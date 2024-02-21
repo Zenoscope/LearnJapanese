@@ -1,0 +1,34 @@
+menu system 
+ Uses an breadcrumbs array to track which room you are in, clicking "back" 
+ removes that entry from the array.
+ The room name and the button (minus the btn_ part) are used to navigate it.
+
+kana grid
+ Usees the kana arrays to populate the grid.
+ Kana buttons change the kana_array[0] or [1] or [2] to change from yoon or whatever.
+  The button refreshes the grid.
+ The buttons flip the cards (sprite animation) and change the face from kana to romanji
+  and play the sound
+
+missing kana grid
+ Usees the kana arrays to populate the grid.
+ Kana buttons change the kana_array[0] or [1] or [2] to change from yoon or whatever.
+  The button refreshes the grid.
+ Buttons on the side run are dragged and delete the card from the stack, if the stack
+  is empty the stack is refreshed and the missing cards are refreshed.
+  if the 
+  
+scr_Functions is where the functions are.
+
+
+20/12/2022
+room_Init_MissingKana.missingCardGrid_array[array_count][0]; = kana character
+room_Init_MissingKana.missingCardGrid_array[array_count][1]; = reading (romanji)
+room_Init_MissingKana.missingCardGrid_array[array_count][2]; = shuffled order number
+room_Init_MissingKana.missingCardGrid_array[array_count][3]; = card_instance_ID
+
+1/01/2023
+scr_Functions.gml
+ line 349 and on, added question mark and card colour
+ 493 changed colour setting to white
+ 
