@@ -595,6 +595,8 @@ function function_spawn_kanji_card(x_loc,y_loc,roomscript,card_index) {
 	
 	var card_source = kanji_list[card_index];
 	
+	draw_set_valign(fa_middle);
+	
 	card_array[array_length(card_array)] = instance_create_layer(x_loc,y_loc,"card_layer",asset_get_index("obj_KanjiCard"),
 	 	{//4
 			index:				card_source.index,
@@ -603,9 +605,11 @@ function function_spawn_kanji_card(x_loc,y_loc,roomscript,card_index) {
 			romanji:			card_source.romanji,
 			position:			card_source.field_1,
 			frequency:			card_source.field_2,
-			variation:			card_source.field_3,
+			variation:			card_source.field_3, 
 			examples:			card_source.examples,
 			strokes:			card_source.field_4,
+			// thhis might break the kanji cards, possibly only for Radicals.
+			kana_reading:		card_source.kana_reading,
 			room_script:		roomscript,
 			image_speed:		0,
 			moving:				"false"
@@ -1011,10 +1015,16 @@ function function_draw_room_name(display_name){
 	draw_set_font(fnt_button);
 	draw_set_halign(fa_top);
 	draw_set_valign(fa_middle);
+	//draw_set_valign(fa_right);
 	draw_set_color(c_black);
 	// add the room name to the room
-	draw_text_ext_transformed(575,25,display_name,0,500,0.5,0.5,0);
-	
+	// 
+	// x_loc = window_get_width;
+	//x_loc = surface_get_width();
+	//x_loc = display_get_gui_width() / 2;
+	//	draw_text_ext_transformed(x_loc,25,display_name,0,1000,0.5,0.5,0);
+	x_loc = room_width/2;
+	draw_text_ext_transformed(575,25,display_name,0,1000,1,1,0);	
 	}
 
 /// show helptext
@@ -1033,8 +1043,8 @@ var has_help = false;
 searchString = button_name;
 value = "";
 
+// search for the tooltip stuff
 try{
-	
 	var has_help = array_any(global.tooltips, function(_val, _ind)
 	{
 	// this function can only have one line?
@@ -1123,7 +1133,7 @@ catch ( _exception){
 					bttn_width: btn_width, // width of string before adding a new line
 					image_xscale : 8, // width of the image					
 					//image_yscale : 4.5, // height of the image
-					image_yscale : image_height, // height of the image
+					image_yscale : image_height * 2, // height of the image
 					speed : 0
 					});
 			}

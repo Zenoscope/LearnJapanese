@@ -36,6 +36,11 @@ else if (hovering && mouse_check_button_released(mb_left)) {//2
 		depth = -200;
 		if (room_get_name(room) == "Word0Builder") {			
 			perform_increment = function_destroy_on_card_collision(room_script.object);
+			
+			//instance.card_face_text = card_face_text;
+			//instance.image_blend = c_white;
+			//function_reset_missing_card(self);
+		
 			if ( perform_increment == true ) {				
 				room_script.match_count++;
 				}

@@ -24,6 +24,6 @@ if (room_script.tick_state == true ) {
 	draw_set_color(c_black);
 	// add the clue to the room
 	word_romanji = selected_word.romanji;
-	draw_text_ext(50,yStart + 350,word_romanji,string_gap,stringLength);
+	draw_text_ext(50,yStart + 350,"Clue: " + word_romanji,string_gap,stringLength);
 }
 

@@ -1,4 +1,14 @@
 
+/*
+Which fonts are used where:
+Helptext
+Kanji and Radicals symbol
+Kanji and radicals text
+
+Flashcards = Hiragana and Katakana flashcards 
+
+Buttons = fnt_Button
+*/
 
 /// currently this is in the button!!!
 function tooltip(
@@ -18,9 +28,9 @@ function tooltip(
 // helptext
 
 // BUTTON NAME IS CASE SENSITIVE!!!
-
+// helptext is the text spoken by Clarissa as part of the game UI
 tooltip021 = new tooltip("Hiragana","Hiragana is one of the four Japanese character sets, which also include kanji*, katakana* and romanji (the ^latin alphabet^, used for writing words in English). It is a syllabary, representing all of the syllables of the Japanese language. \n\n Hiragana is used for Kanji suffixes; particles, furigana (used above Kanji to help with pronounciation) and native Japanese words which have no Kanji equivalent.\n\n *Described in the katakana and kanji sections.","helptext");
-tooltip022 = new tooltip("Katakana","Katakana is one of the four character sets in Japanese, which also include kanji*, katakana* and romanji (the ^latin alphabet^, used for writing words in English).  It is a syllabary, representing all of the syllables of the Japanese language.\n\nKatakana is used for writing foreign language words and loan words; onomatopoeia and sound effects in Manga; and scientific and technical terms.\n\n*Described in the kanji and hiragana sections.","helptext");
+tooltip022 = new tooltip("Katakana","Katakana is one of the four character sets in Japanese, which also include kanji*, hiragana* and romanji (the ^latin alphabet^, used for writing words in English).  It is a syllabary, representing all of the syllables of the Japanese language.\n\nKatakana is used for writing foreign language words and loan words; onomatopoeia and sound effects in Manga; and scientific and technical terms.\n\n*Described in the kanji and hiragana sections.","helptext");
 tooltip023 = new tooltip("Kanji","Kanji is one of the four character sets in japanese, which also include hiragana*, katakana* and romanji (the ^latin alphabet^, used for writing words in English).\n\nKanji are based on Chinese hanji characters, and represent a word or idea. They may have one or more \"readings\", the On-ymi (chinese) and Kun-yomi (Japanese) readings. For example, the kanji X, meaning \"whatever\" has... \n\n*Described in the katakana and hiragana sections.","helptext");
 tooltip024 = new tooltip("Grammar","How sentences are put together, and how the parts work: nouns, particles, verbs, adverbs and adjectives.","helptext");
 tooltip025 = new tooltip("Vocabulary","Words, words and more words.\n All of the words in the N5 test, maybe.","helptext");
@@ -33,6 +43,10 @@ tooltip031 = new tooltip("Vocab0List","A list of N5 vocabulary which are usually
 tooltip032 = new tooltip("Missing0Vocab","A game to help learn the N5 vocabulary.","helptext");
 tooltip033 = new tooltip("Word0Builder","Drag the character into the correct spot to spell the word.","helptext");
 tooltip034 = new tooltip("Vocab0Grammar","Vocab and grammar. Grammar and vocab.\n\n Vocab and grammar.","helptext");
+
+tooltip035 = new tooltip("One0Hundred0Kanji0List","A list of the 100 most common Kanji used in Japanese. Each Kanji may have multiple readings. These are listed in order, with the most common first, marked with *. Learning the most common readings gets you reading kanji more quickly. There are two types of readings: On-yomi (Chinese, only some match modern Chinese pronounciation)  and Kun-yomi (Japanese). Generally, the on-yomi reading is used for words made of multiple kanji,and kun-yomi are used for words using a single kanji (though there are exceptions). Okurigana are a mix of Kanji and hiragana, they use kunyomi reading.","helptext");
+tooltip036 = new tooltip("Radical0List"," Learning the radicals isn't essential, but may make learning the Kanji easier.\n\n Radicals are the parts which make up a kanji character. For example 図 chizu (map) is made up of the radicals 囗 斗. They can sometimes be kanji themselves, and may have variations in how they are written.\n\n Radicals may appear in different positions as part of a character, eg on the left hand side or surrounding another radical or kanji character. Most radicals don't really mean anything but they have been given meanings to help with remembering them **is this true?","helptext");
+tooltip037 = new tooltip("One0Hundred0Kanji0Vocab","Words which use the 100 Kanji characters.","helptext");
 
 //
 tooltip040 = new tooltip("sokuonfu","small tsu, the following consonant is doubled, and pronounced separately, eg konnichiwa","helptext");
@@ -47,6 +61,9 @@ tooltip050 = new tooltip("Links","Just a test!","biblio");
 // but it comes back.
 tooltip070 = new tooltip("Links","Just a test!","blurb");
 
+// tooltips 
+
+
 // invisible button tool tips
 tooltip081 = new tooltip("invisTeForm", "Used to request an action, for connecting verbs, asking permission or present progressive (an ongoing action in the present).","tooltip");
 tooltip082 = new tooltip("invisPolite","Polite - used with superiors and strangers, and in public announcements.","tooltip");
@@ -60,7 +77,7 @@ tooltip088 = new tooltip("invisStem","The stem of the verb, used for conjugation
 //kana tooltips
 tooltip090 = new tooltip("Gojuon","The traditional grid order of the kana characters (shown sideways here)","tooltip");
 tooltip091 = new tooltip("(Han)dakuten","Indicate pronounciation changes. Dakuten ('dots') are voiced: e.g. ka becomes ga; sa - za; ta - da; ha - ba, and Handakuten ('circles') are half-voiced: 'ha' becomes a 'p' sound.","tooltip");
-tooltip092 = new tooltip("Yoon","Digraphs, add a 'y','g' or 'j' sound to a consonant in the 'i' column.","tooltip");
+tooltip092 = new tooltip("Yoon","Digraphs, add a 'y','g' or 'j' sound to a consonant in the 'i' column. E.g. ki + ya = kya,  gi + yo = gyo","tooltip");
 
 //test, please remove!
 tooltip098 = new tooltip("invisTest","Quit game.","tooltip");
@@ -119,6 +136,11 @@ tooltip031,
 tooltip032,
 tooltip033,
 tooltip034,
+
+tooltip035,
+tooltip036,
+tooltip037,
+
 
 // bibliography
 tooltip050,
