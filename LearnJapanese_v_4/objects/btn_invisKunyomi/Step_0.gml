@@ -3,9 +3,9 @@
 /// @Description - btn_nav_parent
 
 //if the layer
+event_inherited();
 
-
-if (hovering && self.visible == true) {//2	
+if (hovering) {//2	 && self.visible == tru
 	
 	show_debug_message("weeeeeeeee");
 	

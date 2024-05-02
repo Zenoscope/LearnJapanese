@@ -14,6 +14,7 @@
     {"name":"inst_23F6783B","path":"rooms/Hiragana/Hiragana.yy",},
     {"name":"inst_29F4D776","path":"rooms/Hiragana/Hiragana.yy",},
     {"name":"inst_2941E3B7","path":"rooms/Hiragana/Hiragana.yy",},
+    {"name":"inst_B1E0A51","path":"rooms/Hiragana/Hiragana.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -23,6 +24,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1D3940D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"btnNAV_Flipcards","path":"objects/btnNAV_Flipcards/btnNAV_Flipcards.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":303.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_23F6783B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"btnNAV_Vocab0List","path":"objects/btnNAV_Vocab0List/btnNAV_Vocab0List.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":502.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_29F4D776","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"btnNAV_Word0Builder","path":"objects/btnNAV_Word0Builder/btnNAV_Word0Builder.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":603.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B1E0A51","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"btn_QuestionMark","path":"objects/btn_QuestionMark/btn_QuestionMark.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1097.0,"y":815.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3313ECE6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":{"name":"inst_3313ECE6","path":"rooms/Room_Parent/Room_Parent.yy",},"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"btnNAV_back","path":"objects/btnNAV_back/btnNAV_back.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1217.0,"y":720.0,},

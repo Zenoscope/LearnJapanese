@@ -594,9 +594,7 @@ function function_spawn_kanji_card(x_loc,y_loc,roomscript,card_index) {
 	card_array	= roomscript.card_array;	
 	
 	var card_source = kanji_list[card_index];
-	
-	draw_set_valign(fa_middle);
-	
+			
 	card_array[array_length(card_array)] = instance_create_layer(x_loc,y_loc,"card_layer",asset_get_index("obj_KanjiCard"),
 	 	{//4
 			index:				card_source.index,
@@ -608,20 +606,42 @@ function function_spawn_kanji_card(x_loc,y_loc,roomscript,card_index) {
 			variation:			card_source.field_3, 
 			examples:			card_source.examples,
 			strokes:			card_source.field_4,
+			// this might break the kanji cards, possibly only for Radicals.
+			kana_reading:		card_source.kana_reading,
 			room_script:		roomscript,
 			image_speed:		0,
-			moving:				"false"
-			//card_position:		"middle"
+			moving:				"false",
+			//sprite_xloc:		150 // can change depending on side.
 			});
-	
+
+/*
+surface_set_target(global.painting_surface);
+
+  //draw_clear(c_green);
+  //draw_sprite(spr_KanjiComponent,6,x_loc,y_loc);    
+  draw_sprite(spr_KanjiComponent,6,card_array[array_length(card_array) - 1].sprite_xloc,y_loc);  
+
+  draw_set_font(fnt_100Kanji);
+  draw_set_color(c_black);
+  draw_set_valign(fa_middle);
+  draw_set_halign(fa_center);
+
+  font_scale = 4;
+  //draw_text_ext_transformed(x_loc,0,card_source.kanji,0,200,font_scale,font_scale,0);
+  draw_text_ext_transformed(card_array[array_length(card_array) - 1].sprite_xloc,0,card_source.kanji,0,200,font_scale,font_scale,0);
+
+surface_reset_target();
+*/
+
 }
 
 /// Moves a card towards its destination
 /// Once it gets there, it deletes it.
 ///
 /// FIXME: description and room script
-function move_cards(destination_x,destination_y,card,room_script) {
+function move_kanji_cards(destination_x,destination_y,card,room_script) {
 	
+	/*
 	var travel_speed = 10; 
 	// + travel_speed; for some reason, moving to the
 	// left adds another 10 to the side.
@@ -633,8 +653,10 @@ function move_cards(destination_x,destination_y,card,room_script) {
 		else {//0			
 			self.speed = 0;
 			room_script.moving = false;
+			// delete the card
+			*/
 			delete_card(room_script);
-		}
+		//}
 }//0
 
 /// DESCRIPTION: Deletes a card from the card array and 
@@ -643,13 +665,13 @@ function move_cards(destination_x,destination_y,card,room_script) {
 /// FIXME: description and room script
 /// rename to: function function_delete_card(card_array,room_script)){		
 function delete_card(room_script){
-	while ( array_length(room_script.card_array) > room_script.number_of_cards){
+	//while ( array_length(room_script.card_array) > room_script.number_of_cards){
 		show_debug_message("destroying card " + string(room_script.card_array[0].kanji));
 		// get the first card in the array and destroy it.		
 		instance_destroy(room_script.card_array[0]);
 		// new cards always get added to the end of the array
 		array_delete(room_script.card_array, 0, room_script.number_of_cards);
-		}
+	//	}
 	}
 
 /// DESCRIPTION:
@@ -1022,7 +1044,20 @@ function function_draw_room_name(display_name){
 	//x_loc = display_get_gui_width() / 2;
 	//	draw_text_ext_transformed(x_loc,25,display_name,0,1000,0.5,0.5,0);
 	x_loc = room_width/2;
-	draw_text_ext_transformed(575,25,display_name,0,1000,0.5,0.5,0);	
+	draw_text_ext_transformed(575,25,display_name,0,1000,1,1,0);	
+	}
+
+
+function function_draw_version(version){
+		
+	draw_set_font(fnt_button);
+	draw_set_halign(fa_top);
+	draw_set_valign(fa_left);
+	draw_set_color(c_black);
+	x_loc = 100;
+	y_loc = 100;
+	draw_text_ext(x_loc,y_loc,version,0,0);
+	
 	}
 
 /// show helptext
@@ -1041,8 +1076,8 @@ var has_help = false;
 searchString = button_name;
 value = "";
 
+// search for the tooltip stuff
 try{
-	
 	var has_help = array_any(global.tooltips, function(_val, _ind)
 	{
 	// this function can only have one line?
@@ -1131,7 +1166,7 @@ catch ( _exception){
 					bttn_width: btn_width, // width of string before adding a new line
 					image_xscale : 8, // width of the image					
 					//image_yscale : 4.5, // height of the image
-					image_yscale : image_height, // height of the image
+					image_yscale : image_height * 2, // height of the image
 					speed : 0
 					});
 			}

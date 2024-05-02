@@ -36,5 +36,5 @@
     "path": "sprites/spr_ButtonInvisible/spr_ButtonInvisible.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

@@ -4,8 +4,15 @@
 //draws the text on the button
 draw_self();
 
-//draw_set_font(Katakana);
-draw_set_font(FlashCards);
+if (global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2] == "Kanji") {
+	use_font = fnt_100Kanji ;
+	}
+else {
+	use_font = FlashCards;
+	}
+
+
+draw_set_font(use_font);
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);

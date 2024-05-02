@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Splash_Title",
-    "path": "sprites/Splash_Title/Splash_Title.yy",
+    "name": "spr_Splash_Title_Upper",
+    "path": "sprites/spr_Splash_Title_Upper/spr_Splash_Title_Upper.yy",
   },
   "spriteMaskId": null,
   "visible": true,

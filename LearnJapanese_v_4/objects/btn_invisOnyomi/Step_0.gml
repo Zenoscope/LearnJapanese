@@ -3,18 +3,19 @@
 /// @Description - btn_nav_parent
 
 //if the layer
+event_inherited();
 
-
-if (hovering && self.visible == true) {//2	
+//if (hovering && self.visible == true) {//2
+if (hovering) {//2	
 	
-	show_debug_message("weeeeeeeee");
+	//show_debug_message("weeeeeeeee");
 	
 	image_xscale = 1.05;
 	image_yscale = 1.05;
 	 
 	
 	try {
-		function_show_helptext(btn_name,_tooltips,self);
+		function_show_helptext(btn_name,tooltips,self);
 		}
 	catch( _exception) {
 		show_debug_message(" function doesn't exist?");

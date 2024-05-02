@@ -4,16 +4,21 @@ event_inherited();
 
 if (hovering) {//2	
 	 	
-	//var lay_id = self.layer;
-
-	//if (layer_get_visible(lay_id)){
+	if (btn_name == "?") {
+		btn_name = room_get_name(room);
+		
+		}
+	
+	// runs for all buttons.
 	function_show_helptext(btn_name,global.tooltips,self);
+	
 	if (btn_name == "back") { 
 			show_debug_message("hovering over back button");
 			}
 	else if (btn_name == "quit0game") {
 			show_debug_message("hovering over quit button");
 			}
+    
 	else {
 		function_play_cow_narrator();
 		}	
@@ -23,8 +28,6 @@ if (hovering) {//2
 	
 else {//2
 	
-	//function_stop_cow_narrator();
-
 	 if (global.show_helptext == true){
 		global.show_helptext = false;	
 		}

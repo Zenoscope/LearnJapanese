@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Grammar",
-    "path": "folders/Objects/Features/Grammar.yy",
+    "name": "Parents",
+    "path": "folders/Objects/Parents.yy",
   },
   "parentObjectId": {
     "name": "btn_Label",

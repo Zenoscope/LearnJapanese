@@ -1,4 +1,14 @@
 
+/*
+Which fonts are used where:
+Helptext
+Kanji and Radicals symbol
+Kanji and radicals text
+
+Flashcards = Hiragana and Katakana flashcards 
+
+Buttons = fnt_Button
+*/
 
 /// currently this is in the button!!!
 function tooltip(
@@ -34,8 +44,8 @@ tooltip032 = new tooltip("Missing0Vocab","A game to help learn the N5 vocabulary
 tooltip033 = new tooltip("Word0Builder","Drag the character into the correct spot to spell the word.","helptext");
 tooltip034 = new tooltip("Vocab0Grammar","Vocab and grammar. Grammar and vocab.\n\n Vocab and grammar.","helptext");
 
-tooltip035 = new tooltip("One0Hundred0Kanji0List","A list of the 100 most common Kanji used in Japanese.","helptext");
-tooltip036 = new tooltip("Radical0List"," Learning the radicals isn't essential, but may make learning the Kanji easier.\n\n Radicals are the parts which make up a kanji character. For example 図 chizu (map) is made up of the radicals 囗 斗. They can sometimes be kanji themselves, and may have variations in how they are written.\n\n Radicals may appear in different positions as part of a character, eg on the left hand side or surrounding another radical or kanji character. Radicals in frequency group 1 appear in 25% of all kanji, radicals in groups 1 and 2 appear in 50% of all kanji, radicals in groups 1, 2 and 3 appear in 75% of all kanji, and radicals in all groups (1,2,3 and 4) may appear in all kanji. Most radicals don't really mean anything but they have been given meanings to help with remembering them **is this true?","helptext");
+tooltip035 = new tooltip("One0Hundred0Kanji0List","A list of the 100 most common Kanji used in Japanese. Each Kanji may have multiple readings. These are listed in order, with the most common first, marked with *. Learning the most common readings gets you reading kanji more quickly. There are two types of readings: On-yomi (Chinese, only some match modern Chinese pronounciation)  and Kun-yomi (Japanese). Generally, the on-yomi reading is used for words made of multiple kanji,and kun-yomi are used for words using a single kanji (though there are exceptions). Okurigana are a mix of Kanji and hiragana, they use kunyomi reading.","helptext");
+tooltip036 = new tooltip("Radical0List"," Learning the radicals isn't essential, but may make learning the Kanji easier.\n\n Radicals are the parts which make up a kanji character. For example 図 chizu (map) is made up of the radicals 囗 斗. They can sometimes be kanji themselves, and may have variations in how they are written.\n\n Radicals may appear in different positions as part of a character, eg on the left hand side or surrounding another radical or kanji character. Most radicals don't really mean anything but they have been given meanings to help with remembering them **is this true?","helptext");
 tooltip037 = new tooltip("One0Hundred0Kanji0Vocab","Words which use the 100 Kanji characters.","helptext");
 
 //

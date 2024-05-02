@@ -18,8 +18,8 @@ function first_1000_vocab(
 	field_4		=_sorting;
 }
 
-kanji_glyph     (  2,"二","Two","ni"     ,"numerical noun","futa(tsu), futa","二人 futari (two people, pair)","2",1)
-first_1000_vocab(001,"私","I  ","watashi","Pronoun"       ,"わたし"         ,"introduction","My name is Clarabelle.",1)
+//kanji_glyph     (  2,"二","Two","ni"     ,"numerical noun","futa(tsu), futa","二人 futari (two people, pair)","2",1)
+//first_1000_vocab(001,"私","I  ","watashi","Pronoun"       ,"わたし"         ,"introduction","My name is Clarabelle.",1)
 
 
 first_1000_vocab001 = new first_1000_vocab(001,"私","I; myself","watashi","Pronoun","わたし","introduction","私はクララベルです / わたしはクララベルです  / Watashi wa clarabelle desu / My name is Clarabelle.",1)

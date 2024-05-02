@@ -41,4 +41,4 @@ invis_tooltip008,
 invis_tooltip009
 ]
 
-layer_ID = self.layerID;
+//layer_ID = self.layerID;

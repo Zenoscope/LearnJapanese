@@ -1,5 +1,5 @@
 /// @Questionmark button create
-
+/*
 hovering = false;
 clicked = false;
 
@@ -14,9 +14,9 @@ display_name = "?";
 
 global.show_helptext = false;
 tooltips = global.tooltips;
-
+*/
 /*
-Tid needs to look like a tooltip,
+Needs to look like a tooltip,
 but function like helptext.
 // works!
 searchString = btn_name;
@@ -38,5 +38,7 @@ catch ( _exception){
 
 tip = value.tooltip;
 */
+/*
 tip_text = ""; 
 bttn_width = sprite_get_width(spr_Button);
+*/

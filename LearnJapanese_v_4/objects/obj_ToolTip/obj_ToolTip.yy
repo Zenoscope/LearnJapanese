@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_ToolTip",
-    "path": "sprites/spr_ToolTip/spr_ToolTip.yy",
+    "name": "Sprite706",
+    "path": "sprites/Sprite706/Sprite706.yy",
   },
   "spriteMaskId": null,
   "visible": true,

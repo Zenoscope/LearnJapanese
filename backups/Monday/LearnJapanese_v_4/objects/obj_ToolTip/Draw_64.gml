@@ -1,5 +1,6 @@
 /// @Description draws the text on the balloon
 
+// otherwise it's drawn below everything
 draw_self();
 
 draw_set_font(fnt_button);
@@ -22,5 +23,5 @@ offset = _slice.bottom + (_sprite_height / 2); // might want to add the seperato
 #endregion
 
 
-draw_text_ext_transformed(x,y - offset,tip_text,60,bttn_width,0.5,0.5,0);
+draw_text_ext_transformed(x,y - offset,tip_text,60,bttn_width,1,1,0);
 

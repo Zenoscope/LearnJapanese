@@ -11,7 +11,7 @@ draw_set_color(c_black);
 
 font_height = string_height("String");
 
-draw_text_ext_transformed(320,50,display_string,font_height,1850,0.5,0.5,0);
+draw_text_ext_transformed(320,50,display_string,font_height,1850,1,1,0);
 
 // temporary 
 // draw_text_ext_transformed(320,50,display_string,font_height,1900,0.5,0.5,0);

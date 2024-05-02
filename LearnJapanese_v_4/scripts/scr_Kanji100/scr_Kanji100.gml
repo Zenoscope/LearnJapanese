@@ -2,7 +2,7 @@
 
 function kanji_glyph(
 	//_index,_kanji,_meaning,_sorting,_type,_onyomi,_kunyomi,_examples, _romanji
-	_index,_kanji,_meaning,_romanji,_type,_onyomi,_kunyomi,_examples, _sorting
+	_index,_kanji,_meaning,_romanji,_type,_onyomi,_kunyomi,_examples, _sorting,_kana_reading	
 	) constructor {
 	index		=_index;
 	kanji		=_kanji;
@@ -13,6 +13,8 @@ function kanji_glyph(
 	field_3		=_kunyomi;
 	examples	=_examples;
 	field_4		=_sorting;
+	kana_reading = "reading";
+	
 }
 
 first_100_kanji1 = new kanji_glyph(1,"一","One",1,"numerical noun","ichi, itsu","hito(tsu), hito","一人 hitori (one person, alone)","1")

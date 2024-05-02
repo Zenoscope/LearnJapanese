@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Verb_buttons",
-    "path": "folders/Objects/Features/Grammar/GrammarRooms/Verb_buttons.yy",
+    "name": "Parents",
+    "path": "folders/Objects/Parents.yy",
   },
   "parentObjectId": {
     "name": "btnNAV_parent",

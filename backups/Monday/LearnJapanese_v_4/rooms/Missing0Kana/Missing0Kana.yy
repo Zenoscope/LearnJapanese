@@ -18,6 +18,7 @@
     {"name":"inst_23A79C7A","path":"rooms/Missing0Kana/Missing0Kana.yy",},
     {"name":"inst_9514C91","path":"rooms/Missing0Kana/Missing0Kana.yy",},
     {"name":"inst_41928634","path":"rooms/Missing0Kana/Missing0Kana.yy",},
+    {"name":"inst_226672AD","path":"rooms/Missing0Kana/Missing0Kana.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -31,6 +32,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_23A79C7A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"btn_ShowMissingKana2","path":"objects/btn_ShowMissingKana2/btn_ShowMissingKana2.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1312.0,"y":410.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_9514C91","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"btn_ShowMissingKana1","path":"objects/btn_ShowMissingKana1/btn_ShowMissingKana1.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1312.0,"y":306.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_41928634","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"btn_ShowMissingKana0","path":"objects/btn_ShowMissingKana0/btn_ShowMissingKana0.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1312.0,"y":202.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_226672AD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"btn_QuestionMark","path":"objects/btn_QuestionMark/btn_QuestionMark.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1081.0,"y":815.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"card_layer","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4DBD2EFB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"init_Room_Missing_Kana","path":"objects/init_Room_Missing_Kana/init_Room_Missing_Kana.yy",},"properties":[],"rotation":0.0,"scaleX":9.0,"scaleY":7.0,"x":32.0,"y":32.0,},

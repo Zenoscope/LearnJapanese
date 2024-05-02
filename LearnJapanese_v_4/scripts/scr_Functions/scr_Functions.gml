@@ -42,7 +42,7 @@ switch ( )
 
 function function_click_NAV_button(btn_name) {
 
-	show_debug_message("you NAV clicked '" + btn_name +"'");	
+	//show_debug_message("you NAV clicked '" + btn_name +"'");	
 	// add an array to record where you are
 	//	
 	
@@ -134,13 +134,13 @@ else array_index = 0;
 // Scale UI
 // chuck this into another function
 //scale it with the screen size
-show_debug_message("1");
+//show_debug_message("1");
 var card_size = 100; // get it from the sprite, perhaps?
 //var gutter = 10;
 var card_spacing = 2;
 
 //get the width and height of the window
-show_debug_message("2");
+//show_debug_message("2");
 //var screen_width = window_get_width(); // GUI layer instead?
 //var screen_height = window_get_height(); // GUI layer instead?
 
@@ -151,7 +151,7 @@ show_debug_message("2");
 //cols ^
 //row_spacing = screen_height/kana_grid_height;
 
-show_debug_message("3");
+//show_debug_message("3");
 // start positions for the grids.
 var y_start = 1; //(card_size / 4) ;// + (gutter); // y position, goes down the screen
 var y_loc = y_start; // initial y position for all of the columns.
@@ -160,11 +160,11 @@ var y_loc = y_start; // initial y position for all of the columns.
 var x_loc = (card_size / 2); // x position, goes across the screen
 
 //total_width = (card_size * kana_grid_width) + ((kana_grid_width - 1) * col_spacing) + (gutter * 2);
-show_debug_message("111 kana_array " + string(kana_array));
+//show_debug_message("111 kana_array " + string(kana_array));
 
 var max_array_length = array_length( kana_array[array_index]);
 
-show_debug_message("4: max array length "  + string(max_array_length));
+//show_debug_message("4: max array length "  + string(max_array_length));
 
 var kana_grid_width =  kana_array[array_index][max_array_length - 1][0];
 var kana_grid_height =  kana_array[array_index][max_array_length - 1][1];
@@ -172,7 +172,7 @@ var kana_grid_height =  kana_array[array_index][max_array_length - 1][1];
 // loop through the kana
 // draw the grid of cards 
 // -1 to skip the size characters at the end
-show_debug_message("5");
+//show_debug_message("5");
 var kana_counter = 0;
 while (kana_counter < max_array_length -1) {//2
 	
@@ -239,7 +239,7 @@ while (kana_counter < max_array_length -1) {//2
 				
 			// otherwise if the room is MissingKana then it's static
 		else if ( room_name == "Missing0Kana" ) {//4\
-				show_debug_message("!! Place 'missing' card: ?");
+				//show_debug_message("!! Place 'missing' card: ?");
 				var card_function = "missing";
 				var object = asset_get_index("btn_Flipcard");	
 				var kana_char = kana_array[array_index][kana_counter][0];
@@ -353,8 +353,8 @@ function function_trim_buttonName(orig_btn_name) {
 function function_generate_missing_card_stack(card_offset,room_script,missing_card_array) {
 
 // create missing card stack array
-show_debug_message("create new missing Card Stack array" + string (missing_card_array));
-show_debug_message("room_script" + string (room_script));
+//show_debug_message("create new missing Card Stack array" + string (missing_card_array));
+//show_debug_message("room_script" + string (room_script));
 
 room_script.array_cardStack = array_create(5, 0);
 
@@ -424,24 +424,24 @@ return  room_script.array_cardStack;
 function function_generate_missing_kana_array(array_index,room_script) {
 // - 1 to chop off the  the grid width/height numbers at the end.
 var kana_array_length = array_length(global.kana_array[array_index]);
-show_debug_message("kana_array_length: " + string(kana_array_length));
-show_debug_message("kana_array_global " + string(global.kana_array[array_index]));
+//show_debug_message("kana_array_length: " + string(kana_array_length));
+//show_debug_message("kana_array_global " + string(global.kana_array[array_index]));
 
 // count the headers so we can skip them:
 //
 var heading_count = 0;
 for (var i = 0, len = kana_array_length; i < len; ++i) { 
 	var returned_value = global.kana_array[array_index][i][1];
-	show_debug_message("returned_value" + string(returned_value));
+	//show_debug_message("returned_value" + string(returned_value));
 	// array counter at the end OR "" as header OR - as spacer
 	if ( is_numeric( returned_value ) || returned_value == "" || returned_value == "-" ) {
 		heading_count++; 
 		}				
 	}
-show_debug_message( "heading count = " + string (heading_count) );
+//show_debug_message( "heading count = " + string (heading_count) );
 
 // Create the random number array, which is used to order the kana list
-show_debug_message( "create 'random' number array" );
+//show_debug_message( "create 'random' number array" );
 // create an empty array as long as the kana array, subtracting the heading count
 var random_number_list = array_create(kana_array_length - heading_count ); 
 
@@ -455,45 +455,45 @@ while( array_counter < array_length( random_number_list ) ) {
 //
 // Assign the number randomly to each "card"
 //
-show_debug_message( "copy kana to Missing Card Grid array" );
+//show_debug_message( "copy kana to Missing Card Grid array" );
 //                         0   1   2
 var missingCardGrid_array = [0];
 show_debug_message("missing card array " + string(missingCardGrid_array));
 
 var array_counter = 0; // recycling!!!
 while (array_counter < kana_array_length) { 	
-	show_debug_message("---updateing missing card array");
+	//show_debug_message("---updateing missing card array");
 	
 	// add the array value to the end of the array (thats what array_push does)		
 	missingCardGrid_array[array_counter][0] = global.kana_array[array_index][array_counter][0];
 	missingCardGrid_array[array_counter][1] = global.kana_array[array_index][array_counter][1];
-	show_debug_message("missing card array " + string(missingCardGrid_array));
+	//show_debug_message("missing card array " + string(missingCardGrid_array));
 	
 	var missingCardGrid_array_one  = missingCardGrid_array[array_counter][1];	
 		
 	if ( missingCardGrid_array_one == ""  ||  is_numeric(missingCardGrid_array_one) || missingCardGrid_array_one = "-" ) { 
 		// if the element is not kana (eg a header, a number or a minus sign) skip it
-		show_debug_message("skipping");		
+		//show_debug_message("skipping");		
 		missingCardGrid_array[array_counter][2] = "";
 		}
 	else {
 		// otherwise do these things:		
 		// get the size of the remaining random_number_list
 		var rnd_number_list_length = array_length(random_number_list);
-		show_debug_message("Rnd number list length = " + string( rnd_number_list_length ) );
+		//show_debug_message("Rnd number list length = " + string( rnd_number_list_length ) );
 		
 		// generate a random number between 0 and the size of the list.
 		var location = irandom( rnd_number_list_length - 1);
-		show_debug_message("Random location is: " + string(location));		
+		//show_debug_message("Random location is: " + string(location));		
 		// fetch a random number from the list from that location
 		// add random number to the missing card array.
 		missingCardGrid_array[array_counter][2] = random_number_list[location];
 		//show_debug_message("missingCardGrid_array_two " + string(room_script.missingCardGrid_array[array_counter]));
-		show_debug_message("missingCardGrid_array_two " + string(missingCardGrid_array[array_counter]));
+		//show_debug_message("missingCardGrid_array_two " + string(missingCardGrid_array[array_counter]));
 		// add the array element for the instance ID of the card
 		missingCardGrid_array[array_counter][3] = "";
 		//show_debug_message("missingCardGrid_array_two " + string(room_script.missingCardGrid_array[array_counter]));
-		show_debug_message("missingCardGrid_array_two " + string(missingCardGrid_array[array_counter]));
+		//show_debug_message("missingCardGrid_array_two " + string(missingCardGrid_array[array_counter]));
 		
 		try {
 			// delete the random numnber from the array.
@@ -501,13 +501,13 @@ while (array_counter < kana_array_length) {
 			}
 		catch(_exception) {
 			// throw an erro if it doesn't work
-			show_debug_message("error!!!");
+			show_debug_message("error in function_generate_missing_kana_array!!!");
 			}			
 		}
-	show_debug_message("Position: " + string(missingCardGrid_array[array_counter] ) );
+	//show_debug_message("Position: " + string(missingCardGrid_array[array_counter] ) );
 	array_counter++;	
 	}
-	show_debug_message("Array is" + string(missingCardGrid_array));
+	//show_debug_message("Array is" + string(missingCardGrid_array));
 	var return_array = [missingCardGrid_array,heading_count];
 	return return_array;
 }
@@ -540,7 +540,7 @@ var missing_card_list = [
 		instance.card_face_text = "?";
 		i ++;
 		}
-	show_debug_message("Draw missing cards");
+	//show_debug_message("Draw missing cards");
 	return missing_card_list;
 }
 
@@ -553,9 +553,9 @@ var missing_card_list = [
 function function_play_sound(button_selected,meaning_character){
 
 	var flipcard_sound = button_selected +  global.gender + "_" + meaning_character;
-	show_debug_message("flipcard_sound " + flipcard_sound);
+	//show_debug_message("flipcard_sound " + flipcard_sound);
 	//if (audio_exists(asset_get_index(flipcard_sound))) {
-		show_debug_message("playing " + string(flipcard_sound));
+	//	show_debug_message("playing " + string(flipcard_sound));
 		//audio_play_sound(asset_get_index(flipcard_sound), 1, false);
 	//}
 	//else { 
@@ -594,9 +594,7 @@ function function_spawn_kanji_card(x_loc,y_loc,roomscript,card_index) {
 	card_array	= roomscript.card_array;	
 	
 	var card_source = kanji_list[card_index];
-	
-	draw_set_valign(fa_middle);
-	
+			
 	card_array[array_length(card_array)] = instance_create_layer(x_loc,y_loc,"card_layer",asset_get_index("obj_KanjiCard"),
 	 	{//4
 			index:				card_source.index,
@@ -608,22 +606,23 @@ function function_spawn_kanji_card(x_loc,y_loc,roomscript,card_index) {
 			variation:			card_source.field_3, 
 			examples:			card_source.examples,
 			strokes:			card_source.field_4,
-			// thhis might break the kanji cards, possibly only for Radicals.
+			// this might break the kanji cards, possibly only for Radicals.
 			kana_reading:		card_source.kana_reading,
 			room_script:		roomscript,
 			image_speed:		0,
-			moving:				"false"
-			//card_position:		"middle"
+			moving:				"false",
+			//sprite_xloc:		150 // can change depending on side.
 			});
-	
+
 }
 
 /// Moves a card towards its destination
 /// Once it gets there, it deletes it.
 ///
 /// FIXME: description and room script
-function move_cards(destination_x,destination_y,card,room_script) {
+function move_kanji_cards(destination_x,destination_y,card,room_script) {
 	
+	/*
 	var travel_speed = 10; 
 	// + travel_speed; for some reason, moving to the
 	// left adds another 10 to the side.
@@ -635,8 +634,10 @@ function move_cards(destination_x,destination_y,card,room_script) {
 		else {//0			
 			self.speed = 0;
 			room_script.moving = false;
+			// delete the card
+			*/
 			delete_card(room_script);
-		}
+		//}
 }//0
 
 /// DESCRIPTION: Deletes a card from the card array and 
@@ -645,13 +646,13 @@ function move_cards(destination_x,destination_y,card,room_script) {
 /// FIXME: description and room script
 /// rename to: function function_delete_card(card_array,room_script)){		
 function delete_card(room_script){
-	while ( array_length(room_script.card_array) > room_script.number_of_cards){
-		show_debug_message("destroying card " + string(room_script.card_array[0].kanji));
+	//while ( array_length(room_script.card_array) > room_script.number_of_cards){
+		//show_debug_message("destroying card " + string(room_script.card_array[0].kanji));
 		// get the first card in the array and destroy it.		
 		instance_destroy(room_script.card_array[0]);
 		// new cards always get added to the end of the array
 		array_delete(room_script.card_array, 0, room_script.number_of_cards);
-		}
+	//	}
 	}
 
 /// DESCRIPTION:
@@ -750,7 +751,7 @@ function function_tickbox_actions(tickbox_name,state) {
 	switch (tickbox_name)
 		{		
 		case "Hiragana":
-			show_debug_message("ticked/unticked Hiragana")
+			//show_debug_message("ticked/unticked Hiragana")
 			// tick
 			if (room_script.tick_state = true){ 
 				add_to_WordBuilderArray("0");
@@ -761,7 +762,7 @@ function function_tickbox_actions(tickbox_name,state) {
 				}			
 		break;
 		case "Katakana":
-			show_debug_message("ticked/unticked Hiragana")
+			//show_debug_message("ticked/unticked Hiragana")
 			// tick
 			if (room_script.tick_state = false){ 
 				add_to_WordBuilderArray("0");
@@ -771,7 +772,7 @@ function function_tickbox_actions(tickbox_name,state) {
 				remove_from_WordBuilderArray("0");
 				}		break;
 		case "Kanji":
-			show_debug_message("ticked/unticked Hiragana")
+			//show_debug_message("ticked/unticked Hiragana")
 			// tick
 			if (room_script.tick_state = true){ 
 				add_to_WordBuilderArray("0");
@@ -781,7 +782,7 @@ function function_tickbox_actions(tickbox_name,state) {
 				remove_from_WordBuilderArray("0");
 				}		break;
 		case "Show0Clue": // or "Show Clue"?
-			show_debug_message("ticked/unticked Hiragana")
+			//show_debug_message("ticked/unticked Hiragana")
 			// tick
 			if (room_script.tick_state = true){ 
 				room_script.tick_state = false;				
@@ -836,10 +837,10 @@ function function_add_to_WordBuilderArray(string_to_find,copy_from_array,_struct
 	var counter = 0;
 	while(counter < array_length(copy_from_array)){
 
-		// Loop through the array of words.
+		// Loop through the array of entries for each line.
 		var field_counter = 0;
 		var field_string = "";
-				
+			
 		while (field_counter < array_length(field_num)){
 			// convert the field name 
 			var field = field_num[field_counter];
@@ -849,7 +850,7 @@ function function_add_to_WordBuilderArray(string_to_find,copy_from_array,_struct
 			field_string = field_string + string(copy_from_array[counter][$ field]);
 			field_counter ++;
 			}
-	
+		
 		// if the field_string contains the string_to_find		
 		if ( string_count(string_to_find,field_string)){
 			// add the match to the array from the copy_from_array.		
@@ -901,9 +902,9 @@ function function_delete_found_card(internal_room_script) {
 		var total_cards = internal_room_script.kana_array_length - internal_room_script.heading_count;
 		var card_count = internal_room_script.missing_card_index;
 		
-		show_debug_message("total_cards " + string(total_cards));
-		show_debug_message("card_count " + string(card_count));
-		show_debug_message("Card offset " + string(internal_room_script.card_offset));
+		//show_debug_message("total_cards " + string(total_cards));
+		//show_debug_message("card_count " + string(card_count));
+		//show_debug_message("Card offset " + string(internal_room_script.card_offset));
 		
 		var missing_card_list_length = array_length(internal_room_script.missing_card_list);
 		var modulus = total_cards % missing_card_list_length;
@@ -1025,6 +1026,19 @@ function function_draw_room_name(display_name){
 	//	draw_text_ext_transformed(x_loc,25,display_name,0,1000,0.5,0.5,0);
 	x_loc = room_width/2;
 	draw_text_ext_transformed(575,25,display_name,0,1000,1,1,0);	
+	}
+
+
+function function_draw_version(version){
+		
+	draw_set_font(fnt_button);
+	draw_set_halign(fa_top);
+	draw_set_valign(fa_left);
+	draw_set_color(c_black);
+	x_loc = 100;
+	y_loc = 100;
+	draw_text_ext(x_loc,y_loc,version,0,0);
+	
 	}
 
 /// show helptext
@@ -1216,7 +1230,7 @@ function function_play_cow_narrator(){
 					cow_frame_change = 0;
 					}
 				}
-			show_debug_message("cow exists");
+			//show_debug_message("cow exists");
 		}
 	}
 

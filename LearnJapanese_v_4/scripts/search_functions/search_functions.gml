@@ -8,15 +8,28 @@
 /// @param text - text to search for
 /// @param search_array - array to search
 
+// FIXME this function is very simailar to the 
+// function_add_to_WordBuilderArray function
+// eg is searches for a match in a column and returns the match.
+// if I could not hardcode the columns, this could be reused.
+
 function search_for_word(text,search_array) {
 	
 	var local_search_list = [];
 	var counter = 0;
 	var search_result_count = 0;
+	
+	text = string_lower(text);
+	
+	// search through the whole array
 	while (counter  < array_length(search_array) ) {		
 		// loop through each element in the array
 		// if it matches, add it to the search list array
-		if ( string_count(text,search_array[counter] ) > 0) {
+		search_string = string_lower(search_array[counter].kanji + " " + search_array[counter].meaning  + "" + search_array[counter].field_2)
+		
+		
+		//if ( string_count(text,search_array[counter] ) > 0) {
+		if ( string_count(text,search_string ) > 0) {
 				array_push(local_search_list,search_array[counter]);
 				search_result_count++;
 				}
@@ -24,7 +37,7 @@ function search_for_word(text,search_array) {
 			}
 				
 	if (search_result_count == 0) { 
-			show_debug_message("search result: no matches");
+			//show_debug_message("search result: no matches");
 			room_script.found_something = false;
 			// maybe display "no match found" instead of the search text
 			}

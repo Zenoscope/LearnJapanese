@@ -7,4 +7,6 @@ global.show_helptext = "false";
 
 window_set_caption("Learn Japanese with Clarabelle and Gran");
 
+// show the version on the splash screen
 var release = "Release 2";
+function_draw_version(release);

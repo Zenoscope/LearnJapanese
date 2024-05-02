@@ -2,7 +2,7 @@
 // 
 // NB this should be a function
 // find if there is an underscore in the room name.
-
+draw_set_font(fnt_button);
 draw_set_color(c_black);
 draw_set_halign(fa_right);
 
@@ -14,8 +14,8 @@ else {
 	}
 
 // Draw the word counter
-var x_scale = 0.5;
-var y_scale = 0.5;
+var x_scale = 1;
+var y_scale = 1;
 
 string_counter = "Showing words";
 draw_text_ext_transformed(1350,155,string_counter,string_height(string_counter),500,x_scale,y_scale,0);

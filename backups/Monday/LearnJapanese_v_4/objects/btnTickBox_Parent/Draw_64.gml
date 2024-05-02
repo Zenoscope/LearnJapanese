@@ -18,10 +18,10 @@ var string_w = string_width(string) ;
 
 if (text_side == "R") {
 	draw_set_halign(fa_left);	
-	draw_text_ext_transformed(x + 55 ,y + 30 ,display_name,40,500,0.5,0.5,0);
+	draw_text_ext_transformed(x + 55 ,y + 30 ,display_name,40,500,1,1,0);
 	}
 else if (text_side == "L") {
 	draw_set_halign(fa_right);	
-	draw_text_ext_transformed(x + 10 ,y + 30,display_name,40,500,0.5,0.5,0);
+	draw_text_ext_transformed(x + 10 ,y + 30,display_name,40,500,1,1,0);
 	}
  

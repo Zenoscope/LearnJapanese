@@ -276,7 +276,7 @@ global.hiragana_gojuon=[ //五十音 (50 standard kana)
 	["H",""],
 	["は","ha"],
 	["ひ","hi"],
-	["ふ","hu"],
+	["ふ","fu"],
 	["へ","he"],
 	["ほ","ho"],//42
 	
@@ -284,7 +284,7 @@ global.hiragana_gojuon=[ //五十音 (50 standard kana)
 	["ま","ma"],
 	["み","mi"],
 	["む","mu"],
-	["む","me"],
+	["め","me"],
 	["も","mo"],//42	
 
 	["Y",""],

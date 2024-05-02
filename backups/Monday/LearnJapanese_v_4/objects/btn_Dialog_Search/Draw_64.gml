@@ -10,7 +10,8 @@ var half_char_width = string_width("A") / 2;
 var spr_width = (self.sprite_width / 2);
 
 // search text config
-
+// search font
+draw_set_font(fnt_button);
 draw_set_color(c_black);
 draw_set_valign(fa_top);
 draw_set_halign(text_align);
