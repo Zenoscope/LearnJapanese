@@ -3,36 +3,36 @@
 // otherwise it's drawn below everything
 draw_self();
 
+// add the top back on and that is where the text should go.
+var gap = text_line_sep;
+//var x_offset = 156 + (gap / 2);
+var x_offset = (bttn_width/2) + (gap / 2); // this might just work with the wide buttons
+//var y_offset =  45 + str_height + _slice.bottom;
+var y_offset =  (bttn_height /2) + str_height + _slice.bottom;
+//(bttn_height); //( _slice.bottom + _slice.top + str_height) + 50
+
+// min width of the tooltip, this might change?
+// depending on the size of the button the half width buttons don't work right.
+
+if (str_width < 300 ) {
+	str_width = 300;
+	}
+
+// you can't multiply anything, it will make it stretch
+draw_sprite_stretched(object_get_sprite(mySprite), 0, x_loc - x_offset, y_loc - y_offset , str_width + gap ,str_height + _slice.top + _slice.bottom );
+
+// ************************
+// text, leave this alone(
+// cut off the bottom and the top, then divide by 2
+// sprite_height = self.sprite_height - (_slice.bottom + _slice.top);// 
+
+
+offset = _slice.bottom + str_height + _slice.top + (line_height /2); // might want to add the seperator as well?
 draw_set_font(fnt_button);
 draw_set_halign(fa_center);
-draw_set_valign(fa_bottom);
+//draw_set_valign(fa_bottom);
+draw_set_valign(fa_top);
 draw_set_color(c_black);
- 
-#region
-// Works to put the text in the middle of the speech bubble.
-// str_height = string_height_ext(tip_text,text_line_sep,bttn_width);()
-//font_height = string_height("A");
 
-_slice = sprite_get_nineslice(object_get_sprite(self.object_index));
-ignore = _slice.bottom + _slice.bottom;
-
-
-draw_sprite_stretched(object_get_sprite(self.object_index), 0,self.x - (str_width) , self.y - (str_height * 2), (str_width * 1)  + _slice.left + _slice.right , (str_height * 2)  + _slice.top);
-// set the origin of the sprite
-sprite_set_offset(object_get_sprite(self.object_index),x,y - _slice.bottom);
-
-// cut off the bottom and the top, then divide by 2
-
-_sprite_height = self.sprite_height - (_slice.bottom + _slice.top);
-
-// add the top back on and that is where the text should go.
-
-offset = _slice.bottom; // might want to add the seperator as well?
-//offset = _slice.bottom + (_sprite_height / 1.5); // might want to add the seperator as well?
-
-#endregion
-
-//draw_text_ext_transformed(x,y - offset,tip_text,text_line_sep,bttn_width,1,1,0);
-
+//offset = 0;
 draw_text_ext_transformed(x,y - offset,tip_text,text_line_sep,bttn_width,1,1,0);
-

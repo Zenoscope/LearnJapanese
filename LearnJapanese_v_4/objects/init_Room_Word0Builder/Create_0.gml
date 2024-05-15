@@ -7,7 +7,9 @@ event_inherited();
 // default to whatever the room is, right?
 // var value = global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2];
 
-switch(global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2])
+origin_room_name = global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2]
+
+switch(origin_room_name)
 	{		
 		case "Hiragana":
 			// import the word list
@@ -29,7 +31,8 @@ switch(global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2])
 		case "Kanji":  // Kanji top 100
 			if (global.navLastButton == "Word0Builder") {
 				// import the word list
-				function_execute_script("scr_VocabList");
+				// function_execute_script("scr_VocabList");
+				function_execute_script("scr_Kanji100");
 				// is actually using the vocab list
 				ListDefault = 1;
 				}

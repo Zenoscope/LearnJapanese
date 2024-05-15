@@ -543,7 +543,7 @@
     {"lower":55360,"upper":55360,},
     {"lower":56738,"upper":56738,},
   ],
-  "regenerateBitmap": false,
+  "regenerateBitmap": true,
   "sampleText": "abcdef ABCDEF\n0123456789 .,<>\"'&!?\nthe quick brown fox jumps over the lazy dog\nTHE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\nDefault character: ▯ (9647)",
   "sdfSpread": 8,
   "size": 40.0,

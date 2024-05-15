@@ -39,6 +39,8 @@ switch (global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2]){
 // kanji_list is the one from the grammarscript.
 // field_name = 2 is field_4
 field_list = ["field_4"];
+// searches through the vocab and finds the vocab which matches 
+// what we are searching for, eg kanji, hiragana etc
 word_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,10,field_list);
 
 reached_list_end = false;
@@ -49,3 +51,6 @@ found_something = false;
 
 blockButtonClick = false;
 
+current_scroll_clicks = 0;
+current_scroll_clicks = 1;
+reached_list_end = false;

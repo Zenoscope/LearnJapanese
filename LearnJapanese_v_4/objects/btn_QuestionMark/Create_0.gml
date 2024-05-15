@@ -1,4 +1,12 @@
 /// @Questionmark button create
+
+/* the sprite for the questionmark is gonna need some work,
+since the button will need to have the speachmark horn somewhere.
+though if the button is in a fixed location, perhaps the text can go off to the left?
+Maybe a mirror image of the existing sprite,
+with custom other stuff generating it. 
+*/
+
 /*
 hovering = false;
 clicked = false;

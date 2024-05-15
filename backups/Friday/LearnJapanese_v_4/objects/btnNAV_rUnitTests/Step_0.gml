@@ -15,8 +15,8 @@ if (mouse_check_button_released(mb_left))
 
 if (clicked)
 {
-    show_debug_message("you clicked " + btn_name);
-	show_debug_message("Going to room " + btn_name);
+    //show_debug_message("you clicked " + btn_name);
+	//show_debug_message("Going to room " + btn_name);
 	function_click_NAV_button(btn_name);
 } 
 

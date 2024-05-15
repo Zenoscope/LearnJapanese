@@ -11,14 +11,14 @@ if (hovering) {//2
 	
 	// runs for all buttons.
 	function_show_helptext(btn_name,global.tooltips,self);
-	
-	if (btn_name == "back") { 
-			show_debug_message("hovering over back button");
+
+   if (btn_name == "back") { 
+			//show_debug_message("hovering over back button");
 			}
 	else if (btn_name == "quit0game") {
-			show_debug_message("hovering over quit button");
+			//show_debug_message("hovering over quit button");
 			}
-    
+	  
 	else {
 		function_play_cow_narrator();
 		}	

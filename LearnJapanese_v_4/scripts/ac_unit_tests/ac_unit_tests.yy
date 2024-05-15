@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "ac_unit_tests",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Scripts",
-    "path": "folders/UnitTests/Scripts.yy",
+  "$GMScript":"",
+  "%Name":"ac_unit_tests",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ac_unit_tests",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/UnitTests/Scripts.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

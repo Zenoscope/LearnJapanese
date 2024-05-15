@@ -18,3 +18,8 @@ if (search) {
 else {
 	display_list = word_list;
 	}
+
+max_scroll_clicks = array_length(display_list) / number_words_shown;	
+
+	
+	

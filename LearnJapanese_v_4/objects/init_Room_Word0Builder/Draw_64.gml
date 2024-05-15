@@ -11,28 +11,39 @@ draw_set_color(c_black);
 var stringLength = 1300;
 
 // add the word meaning to the room
-word_meaning = selected_word.meaning;
-word_romanji = selected_word.romanji;
+word_display = selected_word.meaning;
+
+// if Kanji and 
+if ( origin_room_name == "Kanji" ) {
+	onyomi = "-";
+	kunyomi = "-";
+	
+	word_display = "";
+	word_clue = selected_word.meaning;
+	
+	if (selected_word.field_2 != "" ) { 
+		onyomi = "Onyomi: " + selected_word.field_2;
+		}
+	if (selected_word.field_3 != "" ) { 
+		line_break = "";
+		if (kunyomi != "" ) { // of there is onyomi, then add a new line 
+			line_break = "\n"; 
+			}
+		kunyomi = line_break + "Kunyomi: " + selected_word.field_3;
+		}
+	word_display = word_display + "\n" + onyomi + kunyomi;
+	}
+else {
+	word_clue = selected_word.romanji;
+	}	
 
 // 46 wide max. for testing, and beyond!
-//word_meaning = "that way, that direction (over there, distant speaker and listener), formal";
 
-string_gap = string_height(word_meaning);
-draw_text_ext(50,yStart + 75,word_meaning,string_gap,stringLength);
+string_gap = 30;
+draw_text_ext(50,yStart + 75,word_display,string_gap,stringLength);
 
-//try{
-	draw_text_ext(50,yStart + 350, "Clue: " + word_romanji,string_gap,stringLength);
-//	}
-//catch {
-//	show_debug_message("wtf");
-//	}
-	
-	
-if (room_script.tick_state == true ) {
-	// Draw the clue (romaji)
-	draw_set_color(c_black);
+if (room_script.tick_state == true) {
 	// add the clue to the room
-	word_romanji = selected_word.romanji;
-	draw_text_ext(50,yStart + 350,"Clue: " + word_romanji,string_gap,stringLength);
+	draw_text_ext(50, yStart + 350, "Clue: " + word_clue, string_gap, stringLength);
 }
 

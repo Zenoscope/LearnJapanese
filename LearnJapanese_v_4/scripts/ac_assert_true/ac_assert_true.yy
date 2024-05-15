@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "ac_assert_true",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Testing",
-    "path": "folders/UnitTests/Scripts/AtomicCity/Testing.yy",
+  "$GMScript":"",
+  "%Name":"ac_assert_true",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ac_assert_true",
+  "parent":{
+    "name":"Testing",
+    "path":"folders/UnitTests/Scripts/AtomicCity/Testing.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

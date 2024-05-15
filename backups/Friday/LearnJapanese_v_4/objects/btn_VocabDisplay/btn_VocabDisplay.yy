@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Vocab_List",
-    "path": "folders/Objects/Features/Vocab/Vocab_List.yy",
+    "name": "Search",
+    "path": "folders/Objects/Features/Vocab/Vocab_List/Search.yy",
   },
   "parentObjectId": {
     "name": "btn_Label",

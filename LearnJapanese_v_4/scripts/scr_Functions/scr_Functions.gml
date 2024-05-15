@@ -83,21 +83,29 @@ function function_click_NAV_button(btn_name) {
 			room_goto_next();
 		break;
 
-		default:			
+		default:
+		    
+		   try {	
 			//add the room to the navigation array
 			array_push(global.roomBreadcrumbs,btn_name);			
 			/// go to the actual room
-			room_index = asset_get_index(global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 1]);
-			try { 
-				room_goto(room_index); 
+			//room_index = asset_get_index(global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 1]);
+			   }
+		   // if the breadcrumbs don't exist just go the room. 
+		   catch ( _exception) {
+				room_index = btn_name;
 				}
-			catch( _exception)
-				{
+				
+			try { 
+				room_goto(asset_get_index(btn_name));
+				}
+			catch( _exception) {
 				show_debug_message("!!!!");
 				show_debug_message("!!!! Unable to find room, error in function_click_NAV_button");
 				show_debug_message("!!!!");
 				show_debug_message(_exception.message);
 				}
+		   	
 		}	
 }
 #endregion
@@ -1081,40 +1089,34 @@ catch ( _exception){
 		layer_create(-1000,"Helptext");
 		
 		if (value.tip_type == "tooltip"){
-			
-			//offset the helptext from the actual  button
-			
-			_slice = sprite_get_nineslice(object_get_sprite(self.object_index));
-			offset = _slice.bottom; // might want to add the seperator as well?	
-		
+	
 			var x_loc = mySelf.x;
 			// offset for the tooltips speech bubble.
-			var y_loc = mySelf.y - (offset); //- (mySelf.sprite_height * 0.5);
+			var y_loc = mySelf.y; 
 			// max width of the text before a new line...
 			// the width of the button being moused over.
+			
 			var local_btn_width = mySelf.sprite_width;
+			var local_btn_height = mySelf.sprite_height;
 
 			object = asset_get_index("obj_ToolTip");
 			
 			var local_tip_text = value.tooltip_text;
-			// width of the string in pixels
-			
-			var local_string_width = (string_width_ext(local_tip_text,60,local_btn_width));
-			
-			if (local_string_width > 3) local_string_width = 3;
-			else if (local_string_width < 1) local_string_width = 1;
-		
-			
+				
 			// create the object and set some stuff up.
 			instance_create_layer(x_loc,y_loc,"Helptext",object,
 					{
 					tip_text: local_tip_text, //tooltip_array[counter].tooltip_text, //+ string(image_y_factor),
-					//bttn_width: local_btn_width,
+					bttn_width: local_btn_width,
+					bttn_height: local_btn_height,
+					x_loc: x_loc, 
+					y_loc: y_loc,
 					// with of the text
-					bttn_width: local_btn_width * 1.5,
+					// bttn_width: local_btn_width * 1.5,
 					// width of the button image
-					image_xscale : local_string_width,
-					//image_xscale : local_string_width / 100,
+					// image_xscale : local_string_width,
+					// image_xscale : local_string_width / 100
+					object: object,
 					speed : 0
 					});
 			}
@@ -1127,27 +1129,30 @@ catch ( _exception){
 		
 			//var x_loc = mySelf.x + 350;
 			var x_loc = 300;
-			var y_loc = 75; //- (mySelf.sprite_height * 0.5);
-			var btn_width = mySelf.sprite_width * 5.5;
+			var y_loc = 15; //- (mySelf.sprite_height * 0.5);
+			// var btn_width = mySelf.sprite_width * 5.5;
 						
-			object = asset_get_index("obj_HelpText");
+			var object = asset_get_index("obj_HelpText");
 						
 			var local_tip_text = value.tooltip_text; // tooltip text
 			
 			// 200 is 100 * 0.5
-			image_height = (string_height_ext(local_tip_text,60,btn_width)/200);
+			//image_height = (string_height_ext(local_tip_text,60,btn_width)/200);
 			//show_debug_message("image_height " + string(image_height));
 			
-			if (image_height > 4.5) image_height = 4.5;
-			else if (image_height < 1) image_height = 1;
+			//if (image_height > 4.5) image_height = 4.5;
+			//else if (image_height < 1) image_height = 1;
 			
 			instance_create_layer(x_loc,y_loc,"Helptext",object,
 					{
 					tip_text: local_tip_text,
-					bttn_width: btn_width, // width of string before adding a new line
-					image_xscale : 8, // width of the image					
+					// bttn_width: btn_width, // width of string before adding a new line
+					x_loc: x_loc, 
+					y_loc: y_loc,					
+					//image_xscale : 8, // width of the image					
 					//image_yscale : 4.5, // height of the image
-					image_yscale : image_height * 2, // height of the image
+					//image_yscale : image_height * 2, // height of the image
+					object: object,
 					speed : 0
 					});
 			}

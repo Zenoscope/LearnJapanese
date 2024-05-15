@@ -65,6 +65,9 @@ tooltip070 = new tooltip("Links","Just a test!","blurb");
 
 
 // invisible button tool tips
+tooltip075 = new tooltip("invisKunyomi","Kunyomi is the Japanese reading. Readings are ordered most to least frequent.","tooltip");
+tooltip076 = new tooltip("invisOnyomi","Onyomi is the Chinese reading. Readings are ordered most to least frequent.","tooltip");
+
 tooltip081 = new tooltip("invisTeForm", "Used to request an action, for connecting verbs, asking permission or present progressive (an ongoing action in the present).","tooltip");
 tooltip082 = new tooltip("invisPolite","Polite - used with superiors and strangers, and in public announcements.","tooltip");
 tooltip083 = new tooltip("invisPlain","Plain - used with friends, children and in informal situations, eg shopping.","tooltip");
@@ -85,7 +88,7 @@ tooltip098 = new tooltip("invisTest","Quit game.","tooltip");
 tooltip100 = new tooltip("back","go back?","tooltip");
 
 // helptext
-tooltip000 = new tooltip("start0game","Start!","tooltip");
+tooltip000 = new tooltip("start0game","Start!\nStart!\nStart!","tooltip");
 
 // Grammar things
 grammar_blurb01= new grammar_blurb("Noun","A noun is a naming word. There are nouns, eg 'dog' and Proper Nouns which is an actual name eg 'Rex'. In the sentence 'My cat is called Milly' cat is a noun, while Milly is a proper noun.\n\nJapanese also doesn't have definite and indefinite articles, which are 'the' and 'a' respectively, in English. So you would just say 'Neko wa cuppo o [Cat broke cup]' rather than 'The cat broke a cup'.","Helptext");
@@ -144,6 +147,10 @@ tooltip037,
 
 // bibliography
 tooltip050,
+
+//
+tooltip075,
+tooltip076,
 
 // verb conjugation tool tips
 tooltip081,

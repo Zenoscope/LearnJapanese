@@ -13,6 +13,7 @@ if (!room_script.blockButtonClick) {
 		image_xscale = 3.05;	 
 		image_yscale = 0.8;
  
+		// moves it up because otherwise they overlap too much
 		x = x_origin - 10;
 		y = y_origin -10;
 		}//2
@@ -26,12 +27,17 @@ if (!room_script.blockButtonClick) {
 		image_yscale = 0.7;
 		}//2
 
+    /*
 	if (clicked) {
 		// set the buttonClick to be true.
 		room_script.blockButtonClick = true;
 		// show the search result
-		function_show_vocab_search_result(room_script.display_list[card_index],room_script); // item number		
+		
+		// release 3
+		//function_show_vocab_search_result(room_script.display_list[card_index],room_script); // item number		
 	}
+	*/
+	
 }
 
 else {

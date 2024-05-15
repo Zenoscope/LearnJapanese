@@ -12,7 +12,7 @@ enabled_keys = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 text_align = fa_left;
 
 draw_set_halign(fa_right);
-draw_set_valign(fa_middle);
+draw_set_valign(text_align);
 draw_set_color(c_black);
 
 // font for input

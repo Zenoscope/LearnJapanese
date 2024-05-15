@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scr_VocabList",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Data",
-    "path": "folders/Data.yy",
+  "$GMScript":"",
+  "%Name":"scr_VocabList",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_VocabList",
+  "parent":{
+    "name":"Data",
+    "path":"folders/Data.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

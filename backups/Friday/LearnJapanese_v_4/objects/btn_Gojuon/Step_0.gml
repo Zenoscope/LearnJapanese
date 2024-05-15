@@ -16,7 +16,7 @@ if (mouse_check_button_released(mb_left)) {
 	} 
 
 if (clicked){
-    show_debug_message("you goujon clicked" + btn_name);
+    //show_debug_message("you goujon clicked" + btn_name);
 	function_click_NAV_button(btn_name);
 	
 	// selected button

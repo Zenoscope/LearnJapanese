@@ -73,7 +73,7 @@ if (moving) {
 		//show_debug_message(btn_name +" Stop!");
 		x = x_origin;
         y = y_origin;
-		show_debug_message( string (x_origin) +  string( y_origin ) );
+		//show_debug_message( string (x_origin) +  string( y_origin ) );
 		moving = false;
 		speed = 0;
 		depth = 0;		
@@ -97,7 +97,7 @@ if (point_in_rectangle(x, y, instance.x - 25, instance.y - 25, instance.x + 25, 
 	
 	// use the button name to change behaviour	
 	//if (btn_name == "btn_ShowKana" ) {
-		show_debug_message("Kana Success!!!");
+		//show_debug_message("Kana Success!!!");
 		instance.card_face_text = cardface;
 		instance.image_blend = c_white;
 	

@@ -12,17 +12,22 @@
 
 event_inherited();
 
-// screen positgions for the cards
+moving = "false";
+
+// screen positions for the cards
 card_left_x = 000;
 card_right_x = 600;
 card_middle_x = card_right_x / 2;
+//surface_w = 300;
+//surface_h = 300;
 
-y_loc = 350;
+// it's the size, not the location of the surface.
+// global.painting_surface = surface_create(surface_w,surface_h);
+
+y_loc = 288;
+
 moving = false;
 spawn_card = false;
-
-// card locatioon
-var x_loc = card_middle_x;
 
 // initial card which is shown on the first card.
 card_index = 0;
@@ -55,7 +60,7 @@ switch (room_get_name(room))
 					//select Kanji mainly from the list
 					ListDefault = 3;
 				break;
-				}			
+				}
 			number_of_cards = 1;
 			// the list default chooses the category of word
 			// eg kanji is #1, kanjilist is the array.
@@ -77,5 +82,9 @@ card_source = card_source;
 //1,"人","human, person","hito","",25,"亻","人,欠,夫,肉,丙","2"
 // this part is ignored "ひと"
 
-function_spawn_kanji_card(x_loc,y_loc,room_script,card_index,"field_4");
+//function_spawn_kanji_card(card_middle_x / 2,y_loc / 2,room_script,card_index,"field_4");
+function_spawn_kanji_card(card_middle_x,y_loc,room_script,card_index,"field_4");
 instance_id[instance_count - 1].room_script = id;
+
+//draw_surface(global.painting_surface,card_middle_x - (surface_w / 2) ,288 - (surface_h / 2) );
+
