@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"GrammarRooms",
-    "path":"folders/Objects/Features/Grammar/GrammarRooms.yy",
+    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarRooms.yy",
   },
   "parentObjectId":{
     "name":"Init_Room_Parent",

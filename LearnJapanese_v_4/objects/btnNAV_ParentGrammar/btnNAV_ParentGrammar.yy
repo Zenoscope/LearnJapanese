@@ -2,10 +2,8 @@
   "$GMObject":"",
   "%Name":"btnNAV_ParentGrammar",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"btnNAV_ParentGrammar",
@@ -15,8 +13,8 @@
     "path":"folders/Objects/Parents.yy",
   },
   "parentObjectId":{
-    "name":"btn_Label",
-    "path":"objects/btn_Label/btn_Label.yy",
+    "name":"btnNAV_parent",
+    "path":"objects/btnNAV_parent/btnNAV_parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

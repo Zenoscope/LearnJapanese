@@ -10,8 +10,8 @@
   "name":"obj_HelpText",
   "overriddenProperties":[],
   "parent":{
-    "name":"HelpSystem",
-    "path":"folders/Sprites/HelpSystem.yy",
+    "name":"Helptext",
+    "path":"folders/Sprites/HelpSystem/Helptext.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"Sprite704",
-    "path":"sprites/Sprite704/Sprite704.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

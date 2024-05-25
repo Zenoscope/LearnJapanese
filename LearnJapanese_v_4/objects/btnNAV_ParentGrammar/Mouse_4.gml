@@ -14,8 +14,8 @@ switch (btn_name)
 		case "adverbs":
 			
 			field_list = ["meaning","romanji","field_3"];
-			room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,10,field_list);
-
+			//room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,10,field_list);
+			room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,field_list);
 			room_script.display_string = "An adverb describes a verb. They can appear pretty much anywhere in a sentence. Averbs can be created from adjectives. Adverbial nouns are nouns that function as adverbs in a sentence.";
 		break;
 

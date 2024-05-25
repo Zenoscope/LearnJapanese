@@ -10,6 +10,10 @@ Flashcards = Hiragana and Katakana flashcards
 Buttons = fnt_Button
 */
 
+//GMLive		
+if (live_call()) return live_result;
+
+
 /// currently this is in the button!!!
 function tooltip(
 	// button_name,tooltip_text
@@ -61,7 +65,10 @@ tooltip050 = new tooltip("Links","Just a test!","biblio");
 // blurbs
 // a blurb is displayed in a room and just stay there, a helptext might replace it,
 // but it comes back.
-tooltip070 = new tooltip("Links","Just a test!","blurb");
+tooltip060 = new tooltip("Splash_Screen","Learn Japanese: Release 2\n\nCreated by Omoshiroi games\n\nTested by Bobby and Omoshiroi Games.\n\nRead the dev blog at:          \n\nMade with Gamemeaker.","questionmark");
+tooltip061 = new tooltip("Main_menu","Learn Japanese: Release 2\n\nCreated by Omoshiroi games\n\nTested by Bobby and Omoshiroi Games.\n\nRead the dev blog at:          \n\nMade with Gamemeaker.","questionmark");
+
+
 
 // tooltips 
 
@@ -149,6 +156,12 @@ tooltip037,
 
 // bibliography
 tooltip050,
+
+// questionmark text
+tooltip060,
+tooltip061,
+
+
 
 //
 tooltip075,

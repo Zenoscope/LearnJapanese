@@ -6,13 +6,13 @@
 // NB this should be a function
 // find if there is an underscore in the room name.
 
-
+if (live_call()) return live_result;
 
 draw_set_color(c_black);
 draw_set_halign(fa_right);
 
-if (array_length(display_list) < number_words_shown){
-	word_display_number = array_length(display_list);
+if (array_length(word_list) < number_words_shown){
+	word_display_number = array_length(word_list);
 	}
 else {
 	word_display_number = number_words_shown;

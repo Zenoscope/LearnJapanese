@@ -13,15 +13,3 @@ original_str_height = string_height("A");
 original_sprite_height = self.sprite_height - (_slice.bottom + _slice.top);
 
 mySprite = obj_HelpText_sprite;
-
-show_debug_message("str_height " + string(str_height));
-show_debug_message("str_width " + string(str_width));
-
-show_debug_message("bttn_width " + string(bttn_width));
-show_debug_message("bttn_height " + string(bttn_height));
-
-show_debug_message("x_loc " + string(x_loc));
-show_debug_message("y_loc " + string(y_loc));
-
-show_debug_message("_slice.left " + string(_slice.left));
-show_debug_message("_slice.left " + string(_slice.right));

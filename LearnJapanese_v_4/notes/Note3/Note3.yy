@@ -4,7 +4,7 @@
   "name":"Note3",
   "parent":{
     "name":"Grammar",
-    "path":"folders/Objects/Features/Grammar.yy",
+    "path":"folders/Objects/Features/VocabAndGrammar/Grammar.yy",
   },
   "resourceType":"GMNotes",
   "resourceVersion":"2.0",

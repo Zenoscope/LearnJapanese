@@ -1,23 +1,6 @@
-b tn_invisKunyomi
-btn_invisOnyomi
 
-kanji button 96, 539
+# add to an object script
+if (live_call()) return live_result;
 
-vocab searchfields:
-kanji, meaning,field_2
-
-
-on room exit search,
-clear the following arrays:
-<whatever> = search_for_word
-
-iru, sore, cat,
-
-Overflow:
-
-Kanji - radical list
-Kanji - 100 kanji list
-
-Find out how big the text is
-Find out how big the sprite is
-Scale the sprite by the factor between the text and the sprite?
+room?
+room_set_live(room, true);

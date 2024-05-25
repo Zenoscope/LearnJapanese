@@ -4,11 +4,7 @@ event_inherited();
 
 if (hovering) {//2	
 	 	
-	if (btn_name == "?") {
-		btn_name = room_get_name(room);
-		
-		}
-	
+
 	// runs for all buttons.
 	function_show_helptext(btn_name,global.tooltips,self);
 

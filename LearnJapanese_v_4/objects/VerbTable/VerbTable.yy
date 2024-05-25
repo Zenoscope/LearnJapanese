@@ -9,8 +9,8 @@
   "name":"VerbTable",
   "overriddenProperties":[],
   "parent":{
-    "name":"Verb_buttons",
-    "path":"folders/Objects/Features/Grammar/GrammarRooms/Verb_buttons.yy",
+    "name":"InvisVerb_buttons",
+    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarRooms/InvisVerb_buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,

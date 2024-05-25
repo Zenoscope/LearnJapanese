@@ -70,7 +70,7 @@
   "name":"verbs",
   "parent":{
     "name":"GrammarRooms",
-    "path":"folders/Objects/Features/Grammar/GrammarRooms.yy",
+    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarRooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

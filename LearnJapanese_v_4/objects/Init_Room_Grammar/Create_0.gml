@@ -1,11 +1,17 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+room_set_live(room, true);
+
 // Inherit the parent event
 event_inherited();
 
 // add he blurb text stuff to RAM.
 //function_execute_script("scr_Grammar");
+
+
+
+
 
 grammar_string[1]="Sentence Structure";
 grammar_string[2]="Basic sentence structure in English is Subject-Verb-";
@@ -144,9 +150,19 @@ for(lines = 1; lines <= num_display_lines; lines += 1; ) {
 
 show_debug_message(display_string);
 
+//function function_deactivate_layers_byName(layers_to_deactivate){
+//	var lay_id = layer_get_id(layers_to_deactivate);	/
+//	instance_deactivate_layer(lay_id);	
+//	}
+
+if (layer_get_id(self.layer).visible == false) { 
+	show_debug_message(display_string);
+		}
+
 // hide the layers until we need them
 // 
 var LayerArray = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs"]
 hide_layers_by_name(LayerArray);
+function_deactivate_layers_byName(LayerArray);
 
 function_execute_script("scr_VocabList");

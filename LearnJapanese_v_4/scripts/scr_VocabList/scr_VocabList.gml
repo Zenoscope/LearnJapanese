@@ -667,6 +667,7 @@ first_1000_vocab652 = new first_1000_vocab(652,"呼ぶ","to call out, to invite"
 first_1000_vocab653 = new first_1000_vocab(653,"良い","good","yoi/ii","い-adjective","よい/いい","","このレストランの料理はとても良いです。/ このレストランのりょうりはとてもいいです。/ Kono resutoran no ryōri wa totemo ii desu. / The food at this restaurant is very good.",1);
 first_1000_vocab654 = new first_1000_vocab(654,"横","beside,side,width","yoko","Noun","よこ","","机の横に本があります。/ つくえのよこにほんがあります。/ Tsukue no yoko ni hon ga arimasu. / There is a book next to the desk.",1);
 first_1000_vocab655 = new first_1000_vocab(655,"よく","often, well","yoku","Adverb","","5","彼女はよく笑います。/ かのじょはよくわらいます。/ Kanojo wa yoku waraimasu. / She often laughs.",2);
+
 kanji_list = [
 first_1000_vocab001,
 first_1000_vocab002,

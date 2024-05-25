@@ -67,7 +67,8 @@ switch (room_get_name(room))
 			// kanji_list is the one from the grammarscript.
 			// field_name = 2 is field_4
 			field_list = ["meaning","romanji","field_3"];
-			kanji_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,10,field_list);
+			//kanji_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,10,field_list);
+			kanji_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,field_list);
 			break;
 		default:
 			show_debug_message(" ");

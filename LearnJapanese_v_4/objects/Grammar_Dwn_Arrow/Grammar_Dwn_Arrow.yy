@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"GrammarNav",
-    "path":"folders/Objects/Features/Grammar/GrammarNav.yy",
+    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarNav.yy",
   },
   "parentObjectId":{
     "name":"btn_NoLabel",

@@ -1,17 +1,13 @@
 {
   "$GMObject":"",
   "%Name":"btnNAV_verbs",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"btnNAV_verbs",
   "overriddenProperties":[],
   "parent":{
     "name":"GrammarNav",
-    "path":"folders/Objects/Features/Grammar/GrammarNav.yy",
+    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarNav.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_ParentGrammar",

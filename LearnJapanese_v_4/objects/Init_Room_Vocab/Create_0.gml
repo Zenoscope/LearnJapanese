@@ -41,7 +41,9 @@ switch (global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2]){
 field_list = ["field_4"];
 // searches through the vocab and finds the vocab which matches 
 // what we are searching for, eg kanji, hiragana etc
-word_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,10,field_list);
+//word_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,10,field_list);
+
+word_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,field_list);
 
 reached_list_end = false;
 max_words_to_display = 10;

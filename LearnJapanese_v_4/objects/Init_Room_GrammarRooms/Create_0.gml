@@ -36,7 +36,8 @@ switch (global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2]){
 // kanji_list is the one from the grammarscript.
 // field_name = 2 is field_4
 field_list = ["field_4"];
-word_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,10,field_list);
+//word_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,10,field_list);
+word_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,field_list);
 
 reached_list_end = false;
 number_words_shown = 10;

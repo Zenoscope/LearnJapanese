@@ -1,13 +1,8 @@
-/// @Btn_NoLabel:Create
+/// @description Insert description here
+// You can write your code in this editor
 
-hovering = false;
-clicked = false;
+// Inherit the parent event
+event_inherited();
 
-orig_btn_name = object_get_name(object_index);
-name_array = function_trim_buttonName(orig_btn_name);
-
-btn_name = name_array[0];
-display_name = name_array[1];
-
-//my_height = image_xscale;
-//my_width = image_yscale; 
+image_speed = 0;
+image_index = random(image_number);

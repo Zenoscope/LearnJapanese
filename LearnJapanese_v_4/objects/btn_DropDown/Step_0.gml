@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (live_call()) return live_result;
 
 if (search) {
 	//display_list = init_Dialog_Search.search_list;

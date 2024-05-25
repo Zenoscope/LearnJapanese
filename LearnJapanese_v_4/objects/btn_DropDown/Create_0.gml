@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (live_call()) return live_result;
 
 function_execute_script("scr_VocabList");
 
@@ -26,10 +27,10 @@ image_index = 0;
 
 // specifies what to search, but we are using trhe whole list, so it doesn't matter
 // ListDefault = 1;
-//temp1 = kanji_list
-//temp2 = ListDefault;
+// temp1 = kanji_list
+ListDefault = "verb";
 
-// word_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,4);
+word_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,5);
 
 reached_list_end = false;
 number_words_shown = 5;

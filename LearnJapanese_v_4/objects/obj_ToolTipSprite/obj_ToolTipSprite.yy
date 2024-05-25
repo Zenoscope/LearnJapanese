@@ -6,8 +6,8 @@
   "name":"obj_ToolTipSprite",
   "overriddenProperties":[],
   "parent":{
-    "name":"HelpSystem",
-    "path":"folders/Sprites/HelpSystem.yy",
+    "name":"ToolTip",
+    "path":"folders/Sprites/HelpSystem/ToolTip.yy",
   },
   "parentObjectId":null,
   "persistent":false,

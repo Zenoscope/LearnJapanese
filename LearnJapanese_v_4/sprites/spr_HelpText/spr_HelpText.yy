@@ -44,8 +44,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"HelpSystem",
-    "path":"folders/Sprites/HelpSystem.yy",
+    "name":"Helptext",
+    "path":"folders/Sprites/HelpSystem/Helptext.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

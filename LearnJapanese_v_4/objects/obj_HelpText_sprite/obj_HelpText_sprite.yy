@@ -6,8 +6,8 @@
   "name":"obj_HelpText_sprite",
   "overriddenProperties":[],
   "parent":{
-    "name":"HelpSystem",
-    "path":"folders/Sprites/HelpSystem.yy",
+    "name":"Helptext",
+    "path":"folders/Sprites/HelpSystem/Helptext.yy",
   },
   "parentObjectId":null,
   "persistent":false,

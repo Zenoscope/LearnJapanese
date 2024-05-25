@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
   "%Name":"btnNAV_invisTest",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"btnNAV_invisTest",
   "overriddenProperties":[],
   "parent":{
     "name":"GrammarNav",
-    "path":"folders/Objects/Features/Grammar/GrammarNav.yy",
+    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarNav.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

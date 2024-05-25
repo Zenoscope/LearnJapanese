@@ -1,5 +1,8 @@
 // storage for functions and maybe templates for things I forget, like switches
 
+//GMLive
+if (live_call()) return live_result;
+
 /*
 /// TEMPLATES
 
@@ -109,12 +112,6 @@ function function_click_NAV_button(btn_name) {
 		}	
 }
 #endregion
-
-
-
-
-
-
 
 #region
 /// DESCRIPTION:
@@ -262,25 +259,25 @@ while (kana_counter < max_array_length -1) {//2
 		kana_array[0][kana_counter][3] = instance_create_layer(x_loc,y_loc,"card_layer",object,
 		// card = instance_create_layer(x_loc,y_loc,"card_layer",object,
 		// if the roon is flipcard, the function is "button" 
-			  { //4
+			  {//4
 			// if the second char isn't blank, then its a target card
-	    	kana_character : kana_char,
-    		meaning_character : meaning_char,//match card with this
+			kana_character:kana_char,
+			meaning_character : meaning_char,//match card with this
 			// add the card's functionality
 			object_function: card_function,
 			//kana_number: missing_number
 			image_alpha: 100,
 			depth: 0
-			  }//4		
+			}//4		
 			); // end of struct
 		else {
 		card = instance_create_layer(x_loc,y_loc,"card_layer",object,
 		//card = instance_create_layer(x_loc,y_loc,"card_layer",object,
 		    // if the roon is flipcard, the function is "button" 
-			  { //4
+			{//4
 			// if the second char isn't blank, then its a kana card (not a header)
-	    	kana_character : kana_char,
-    		meaning_character : meaning_char,//match card with this?
+			kana_character : kana_char,
+			meaning_character : meaning_char,//match card with this?
 			// add the card's functionality
 			object_function: card_function,
 			//kana_number: missing_number
@@ -814,11 +811,13 @@ function function_tickbox_actions(tickbox_name,state) {
 /// loops through the array and adds a word based on field_4, so the
 /// numbers which determine hiragana, katakana etc
 ///
-///  string_to_find = what to search for
+///  string_to_find = keyword to search for (depends on the field) eg verb, noun, whatever
 ///
 ///  copy_from_array = array to copy
 ///
 ///  field_name = field to search
+///
+///  field_num = 
 /// 
 /// RETURNS: the updated array
 /// FIXME  hmm, does this mean the orginal array is deleted?
@@ -837,7 +836,7 @@ search fields:
 	examples	=_examples; // exampes
 	field_4		=_sorting; // eg kanji, hiragana, katakana
 */
-function function_add_to_WordBuilderArray(string_to_find,copy_from_array,_struct,field_num) {
+function function_add_to_WordBuilderArray(string_to_find,copy_from_array,field_num) {
 	
 	// field_num
 	// loop through array, add wordlist word as we go
@@ -1056,6 +1055,9 @@ function function_draw_version(version){
 /// self
 function function_show_helptext(button_name,tooltip_array,mySelf){
 		
+//GMLive		
+if (live_call()) return live_result;
+		
 // //1
 // choose the right helptext stuff. 	
 //
@@ -1065,7 +1067,7 @@ var has_help = false;
 searchString = button_name;
 value = "";
 
-// search for the tooltip stuff
+// search for the tooltip stuff by button_name
 try{
 	var has_help = array_any(global.tooltips, function(_val, _ind)
 	{
@@ -1106,56 +1108,88 @@ catch ( _exception){
 			// create the object and set some stuff up.
 			instance_create_layer(x_loc,y_loc,"Helptext",object,
 					{
-					tip_text: local_tip_text, //tooltip_array[counter].tooltip_text, //+ string(image_y_factor),
+					tip_text: local_tip_text,
 					bttn_width: local_btn_width,
 					bttn_height: local_btn_height,
 					x_loc: x_loc, 
 					y_loc: y_loc,
-					// with of the text
-					// bttn_width: local_btn_width * 1.5,
-					// width of the button image
-					// image_xscale : local_string_width,
-					// image_xscale : local_string_width / 100
 					object: object,
 					speed : 0
 					});
 			}
 		else if (value.tip_type == "helptext"){
 			
-			//offset the helptext from the actual  button
-			
-			_slice = sprite_get_nineslice(object_get_sprite(self.object_index));
-			offset = _slice.bottom; // might want to add the seperator as well?	
-		
-			//var x_loc = mySelf.x + 350;
+			// fixed spot for it
 			var x_loc = 300;
-			var y_loc = 15; //- (mySelf.sprite_height * 0.5);
-			// var btn_width = mySelf.sprite_width * 5.5;
+			var y_loc = 15; 
 						
 			var object = asset_get_index("obj_HelpText");
 						
 			var local_tip_text = value.tooltip_text; // tooltip text
 			
-			// 200 is 100 * 0.5
-			//image_height = (string_height_ext(local_tip_text,60,btn_width)/200);
-			//show_debug_message("image_height " + string(image_height));
-			
-			//if (image_height > 4.5) image_height = 4.5;
-			//else if (image_height < 1) image_height = 1;
-			
 			instance_create_layer(x_loc,y_loc,"Helptext",object,
 					{
 					tip_text: local_tip_text,
-					// bttn_width: btn_width, // width of string before adding a new line
 					x_loc: x_loc, 
 					y_loc: y_loc,					
-					//image_xscale : 8, // width of the image					
-					//image_yscale : 4.5, // height of the image
-					//image_yscale : image_height * 2, // height of the image
 					object: object,
 					speed : 0
 					});
 			}
+
+		else if (value.tip_type == "questionmark"){
+			
+			var x_loc = 100;
+			var y_loc = 200; 
+			// max width of the text before a new line...
+			// the width of the button being moused over.
+			
+			show_debug_message("creating questionmark");
+			
+			var local_btn_width = mySelf.sprite_width;
+			var local_btn_height = mySelf.sprite_height;
+
+			object = asset_get_index("obj_QuestionMark");
+			
+			var local_tip_text = value.tooltip_text;
+			//local_tip_text = "Test the some text\nTest the some text";
+				
+			//create the object and set some stuff up.
+			instance_create_layer(x_loc,y_loc,"Helptext",object,
+					{
+					tip_text: local_tip_text,
+					bttn_width: 500,
+					bttn_height: 500,
+					x_loc: x_loc, 
+					y_loc: y_loc,
+					object: object,
+					speed : 0
+					});
+			
+			/*
+			// will the questionmark always be in the same place?
+			// like in the 
+	
+			//var x_loc = mySelf.x;
+			//var y_loc = mySelf.y; //- (mySelf.sprite_height * 0.5);
+			var x_loc = 300;
+			var y_loc = 15; 
+
+			//var btn_width = mySelf.sprite_width * 1.5;
+						
+			object = asset_get_index("obj_ToolTip");
+			
+			instance_create_layer(x_loc,y_loc,"Helptext",object,
+					{
+					tip_text: value.tooltip_text,
+					bttn_width: 300,
+					speed : 0,
+					//image: 1
+					});
+			*/
+			}		
+			
+		/*
 		else if (value.tip_type == "biblio"){
 			
 			//offset the helptext from the actual  button
@@ -1176,7 +1210,9 @@ catch ( _exception){
 					image_xscale : 3,					
 					speed : 0
 					});
-			}
+			}*/
+			
+			
 		else {
 				show_debug_message("Not a valid tooltip type.");
 				}
