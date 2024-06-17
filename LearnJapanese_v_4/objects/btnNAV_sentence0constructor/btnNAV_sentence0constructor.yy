@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"btnNAV_sentence0constructor",
+  "%Name":"btnNAV_Sentence0constructor",
   "eventList":[],
   "managed":true,
-  "name":"btnNAV_sentence0constructor",
+  "name":"btnNAV_Sentence0constructor",
   "overriddenProperties":[],
   "parent":{
     "name":"GrammarNav",

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_VocabList",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_VocabList",
+  "parent":{
+    "name":"Data",
+    "path":"folders/Data.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

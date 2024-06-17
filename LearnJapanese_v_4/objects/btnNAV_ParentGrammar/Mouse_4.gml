@@ -1,17 +1,14 @@
 /// @description shows the text
 
-/* if using the 
-room_index = asset_get_index(btn_name);
- 
-room_goto(room_index); 
-*/
+if (live_call()) return live_result;
 
-//room_goto("adverbs");
+var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs"];
+hide_layers_by_name(layer_array)
 
 // switch statement for the buttons
 switch (btn_name)
 		{		
-		case "adverbs":
+		case "Adverbs":
 			
 			field_list = ["meaning","romanji","field_3"];
 			//room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,10,field_list);
@@ -19,7 +16,7 @@ switch (btn_name)
 			room_script.display_string = "An adverb describes a verb. They can appear pretty much anywhere in a sentence. Averbs can be created from adjectives. Adverbial nouns are nouns that function as adverbs in a sentence.";
 		break;
 
-		case "particles":			
+		case "Particles":			
 		
 			// might have to loop through and delete all of the grammar_string[]'s first?
 			room_script.display_string = "";
@@ -87,12 +84,13 @@ switch (btn_name)
 			
 		break;
 
-		case "verbs":
+		case "Verbs":
 			// show search thinger for verbs
-			room_script.display_string = "There are three types of verbs in Japanese, Ichidan, Godan and irregular.";
+			room_script.display_string = "Verbs";
+		
 		break;
 
-		case "adjectives":
+		case "Adjectives":
 			// show search thinger for adjectives
 			room_script.display_string = "Adjectives describe a noun, eg hot, handsome, old...\n\nThere is one, \"good\" which is irregular. The rest are regular.\n Adjectives can work like vebs , when used at the end of a sentence, and coupled with the auillary verb are cnjugated. See the tables below.";
 		break;
@@ -102,11 +100,31 @@ switch (btn_name)
 			// room_script.display_string = 
 		break;
 
+		case "Sentence Constructor":
+			// sentence builder
+			// room_script.display_string = 
+		break;
+
+
 		default:
 			show_debug_message(" ");
 		break;
 		}
 
-var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs"];
-hide_layers_by_name(layer_array)
+room_script.display_string = btn_name;
 show_a_layer_by_name(btn_name);
+
+
+
+var lay_id = layer_get_id("Verbs");
+layer_set_visible(lay_id, true);	
+
+var a = layer_get_all();
+for (var i = 0; i < array_length(a); i++;){
+	name = layer_get_name(a[i]) != ""
+	show_debug_message("layer name " + name);
+	}
+
+
+
+

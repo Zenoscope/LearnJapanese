@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"InvisVerb_buttons",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarRooms/InvisVerb_buttons.yy",
+    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/InvisVerb_buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,

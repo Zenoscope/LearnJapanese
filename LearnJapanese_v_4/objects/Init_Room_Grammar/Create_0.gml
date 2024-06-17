@@ -9,10 +9,6 @@ event_inherited();
 // add he blurb text stuff to RAM.
 //function_execute_script("scr_Grammar");
 
-
-
-
-
 grammar_string[1]="Sentence Structure";
 grammar_string[2]="Basic sentence structure in English is Subject-Verb-";
 grammar_string[3]="Object, while Japanese sentence structure is ";
@@ -138,7 +134,7 @@ grammar_string[121]="Similar to subject? IDK";
 
 // sets the line to remove
 total_lines =121;
-num_display_lines = 13;
+num_display_lines = 11;
 current_line = num_display_lines;
 display_string = ""; //grammar_string[1];
 
@@ -163,6 +159,6 @@ if (layer_get_id(self.layer).visible == false) {
 // 
 var LayerArray = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs"]
 hide_layers_by_name(LayerArray);
-function_deactivate_layers_byName(LayerArray);
+function_deactivate_layers_by_Name(LayerArray);
 
 function_execute_script("scr_VocabList");

@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"btnNAV_adverbs",
+  "%Name":"btnNAV_Adverbs",
   "eventList":[],
   "managed":true,
-  "name":"btnNAV_adverbs",
+  "name":"btnNAV_Adverbs",
   "overriddenProperties":[],
   "parent":{
     "name":"GrammarNav",
