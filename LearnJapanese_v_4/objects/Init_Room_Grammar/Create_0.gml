@@ -157,8 +157,8 @@ if (layer_get_id(self.layer).visible == false) {
 
 // hide the layers until we need them
 // 
+
 var LayerArray = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs"]
-hide_layers_by_name(LayerArray);
 function_deactivate_layers_by_Name(LayerArray);
 
 function_execute_script("scr_VocabList");

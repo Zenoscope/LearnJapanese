@@ -18,6 +18,7 @@
     {"name":"GMLive_fallback","order":1,"path":"extensions/GMLive_fallback/GMLive_fallback.yy",},
     {"name":"Note3","order":2,"path":"notes/Note3/Note3.yy",},
     {"name":"btn_DropDown","order":2,"path":"objects/btn_DropDown/btn_DropDown.yy",},
+    {"name":"btn_invisTeForm","order":1,"path":"objects/btn_invisTeForm/btn_invisTeForm.yy",},
     {"name":"btnNAV_Grammar","order":4,"path":"objects/btnNAV_Grammar/btnNAV_Grammar.yy",},
     {"name":"btnNAV_start0game","order":1,"path":"objects/btnNAV_start0game/btnNAV_start0game.yy",},
     {"name":"btnNAV_Vocabulary","order":5,"path":"objects/btnNAV_Vocabulary/btnNAV_Vocabulary.yy",},

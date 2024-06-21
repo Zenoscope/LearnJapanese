@@ -3,7 +3,7 @@
 if (live_call()) return live_result;
 
 var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs"];
-hide_layers_by_name(layer_array)
+function_deactivate_layers_by_Name(layer_array);
 
 // switch statement for the buttons
 switch (btn_name)
@@ -112,19 +112,6 @@ switch (btn_name)
 		}
 
 room_script.display_string = btn_name;
-show_a_layer_by_name(btn_name);
 
-
-
-var lay_id = layer_get_id("Verbs");
-layer_set_visible(lay_id, true);	
-
-var a = layer_get_all();
-for (var i = 0; i < array_length(a); i++;){
-	name = layer_get_name(a[i]) != ""
-	show_debug_message("layer name " + name);
-	}
-
-
-
-
+var lay_id = layer_get_id(btn_name);
+instance_activate_layer(lay_id);
