@@ -48,5 +48,3 @@ while (counter < word_display_number) {
 				})		
 		counter ++;
 		}
-
-room_script = function_get_room_script_name(id);

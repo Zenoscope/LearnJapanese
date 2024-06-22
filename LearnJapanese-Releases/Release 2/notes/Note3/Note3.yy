@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"Note3",
+  "name":"Note3",
+  "parent":{
+    "name":"Grammar",
+    "path":"folders/Objects/Features/Grammar.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

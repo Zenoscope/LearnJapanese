@@ -8,8 +8,8 @@
   "name":"Init_Room_GrammarRooms",
   "overriddenProperties":[],
   "parent":{
-    "name":"GrammarRooms",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarRooms.yy",
+    "name":"Delete",
+    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarRooms/Delete.yy",
   },
   "parentObjectId":{
     "name":"Init_Room_Parent",

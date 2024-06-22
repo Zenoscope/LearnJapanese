@@ -1,4 +1,8 @@
 
+//
+room_set_live(room, true);
+if (live_call()) return live_result;
+
 
 // create an array for collisions and store the 
 

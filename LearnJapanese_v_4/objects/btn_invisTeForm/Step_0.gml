@@ -7,9 +7,7 @@ if (live_call()) return live_result;
 
 event_inherited();
 
-
-
-if (hovering && layer.visible == true ) {//2	
+if (hovering && visible == true ) {//2	
 	 	
 
 	// runs for all buttons.

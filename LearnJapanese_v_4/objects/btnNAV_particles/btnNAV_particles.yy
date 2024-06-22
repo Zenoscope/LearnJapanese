@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"btnNAV_particles",
+  "%Name":"btnNAV_Particles",
   "eventList":[],
   "managed":true,
-  "name":"btnNAV_particles",
+  "name":"btnNAV_Particles",
   "overriddenProperties":[],
   "parent":{
     "name":"GrammarNav",

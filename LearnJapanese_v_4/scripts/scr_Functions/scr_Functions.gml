@@ -1251,9 +1251,16 @@ function show_a_layer_by_name(Layer){
 		layer_set_visible(lay_id, true);
 		}
 		
+// deactivate the layers
+function function_deactivate_layers_by_Name(layer_array){
+	for(var Counter=0;Counter<array_length(layer_array);Counter++;) {
+		// var lay_id = layer_get_id(layer_array[Counter]);
+		instance_deactivate_layer(layer_array[Counter]);
+		}		
+	}
 
-/// @play the cow narration stuff
 
+// @play the cow narration stuff
 function function_play_cow_narrator(){
 		// if the cow exists and a dialog is displayed
 		// she talks!

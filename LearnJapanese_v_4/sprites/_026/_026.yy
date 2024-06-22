@@ -25,7 +25,11 @@
     {"$GMSpriteFrame":"","%Name":"73553c94-904c-4bfc-a22d-fd5af565871e","name":"73553c94-904c-4bfc-a22d-fd5af565871e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"5ab3bf05-ca38-40f3-a734-1c784c4f7131","name":"5ab3bf05-ca38-40f3-a734-1c784c4f7131","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"fcff8231-28e3-4ba8-865a-37fcbd47a7c8","name":"fcff8231-28e3-4ba8-865a-37fcbd47a7c8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+<<<<<<< HEAD
     {"$GMSpriteFrame":"","%Name":"c22554f0-558c-4ac1-bc05-ee45691811c3","name":"c22554f0-558c-4ac1-bc05-ee45691811c3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+=======
+    {"$GMSpriteFrame":"","%Name":"deded2a4-e335-4dc6-9ae4-33b744354775","name":"deded2a4-e335-4dc6-9ae4-33b744354775","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+>>>>>>> fd9fd084fa77285d0fab37fa6d082c029f277c7f
   ],
   "gridX":0,
   "gridY":0,
@@ -121,8 +125,13 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fcff8231-28e3-4ba8-865a-37fcbd47a7c8","path":"sprites/_026/_026.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"fb1bcc46-32be-442f-b1bc-94da9587b90d","IsCreationKey":false,"Key":12.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+<<<<<<< HEAD
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c22554f0-558c-4ac1-bc05-ee45691811c3","path":"sprites/_026/_026.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"ac3a70e6-5de8-418f-acee-dcd3db733dd0","IsCreationKey":false,"Key":13.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+=======
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"deded2a4-e335-4dc6-9ae4-33b744354775","path":"sprites/_026/_026.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"7cb935f2-a261-4656-8f91-3187232f5a75","IsCreationKey":false,"Key":13.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+>>>>>>> fd9fd084fa77285d0fab37fa6d082c029f277c7f
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
