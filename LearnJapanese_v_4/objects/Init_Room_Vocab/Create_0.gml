@@ -29,3 +29,5 @@ field_list = ["field_4"];
 // searches through the vocab and finds the vocab which matches 
 // what we are searching for, eg kanji, hiragana etc
 word_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,field_list);
+
+show_initial_words = false;

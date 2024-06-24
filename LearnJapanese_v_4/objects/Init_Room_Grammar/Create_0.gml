@@ -163,3 +163,5 @@ var LayerArray = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs",
 function_deactivate_layers_by_Name(LayerArray);
 
 function_execute_script("scr_VocabList");
+
+show_initial_words = false;
