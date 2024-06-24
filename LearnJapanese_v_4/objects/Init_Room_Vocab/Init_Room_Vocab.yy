@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Vocab_List",
-    "path":"folders/Objects/Features/Vocab/Vocab_List.yy",
+    "path":"folders/Objects/Features/Vocab_List.yy",
   },
   "parentObjectId":null,
   "persistent":false,

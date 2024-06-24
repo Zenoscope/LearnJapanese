@@ -7,6 +7,5 @@ dlg_style = 1;
 event_inherited();
 
 clicked = false;
-//hovering = false;
 
 show_debug_message("creating the dialog");

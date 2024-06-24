@@ -1,3 +1,35 @@
+/*
+Notes:
+ button Dialog_Search: 
+	click on it and then it does the search
+ btn_VocabDisplay:
+	displays the results
+	
+dlg_VocabWordDisplay:
+ deletes the 
+
+Make stuff more portable:
+Room_Init scripts should set variables to be used in the room,
+ eg searching for Kanji or whatever.
+Objects set methods and variables used in the stuff.
+
+
+
+**********************************
+***  variables needed by the search functions
+**********************************
+// field which is being searched, needs to be the column name
+field_list = ["field_4"];
+// what we are searching for, eg kanji, hiragana etc
+// adds the stuff to the array.
+word_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,field_list);
+// max number of hits to display
+max_words_to_display = 10;
+number_words_shown = room_script.max_words_to_display;
+room_script.card_index
+*/
+
+
 /// DESCRIPTION: Search for items in an array, and return an array of matches.
 ///  
 /// USAGE:
@@ -26,7 +58,7 @@ function search_for_word(text,search_array) {
 		// loop through each element in the array
 		// if it matches, add it to the search list array
 		search_string = string_lower(search_array[counter].kanji + " " + search_array[counter].meaning  + "" + search_array[counter].field_2)
-		
+		search_string = string_lower(search_array[counter].kanji + " " + search_array[counter].meaning  + "" + search_array[counter].field_2)
 		
 		//if ( string_count(text,search_array[counter] ) > 0) {
 		if ( string_count(text,search_string ) > 0) {

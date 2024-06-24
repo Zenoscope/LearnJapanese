@@ -1,6 +1,17 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+/*
+if the search field is blank,
+just return all of the words and you can scroll
+
+if the number returned is less than say 5, then no scroll bars.
+more than that and it has the scroll bars.
+
+or they are always there and just don't do anything?
+
+*/
+
 if (live_call()) return live_result;
 
 function_execute_script("scr_VocabList");

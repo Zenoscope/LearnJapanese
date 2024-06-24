@@ -60,7 +60,7 @@ function function_click_NAV_button(btn_name) {
 			// and go back to the previous menu item
 			room_goto(asset_get_index(global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 1]));
 		break;
-		
+						
 		case "Gojuon":
 			//change the array to Gojuon
 			global.use_kana_set = 0;

@@ -1,14 +1,7 @@
 // @description draw the found words
 // 
 
-if ( array_length(display_list) < max_words_to_display ){
-	word_display_number = array_length(display_list);
-	}
-else {
-	word_display_number = number_words_shown;
-	}
-
-// find if there is an underscore in the room name.
+// set the fonts
 draw_set_font(fnt_button);
 draw_set_color(c_black);
 draw_set_halign(fa_left);
@@ -17,7 +10,7 @@ draw_set_halign(fa_left);
 var x_scale = 1;
 var y_scale = 1;
 
-if ( array_length(display_list) > 0 ) { 
+if (array_length(display_list) > 0 ) { 
 	string_counter = "Showing words";
 	string_counter = string(card_index + 1) + " to " + string(card_index + word_display_number) + " of " + string(array_length(display_list));
 	draw_text_ext_transformed(1050,155 + (string_height(string_counter) /2),string_counter,string_height(string_counter),700,x_scale,y_scale,0);
@@ -38,19 +31,15 @@ else {
 	room_script.reached_list_end = false;
 	}
 
+
+/*
 // variables for displaying the vocab buttons
 var text_x_pos = 50;
 var text_y_pos = 30;
 var counter = 0;
-vocab_display_buttons = [];
+room_script.vocab_display_buttons = [];
 
-//show_debug_message("number_words_shown " + string(word_display_number));
-//show_debug_message("number_words_shown " + string(display_list));
-
-
-//if ( room_script.reached_list_end == false ) {
-
-while (counter < word_display_number) {
+while (counter < room_script.word_display_number) {
 		
 		var vocab_object = asset_get_index("btn_VocabDisplay");
 		vocab_display_buttons[counter] = instance_create_layer( text_x_pos,text_y_pos + (counter * 70) ,"vocab_layer",vocab_object,
@@ -65,4 +54,4 @@ while (counter < word_display_number) {
 				})		
 		counter ++;
 		}
-//}
+*/

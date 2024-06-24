@@ -5,22 +5,24 @@ if (live_call()) return live_result;
 var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs"];
 function_deactivate_layers_by_Name(layer_array);
 
+field_list = ["field_1"];
+
 // switch statement for the buttons
 switch (btn_name)
 		{		
 		case "Adverbs":
 			
 			field_list = ["meaning","romanji","field_3"];
-			//room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,10,field_list);
 			room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,field_list);
 			room_script.display_string = "An adverb describes a verb. They can appear pretty much anywhere in a sentence. Averbs can be created from adjectives. Adverbial nouns are nouns that function as adverbs in a sentence.";
+			
 		break;
 
 		case "Particles":			
-		
 			// might have to loop through and delete all of the grammar_string[]'s first?
 			room_script.display_string = "";
 						
+			#region
 			room_script.grammar_string[1] = "Japanese particles, are suffixes or short words in Japanese";
 			room_script.grammar_string[2] = "grammar that immediately follow the noun, verb, adjective, ";
 			room_script.grammar_string[3] = "or sentence they are modifying. ";
@@ -73,6 +75,7 @@ switch (btn_name)
 			room_script.grammar_string[50] = "";
 			room_script.grammar_string[51] = "yori hou ga, よりほうが, [A] is preferred to [B]";
 			room_script.grammar_string[52] = "example: 私 は 犬 より 補 が 猫 です ね i prefer cats to dogs.";
+			#endregion
 			
 			room_script.total_lines = 52;
 			
@@ -87,12 +90,17 @@ switch (btn_name)
 		case "Verbs":
 			// show search thinger for verbs
 			room_script.display_string = "Verbs";
-		
+			room_script.word_list = function_add_to_WordBuilderArray("Verb",room_script.kanji_list,field_list);
+			
+			var lay_id = layer_get_id("Search");
+			instance_activate_layer(lay_id);
+			
 		break;
 
 		case "Adjectives":
 			// show search thinger for adjectives
 			room_script.display_string = "Adjectives describe a noun, eg hot, handsome, old...\n\nThere is one, \"good\" which is irregular. The rest are regular.\n Adjectives can work like vebs , when used at the end of a sentence, and coupled with the auillary verb are cnjugated. See the tables below.";
+			room_script.word_list = function_add_to_WordBuilderArray("Adjective",room_script.kanji_list,field_list);
 		break;
 
 		case "N50sentences":
@@ -105,7 +113,6 @@ switch (btn_name)
 			// room_script.display_string = 
 		break;
 
-
 		default:
 			show_debug_message(" ");
 		break;
@@ -115,3 +122,8 @@ room_script.display_string = btn_name;
 
 var lay_id = layer_get_id(btn_name);
 instance_activate_layer(lay_id);
+room_script.grammar_Room = btn_name;
+
+// max number of hits to display
+room_script.max_words_to_display = 10;
+room_script.number_words_shown = room_script.max_words_to_display;

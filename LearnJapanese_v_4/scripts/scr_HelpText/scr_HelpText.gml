@@ -81,9 +81,9 @@ tooltip081 = new tooltip("invisTeForm", "Used to request an action, for connecti
 tooltip082 = new tooltip("invisPolite","Polite - used with superiors and strangers, and in public announcements.","tooltip");
 tooltip083 = new tooltip("invisPlain","Plain - used with friends, children and in informal situations, eg shopping.","tooltip");
 tooltip084 = new tooltip("invisPresent","Expresses an action that is currently going on or habitually performed, or a state that currently or generally exists.'","tooltip");
-tooltip085 = new tooltip("invisPresNeg","pres_neg","The negative of present tense, eg not ~.");
+tooltip085 = new tooltip("invisPresNeg","The negative of present tense, eg not ~.","tooltip");
 tooltip086 = new tooltip("invisPast","Describing an action which has occured in the past.","tooltip");
-tooltip087 = new tooltip("invisPastNeg","past_neg","Expressing an action which has not occured in the past.");
+tooltip087 = new tooltip("invisPastNeg","Expressing an action which has not occured in the past.","tooltip");
 tooltip088 = new tooltip("invisStem","The stem of the verb, used for conjugations.","tooltip");
 
 //kana tooltips

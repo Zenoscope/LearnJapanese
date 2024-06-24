@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"btn_DropDown",
+  "%Name":"btn_DropdownArrow",
   "eventList":[],
   "managed":true,
-  "name":"btn_DropDown",
+  "name":"btn_DropdownArrow",
   "overriddenProperties":[],
   "parent":{
     "name":"DropDown",
     "path":"folders/Objects/Features/VocabAndGrammar/DropDown.yy",
   },
-  "parentObjectId":{
-    "name":"btn_Dialog_Search",
-    "path":"objects/btn_Dialog_Search/btn_Dialog_Search.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_DropDown",
-    "path":"sprites/spr_DropDown/spr_DropDown.yy",
+    "name":"spr_Nav_Arrow_Down",
+    "path":"sprites/spr_Nav_Arrow_Down/spr_Nav_Arrow_Down.yy",
   },
   "spriteMaskId":null,
   "visible":true,

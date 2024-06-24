@@ -1,4 +1,4 @@
-/// @description blink cursor
+/// @description blink cursor 
 
 blink_speed = 10;
 

@@ -1,7 +1,6 @@
 /// @description draw the dialog box
 // You can write your code in this editor
 
-
 //dlg_style	  = 0;
 xloc		  = 100;
 yloc		  = 50; 

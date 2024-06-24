@@ -1,16 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"init_ShowVocab",
+  "%Name":"btn_DropDown_old",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"init_ShowVocab",
+  "name":"btn_DropDown_old",
   "overriddenProperties":[],
   "parent":{
-    "name":"Search",
-    "path":"folders/Objects/Features/Vocab/Vocab_List/Search.yy",
+    "name":"DropDown",
+    "path":"folders/Objects/Features/VocabAndGrammar/DropDown.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_DropDown",
+    "path":"sprites/spr_DropDown/spr_DropDown.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

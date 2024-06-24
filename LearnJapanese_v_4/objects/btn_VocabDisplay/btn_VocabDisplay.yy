@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Search",
-    "path":"folders/Objects/Features/Vocab/Vocab_List/Search.yy",
+    "path":"folders/Objects/Features/Vocab_List/Search.yy",
   },
   "parentObjectId":{
     "name":"btn_Label",

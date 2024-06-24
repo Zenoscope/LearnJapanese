@@ -14,7 +14,7 @@
   ],
   "isDnd":false,
   "layers":[
-    {"$GMRInstanceLayer":"","%Name":"DialogBox","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"DialogBox","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"DialogBox_delete","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"DialogBox_delete","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Buttons","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"instances":[
         {"$GMRInstance":"","%Name":"inst_3313ECE6_2_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":{"name":"inst_3313ECE6","path":"rooms/Room_Parent/Room_Parent.yy",},"inheritItemSettings":false,"isDnd":false,"name":"inst_3313ECE6_2_1","objectId":{"name":"btnNAV_back","path":"objects/btnNAV_back/btnNAV_back.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1216.0,"y":704.0,},
         {"$GMRInstance":"","%Name":"inst_294F3FEC_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_294F3FEC_1_1","objectId":{"name":"obj_ArrowUp","path":"objects/obj_ArrowUp/obj_ArrowUp.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":-359.5523,"scaleX":1.5,"scaleY":1.5,"x":962.0,"y":32.0,},
@@ -32,7 +32,7 @@
   "name":"Vocab0List",
   "parent":{
     "name":"Vocab_List",
-    "path":"folders/Objects/Features/Vocab/Vocab_List.yy",
+    "path":"folders/Objects/Features/Vocab_List.yy",
   },
   "parentRoom":{
     "name":"Room_Parent",

@@ -1,15 +1,6 @@
-/// @description show search results
-
-// move these to the objects
-
-// if not searching, then the display list is the actual word list.
-// *I could avoid this (ans storing the arrays) but it might get confusing... 
-//if (btn_Search.search == false){	
-//	}
-// otherswise it's the search results.
-
-/*
-if (search) {
+/// @description Insert description here
+// You can write your code in this editor
+if (room_script.search) {
 	// result list
 	room_script.display_list = room_script.search_result_list;
 	
@@ -23,4 +14,3 @@ else {
 	}
 
 room_script.max_scroll_clicks = array_length(room_script.display_list) / room_script.number_words_shown;	
-*/

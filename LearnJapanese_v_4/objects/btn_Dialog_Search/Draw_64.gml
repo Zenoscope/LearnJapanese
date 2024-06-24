@@ -15,9 +15,6 @@ draw_set_color(c_black);
 draw_set_valign(fa_top);
 draw_set_halign(text_align);
 
-//draw_text_transformed(x + box_gap, y, text, scale, scale,0);
-//draw_text_transformed(x + box_gap, y - (box_height/2) , text, scale, scale,0);
-//draw_text_transformed(x - (spr_width - half_char_width) + box_gap, y - (box_height/2) + (box_gap / 2) , text, scale, scale,0);
 draw_text_transformed(x, y - (box_height/2) + (box_gap / 2) , text, scale, scale,0);
 
 // draws the cursor
@@ -31,14 +28,41 @@ if (blink) {
 	//	}
 	// draw the cursor
 	draw_line_width(
-		//x + (length * scale) + half_char_width,
-		//x - ((spr_width - half_char_width) + (length * scale)) + box_gap,
 		x + length, //- ((spr_width - half_char_width) + (length * scale)),
 		y - ((height * 0.75) * scale) ,
-		//x + (length * scale) + half_char_width,
-		//x - ((spr_width - half_char_width) + (length * scale)) + box_gap,
 		x + length,//- ((spr_width - half_char_width) + (length * scale)) + box_gap,
 		y + ((height * 0.75) * scale), 
 		line_width * scale 
 		);	
 	}
+
+if (array_length(room_script.display_list) < room_script.max_words_to_display ){
+	room_script.word_display_number = array_length(room_script.display_list);
+	}
+else {
+	room_script.word_display_number = room_script.number_words_shown;
+	}
+
+// variables for displaying the vocab buttons
+var text_x_pos = 50;
+var text_y_pos = 30;
+var counter = 0;
+
+room_script.vocab_display_buttons = [];
+
+while (counter < room_script.word_display_number) {
+		
+		var vocab_object = asset_get_index("btn_VocabDisplay");
+		vocab_display_buttons[counter] = instance_create_layer( text_x_pos,text_y_pos + (counter * 70) ,"vocab_layer",vocab_object,
+				{
+				//used for displayng result when button is clicked
+				card_index:		room_script.card_index + counter,
+				// shows reults on button
+				kanji:			room_script.display_list[room_script.card_index + counter].kanji,
+				meaning:		room_script.display_list[room_script.card_index + counter].meaning,
+ 				kana:			room_script.display_list[room_script.card_index + counter].field_2,
+				room_script:	room_script
+				})		
+		counter ++;
+		}
+
