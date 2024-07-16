@@ -7,7 +7,7 @@ if (live_call()) return live_result;
 
 event_inherited();
 
-if (hovering && visible == true ) {//2	
+if (hovering &&room_script.search = false ) {//2	
 	 	
 
 	// runs for all buttons.
@@ -17,7 +17,7 @@ if (hovering && visible == true ) {//2
 	
 else {//2
 	
-	 if (global.show_helptext == true){
+	 if (global.show_helptext == true || room_script.search = true ){
 		global.show_helptext = false;	
 		}
 	 	

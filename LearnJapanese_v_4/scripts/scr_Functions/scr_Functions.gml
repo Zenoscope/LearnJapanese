@@ -1,8 +1,5 @@
 // storage for functions and maybe templates for things I forget, like switches
 
-//GMLive
-if (live_call()) return live_result;
-
 /*
 /// TEMPLATES
 
@@ -1081,9 +1078,9 @@ catch ( _exception){
 	has_help = false;
  }
 
-	if (has_help == false) {
-		show_debug_message("Helptext for " + string(button_name) +" not found");
-		}
+	//if (has_help == false) {
+		//show_debug_message("Helptext for " + string(button_name) +" not found");
+	//	}
 	
 	// if there is, show the button
 	if (has_help) {		

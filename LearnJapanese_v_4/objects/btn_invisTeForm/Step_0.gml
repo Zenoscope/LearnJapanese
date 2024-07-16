@@ -7,12 +7,11 @@ if (live_call()) return live_result;
 
 event_inherited();
 
-if (hovering && visible == true ) {//2	
-	 	
-
+if (hovering) {//2	
+ 	
 	// runs for all buttons.
 	function_show_helptext(btn_name,global.tooltips,self);
- 
+
 	}
 	
 else {//2

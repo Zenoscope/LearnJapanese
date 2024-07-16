@@ -28,7 +28,7 @@
   "name":"Tests",
   "parent":{
     "name":"UnitTests",
-    "path":"folders/UnitTests.yy",
+    "path":"folders/Debug/UnitTests.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

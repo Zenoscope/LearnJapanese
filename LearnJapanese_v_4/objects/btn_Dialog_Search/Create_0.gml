@@ -1,8 +1,10 @@
 /// @description Init_Dialog_Search:Create
 //room_script = function_get_room_script_name(id);
 
-use_search = false;
+if (live_call()) return live_result;
 
+use_search = false;
+room_script.search = false;
 room_script.reached_list_end = false;
 room_script.room_script.search = false;
 room_script.found_something = false;
@@ -10,6 +12,9 @@ room_script.blockButtonClick = false;
 room_script.current_scroll_clicks = 1;
 room_script.reached_list_end = false;
 room_script.word_display_number = 0;
+
+text_halign = fa_left;
+text_valign = fa_top;
 
 // get the highest layer and put this above that:
 
@@ -32,15 +37,13 @@ room_script.card_index = 0;
 // generate an empty card array
 room_script.card_array = [];
 
-text = "Search";
+text = "Click here to search";
 // japanese keyboard input?
 enabled_keys = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 
 // set the alignment for the GUI 
-text_align = fa_left;
-
-draw_set_halign(fa_right);
-draw_set_valign(text_align);
+draw_set_halign(text_halign);
+draw_set_valign(text_valign);
 draw_set_color(c_black);
 
 // font for input
@@ -51,7 +54,7 @@ box_width = string_width(model_string);
 box_height = string_height(model_string);
 
 // rename as cursor
-blink = true;
+blink = false;
 blink_speed = 0;  // higher is faster?
 alarm[0] = blink_speed;
 

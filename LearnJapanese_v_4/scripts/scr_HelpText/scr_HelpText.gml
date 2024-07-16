@@ -10,10 +10,6 @@ Flashcards = Hiragana and Katakana flashcards
 Buttons = fnt_Button
 */
 
-//GMLive		
-if (live_call()) return live_result;
-
-
 /// currently this is in the button!!!
 function tooltip(
 	// button_name,tooltip_text

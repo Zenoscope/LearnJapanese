@@ -6,7 +6,7 @@
   "name":"_ac_add_test_result",
   "parent":{
     "name":"Testing",
-    "path":"folders/UnitTests/Scripts/AtomicCity/Testing.yy",
+    "path":"folders/Debug/UnitTests/Scripts/AtomicCity/Testing.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

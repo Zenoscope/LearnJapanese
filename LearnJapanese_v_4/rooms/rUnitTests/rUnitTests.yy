@@ -24,7 +24,7 @@
   "name":"rUnitTests",
   "parent":{
     "name":"AtomicCity",
-    "path":"folders/UnitTests/Scripts/AtomicCity.yy",
+    "path":"folders/Debug/UnitTests/Scripts/AtomicCity.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

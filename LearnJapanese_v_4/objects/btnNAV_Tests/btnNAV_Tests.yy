@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"UnitTests",
-    "path":"folders/UnitTests.yy",
+    "path":"folders/Debug/UnitTests.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

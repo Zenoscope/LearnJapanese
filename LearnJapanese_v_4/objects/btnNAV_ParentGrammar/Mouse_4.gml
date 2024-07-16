@@ -89,7 +89,7 @@ switch (btn_name)
 
 		case "Verbs":
 			// show search thinger for verbs
-			room_script.display_string = "Verbs";
+			room_script.display_string = "Verb conjugation";
 			room_script.word_list = function_add_to_WordBuilderArray("Verb",room_script.kanji_list,field_list);
 			
 			var lay_id = layer_get_id("Search");
@@ -118,7 +118,9 @@ switch (btn_name)
 		break;
 		}
 
-room_script.display_string = btn_name;
+// room_script.display_string = btn_name;
+
+room_script.display_name = room_script.display_name + " - " + room_script.display_string;
 
 var lay_id = layer_get_id(btn_name);
 instance_activate_layer(lay_id);

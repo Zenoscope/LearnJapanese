@@ -6,7 +6,7 @@
   "name":"ac_assert_true",
   "parent":{
     "name":"Testing",
-    "path":"folders/UnitTests/Scripts/AtomicCity/Testing.yy",
+    "path":"folders/Debug/UnitTests/Scripts/AtomicCity/Testing.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

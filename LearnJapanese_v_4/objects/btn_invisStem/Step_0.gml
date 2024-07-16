@@ -5,11 +5,12 @@ if (live_call()) return live_result;
 
 /// @Description - btn_nav_parent
 
-event_inherited();
+if (!room_script.search == true) {
+	// disables the hovering part, wtf
+	event_inherited();
+	}
 
-if (hovering && visible == true ) {//2	
-	 	
-
+if (hovering) {//2	
 	// runs for all buttons.
 	function_show_helptext(btn_name,global.tooltips,self);
  

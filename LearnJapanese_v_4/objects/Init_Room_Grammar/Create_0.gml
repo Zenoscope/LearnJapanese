@@ -161,7 +161,7 @@ if (layer_get_id(self.layer).visible == false) {
 
 var LayerArray = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs","Search"]
 function_deactivate_layers_by_Name(LayerArray);
-
 function_execute_script("scr_VocabList");
-
 show_initial_words = false;
+
+//display_name = display_name + display_string;

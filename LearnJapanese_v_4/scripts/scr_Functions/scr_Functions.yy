@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_Functions",
   "parent":{
-    "name":"Function script",
-    "path":"folders/Objects/Function script.yy",
+    "name":"Functions",
+    "path":"folders/Objects/Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

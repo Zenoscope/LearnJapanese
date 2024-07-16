@@ -6,7 +6,7 @@
   "name":"ac_unit_tests",
   "parent":{
     "name":"Scripts",
-    "path":"folders/UnitTests/Scripts.yy",
+    "path":"folders/Debug/UnitTests/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

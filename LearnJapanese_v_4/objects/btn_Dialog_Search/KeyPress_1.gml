@@ -4,6 +4,8 @@
 
 // Stolen from: https://www.youtube.com/watch?v=PWRPCWf58nU
 
+if (live_call()) return live_result;
+
 if (string_count(chr(keyboard_key),enabled_keys) && (string_length( chr(keyboard_key) ) == 1) ){
 	// left mouse button will trigger this
 	blink = true;

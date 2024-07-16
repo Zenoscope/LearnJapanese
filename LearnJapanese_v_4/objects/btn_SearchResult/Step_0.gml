@@ -1,6 +1,8 @@
 /// @description Click events
 // This displays the search list results
 
+if (live_call()) return live_result;
+
 if (!room_script.blockButtonClick) {
 	
 	event_inherited();
@@ -10,7 +12,7 @@ if (!room_script.blockButtonClick) {
 	if (hovering) {//2	
 		//window_set_cursor(cr_handpoint);
 		// get bigger if hovering	
-		image_xscale = 3.05;	 
+		image_xscale = 3.05; 
 		image_yscale = 0.8;
  
 		// moves it up because otherwise they overlap too much
@@ -26,8 +28,7 @@ if (!room_script.blockButtonClick) {
 		image_xscale = 3;
 		image_yscale = 0.7;
 		}//2
-
-    /*
+  
 	if (clicked) {
 		// set the buttonClick to be true.
 		room_script.blockButtonClick = true;
@@ -36,8 +37,6 @@ if (!room_script.blockButtonClick) {
 		// release 3
 		//function_show_vocab_search_result(room_script.display_list[card_index],room_script); // item number		
 	}
-	*/
-	
 }
 
 else {

@@ -2,7 +2,6 @@
 // You can write your code in this editor
 
 //GMLive		
-// if (live_call()) return live_result;
 room_set_live(room, true);
 
 function_execute_script("scr_HelpText");

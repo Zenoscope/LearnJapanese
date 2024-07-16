@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+if (live_call()) return live_result;
+
 if (room_script.search) {
 	// result list
 	room_script.display_list = room_script.search_result_list;
