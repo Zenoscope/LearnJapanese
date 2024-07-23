@@ -4,7 +4,19 @@
 room_set_live(room, true);
 
 // Inherit the parent event
-event_inherited();
+// the init script seems to rerun when an object is enabled
+// which wipes the room_script variables.
+
+//if (is_undefined(search)) {
+    // If it's undefined, initialize it with a default value
+	event_inherited();
+//	}
+//
+//function_get_room_script_name()
+//*/
+//if !variable_instance_exists(room,room_script){
+//	event_inherited();
+//	}
 
 // add he blurb text stuff to RAM.
 //function_execute_script("scr_Grammar");
@@ -137,7 +149,7 @@ grammar_string[121]="Similar to subject? IDK";
 total_lines = 121;
 num_display_lines = 11;
 current_line = num_display_lines;
-display_string = ""; //grammar_string[1];
+display_string = grammar_string[1];
 
 // mash the arrays together into a huge string. 
 for(lines = 1; lines <= num_display_lines; lines += 1; ) {
@@ -145,23 +157,23 @@ for(lines = 1; lines <= num_display_lines; lines += 1; ) {
 	display_string = string_join("\n",display_string,grammar_string[lines]);
 	}
 
-show_debug_message(display_string);
-
-//function function_deactivate_layers_byName(layers_to_deactivate){
-//	var lay_id = layer_get_id(layers_to_deactivate);	/
-//	instance_deactivate_layer(lay_id);	
-//	}
-
-if (layer_get_id(self.layer).visible == false) { 
-	show_debug_message(display_string);
-		}
-
 // hide the layers until we need them
 // 
-
 var LayerArray = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs","Search"]
 function_deactivate_layers_by_Name(LayerArray);
 function_execute_script("scr_VocabList");
-show_initial_words = false;
 
-//display_name = display_name + display_string;
+// show a list of words when activating the search function
+show_initial_words = true;
+search = false;
+use_search = false;
+search = false;
+search_result_list = [];
+//reached_list_end = false;
+//room_script.search = false;
+found_something = false;
+//current_scroll_clicks = 1;
+//reached_list_end = false;
+//word_display_number = 0;
+card_index = 0;
+blockButtonClick = false;

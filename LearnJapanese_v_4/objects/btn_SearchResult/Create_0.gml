@@ -2,7 +2,7 @@
 
 //room_script = function_get_room_script_name(id);
 
-event_inherited();
+//event_inherited();
 
 hovering = false;
 clicked = false;
@@ -14,3 +14,5 @@ create_depth = depth;
 
 image_xscale = 3;
 image_yscale = 0.7;
+
+text_colour = c_gray;

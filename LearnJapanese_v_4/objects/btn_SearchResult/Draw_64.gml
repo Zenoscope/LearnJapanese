@@ -1,16 +1,18 @@
 /// @description Draws the button
 // This displays the search list results
 
-// draws the sprite for the button
-draw_self();
+if (live_call()) return live_result;
 
+// draws the sprite for the button
+//draw_self();
 
 y_offset = 5;
 kerning = 33;
 x_offset = 15;
 
 draw_set_font(FlashCards);
-draw_set_color(c_black);
+draw_set_color(text_colour);
+//draw_set_color(c_black);
 draw_set_valign(fa_left);
 draw_set_halign(fa_top);
 

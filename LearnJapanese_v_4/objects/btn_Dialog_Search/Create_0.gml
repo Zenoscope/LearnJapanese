@@ -1,7 +1,9 @@
 /// @description Init_Dialog_Search:Create
-//room_script = function_get_room_script_name(id);
+
+// room_script = function_get_room_script_name(id);
 
 if (live_call()) return live_result;
+
 
 use_search = false;
 room_script.search = false;
@@ -62,17 +64,7 @@ alarm[0] = blink_speed;
 // contains will search all of the columns! yay!
 
 image_speed = 0;
-
-temp = true;
-
-if ( temp == false ) {
-	// use first image for the button
-	image_index = 0;
-	// align with the "search" button
-	x = btn_Search.x;
-	y = btn_Search.y;
-	}
-else {
-	image_index = 0;
-	}
-// should have a "catch" on this one really.
+// make this random
+image_index = irandom(self. image_number);
+//x = btn_Search.x;
+//y = btn_Search.y;

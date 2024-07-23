@@ -10,8 +10,8 @@
   "name":"btnNAV_ParentGrammar",
   "overriddenProperties":[],
   "parent":{
-    "name":"Parents",
-    "path":"folders/Objects/Parents.yy",
+    "name":"GrammarNav",
+    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarNav.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

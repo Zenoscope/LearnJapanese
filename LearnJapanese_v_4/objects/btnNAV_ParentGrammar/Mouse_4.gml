@@ -2,7 +2,7 @@
 
 if (live_call()) return live_result;
 
-var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs"];
+var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs","Arrow_Buttons"];
 function_deactivate_layers_by_Name(layer_array);
 
 field_list = ["field_1"];

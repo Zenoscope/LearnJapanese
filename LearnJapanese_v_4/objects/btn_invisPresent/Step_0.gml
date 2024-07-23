@@ -7,7 +7,10 @@ if (live_call()) return live_result;
 
 /// @Description - btn_nav_parent
 
-event_inherited();
+if (!room_script.search == true) {
+	// disables the hovering part, wtf
+	event_inherited();
+	}
 
 if (hovering && room_script.search = false ) {//2	
 	 	

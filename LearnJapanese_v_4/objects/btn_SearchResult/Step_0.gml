@@ -3,43 +3,22 @@
 
 if (live_call()) return live_result;
 
-if (!room_script.blockButtonClick) {
-	
-	event_inherited();
-	
-	// this scaling is custom to this button, 
-	// so it can't be inherited.
+event_inherited();
+
+//if (!room_script.blockButtonClick) {
 	if (hovering) {//2	
-		//window_set_cursor(cr_handpoint);
-		// get bigger if hovering	
-		image_xscale = 3.05; 
-		image_yscale = 0.8;
- 
-		// moves it up because otherwise they overlap too much
-		x = x_origin - 10;
-		y = y_origin -10;
+		text_colour = c_black;
+		image_index = 0;
 		}//2
 	else {//2
-		//window_set_cursor(cr_arrow);
-	 
-		x = x_origin;
-		y = y_origin;
-	 
-		image_xscale = 3;
-		image_yscale = 0.7;
+		text_colour = c_gray;
+		text_colour = c_black;
+		image_index = 1;
 		}//2
   
 	if (clicked) {
-		// set the buttonClick to be true.
-		room_script.blockButtonClick = true;
-		// show the search result
-		
-		// release 3
-		//function_show_vocab_search_result(room_script.display_list[card_index],room_script); // item number		
+		///room_script.blockButtonClick = true;
+		//function_show_vocab_search_result(room_script.display_list[card_index],room_script); // item number
+		room_script.search_result_method();
 	}
-}
-
-else {
-		image_xscale = 3;
-		image_yscale = 0.7;	
-	}
+//}

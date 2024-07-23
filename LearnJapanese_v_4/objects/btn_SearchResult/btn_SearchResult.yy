@@ -14,8 +14,8 @@
     "path":"folders/Objects/Functions/Search.yy",
   },
   "parentObjectId":{
-    "name":"btn_Label",
-    "path":"objects/btn_Label/btn_Label.yy",
+    "name":"btn_Parent",
+    "path":"objects/btn_Parent/btn_Parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ButtonTLCorner",
-    "path":"sprites/spr_ButtonTLCorner/spr_ButtonTLCorner.yy",
+    "name":"spr_SearchResult",
+    "path":"sprites/spr_SearchResult/spr_SearchResult.yy",
   },
   "spriteMaskId":null,
   "visible":true,
