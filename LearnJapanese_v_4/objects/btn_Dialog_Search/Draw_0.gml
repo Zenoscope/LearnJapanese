@@ -34,9 +34,6 @@ draw_set_color(c_black);
 draw_set_halign(text_halign);
 draw_set_valign(text_valign);
 
-//draw_text_transformed( x +  half_char_width , y, text, scale, scale,0);
-//draw_text_transformed(self.x + (length/2) , self.y, text, scale, scale,0);
-
 draw_text_transformed(self.x , self.y, text, scale, scale,0);
 
 var cursor_x = x + length + half_char_width;
@@ -61,17 +58,16 @@ draw_set_halign(fa_left);
 var x_scale = 1;
 var y_scale = 1;
 
-/*
-if (array_length(display_list) > 0 ) { 
+if (array_length(room_script.display_list) > 0 ) { 
 	string_counter = "Showing words";
-	string_counter = string(card_index + 1) + " to " + string(card_index + word_display_number) + " of " + string(array_length(display_list));
+	string_counter = string(room_script.card_index + 1) + " to " + string(room_script.card_index + room_script.word_display_number) + " of " + string(array_length(room_script.display_list));
 	draw_text_ext_transformed(text_x_pos,text_y_pos,string_counter,string_height(string_counter),700,x_scale,y_scale,0);
 	}
 else{
 	string_counter = "Nothing found!";
 	draw_text_ext_transformed(text_x_pos,text_y_pos,string_counter,string_height(string_counter),500,x_scale,y_scale,0);
 	}
-*/
+
 
 
 var _yscale = 6;
@@ -89,10 +85,14 @@ if (array_length(room_script.display_list) > room_script.max_words_to_display ){
 	draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_yscale,0,c_white,1);
 	
 	var arrow = asset_get_index("Search_Up_Arrow");
-	instance_create_layer( (_width * _xscale) + 12 ,text_y_pos + 10 ,"vocab_layer",arrow);
+	instance_create_layer( (_width * _xscale) + 12 ,text_y_pos + 10 ,"vocab_layer",arrow,{
+		room_script:	room_script	
+		});
 	
 	var arrow = asset_get_index("Search_Dwn_Arrow");
-	instance_create_layer( (_width * _xscale) + 12 , text_y_pos + (_height * 5.5),"vocab_layer",arrow); 
+	instance_create_layer( (_width * _xscale) + 12 , text_y_pos + (_height * 5.5),"vocab_layer",arrow,{
+		room_script:	room_script	
+		}); 
 	//instance_create_layer( (_width * _xscale) , (6 * room_script.word_display_number) - text_y_pos,"vocab_layer",arrow); 	
 	
 	}
@@ -113,11 +113,12 @@ room_script.vocab_display_buttons = [];
 
 
 // draws the result button
-for (i = 0; i < room_script.word_display_number; i++) {  
+//for (i = 0; i < room_script.word_display_number; i++) {
+for (i = 0; i < room_script.max_words_to_display; i++) {  
 // while (counter < room_script.word_display_number) {
 		var vocab_object = asset_get_index("btn_SearchResult");
 		
-		vocab_display_buttons[i] = instance_create_layer( text_x_pos + 10,text_y_pos + (i * 70) + 10,"vocab_layer",vocab_object,
+		vocab_display_buttons[i] = instance_create_layer( text_x_pos + 10,text_y_pos + (i * 69) + 10,"vocab_layer",vocab_object,
 				{
 				//used for displayng result when button is clicked
 				card_index:		room_script.card_index + i,

@@ -31,7 +31,7 @@ if (_current_line > _num_display_lines) {
 	room_script.current_line = _current_line - 1;	
 	}
 	*/
-/*	
+/*
 if (_current_line < _total_lines) { //need to be able to keep some of the text on the screen
 	// the string to delete
 	// delete_this_string = string_join("\n",_grammar_string[_counter - 1],"");
@@ -45,4 +45,9 @@ if (_current_line < _total_lines) { //need to be able to keep some of the text o
 	room_script.current_line = _current_line;
 	show_debug_message(room_script.display_string);
 	}
-*/	
+*/
+
+if (room_script.card_index > 0 ){
+	show_debug_message("stop");
+	room_script.card_index--;
+	}

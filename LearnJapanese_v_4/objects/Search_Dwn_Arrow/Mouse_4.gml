@@ -27,3 +27,12 @@ if (_current_line < _total_lines) { //need to be able to keep some of the text o
 	show_debug_message("+" + room_script.display_string + "+");
 	}
 */
+
+temp1 = room_script.card_index;
+temp2 = room_script.word_list;
+temp3 = room_script.max_words_to_display
+
+if (room_script.card_index < array_length(room_script.word_list) - room_script.max_words_to_display) {
+	show_debug_message("stop");
+	room_script.card_index++;
+	}

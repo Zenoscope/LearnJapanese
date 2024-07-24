@@ -26,7 +26,7 @@ switch (global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2]){
 		}			
 
 max_words_to_display = 8;
-number_words_shown = room_script.max_words_to_display;
+number_words_shown = max_words_to_display;
 field_list = ["field_4"];
 // searches through the vocab and finds the vocab which matches 
 // what we are searching for, eg kanji, hiragana etc

@@ -127,5 +127,5 @@ instance_activate_layer(lay_id);
 room_script.grammar_Room = btn_name;
 
 // max number of hits to display
-room_script.max_words_to_display = 10;
-room_script.number_words_shown = room_script.max_words_to_display;
+//room_script.max_words_to_display = 10;
+//room_script.number_words_shown = room_script.max_words_to_display;

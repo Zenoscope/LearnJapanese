@@ -4,14 +4,12 @@
 
 if (live_call()) return live_result;
 
-
 use_search = false;
 room_script.search = false;
 room_script.reached_list_end = false;
-room_script.room_script.search = false;
 room_script.found_something = false;
-room_script.blockButtonClick = false;
-room_script.current_scroll_clicks = 1;
+room_script.blockButtonClick = false; // oly true if search finds something
+room_script.current_scroll_clicks = 1;// 
 room_script.reached_list_end = false;
 room_script.word_display_number = 0;
 
@@ -64,7 +62,5 @@ alarm[0] = blink_speed;
 // contains will search all of the columns! yay!
 
 image_speed = 0;
-// make this random
+// make the searchbox image random
 image_index = irandom(self. image_number);
-//x = btn_Search.x;
-//y = btn_Search.y;
