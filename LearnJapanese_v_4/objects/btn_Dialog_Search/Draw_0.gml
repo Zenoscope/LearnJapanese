@@ -60,15 +60,19 @@ var y_scale = 1;
 
 if (array_length(room_script.display_list) > 0 ) { 
 	string_counter = "Showing words";
-	string_counter = string(room_script.card_index + 1) + " to " + string(room_script.card_index + room_script.word_display_number) + " of " + string(array_length(room_script.display_list));
-	draw_text_ext_transformed(text_x_pos,text_y_pos,string_counter,string_height(string_counter),700,x_scale,y_scale,0);
+	string_counter = string(room_script.card_index + 1) + " to " + string(room_script.card_index + room_script.max_words_to_display) + " of " + string(array_length(room_script.display_list));
+	draw_set_halign(fa_right);
+	draw_text_ext_transformed(text_x_pos + 800,text_y_pos - 80,string_counter,string_height(string_counter),700,x_scale,y_scale,0);
 	}
 else{
 	string_counter = "Nothing found!";
-	draw_text_ext_transformed(text_x_pos,text_y_pos,string_counter,string_height(string_counter),500,x_scale,y_scale,0);
+	draw_set_halign(fa_right);
+	draw_text_ext_transformed(text_x_pos + 800,text_y_pos - 80 ,string_counter,string_height(string_counter),500,x_scale,y_scale,0);
 	}
 
+//------------------------------
 
+//------------------------------
 
 var _yscale = 6;
 var _xscale = 3;
@@ -76,13 +80,18 @@ var _xscale = 3;
 var _width  = sprite_get_width(spr_SearchDropBG);
 var _height = sprite_get_height(spr_SearchDropBG);
 
+
+
+if (show_buttons == true){
+	room_script.vocab_display_buttons = [];
+	
 if (array_length(room_script.display_list) > room_script.max_words_to_display ){
 	
 	// fix the size of the background and show the arrows.
 	room_script.word_display_number = array_length(room_script.display_list);
 	
-	// 
-	draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_yscale,0,c_white,1);
+	// bg
+	//draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_yscale,0,c_white,1);
 	
 	var arrow = asset_get_index("Search_Up_Arrow");
 	instance_create_layer( (_width * _xscale) + 12 ,text_y_pos + 10 ,"vocab_layer",arrow,{
@@ -101,24 +110,24 @@ else {
 	 // scale the bg by the total bg size 
 	var _ysize =(_yscale/room_script.max_words_to_display) * room_script.word_display_number;
 	
-	draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_ysize,0,c_white,1);	
+	//draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_ysize,0,c_white,1);	
+	}
+    //draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,3.01,6,0,c_white,1);
 	}
 
-room_script.vocab_display_buttons = [];
-
-// draws the white background rectangle
-//if (room_script.search == true) {
-    draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,3.01,6,0,c_white,1);
-//	}
-
+draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,3.01,6,0,c_white,1);
 
 // draws the result button
 //for (i = 0; i < room_script.word_display_number; i++) {
 for (i = 0; i < room_script.max_words_to_display; i++) {  
 // while (counter < room_script.word_display_number) {
-		var vocab_object = asset_get_index("btn_SearchResult");
+
+		if (show_buttons == true){
 		
-		vocab_display_buttons[i] = instance_create_layer( text_x_pos + 10,text_y_pos + (i * 69) + 10,"vocab_layer",vocab_object,
+		var vocab_object = asset_get_index("btn_SearchResult");
+	
+		//
+		room_script.vocab_display_buttons[i] = instance_create_layer( text_x_pos + 10,text_y_pos + (i * 69) + 10,"vocab_layer",vocab_object,
 				{
 				//used for displayng result when button is clicked
 				card_index:		room_script.card_index + i,
@@ -127,8 +136,26 @@ for (i = 0; i < room_script.max_words_to_display; i++) {
 				meaning:		room_script.display_list[room_script.card_index + i].meaning,
  				kana:			room_script.display_list[room_script.card_index + i].field_2,
 				room_script:	room_script				
-				})		
-		// counter ++;
-		//}
+				})
+		}
+
+		else {
+			room_script.vocab_display_buttons[i].kanji = room_script.display_list[room_script.card_index + i].kanji;
+			room_script.vocab_display_buttons[i].meaning = room_script.display_list[room_script.card_index + i].meaning;
+ 			room_script.vocab_display_buttons[i].field_2 = room_script.display_list[room_script.card_index + i].field_2;			
+			}
 	}
 
+if (mouse_wheel_up()) {
+	if (room_script.card_index > 0 ){
+		room_script.card_index--;
+		}
+	}
+if (mouse_wheel_down()) {
+	if (room_script.card_index < array_length(room_script.word_list) - room_script.max_words_to_display) {
+		show_debug_message("stop");
+		room_script.card_index++;
+		}
+	}
+
+show_buttons = false;

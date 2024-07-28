@@ -23,3 +23,7 @@ else {*/
 	//}
 
 room_script.max_scroll_clicks = array_length(room_script.display_list) / room_script.number_words_shown;	
+
+
+
+

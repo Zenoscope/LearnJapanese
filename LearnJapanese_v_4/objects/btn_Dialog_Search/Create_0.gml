@@ -13,6 +13,8 @@ room_script.current_scroll_clicks = 1;//
 room_script.reached_list_end = false;
 room_script.word_display_number = 0;
 
+show_buttons = true;
+
 text_halign = fa_left;
 text_valign = fa_top;
 
