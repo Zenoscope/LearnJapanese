@@ -23,22 +23,6 @@ create_buttons = true;
 text_halign = fa_left;
 text_valign = fa_top;
 
-// get the highest layer and put this above that:
-
-var my_layer_depth = 0;
-var current_depth = 0;
-// loop through all the layers and get the depths
-var all_layers = layer_get_all();
-for (var i = 0; i < array_length(all_layers); i++;)
-	{
-    current_depth = layer_get_depth(all_layers[i]);
-	if (current_depth < my_layer_depth){
-		my_layer_depth = current_depth;
-		}	
-	}
-
-layer_create(my_layer_depth - 100,"vocab_layer");
-
 // initial card which is shown on the first card.
 room_script.card_index = 0;
 // generate an empty card array
@@ -71,3 +55,24 @@ alarm[0] = blink_speed;
 image_speed = 0;
 // make the searchbox background image random
 image_index = irandom(self. image_number);
+
+function create_vocab_layer(){
+	// get the highest layer and put this above that:
+	var my_layer_depth = 0;
+	var current_depth = 0;
+	// loop through all the layers and get the depths
+	var all_layers = layer_get_all();
+	for (var i = 0; i < array_length(all_layers); i++;)
+		{
+		current_depth = layer_get_depth(all_layers[i]);
+		if (current_depth < my_layer_depth){
+			my_layer_depth = current_depth;
+			}	
+		}
+	
+	layer_create(my_layer_depth - 100,"vocab_layer");
+	}
+
+	
+	
+	

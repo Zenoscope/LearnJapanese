@@ -667,6 +667,17 @@ first_1000_vocab652 = new first_1000_vocab(652,"呼ぶ","to call out, to invite"
 first_1000_vocab653 = new first_1000_vocab(653,"良い","good","yoi/ii","い-adjective","よい/いい","","このレストランの料理はとても良いです。/ このレストランのりょうりはとてもいいです。/ Kono resutoran no ryōri wa totemo ii desu. / The food at this restaurant is very good.",1);
 first_1000_vocab654 = new first_1000_vocab(654,"横","beside,side,width","yoko","noun","よこ","","机の横に本があります。/ つくえのよこにほんがあります。/ Tsukue no yoko ni hon ga arimasu. / There is a book next to the desk.",1);
 first_1000_vocab655 = new first_1000_vocab(655,"よく","often, well","yoku","adverb","","5","彼女はよく笑います。/ かのじょはよくわらいます。/ Kanojo wa yoku waraimasu. / She often laughs.",2);
+first_1000_vocab014 = new first_1000_vocab(014,"ええ","yes; that is correct; right","ee","noun","","Greetings","はい、ええといってください。/ Hai, ēto itte kudasai. / - Yes, please say \"ええ\" (yes).",2);
+
+// 7 ok first_1000_vocab648 = new first_1000_vocab(648,"渡る","aaa","wataru","godan verb, intransitive","わたる","12","手紙を友達に渡しました。/ てがみをともだちにわたしました。/ Tegami o tomodachi ni watashimashita. / I handed the letter to my friend.",2);
+// first_1000_vocab649 = new first_1000_vocab(649,"渡す","aaa","watasu","godan verb, transitive","わたす",""," 彼は手紙を彼女に渡しました。/ かれはてがみをかのじょにわたしました。/ Kare wa tegami o kanojo ni watashimashita. / He handed the letter to her.",2);
+//first_1000_vocab650 = new first_1000_vocab(650,"やる","aaa","yaru","godan verb, transitive","やる","14","仕事を頑張ってやります。/ しごとをがんばってやります。/ Shigoto o ganbatte yarimasu. / I will work hard and do my best.",2);
+//first_1000_vocab651 = new first_1000_vocab(651,"易しい","aaa","yasashii","い-adjective","やさしい","1","これは易しい問題です。/ これはやさしいもんだいです。/ Kore wa yasashii mondai desu. / This is an easy problem.",2);
+//first_1000_vocab652 = new first_1000_vocab(652,"呼ぶ","aaa","yobu","godan verb, transitive","よぶ","2","彼を名前で呼びました。/ かれをなまえでよびました。/ Kare o namae de yobimashita. / I called him by his name.",2);
+//first_1000_vocab653 = new first_1000_vocab(653,"良い","aaa","yoi/ii","い-adjective","よい/いい","","このレストランの料理はとても良いです。/ このレストランのりょうりはとてもいいです。/ Kono resutoran no ryōri wa totemo ii desu. / The food at this restaurant is very good.",2);
+//first_1000_vocab654 = new first_1000_vocab(654,"横","aaa","yoko","noun","よこ","","机の横に本があります。/ つくえのよこにほんがあります。/ Tsukue no yoko ni hon ga arimasu. / There is a book next to the desk.",2);
+//first_1000_vocab655 = new first_1000_vocab(655,"よく","aaa","yoku","adverb","","5","彼女はよく笑います。/ かのじょはよくわらいます。/ Kanojo wa yoku waraimasu. / She often laughs.",2);
+
 
 kanji_list = [
 first_1000_vocab001,
