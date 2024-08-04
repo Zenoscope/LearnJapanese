@@ -30,14 +30,20 @@ if (!keyboard_check(vk_control)) {
 			// display is in the room, but probably should be here
 			if (string_length(text) > 0 ) {
 				room_script.search_result_list = search_for_word(text,room_script.word_list);
+				// we are searching
 				room_script.search = true;
+				create_buttons = true;
 				}
 			else {
-				 // reset the search
+				// reset the search				 
 				room_script.search = false; //?
+				// go back to displaying everything
 				room_script.search_result_list = room_script.display_list;
 				}
 		break;
+		
+		//case vk_escape:
+		// quit the whole search
 		
 		default:
 		break;		

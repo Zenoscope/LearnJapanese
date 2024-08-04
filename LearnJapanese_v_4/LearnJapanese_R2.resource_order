@@ -30,6 +30,7 @@
   "ResourceOrderSettings":[
     {"name":"GMLive_fallback","order":1,"path":"extensions/GMLive_fallback/GMLive_fallback.yy",},
     {"name":"Note3","order":2,"path":"notes/Note3/Note3.yy",},
+    {"name":"_VocabWordDisplay","order":2,"path":"objects/_VocabWordDisplay/_VocabWordDisplay.yy",},
     {"name":"btn_Dialog_Search","order":3,"path":"objects/btn_Dialog_Search/btn_Dialog_Search.yy",},
     {"name":"btn_DropDown_old","order":2,"path":"objects/btn_DropDown_old/btn_DropDown_old.yy",},
     {"name":"btn_DropdownArrow","order":1,"path":"objects/btn_DropdownArrow/btn_DropdownArrow.yy",},
@@ -46,7 +47,6 @@
     {"name":"btnNAV_start0game","order":1,"path":"objects/btnNAV_start0game/btnNAV_start0game.yy",},
     {"name":"btnNAV_Verbs","order":7,"path":"objects/btnNAV_Verbs/btnNAV_Verbs.yy",},
     {"name":"btnNAV_Vocabulary","order":5,"path":"objects/btnNAV_Vocabulary/btnNAV_Vocabulary.yy",},
-    {"name":"dlg_VocabWordDisplay","order":2,"path":"objects/dlg_VocabWordDisplay/dlg_VocabWordDisplay.yy",},
     {"name":"Grammar_Dwn_Arrow","order":3,"path":"objects/Grammar_Dwn_Arrow/Grammar_Dwn_Arrow.yy",},
     {"name":"Grammar_Up_Arrow","order":1,"path":"objects/Grammar_Up_Arrow/Grammar_Up_Arrow.yy",},
     {"name":"Init_Room_adjectives","order":7,"path":"objects/Init_Room_adjectives/Init_Room_adjectives.yy",},

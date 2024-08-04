@@ -57,7 +57,7 @@ function search_for_word(text,search_array) {
 	while (counter  < array_length(search_array) ) {		
 		// loop through each element in the array
 		// if it matches, add it to the search list array
-		search_string = string_lower(search_array[counter].kanji + " " + search_array[counter].meaning  + "" + search_array[counter].field_2)
+		//search_string = string_lower(search_array[counter].kanji + " " + search_array[counter].meaning  + "" + search_array[counter].field_2)
 		search_string = string_lower(search_array[counter].kanji + " " + search_array[counter].meaning  + "" + search_array[counter].field_2)
 		
 		//if ( string_count(text,search_array[counter] ) > 0) {
@@ -93,7 +93,7 @@ function function_show_vocab_search_result(word_list_item,roomScript) {
 	xloc = 100;
 	yloc = 100;
 	
-	instance_create_layer(xloc, yloc, "DialogBox", dlg_VocabWordDisplay,{
+	instance_create_layer(xloc, yloc, "DialogBox", _VocabWordDisplay,{
 			// word_list_item refers to the specific item, rather than the whole array.
 			// index is used to get the index number for displaying the image
 				card_index	:   word_list_item.index,

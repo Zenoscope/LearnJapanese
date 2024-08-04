@@ -20,7 +20,7 @@ if (hovering &&room_script.search = false ) {//2
 	
 else {//2
 	
-	 if (global.show_helptext == true || room_script.search = true ){
+	 if (global.show_helptext == true || room_script.search == true ){
 		global.show_helptext = false;	
 		}
 	 	

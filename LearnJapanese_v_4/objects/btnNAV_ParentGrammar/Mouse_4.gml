@@ -13,8 +13,8 @@ switch (btn_name)
 		case "Adverbs":
 			
 			field_list = ["meaning","romanji","field_3"];
-			room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,field_list);
-			room_script.display_string = "An adverb describes a verb. They can appear pretty much anywhere in a sentence. Averbs can be created from adjectives. Adverbial nouns are nouns that function as adverbs in a sentence.";
+			room_script.word_list = function_add_to_WordBuilderArray("adverb",room_script.kanji_list,field_list);
+			room_script.display_string = "An adverb describes a verb. The can appear pretty much anywhere in a sentence. Averbs can be created from adjectives. Adverbial nouns are nouns that function as adverbs in a sentence.";
 			
 		break;
 
@@ -90,7 +90,7 @@ switch (btn_name)
 		case "Verbs":
 			// show search thinger for verbs
 			room_script.display_string = "Verb conjugation";
-			room_script.word_list = function_add_to_WordBuilderArray("Verb",room_script.kanji_list,field_list);
+			room_script.word_list = function_add_to_WordBuilderArray("verb",room_script.kanji_list,field_list);
 			
 			var lay_id = layer_get_id("Search");
 			instance_activate_layer(lay_id);
@@ -100,7 +100,7 @@ switch (btn_name)
 		case "Adjectives":
 			// show search thinger for adjectives
 			room_script.display_string = "Adjectives describe a noun, eg hot, handsome, old...\n\nThere is one, \"good\" which is irregular. The rest are regular.\n Adjectives can work like vebs , when used at the end of a sentence, and coupled with the auillary verb are cnjugated. See the tables below.";
-			room_script.word_list = function_add_to_WordBuilderArray("Adjective",room_script.kanji_list,field_list);
+			room_script.word_list = function_add_to_WordBuilderArray("adjective",room_script.kanji_list,field_list);
 		break;
 
 		case "N50sentences":

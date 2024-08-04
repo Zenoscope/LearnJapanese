@@ -17,8 +17,10 @@ event_inherited();
 		}//2
   
 	if (clicked) {
-		///room_script.blockButtonClick = true;
-		//function_show_vocab_search_result(room_script.display_list[card_index],room_script); // item number
-		room_script.search_result_method();
+		// replace this with the method variables
+		
+		room_script.blockButtonClick = true;
+		function_show_vocab_search_result(room_script.display_list[card_index],room_script); // item number
+		//room_script.search_result_method();
 	}
-//}
+

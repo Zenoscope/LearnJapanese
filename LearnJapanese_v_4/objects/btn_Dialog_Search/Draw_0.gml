@@ -81,17 +81,15 @@ var _width  = sprite_get_width(spr_SearchDropBG);
 var _height = sprite_get_height(spr_SearchDropBG);
 
 
-
-if (show_buttons == true){
+if (create_buttons == true){
 	room_script.vocab_display_buttons = [];
+	// delete the vocab layer, if it exists
+	//layer_destroy("vocab_layer");
 	
 if (array_length(room_script.display_list) > room_script.max_words_to_display ){
 	
 	// fix the size of the background and show the arrows.
 	room_script.word_display_number = array_length(room_script.display_list);
-	
-	// bg
-	//draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_yscale,0,c_white,1);
 	
 	var arrow = asset_get_index("Search_Up_Arrow");
 	instance_create_layer( (_width * _xscale) + 12 ,text_y_pos + 10 ,"vocab_layer",arrow,{
@@ -103,14 +101,13 @@ if (array_length(room_script.display_list) > room_script.max_words_to_display ){
 		room_script:	room_script	
 		}); 
 	//instance_create_layer( (_width * _xscale) , (6 * room_script.word_display_number) - text_y_pos,"vocab_layer",arrow); 	
-	
+	var _ysize =(_yscale/room_script.max_words_to_display) * room_script.word_display_number;
+	//draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_ysize,0,c_white,1);	
 	}
 else {
 	room_script.word_display_number = room_script.number_words_shown;
 	 // scale the bg by the total bg size 
-	var _ysize =(_yscale/room_script.max_words_to_display) * room_script.word_display_number;
-	
-	//draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_ysize,0,c_white,1);	
+	var _ysize =(_yscale/room_script.max_words_to_display) * room_script.word_display_number;	
 	}
     //draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,3.01,6,0,c_white,1);
 	}
@@ -119,11 +116,18 @@ draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,3.01,6,0,c_white,1)
 
 // draws the result button
 //for (i = 0; i < room_script.word_display_number; i++) {
-for (i = 0; i < room_script.max_words_to_display; i++) {  
+var _search_result_count = 0;
+if (array_length(room_script.display_list) < room_script.max_words_to_display) {
+		_search_result_count = array_length(room_script.display_list);
+		}
+else {
+	_search_result_count = room_script.max_words_to_display;
+	}
+
+for (var i = 0; i < _search_result_count; i++) {  
 // while (counter < room_script.word_display_number) {
 
-		if (show_buttons == true){
-		
+		if (create_buttons == true){		
 		var vocab_object = asset_get_index("btn_SearchResult");
 	
 		//
@@ -139,7 +143,8 @@ for (i = 0; i < room_script.max_words_to_display; i++) {
 				})
 		}
 
-		else {
+		// overwrite the existing buttons.
+		else {			
 			room_script.vocab_display_buttons[i].kanji = room_script.display_list[room_script.card_index + i].kanji;
 			room_script.vocab_display_buttons[i].meaning = room_script.display_list[room_script.card_index + i].meaning;
  			room_script.vocab_display_buttons[i].field_2 = room_script.display_list[room_script.card_index + i].field_2;			
@@ -153,9 +158,8 @@ if (mouse_wheel_up()) {
 	}
 if (mouse_wheel_down()) {
 	if (room_script.card_index < array_length(room_script.word_list) - room_script.max_words_to_display) {
-		show_debug_message("stop");
 		room_script.card_index++;
 		}
 	}
 
-show_buttons = false;
+create_buttons = false;
