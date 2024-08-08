@@ -16,6 +16,11 @@ switch (btn_name)
 			room_script.word_list = function_add_to_WordBuilderArray("adverb",room_script.kanji_list,field_list);
 			room_script.display_string = "An adverb describes a verb. The can appear pretty much anywhere in a sentence. Averbs can be created from adjectives. Adverbial nouns are nouns that function as adverbs in a sentence.";
 			
+			room_script.search_result_method = function(){
+				// just an example
+				show_debug_message("you clicked "+ btn_name);
+				}			
+			
 		break;
 
 		case "Particles":			
@@ -83,7 +88,13 @@ switch (btn_name)
 			for(lines = 1; lines <= room_script.num_display_lines; lines++; ) {
 				//display_string = string_join("\n",grammar_string[1],grammar_string[2]);
 				room_script.display_string = string_join("\n",room_script.display_string,room_script.grammar_string[lines]);
-				}			
+				}
+				
+			room_script.search_result_method = function(){
+				// just an example
+				show_debug_message("you clicked "+ btn_name);
+				}
+
 			
 		break;
 
@@ -95,12 +106,23 @@ switch (btn_name)
 			var lay_id = layer_get_id("Search");
 			instance_activate_layer(lay_id);
 			
+			room_script.search_result_method = function(){
+				// just an example
+				show_debug_message("you clicked "+ btn_name);
+				}
+			
 		break;
 
 		case "Adjectives":
 			// show search thinger for adjectives
 			room_script.display_string = "Adjectives describe a noun, eg hot, handsome, old...\n\nThere is one, \"good\" which is irregular. The rest are regular.\n Adjectives can work like vebs , when used at the end of a sentence, and coupled with the auillary verb are cnjugated. See the tables below.";
 			room_script.word_list = function_add_to_WordBuilderArray("adjective",room_script.kanji_list,field_list);
+
+			room_script.search_result_method = function(){
+				// just an example
+				show_debug_message("you clicked "+ btn_name);
+				}
+
 		break;
 
 		case "N50sentences":
@@ -114,7 +136,7 @@ switch (btn_name)
 		break;
 
 		default:
-			show_debug_message(" ");
+			show_debug_message("THe grammar buttons are broken! Congrats, you found a bug!");
 		break;
 		}
 
@@ -126,6 +148,15 @@ var lay_id = layer_get_id(btn_name);
 instance_activate_layer(lay_id);
 room_script.grammar_Room = btn_name;
 
-// max number of hits to display
-//room_script.max_words_to_display = 10;
-//room_script.number_words_shown = room_script.max_words_to_display;
+///---------------------------------------
+// Grammar Button method scripts
+
+/*
+Verbs - fill in the verb conjugation form 
+ plus special case suru
+Adverbs - fill in the adverb conjugation video_format_rgba
+Adjectives (na vs i)
+Particles doesn't need it, it's a wall of text
+Sentence constructor doesn't need it either
+N5 sentence structure
+*/

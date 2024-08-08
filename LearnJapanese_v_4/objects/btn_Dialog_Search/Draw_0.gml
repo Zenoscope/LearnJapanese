@@ -96,11 +96,19 @@ else{
 
 //------------------------------
 
-var _yscale = 6;
-var _xscale = 3;
+_yscale = 6;
+_xscale = 3;
 
-var _width  = sprite_get_width(spr_SearchDropBG);
-var _height = sprite_get_height(spr_SearchDropBG);
+_width  = sprite_get_width(spr_SearchDropBG);
+_height = sprite_get_height(spr_SearchDropBG);
+
+//------------------------------
+// create the results
+
+if ( create_buttons == true && layer_exists("vocab_layer") ){
+	layer_destroy("vocab_layer");
+	searchfunction_create_vocab_layer();
+	}
 
 // create the buttons and arrows one time
 if (create_buttons == true){
@@ -121,32 +129,27 @@ if (array_length(room_script.display_list) > room_script.max_words_to_display ){
 	instance_create_layer( (_width * _xscale) + 12 , text_y_pos + (_height * 5.5),"vocab_layer",arrow,{
 			room_script:	room_script	
 			});	
-	var _ysize =(_yscale/room_script.max_words_to_display) * room_script.word_display_number;
+	//_ysize =(_yscale/room_script.max_words_to_display) * room_script.word_display_number;
+	//_ysize =(_yscale/room_script.max_words_to_display) * _search_result_count;
 		}
 else {
 	room_script.word_display_number = room_script.number_words_shown;
 	 // scale the bg by the total bg size 
-	var _ysize =(_yscale/room_script.max_words_to_display) * room_script.word_display_number;	
+	//_ysize =(_yscale/room_script.max_words_to_display) * room_script.word_display_number;	
 	}    
 } // end of create buttons
 
+_ysize =(_yscale/room_script.max_words_to_display) * _search_result_count;
 
-//draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,3.01,6,0,c_white,1);
-
-var _ysize =(_yscale/room_script.max_words_to_display) * _search_result_count;
+// baclkground of the image
 draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_ysize + 0.2,0,c_white,1);
+//draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_ysize + 0.2,0,c_red,1);
 
-//------------------------------
-// create the results
-
-if ( create_buttons == true && layer_exists("vocab_layer") ){
-	layer_destroy("vocab_layer");
-	create_vocab_layer();
-	}
-
-for (var i = 0; i < _search_result_count; i++) {  
+for (i = 0; i < _search_result_count; i++) {  
 		// do this only once:
 		if (create_buttons == true){
+			
+		searchfunction_create_vocab_layer();			
 		
 		var vocab_object = asset_get_index("btn_SearchResult");		
 		
@@ -183,5 +186,7 @@ if (mouse_wheel_down()) {
 		room_script.card_index++;
 		}
 	}
+
+//draw_rectangle(self.x - 12, self.y - 12,(_width *_xscale) + self.x , (self.y + ( (_ysize + 1) * _height)) + 12,false);
 
 create_buttons = false;

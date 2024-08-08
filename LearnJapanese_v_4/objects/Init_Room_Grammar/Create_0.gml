@@ -163,18 +163,24 @@ var LayerArray = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs",
 function_deactivate_layers_by_Name(LayerArray);
 function_execute_script("scr_VocabList");
 
+// -- Search settings needed outside the search object
+
 // show a list of words when activating the search function
-show_initial_words = true;
-search = false;
-use_search = false;
-search = false;
+// show_initial_words = true;
+show_initial_words = false;
+// initial list for search results
 search_result_list = [];
-//reached_list_end = false;
-//room_script.search = false;
-found_something = false;
-//current_scroll_clicks = 1;
-//reached_list_end = false;
+// showing no words yet either.
 number_words_shown = 0;
+// number of words to display 
 max_words_to_display = 8;
-card_index = 0;
+
+// don't block button clicks yet
 blockButtonClick = false;
+// hide the result buttons
+show_results = false;
+
+// set the search to be false
+search = false;
+
+card_index = 0;

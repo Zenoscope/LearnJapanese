@@ -19,6 +19,7 @@ if (string_count(chr(keyboard_key),enabled_keys) && (string_length( chr(keyboard
 
 // capture backspace key
 if (!keyboard_check(vk_control)) {
+	
 	switch(keyboard_key) {
 		case vk_backspace:
 			text = string_copy(text,0,string_length(text) - 1);
@@ -43,9 +44,12 @@ if (!keyboard_check(vk_control)) {
 		break;
 		
 		//case vk_escape:
-		// quit the whole search
-		
+		case vk_tab:
+		//case vk_space:
+			searchfunction_reset_dropdown();
+		break;		
 		default:
+			//show_debug_message(string(keyboard_key));
 		break;		
 		}	
 	}
@@ -60,3 +64,4 @@ else {
 		break;
 		}
 	}
+	

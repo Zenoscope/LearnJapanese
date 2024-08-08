@@ -13,23 +13,6 @@ Room_Init scripts should set variables to be used in the room,
  eg searching for Kanji or whatever.
 Objects set methods and variables used in the stuff.
 
-
-
-**********************************
-***  variables needed by the search functions
-**********************************
-// field which is being searched, needs to be the column name
-field_list = ["field_4"];
-// what we are searching for, eg kanji, hiragana etc
-// adds the stuff to the array.
-word_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,field_list);
-// max number of hits to display
-max_words_to_display = 10;
-number_words_shown = room_script.max_words_to_display;
-room_script.card_index
-*/
-
-
 /// DESCRIPTION: Search for items in an array, and return an array of matches.
 ///  
 /// USAGE:
@@ -44,6 +27,7 @@ room_script.card_index
 // function_add_to_WordBuilderArray function
 // eg is searches for a match in a column and returns the match.
 // if I could not hardcode the columns, this could be reused.
+*/
 
 function search_for_word(text,search_array) {
 	
@@ -89,7 +73,11 @@ function search_for_word(text,search_array) {
 /// @param word_list_item item from the wordlist
 /// @param roomScript roomScript
 
-function function_show_vocab_search_result(word_list_item,roomScript) {
+function searchfunction_show_vocab_search_result(word_list_item,roomScript) {
+	if (!layer_exists( "DialogBox")){
+		layer_create(-1000,"DialogBox")
+		}
+	
 	xloc = 100;
 	yloc = 100;
 	
@@ -108,3 +96,9 @@ function function_show_vocab_search_result(word_list_item,roomScript) {
 	 
 }
 
+function searchfunction_reset_dropdown() {
+	//searchfunction
+	room_script.search = false;
+	use_search = false;
+	layer_destroy("vocab_layer");
+	}

@@ -4,27 +4,26 @@
 
 if (live_call()) return live_result;
 
+// these are meta variables, they are not set in the actual room script itself.
 // Are we searching? Not yet
 room_script.search = false;
 // reached the end of the list (possibly delete)
 room_script.reached_list_end = false;
 // searcn returned something
 room_script.found_something = false;
-room_script.blockButtonClick = false; // oly true if search finds something
 room_script.current_scroll_clicks = 1;// 
 room_script.reached_list_end = false;
 room_script.word_display_number = 0;
 
-// dont start wih searching
-use_search = false;
-// create the buttons, then reuse them
+
+// create the arrow buttons, then reuse them
 create_buttons = true;
 
 text_halign = fa_left;
 text_valign = fa_top;
 
 // initial card which is shown on the first card.
-room_script.card_index = 0;
+// room_script.card_index = 0;
 // generate an empty card array
 room_script.card_array = [];
 
@@ -56,7 +55,7 @@ image_speed = 0;
 // make the searchbox background image random
 image_index = irandom(self. image_number);
 
-function create_vocab_layer(){
+function searchfunction_create_vocab_layer(){
 	// get the highest layer and put this above that:
 	var my_layer_depth = 0;
 	var current_depth = 0;
