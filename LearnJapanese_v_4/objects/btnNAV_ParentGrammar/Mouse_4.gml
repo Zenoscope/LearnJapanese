@@ -17,7 +17,9 @@ switch (btn_name)
 			room_script.display_string = "An adverb describes a verb. The can appear pretty much anywhere in a sentence. Averbs can be created from adjectives. Adverbial nouns are nouns that function as adverbs in a sentence.";
 			
 			room_script.search_result_method = function(){
-				// just an example
+				// just an example				
+				//Adverbs - fill in the adverb conjugation
+				
 				show_debug_message("you clicked "+ btn_name);
 				}			
 			
@@ -90,10 +92,10 @@ switch (btn_name)
 				room_script.display_string = string_join("\n",room_script.display_string,room_script.grammar_string[lines]);
 				}
 				
-			room_script.search_result_method = function(){
+			//room_script.search_result_method = function(){
 				// just an example
-				show_debug_message("you clicked "+ btn_name);
-				}
+			//	show_debug_message("you clicked "+ btn_name);
+			//	}
 
 			
 		break;
@@ -104,10 +106,28 @@ switch (btn_name)
 			room_script.word_list = function_add_to_WordBuilderArray("verb",room_script.kanji_list,field_list);
 			
 			var lay_id = layer_get_id("Search");
-			instance_activate_layer(lay_id);
+			instance_activate_layer(lay_id);			
 			
 			room_script.search_result_method = function(){
 				// just an example
+				//Verbs - fill in the verb conjugation form 
+				//plus special case suru
+				obj_VerbTextDict.text = "dict 1";
+				obj_VerbTextStem.text = "stem 1";
+				obj_VerbTextTeForm.text = "te form 1";
+				
+				obj_VerbTextPastNegPln.text = "past neg pln 1";
+				obj_VerbTextPastNegPol.text = "past neg pol 1";
+				
+				obj_VerbTextPastPln.text = "past pln 1";
+				obj_VerbTextPastPol.text = "past pol 1";
+								
+				obj_VerbTextPresNegPln.text = "pre neg pln 1";
+				obj_VerbTextPreNegPol.text = "pre neg pol 1";
+				
+				obj_VerbTextPresPln.text = "pres pln 1";
+				obj_VerbTextPresPol.text = "pres pol 1";
+				
 				show_debug_message("you clicked "+ btn_name);
 				}
 			
@@ -120,6 +140,7 @@ switch (btn_name)
 
 			room_script.search_result_method = function(){
 				// just an example
+				// Adjectives (na vs i)
 				show_debug_message("you clicked "+ btn_name);
 				}
 
@@ -148,15 +169,3 @@ var lay_id = layer_get_id(btn_name);
 instance_activate_layer(lay_id);
 room_script.grammar_Room = btn_name;
 
-///---------------------------------------
-// Grammar Button method scripts
-
-/*
-Verbs - fill in the verb conjugation form 
- plus special case suru
-Adverbs - fill in the adverb conjugation video_format_rgba
-Adjectives (na vs i)
-Particles doesn't need it, it's a wall of text
-Sentence constructor doesn't need it either
-N5 sentence structure
-*/
