@@ -161,6 +161,7 @@ for (i = 0; i < _search_result_count; i++) {
 				kanji:			room_script.display_list[room_script.card_index + i].kanji,
 				meaning:		room_script.display_list[room_script.card_index + i].meaning,
  				kana:			room_script.display_list[room_script.card_index + i].field_2,
+				
 				room_script:	room_script				
 				})
 		}

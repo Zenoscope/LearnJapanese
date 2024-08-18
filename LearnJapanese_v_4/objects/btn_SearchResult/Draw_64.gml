@@ -19,6 +19,42 @@ draw_set_halign(fa_top);
 x_scale = 0.75;
 y_scale = 0.75;
 
-draw_text_ext_transformed(x + x_offset,y + y_offset,		"Kanji: "	+ kanji,0,1500,x_scale,y_scale,0);
-draw_text_ext_transformed(x + x_offset,y + kerning,		"Meaning: "	+ meaning,0,1500,x_scale,y_scale,0);
-draw_text_ext_transformed(x + x_offset + 450,y + y_offset ,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);
+// depending on the room, draw different things.
+// switch statement
+if (string_count(room_script.display_name,"Adverbs") > 0 ){
+			draw_text_ext_transformed(x + x_offset,y + y_offset			,"Adv Kanji: "	+ kanji,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);			
+		}
+else if (string_count(room_script.display_name,"Adjectives") > 0 ){
+			draw_text_ext_transformed(x + x_offset,y + y_offset			,"Adj Kanji: "	+ kanji,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);
+		}
+else if (string_count(room_script.display_name,"Verbs") > 0 ){
+			draw_text_ext_transformed(x + x_offset,y + y_offset			,"Verbs Kanji: "	+ kanji,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);
+		}
+else if (string_count(room_script.display_name,"Kanji") > 0 ){
+			draw_text_ext_transformed(x + x_offset,y + y_offset			,"Kanji Kanji: "	+ kanji,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);
+		}			
+else if (string_count(room_script.display_name,"Hiragana") > 0 ){		
+			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);			
+		}		
+else if (string_count(room_script.display_name,"Katakana") > 0 ){
+			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);		
+		}
+else	{		
+			show_debug_message("Room not found");
+			show_debug_message(room_script.display_name);		
+		}
+
+// this is for Kanji search
+draw_text_ext_transformed(x + x_offset,y + y_offset			,"Kanji: "	+ kanji,0,1500,x_scale,y_scale,0);
+draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);
+draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);

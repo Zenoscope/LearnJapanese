@@ -40,3 +40,15 @@ If the instance x,y matches the one in the array, then match is confirmed.
 
 Insert the instance of the target card into the draggable card
 When the instance ID matches....
+
+// switch statement
+switch ( )
+		{		
+		case "":		    
+
+		break;        
+		default:
+			show_debug_message(" ");
+		break;
+		}
+*/

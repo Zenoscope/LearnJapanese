@@ -17,11 +17,10 @@ event_inherited();
 		}//2
   
 	if (clicked) {
-		// replace this with the method variables
-		
+		// replace this with the method variables		
 		room_script.blockButtonClick = true;
-		//searchfunction
-		//searchfunction_show_vocab_search_result(room_script.display_list[card_index],room_script); // item number
+		// delete the results
+		// 
 		room_script.search_result_method();
 	}
 

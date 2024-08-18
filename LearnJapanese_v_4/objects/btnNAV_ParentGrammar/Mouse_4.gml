@@ -25,7 +25,7 @@ switch (btn_name)
 			
 		break;
 
-		case "Particles":			
+		case "Particles":		
 			// might have to loop through and delete all of the grammar_string[]'s first?
 			room_script.display_string = "";
 						
@@ -112,22 +112,49 @@ switch (btn_name)
 				// just an example
 				//Verbs - fill in the verb conjugation form 
 				//plus special case suru
-				obj_VerbTextDict.text = "dict 1";
-				obj_VerbTextStem.text = "stem 1";
-				obj_VerbTextTeForm.text = "te form 1";
 				
-				obj_VerbTextPastNegPln.text = "past neg pln 1";
-				obj_VerbTextPastNegPol.text = "past neg pol 1";
+				// suru verb
+				if (string_count(verbStem, "suru") > 0 ) {
+					conjugation_pln = verbStem + " shi";
+					conjugation_pol = verbStem + " shi";		
+					}
 				
-				obj_VerbTextPastPln.text = "past pln 1";
-				obj_VerbTextPastPol.text = "past pol 1";
+				if (string_count(verbStem, "/") > 0) {
+					temp = string_split(verbStem,"/")
+					conjugation_pln = temp[1];
+					conjugation_pol = temp[0];
+					}
+				else { 					
+					conjugation_pln = verbStem;
+					conjugation_pol = verbStem;
+					}
+				
+				
+				// Dictionary/infinitive 
+				obj_VerbTextDict.text	= verbStem + "u";// kotaeru
+				
+				obj_VerbTextStem.text	= verbStem; // kotae
+				// stems and inf the same?
+				obj_VerbTextTeForm.text = verbStem + "te"; // kotaete
+				
+				// kotaeru
+				
+				// aka present indicitive plain
+				obj_VerbTextPresPln.text	= conjugation_pln;  //kotae + ru
+				obj_VerbTextPresNegPln.text = conjugation_pln + "nai"; //kotae + nai
+				
+				// aka past indicitive plain
+				obj_VerbTextPastPln.text	= conjugation_pln + "ta"; // kotae + ta
+				obj_VerbTextPastNegPln.text = conjugation_pln + "masen deshita"; // kotae + nakatta
+				
+				// aka present indicitive polite
+				obj_VerbTextPresPol.text	= conjugation_pol + "masu"; //kotae + masu
+				obj_VerbTextPreNegPol.text	= conjugation_pol + "masen"; //kotae + masen
+				
+				// aka past indicitive polite
+				obj_VerbTextPastPol.text	= conjugation_pol + "mashita"; //kotae + mashita
+				obj_VerbTextPastNegPol.text = conjugation_pol + "masen deshita"; //kotae + masen deshita
 								
-				obj_VerbTextPresNegPln.text = "pre neg pln 1";
-				obj_VerbTextPreNegPol.text = "pre neg pol 1";
-				
-				obj_VerbTextPresPln.text = "pres pln 1";
-				obj_VerbTextPresPol.text = "pres pol 1";
-				
 				show_debug_message("you clicked "+ btn_name);
 				}
 			
