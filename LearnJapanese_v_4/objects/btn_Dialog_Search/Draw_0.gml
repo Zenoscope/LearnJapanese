@@ -67,6 +67,8 @@ if (blink) {
 
 //------------------------------
 
+if (room_script.search == true) {
+
 // set the fonts
 draw_set_font(fnt_button);
 draw_set_color(c_black);
@@ -161,7 +163,8 @@ for (i = 0; i < _search_result_count; i++) {
 				kanji:			room_script.display_list[room_script.card_index + i].kanji,
 				meaning:		room_script.display_list[room_script.card_index + i].meaning,
  				kana:			room_script.display_list[room_script.card_index + i].field_2,
-				
+				// FIXME this will casue porblems with other stuff that don'ty have the verbstem field.
+				verbStem:		room_script.display_list[room_script.card_index + i].verbStem,
 				room_script:	room_script				
 				})
 		}
@@ -191,3 +194,5 @@ if (mouse_wheel_down()) {
 //draw_rectangle(self.x - 12, self.y - 12,(_width *_xscale) + self.x , (self.y + ( (_ysize + 1) * _height)) + 12,false);
 
 create_buttons = false;
+
+} // end of:  if (room_script.search = false) {

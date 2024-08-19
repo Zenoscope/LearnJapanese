@@ -19,8 +19,7 @@ event_inherited();
 	if (clicked) {
 		// replace this with the method variables		
 		room_script.blockButtonClick = true;
-		// delete the results
-		// 
-		room_script.search_result_method();
+		room_script.search = false;				
+		room_script.search_result_method(verbStem);
 	}
 

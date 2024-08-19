@@ -13,10 +13,10 @@ switch (btn_name)
 		case "Adverbs":
 			
 			field_list = ["meaning","romanji","field_3"];
-			room_script.word_list = function_add_to_WordBuilderArray("adverb",room_script.kanji_list,field_list);
+			room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,field_list);
 			room_script.display_string = "An adverb describes a verb. The can appear pretty much anywhere in a sentence. Averbs can be created from adjectives. Adverbial nouns are nouns that function as adverbs in a sentence.";
 			
-			room_script.search_result_method = function(){
+			room_script.search_result_method = function(arg){
 				// just an example				
 				//Adverbs - fill in the adverb conjugation
 				
@@ -103,12 +103,18 @@ switch (btn_name)
 		case "Verbs":
 			// show search thinger for verbs
 			room_script.display_string = "Verb conjugation";
-			room_script.word_list = function_add_to_WordBuilderArray("verb",room_script.kanji_list,field_list);
+			room_script.word_list = function_add_to_WordBuilderArray("Verb",room_script.kanji_list,field_list);
 			
 			var lay_id = layer_get_id("Search");
 			instance_activate_layer(lay_id);			
 			
-			room_script.search_result_method = function(){
+			room_script.search_result_method = function(arg){
+				
+				// delete the vocab layer
+				layer_destroy("vocab_layer");
+								
+				verbStem = arg;
+				
 				// just an example
 				//Verbs - fill in the verb conjugation form 
 				//plus special case suru
@@ -131,29 +137,29 @@ switch (btn_name)
 				
 				
 				// Dictionary/infinitive 
-				obj_VerbTextDict.text	= verbStem + "u";// kotaeru
+				obj_VerbTextDict._text	= verbStem + "u";// kotaeru
 				
-				obj_VerbTextStem.text	= verbStem; // kotae
+				obj_VerbTextStem._text	= verbStem; // kotae
 				// stems and inf the same?
-				obj_VerbTextTeForm.text = verbStem + "te"; // kotaete
+				obj_VerbTextTeForm._text = verbStem + "te"; // kotaete
 				
 				// kotaeru
 				
 				// aka present indicitive plain
-				obj_VerbTextPresPln.text	= conjugation_pln;  //kotae + ru
-				obj_VerbTextPresNegPln.text = conjugation_pln + "nai"; //kotae + nai
+				obj_VerbTextPresPln._text	= conjugation_pln;  //kotae + ru
+				obj_VerbTextPresNegPln._text = conjugation_pln + "nai"; //kotae + nai
 				
 				// aka past indicitive plain
-				obj_VerbTextPastPln.text	= conjugation_pln + "ta"; // kotae + ta
-				obj_VerbTextPastNegPln.text = conjugation_pln + "masen deshita"; // kotae + nakatta
+				obj_VerbTextPastPln._text	= conjugation_pln + "ta"; // kotae + ta
+				obj_VerbTextPastNegPln._text = conjugation_pln + "masen deshita"; // kotae + nakatta
 				
 				// aka present indicitive polite
-				obj_VerbTextPresPol.text	= conjugation_pol + "masu"; //kotae + masu
-				obj_VerbTextPreNegPol.text	= conjugation_pol + "masen"; //kotae + masen
+				obj_VerbTextPresPol._text	= conjugation_pol + "masu"; //kotae + masu
+				obj_VerbTextPreNegPol._text	= conjugation_pol + "masen"; //kotae + masen
 				
 				// aka past indicitive polite
-				obj_VerbTextPastPol.text	= conjugation_pol + "mashita"; //kotae + mashita
-				obj_VerbTextPastNegPol.text = conjugation_pol + "masen deshita"; //kotae + masen deshita
+				obj_VerbTextPastPol._text	= conjugation_pol + "mashita"; //kotae + mashita
+				obj_VerbTextPastNegPol._text = conjugation_pol + "masen deshita"; //kotae + masen deshita
 								
 				show_debug_message("you clicked "+ btn_name);
 				}
@@ -163,9 +169,9 @@ switch (btn_name)
 		case "Adjectives":
 			// show search thinger for adjectives
 			room_script.display_string = "Adjectives describe a noun, eg hot, handsome, old...\n\nThere is one, \"good\" which is irregular. The rest are regular.\n Adjectives can work like vebs , when used at the end of a sentence, and coupled with the auillary verb are cnjugated. See the tables below.";
-			room_script.word_list = function_add_to_WordBuilderArray("adjective",room_script.kanji_list,field_list);
+			room_script.word_list = function_add_to_WordBuilderArray("Adjective",room_script.kanji_list,field_list);
 
-			room_script.search_result_method = function(){
+			room_script.search_result_method = function(arg){
 				// just an example
 				// Adjectives (na vs i)
 				show_debug_message("you clicked "+ btn_name);
