@@ -1274,9 +1274,19 @@ function function_play_cow_narrator(){
 					obj_CowNarr.image_index = obj_CowNarr.image_index + random(obj_CowNarr.image_number);
 					cow_frame_change = 0;
 					}
-				}
-			//show_debug_message("cow exists");
+				}			
 		}
 	}
 
 
+function function_join_string(start_line,max_lines,array_input) {
+				temp_string = "";
+				//array_delete( array_input, 0, array_length(array_input) )
+				// array_input = [];
+				for(var line = start_line; line <= (max_lines + start_line); line++;) {
+					temp_string = string_join("\n",temp_string, array_input[line]);
+					}
+					
+				var display_string = string_join("",room_script.title_string, temp_string );
+				return display_string
+				}

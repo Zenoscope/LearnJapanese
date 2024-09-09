@@ -10,7 +10,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 draw_set_color(c_black);
  
-//kern = string_height("A");
-// draw_text_ext_transformed(self.x,self.y,display_name,kern / 1.5,max_string_width,1,1,0);
+kern = string_height("A");
 
-draw_text(self.x,self.y,_text);
+draw_text_ext_transformed(self.x,self.y,_text,kern / 1.5,1000,1,1,0);
+//draw_text(self.x,self.y,_text);

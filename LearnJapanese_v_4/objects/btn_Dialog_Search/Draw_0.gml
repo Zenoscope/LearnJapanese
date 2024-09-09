@@ -50,9 +50,12 @@ draw_set_color(c_black);
 draw_set_halign(text_halign);
 draw_set_valign(text_valign);
 
-draw_text_transformed(self.x , self.y, text, scale, scale,0);
-
 var cursor_x = x + length + half_char_width;
+
+// displays the text
+draw_text_transformed(self.x + 5, self.y, text, scale, scale,0);
+// draw_text_transformed(cursor_x , self.y, text, scale, scale,0);
+
 
 // draws the cursor
 if (blink) {
@@ -114,7 +117,8 @@ if ( create_buttons == true && layer_exists("vocab_layer") ){
 
 // create the buttons and arrows one time
 if (create_buttons == true){
-	room_script.vocab_display_buttons = [];		
+	room_script.vocab_display_buttons = [];
+	searchfunction_create_vocab_layer();	
 
 // if the word list is longer than the numnber of woreds to put on the screen...	
 if (array_length(room_script.display_list) > room_script.max_words_to_display ){

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ButtonHalfWidth",
-    "path":"sprites/spr_ButtonHalfWidth/spr_ButtonHalfWidth.yy",
+    "name":"spr_BackBtn",
+    "path":"sprites/spr_BackBtn/spr_BackBtn.yy",
   },
   "spriteMaskId":null,
   "visible":true,
