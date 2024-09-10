@@ -32,16 +32,16 @@ switch (btn_name)
 			
 			room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,field_list);
 			
-			room_script.grammar_string[1] = "Describes a verb. Adverbs in English end in -ly eg:";
-			room_script.grammar_string[2] = "slowly, brokenly, noisily, and can come either before";
-			room_script.grammar_string[3] = "or after the verb.";
-			room_script.grammar_string[4] = "In the sentence 'I quickly ran to the train station'";
-			room_script.grammar_string[5] = "'quickly' is the adverb.";
+			room_script.grammar_string[0] = "Describes a verb. Adverbs in English end in -ly eg:";
+			room_script.grammar_string[1] = "slowly, brokenly, noisily, and can come either before";
+			room_script.grammar_string[2] = "or after the verb.";
+			room_script.grammar_string[3] = "In the sentence 'I quickly ran to the train station'";
+			room_script.grammar_string[4] = "'quickly' is the adverb.";
 						
 			room_script.total_lines = 5;
 			room_script.current_line = 5;
 			room_script.display_lines = 5;
-			room_script.max_words_to_display = 4;
+			room_script.max_words_to_display = 5;
 			
 			room_script.display_string = function_join_string(0,4,room_script.grammar_string);
 			
@@ -62,8 +62,9 @@ switch (btn_name)
 		break;
 
 		case "Particles":		
-			// might have to loop through and delete all of the grammar_string[]'s first?
-			//room_script.display_string = "";
+			// might have to loop through and delete all of the grammar_string[]'s first?			
+			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
+			
 			room_script.title_string = "Particles";
 			
 			// max width is to col 100
@@ -102,57 +103,57 @@ switch (btn_name)
 			room_script.grammar_string[ 32] = "sapporo o ikimasu";
 			room_script.grammar_string[ 33] = "";
 			room_script.grammar_string[ 34] = "Made, まで";
-			room_script.grammar_string[ 35] = "1) until";
-			room_script.grammar_string[ 36] = "example: Kinou made Tokyo ni imashita (I was in";
-			room_script.grammar_string[ 36] = "Tokyo until yesterday)";
-			room_script.grammar_string[ 37] = "2) as far as";
-			room_script.grammar_string[ 38] = "example: 彼は東京まで行った。 (Kare wa Tokyo made";
-			room_script.grammar_string[ 36] = " itta.) (He went as far as Tokyo.)";
-			room_script.grammar_string[ 39] = "3) to (an extent)";
-			room_script.grammar_string[ 40] = "example (3):-----------";
-			room_script.grammar_string[ 41] = "4) even ~";
-			room_script.grammar_string[ 42] = "example (4):";
-			room_script.grammar_string[ 43] = "";
-			room_script.grammar_string[ 44] = "Ne, ね";
-			room_script.grammar_string[ 44] = "1) isn't it? right? eh? (sentence ending particle";
-			room_script.grammar_string[ 45] = "seeking agreement)";
-			room_script.grammar_string[ 46] = "example: Inu wa kawaii desu ne? Dogs are cute, eh?";
-			room_script.grammar_string[ 47] = "";
-			room_script.grammar_string[ 48] = "Ni, に";
-			room_script.grammar_string[ 49] = "1) destination particle; in; at; on; to";
-			room_script.grammar_string[ 50] = "example: honda-san wa densha ni ikmasu";
-			room_script.grammar_string[ 51] = "";
-			room_script.grammar_string[ 52] = "Ni / Ne, に/へ";
-			room_script.grammar_string[ 53] = "1) to (indicates direction / destination)";
-			room_script.grammar_string[ 54] = "example: honda-san wa Tokyo ni ikimashta";
-			room_script.grammar_string[ 55] = "";
-			room_script.grammar_string[ 56] = "No, の";
-			room_script.grammar_string[ 57] = "1) possessive particle, shows the relationship";
-			room_script.grammar_string[ 58] = "between subject and object.";
-			room_script.grammar_string[ 59] = "example: koko wa watashi no karuma desu";
-			room_script.grammar_string[ 60] = "";
-			room_script.grammar_string[ 61] = "O / Go, お / ご";
-			room_script.grammar_string[ 62] = "1) polite marker; honorific prefix particle";
-			room_script.grammar_string[ 63] = "example:";
-			room_script.grammar_string[ 64] = "";
-			room_script.grammar_string[ 65] = "O / Wo, を";
-			room_script.grammar_string[ 66] = "1) object marker particle";
-			room_script.grammar_string[ 67] = "example:";
-			room_script.grammar_string[ 68] = "";
-			room_script.grammar_string[ 69] = "To, と";
-			room_script.grammar_string[ 70] = "1) and; with; as; (connecting particle)";
-			room_script.grammar_string[ 71] = "example: doa to mado shimasum kudasai";
-			room_script.grammar_string[ 72] = "";
-			room_script.grammar_string[ 73] = "Wa, は";
-			room_script.grammar_string[ 74] = "1) topic marker";
-			room_script.grammar_string[ 75] = "example: watashi wa mizu nomimasu i drink water";
-			room_script.grammar_string[ 76] = "";
-			room_script.grammar_string[ 77] = "yori hou ga, よりほうが";
-			room_script.grammar_string[ 78] = "1) [A] is preferred to [B]";
-			room_script.grammar_string[ 79] = "example: 私 は 犬 より 補 が 猫 です ね I prefer";
-			room_script.grammar_string[ 80] = "cats to dogs.";
+			room_script.grammar_string[ 35] = "1) until";			
+			room_script.grammar_string[ 36] = "example: Kinou made Tokyo ni imashita (I was in";			
+			room_script.grammar_string[ 37] = "Tokyo until yesterday)";
+			room_script.grammar_string[ 38] = "2) as far as";
+			room_script.grammar_string[ 39] = "example: 彼は東京まで行った。 (Kare wa Tokyo made";
+			room_script.grammar_string[ 40] = " itta.) (He went as far as Tokyo.)";
+			room_script.grammar_string[ 41] = "3) to (an extent)";
+			room_script.grammar_string[ 42] = "example (3):-----------";
+			room_script.grammar_string[ 43] = "4) even ~";
+			room_script.grammar_string[ 44] = "example (4):";
+			room_script.grammar_string[ 45] = "";
+			room_script.grammar_string[ 46] = "Ne, ね";
+			room_script.grammar_string[ 47] = "1) isn't it? right? eh? (sentence ending particle";
+			room_script.grammar_string[ 48] = "seeking agreement)";
+			room_script.grammar_string[ 49] = "example: Inu wa kawaii desu ne? Dogs are cute, eh?";
+			room_script.grammar_string[ 50] = "";
+			room_script.grammar_string[ 51] = "Ni, に";
+			room_script.grammar_string[ 52] = "1) destination particle; in; at; on; to";
+			room_script.grammar_string[ 53] = "example: honda-san wa densha ni ikmasu";
+			room_script.grammar_string[ 54] = "";
+			room_script.grammar_string[ 55] = "Ni / Ne, に/へ";
+			room_script.grammar_string[ 56] = "1) to (indicates direction / destination)";
+			room_script.grammar_string[ 57] = "example: honda-san wa Tokyo ni ikimashta";
+			room_script.grammar_string[ 58] = "";
+			room_script.grammar_string[ 59] = "No, の";
+			room_script.grammar_string[ 60] = "1) possessive particle, shows the relationship";
+			room_script.grammar_string[ 61] = "between subject and object.";
+			room_script.grammar_string[ 62] = "example: koko wa watashi no karuma desu";
+			room_script.grammar_string[ 63] = "";
+			room_script.grammar_string[ 64] = "O / Go, お / ご";
+			room_script.grammar_string[ 65] = "1) polite marker; honorific prefix particle";
+			room_script.grammar_string[ 66] = "example:";
+			room_script.grammar_string[ 67] = "";
+			room_script.grammar_string[ 68] = "O / Wo, を";
+			room_script.grammar_string[ 69] = "1) object marker particle";
+			room_script.grammar_string[ 70] = "example:";
+			room_script.grammar_string[ 71] = "";
+			room_script.grammar_string[ 72] = "To, と";
+			room_script.grammar_string[ 73] = "1) and; with; as; (connecting particle)";
+			room_script.grammar_string[ 74] = "example: doa to mado shimasum kudasai";
+			room_script.grammar_string[ 75] = "";
+			room_script.grammar_string[ 76] = "Wa, は";
+			room_script.grammar_string[ 77] = "1) topic marker";
+			room_script.grammar_string[ 78] = "example: watashi wa mizu nomimasu i drink water";
+			room_script.grammar_string[ 79] = "";
+			room_script.grammar_string[ 80] = "yori hou ga, よりほうが";
+			room_script.grammar_string[ 81] = "1) [A] is preferred to [B]";
+			room_script.grammar_string[ 82] = "example: 私 は 犬 より 補 が 猫 です ね I prefer";
+			room_script.grammar_string[ 83] = "cats to dogs.";
 						
-			room_script.total_lines = 80;
+			room_script.total_lines = 83;
 			room_script.current_line = 10;
 			room_script.display_lines = 10;
 			
@@ -168,8 +169,9 @@ switch (btn_name)
 
 		case "Verbs":
 			// show search thing for verbs
-			//room_script.grammar_string ="";
+			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 			room_script.title_string = "Verb conjugation";
+			room_script.display_string = room_script.title_string;
 			
 			room_script.word_list = function_add_to_WordBuilderArray("Verb",room_script.kanji_list,field_list);						
 						
@@ -241,22 +243,25 @@ switch (btn_name)
 
 		case "Adjectives":	
 			
-			//room_script.grammar_string ="";
+			
+			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 			room_script.title_string = "Adjectives";
 		
-			room_script.grammar_string[  1] = "Adjectives describe a noun, eg hot,handsome,old...";
-			room_script.grammar_string[  2] = "Japanese adjectives can be conjugated.";
-			room_script.grammar_string[  3] = "In Japanese, there is irregular, \"good\" which";
-			room_script.grammar_string[  4] = "is irregular. The rest are regular.";
-			room_script.grammar_string[  5] = "Adjectives can work like verbs, when used at the";
-			room_script.grammar_string[  6] = "end of a sentence, and coupled with the auxillary";
-			room_script.grammar_string[  7] = "verb are conjugated.";
+			room_script.grammar_string[  0] = "Adjectives describe a noun, eg hot,handsome,old...";
+			room_script.grammar_string[  1] = "Japanese adjectives can be conjugated.";
+			room_script.grammar_string[  2] = "In Japanese, there is irregular, \"good\" which";
+			room_script.grammar_string[  3] = "is irregular. The rest are regular.";
+			room_script.grammar_string[  4] = "Adjectives can work like verbs, when used at the";
+			room_script.grammar_string[  5] = "end of a sentence, and coupled with the auxillary";
+			room_script.grammar_string[  6] = "verb are conjugated.";
 
-			room_script.total_lines = 8;
-			room_script.current_line = 8;
-			room_script.display_lines = 8;
+			room_script.total_lines = 7; // total number of lines in the list
+			room_script.current_line = 7; // current line (same as number of words to display, initially)
+			room_script.display_lines = 7; 
+			room_script.max_words_to_display = 7; // max number of lines to display on the screen
+			
+			room_script.display_string = function_join_string(0,7,room_script.grammar_string);
 
-			room_script.display_string = function_join_string(room_script.current_line - ( room_script.display_lines - 1), room_script.display_lines ,room_script.grammar_string);
 			
 			room_script.word_list = function_add_to_WordBuilderArray("Adjective",room_script.kanji_list,field_list);
 
@@ -271,7 +276,9 @@ switch (btn_name)
 		break;
 
 		case "N50sentences":			
-
+			
+			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
+			
 			room_script.grammar_string ="";
 			room_script.title_string = "Sentence examples";
 			
@@ -329,9 +336,9 @@ switch (btn_name)
 			room_script.grammar_string[51] = "yori hou ga, よりほうが, [A] is preferred to [B]";
 			room_script.grammar_string[52] = "example: 私 は 犬 より 補 が 猫 です ね i prefer cats to dogs.";
 						
-			room_script.total_lines = 52;
-			room_script.current_line = 10;
-			room_script.display_lines = 10;
+			room_script.total_lines = 52; // total lines in the array
+			room_script.current_line = 10; // current last line to display
+			room_script.display_lines = 10; //max lines to display on the screen 
 			
 			// mash the arrays together into a huge string, up to the max display length					
 			//room_script.display_string = display_string;
@@ -347,7 +354,9 @@ switch (btn_name)
 		break;
 
 		case "Sentence Constructor":
-		
+			
+			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
+			
 			room_script.title_string = "Sentrence constructor";
 			// sentence builder
 			// room_script.display_string = 

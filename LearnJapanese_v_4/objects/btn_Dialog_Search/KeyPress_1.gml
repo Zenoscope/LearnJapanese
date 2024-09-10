@@ -40,6 +40,7 @@ if (!keyboard_check(vk_control)) {
 				room_script.search = false; //?
 				// go back to displaying everything
 				room_script.search_result_list = room_script.display_list;
+				// destroy some layers too?				
 				}
 		break;
 		

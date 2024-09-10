@@ -5,11 +5,12 @@ if (live_call()) return live_result;
 // draw the background sprite
 draw_self();
 
+room_script.display_lines = 2;
+
 // draw the "search result" box
 var box_gap = 0; // gap around the text
 var line_width = 5; // width for the lines
 var scale = 1;//text scale
-
 
 var half_char_width = string_width("A") / 2;
 var spr_width = (self.sprite_width / 2);
@@ -92,16 +93,11 @@ if (array_length(room_script.display_list) > 0 ) {
 	
 	draw_set_halign(fa_right);
 	draw_text_ext_transformed(text_x_pos + 850,text_y_pos - 80,string_counter,string_height(string_counter),700,x_scale,y_scale,0);
-	}
-else{
-	string_counter = "Nothing found!";
-	draw_set_halign(fa_right);
-	draw_text_ext_transformed(text_x_pos + 850,text_y_pos - 80 ,string_counter,string_height(string_counter),500,x_scale,y_scale,0);
-	}
 
 //------------------------------
-
-_yscale = 6;
+// _yscale = 6;
+scale_factor = 6 / 8;
+_yscale = room_script.display_lines * scale_factor;
 _xscale = 3;
 
 _width  = sprite_get_width(spr_SearchDropBG);
@@ -147,7 +143,7 @@ else {
 
 _ysize =(_yscale/room_script.max_words_to_display) * _search_result_count;
 
-// baclkground of the image
+// background of the image
 draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_ysize + 0.2,0,c_white,1);
 //draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_ysize + 0.2,0,c_red,1);
 
@@ -198,5 +194,12 @@ if (mouse_wheel_down()) {
 //draw_rectangle(self.x - 12, self.y - 12,(_width *_xscale) + self.x , (self.y + ( (_ysize + 1) * _height)) + 12,false);
 
 create_buttons = false;
+
+	}
+else{
+	string_counter = "Nothing found!";
+	draw_set_halign(fa_right);
+	draw_text_ext_transformed(text_x_pos + 850,text_y_pos - 80 ,string_counter,string_height(string_counter),500,x_scale,y_scale,0);
+	}
 
 } // end of:  if (room_script.search = false) {
