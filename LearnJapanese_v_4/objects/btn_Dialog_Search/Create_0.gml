@@ -4,17 +4,21 @@
 
 if (live_call()) return live_result;
 
-// these are meta variables, they are not set in the actual room script itself.
-// Are we searching? Not yet
-room_script.search = false;
 // reached the end of the list (possibly delete)
 room_script.reached_list_end = false;
 // searcn returned something
 room_script.found_something = false;
-room_script.current_scroll_clicks = 1;// 
+room_script.current_scroll_clicks = 1;
 room_script.reached_list_end = false;
 room_script.word_display_number = 0;
 
+// these are meta variables, they are not set in the actual room script itself.
+// Are we searching? Not yet
+// room_script.search = false;
+
+// only set if they haven't already been set.
+//room_script.search = true;
+//room_script.show_initial_words = true;
 
 // create the arrow buttons, then reuse them
 create_buttons = true;
@@ -55,23 +59,3 @@ image_speed = 0;
 // make the searchbox background image random
 image_index = irandom(self. image_number);
 
-function searchfunction_create_vocab_layer(){
-	// get the highest layer and put this above that:
-	var my_layer_depth = 0;
-	var current_depth = 0;
-	// loop through all the layers and get the depths
-	var all_layers = layer_get_all();
-	for (var i = 0; i < array_length(all_layers); i++;)
-		{
-		current_depth = layer_get_depth(all_layers[i]);
-		if (current_depth < my_layer_depth){
-			my_layer_depth = current_depth;
-			}	
-		}
-	
-	layer_create(my_layer_depth - 100,"vocab_layer");
-	}
-
-	
-	
-	

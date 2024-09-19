@@ -288,7 +288,6 @@ first_1000_vocab270 = new first_1000_vocab(270,"食堂","cafeteria; dining room"
 first_1000_vocab271 = new first_1000_vocab(271,"醬油","soy sauce","shouyu","Noun","しょうゆ","Food 3","お寿司に醬油をつけて食べます。/ おすしにしょうゆをつけてたべます。/ Osushi ni shouyu o tsukete tabemasu. / I eat sushi with soy sauce.",1,"");
 first_1000_vocab272 = new first_1000_vocab(272,"たばこ","tobacco; cigarette","tabako","Noun","","Food 3","たばこを吸わないで健康を守りましょう。/ たばこをすわないでけんこうをまもりましょう。/ Tabako o suwanai de kenkou o mamorimashou. / Let's protect our health by not smoking.",2,"");
 first_1000_vocab273 = new first_1000_vocab(273,"食べ物","food","tabemono","Noun","たべもの","Food 3","食べ物の中で果物が好きです。/ たべもののなかでくだものがすきです。/ Tabemono no naka de kudamono ga suki desu. / Among food, I like fruits.",1,"");
-first_1000_vocab274 = new first_1000_vocab(274,"食べる","to eat","taberu","Ichidan Verb, Intransitive","たべる","Food 3","昼ご飯にカレーライスを食べました。/ ひるごはんにかれーらいすをたべました。/ Hirugohan ni karee raisu o tabemashita. / I had curry rice for lunch.",1,"tabe");
 first_1000_vocab275 = new first_1000_vocab(275,"卵","eggs; egg","tamago","Noun","たまご","Food 3","卵を割ってボウルに入れます。/ たまごをわってぼうるにいれます。/ Tamago o watte bouru ni iremasu. / I crack the eggs and put them in a bowl.",1,"");
 first_1000_vocab276 = new first_1000_vocab(276,"八百屋","greengrocer; fruit and vegetable shop; versatile","yaoya","Noun","やおや","Food 3","野菜を八百屋で買います。/ やさいをやおやでかいます。/ Yasai o yaoya de kaimasu. / I buy vegetables at the greengrocer's.",1,"");
 first_1000_vocab277 = new first_1000_vocab(277,"野菜","vegetable","yasai","Noun","やさい","Food 3","野菜をたくさん食べると健康に良いです。/ やさいをたくさんたべるとけんこうにいいです。/ Yasai o takusan taberu to kenkou ni ii desu. / Eating lots of vegetables is good for your health.",1,"");
@@ -944,7 +943,7 @@ first_1000_vocab270,
 first_1000_vocab271,
 first_1000_vocab272,
 first_1000_vocab273,
-first_1000_vocab274,
+//first_1000_vocab274,
 first_1000_vocab275,
 first_1000_vocab276,
 first_1000_vocab277,

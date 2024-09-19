@@ -3,23 +3,8 @@
 
 room_set_live(room, true);
 
-// Inherit the parent event
-// the init script seems to rerun when an object is enabled
-// which wipes the room_script variables.
-
-//if (is_undefined(search)) {
-    // If it's undefined, initialize it with a default value
+// Inherit the parent eveninitialize it with a default value
 	event_inherited();
-//	}
-//
-//function_get_room_script_name()
-//*/
-//if !variable_instance_exists(room,room_script){
-//	event_inherited();
-//	}
-
-// add he blurb text stuff to RAM.
-//function_execute_script("scr_Grammar");
 
 display_string = [];
 
@@ -150,11 +135,11 @@ grammar_string[121]="Similar to subject? IDK";
 
 // sets the line to remove
 total_lines = 121;
-num_display_lines = 10;
-current_line = num_display_lines;
+num_max_words_to_display = 10;
+current_line = num_max_words_to_display;
 
 // mash the arrays together into a huge string. 
-for(lines = 1; lines <= num_display_lines; lines += 1; ) {
+for(lines = 1; lines <= num_max_words_to_display; lines += 1; ) {
 	//display_string = string_join("\n",grammar_string[1],grammar_string[2]);
 	display_string = string_join("\n",display_string,grammar_string[lines]);
 	}
@@ -168,8 +153,9 @@ function_execute_script("scr_VocabList");
 // -- Search settings needed outside the search object
 
 // show a list of words when activating the search function
-// show_initial_words = true;
-show_initial_words = false;
+show_initial_words = true;
+search = false;
+// show_initial_words = false;
 // initial list for search results
 search_result_list = [];
 // showing no words yet either.
@@ -181,8 +167,7 @@ max_words_to_display = 8;
 blockButtonClick = false;
 // hide the result buttons
 show_results = false;
-
 // set the search to be false
-search = false;
 
 card_index = 0;
+display_list = [];

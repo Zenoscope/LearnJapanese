@@ -1,11 +1,9 @@
-/// @description draw search results
+/// @description spawns search result buttons
 
 if (live_call()) return live_result;
 
 // draw the background sprite
 draw_self();
-
-room_script.display_lines = 2;
 
 // draw the "search result" box
 var box_gap = 0; // gap around the text
@@ -31,14 +29,14 @@ var y1 = 800;
 
 //------------------------------
 
-// if the result count is less than the number of words to display:
+// if the result count is less than the number of words to display....
 var _search_result_count = 0;
 if (array_length(room_script.display_list) < room_script.max_words_to_display) {
-		// set the result display count to the number of results found
+		// ... set the result display count to the number of results found
 		_search_result_count = array_length(room_script.display_list);			
 		}
 else {
-	// set the result display count to the number of words to display
+	// ... ortherwise set the result display count to the number of words to display
 	_search_result_count = room_script.max_words_to_display;
 	}
 
@@ -59,6 +57,7 @@ draw_text_transformed(self.x + 5, self.y, text, scale, scale,0);
 
 
 // draws the cursor
+#region
 if (blink) {
 	draw_line_width(
 		cursor_x, //- ((spr_width - half_char_width) + (length * scale)),
@@ -68,10 +67,11 @@ if (blink) {
 		line_width * scale 
 		);	
 	}
+#endregion
 
 //------------------------------
 
-if (room_script.search == true) {
+if (room_script.search == true || room_script.show_initial_words == true ) {
 
 // set the fonts
 draw_set_font(fnt_button);
@@ -97,8 +97,8 @@ if (array_length(room_script.display_list) > 0 ) {
 //------------------------------
 // _yscale = 6;
 scale_factor = 6 / 8;
-_yscale = room_script.display_lines * scale_factor;
-_xscale = 3;
+_yscale = room_script.max_words_to_display * scale_factor;
+_xscale = 3.5;
 
 _width  = sprite_get_width(spr_SearchDropBG);
 _height = sprite_get_height(spr_SearchDropBG);
@@ -112,23 +112,29 @@ if ( create_buttons == true && layer_exists("vocab_layer") ){
 	}
 
 // create the buttons and arrows one time
-if (create_buttons == true){
+#region
+// if (create_buttons == true){
 	room_script.vocab_display_buttons = [];
-	searchfunction_create_vocab_layer();	
+	searchfunction_create_vocab_layer();
 
 // if the word list is longer than the numnber of woreds to put on the screen...	
 if (array_length(room_script.display_list) > room_script.max_words_to_display ){
 	
 	// fix the size of the background and show the arrows.
-	room_script.word_display_number = array_length(room_script.display_list);
+	room_script.word_display_number = array_length(room_script.display_list);	
+	
+	x_loc = (_width * _xscale) + (x * 0.70) ;
+	y_loc = _search_result_count * _height;	
 	
 	var arrow = asset_get_index("Search_Up_Arrow");
-	instance_create_layer( (_width * _xscale) + 12 ,text_y_pos + 10 ,"vocab_layer",arrow,{
+	// instance_create_layer( (_width * _xscale) + 12 ,text_y_pos + 10 ,"vocab_layer",arrow,{
+	instance_create_layer( x_loc,text_y_pos + 10 ,"vocab_layer",arrow,{
 			room_script:	room_script	
 			});
 	
 	var arrow = asset_get_index("Search_Dwn_Arrow");
-	instance_create_layer( (_width * _xscale) + 12 , text_y_pos + (_height * 5.5),"vocab_layer",arrow,{
+			
+	instance_create_layer(x_loc, y_loc + y,"vocab_layer",arrow,{
 			room_script:	room_script	
 			});	
 	//_ysize =(_yscale/room_script.max_words_to_display) * room_script.word_display_number;
@@ -139,19 +145,25 @@ else {
 	 // scale the bg by the total bg size 
 	//_ysize =(_yscale/room_script.max_words_to_display) * room_script.word_display_number;	
 	}    
-} // end of create buttons
-
+// } // end of create buttons
+#endregion
+// size of the background
 _ysize =(_yscale/room_script.max_words_to_display) * _search_result_count;
 
 // background of the image
 draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_ysize + 0.2,0,c_white,1);
 //draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_ysize + 0.2,0,c_red,1);
 
+layer_destroy("vocab_layer");
+searchfunction_create_vocab_layer();
+
 for (i = 0; i < _search_result_count; i++) {  
 		// do this only once:
-		if (create_buttons == true){
+		//if (create_buttons == true){
 			
-		searchfunction_create_vocab_layer();			
+		//if (!layer_exists("vocab_layer")) {
+		//searchfunction_create_vocab_layer();
+		//		}
 		
 		var vocab_object = asset_get_index("btn_SearchResult");		
 		
@@ -160,21 +172,29 @@ for (i = 0; i < _search_result_count; i++) {
 				//used for displayng result when button is clicked
 				card_index:		room_script.card_index + i,
 				// shows reults on button
-				kanji:			room_script.display_list[room_script.card_index + i].kanji,
+				//kanji:			room_script.display_list[room_script.card_index + i].kanji,
+				kanji:			"poop",
 				meaning:		room_script.display_list[room_script.card_index + i].meaning,
  				kana:			room_script.display_list[room_script.card_index + i].field_2,
-				// FIXME this will casue porblems with other stuff that don'ty have the verbstem field.
+				// FIXME this will casue porblems with other stuff that don'ty have the verbstem field?
 				verbStem:		room_script.display_list[room_script.card_index + i].verbStem,
+				examples:		room_script.display_list[room_script.card_index + i].examples,
 				room_script:	room_script				
 				})
-		}
+		//}
 
 		// overwrite the existing buttons.
-		else {			
+		/*
+		else {
+			test = "test";
+			
+			temp1 = room_script.vocab_display_buttons[i].kanji;
+			temp2 = room_script.display_list[room_script.card_index + i].kanji;
 			room_script.vocab_display_buttons[i].kanji = room_script.display_list[room_script.card_index + i].kanji;
 			room_script.vocab_display_buttons[i].meaning = room_script.display_list[room_script.card_index + i].meaning;
  			room_script.vocab_display_buttons[i].field_2 = room_script.display_list[room_script.card_index + i].field_2;			
 			}
+			*/
 	}
 
 //------------------------------
@@ -191,9 +211,7 @@ if (mouse_wheel_down()) {
 		}
 	}
 
-//draw_rectangle(self.x - 12, self.y - 12,(_width *_xscale) + self.x , (self.y + ( (_ysize + 1) * _height)) + 12,false);
-
-create_buttons = false;
+// create_buttons = false;
 
 	}
 else{

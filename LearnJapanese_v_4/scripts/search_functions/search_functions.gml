@@ -102,3 +102,19 @@ function searchfunction_reset_dropdown() {
 	use_search = false;
 	layer_destroy("vocab_layer");
 	}
+	
+function searchfunction_create_vocab_layer(){
+	// get the highest layer and put this above that:
+	var my_layer_depth = 0;
+	var current_depth = 0;
+	// loop through all the layers and get the depths
+	var all_layers = layer_get_all();
+	for (var i = 0; i < array_length(all_layers); i++;)
+		{
+		current_depth = layer_get_depth(all_layers[i]);
+		if (current_depth < my_layer_depth){
+			my_layer_depth = current_depth;
+			}	
+		}	
+	layer_create(my_layer_depth - 100,"vocab_layer");
+	}

@@ -23,7 +23,7 @@
   ],
   "name":"spr_Nav_Arrow_Down",
   "nineSlice":null,
-  "origin":0,
+  "origin":6,
   "parent":{
     "name":"GUI",
     "path":"folders/Sprites/GUI.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":0,
-    "yorigin":0,
+    "yorigin":64,
   },
   "swatchColours":null,
   "swfPrecision":2.525,
