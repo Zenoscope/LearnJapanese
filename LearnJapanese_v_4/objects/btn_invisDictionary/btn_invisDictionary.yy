@@ -8,8 +8,8 @@
   "name":"btn_invisDictionary",
   "overriddenProperties":[],
   "parent":{
-    "name":"InvisVerb_buttons",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/InvisVerb_buttons.yy",
+    "name":"GrammarVerb_Objs",
+    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarVerb_Objs.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

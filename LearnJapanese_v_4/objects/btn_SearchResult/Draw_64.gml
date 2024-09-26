@@ -39,10 +39,7 @@ else if (string_count(room_script.title_string,"Verbs") > 0 ){
 			draw_text_ext_transformed(x + x_offset,y + y_offset			,"Word:"	+ kanji,0,1500,x_scale,y_scale,0);
 			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);
 			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Example: "+ examples,0,800,x_scale,y_scale,0);
-		}
-		
-		
-	
+		}	
 else if (string_count(room_script.title_string,"Kanji") > 0 ){
 			draw_text_ext_transformed(x + x_offset,y + y_offset			,"Kanji Kanji: "	+ kanji,0,1500,x_scale,y_scale,0);
 			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);

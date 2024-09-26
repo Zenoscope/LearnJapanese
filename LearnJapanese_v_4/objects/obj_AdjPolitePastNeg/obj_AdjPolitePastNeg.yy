@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_VerbTextStem",
+  "%Name":"obj_AdjPolitePastNeg",
   "eventList":[],
   "managed":true,
-  "name":"obj_VerbTextStem",
+  "name":"obj_AdjPolitePastNeg",
   "overriddenProperties":[],
   "parent":{
-    "name":"GrammarVerb_Objs",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarVerb_Objs.yy",
+    "name":"GrammarAd_Objs",
+    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarAd_Objs.yy",
   },
   "parentObjectId":{
     "name":"obj_VerbTextParent",

@@ -3,7 +3,7 @@
 
 if (live_call()) return live_result;
 
-
+//------------------
 if (room_script.search == true) {
 	// result list
 	room_script.display_list = room_script.search_result_list;
@@ -12,6 +12,8 @@ if (room_script.search == true) {
 		room_script.found_something = false;
 		}
 	}
+	
+//------------------
 else {
 	// if the search list is empty
 	if (room_script.show_initial_words == true){

@@ -1,9 +1,4 @@
-/// @description This displays the list of search results
-
-//room_script = function_get_room_script_name(id);
-
-//event_inherited();
-
+/// @description search result button
 hovering = false;
 clicked = false;
 
@@ -16,3 +11,4 @@ image_xscale = 3;
 image_yscale = 0.7;
 
 text_colour = c_gray;
+text_colour = c_black;

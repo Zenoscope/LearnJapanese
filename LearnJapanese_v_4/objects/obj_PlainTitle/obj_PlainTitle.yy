@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_VerbTextStem",
-  "eventList":[],
+  "%Name":"obj_PlainTitle",
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_VerbTextStem",
+  "name":"obj_PlainTitle",
   "overriddenProperties":[],
   "parent":{
-    "name":"GrammarVerb_Objs",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarVerb_Objs.yy",
+    "name":"GrammarAd_Objs",
+    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarAd_Objs.yy",
   },
   "parentObjectId":{
     "name":"obj_VerbTextParent",

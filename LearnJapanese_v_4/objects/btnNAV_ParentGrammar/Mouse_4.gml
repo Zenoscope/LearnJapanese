@@ -3,10 +3,10 @@
 //---- completed parts
 // verbs
 // particles
+// adjectives + search
 
 //---- to be finished
 // adverbs  + search  
-// adjectives + search
 // sentence - list
 // sentence constructor
 // nouns + search
@@ -35,19 +35,27 @@ switch (btn_name)
 			
 			room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,field_list);
 			
-			room_script.grammar_string[0] = "Describes a verb. Adverbs in English end in -ly eg:";
-			room_script.grammar_string[1] = "slowly, brokenly, noisily, and can come either before";
+			room_script.grammar_string[0] = "Describes a verb. Adverbs in English usually end in -ly";
+			room_script.grammar_string[1] = "(eg: slowly, brokenly, noisily) and can come either before";
 			room_script.grammar_string[2] = "or after the verb.";
 			room_script.grammar_string[3] = "In the sentence 'I quickly ran to the train station'";
 			room_script.grammar_string[4] = "'quickly' is the adverb.";
 						
-			room_script.total_lines = 5;
-			room_script.current_line = 5;
-			room_script.max_words_to_display = 5;			
-			
+			room_script.grammar_string[5] = "Adverbs can be derived from i adjectives, by changing the";
+			room_script.grammar_string[6] = "(i) into a (ku). To use a na adjective, change the (na) to (ni).";
+			room_script.grammar_string[7] = "There are also adverbs which aren't derived from adjectives.";
+					
+			// this shows the words. 
 			room_script.display_string = function_join_string(0,4,room_script.grammar_string);
+							
 			
 			#endregion			
+			
+			// this is for the word search
+			room_script.total_lines = 4;
+			room_script.current_line = 4;
+			room_script.max_words_to_display = 4;
+			
 			
 			// this will display the adjective search.
 			room_script.search_result_method = function(arg){
@@ -58,7 +66,8 @@ switch (btn_name)
 			
 			// move the layer.
 			instance_activate_layer("Search");
-			btn_Dialog_Search.y = 310;
+			btn_Dialog_Search.y = 370;
+			//btn_Dialog_Search.y = 1310;
 			
 		break;
 
@@ -153,14 +162,15 @@ switch (btn_name)
 			room_script.grammar_string[ 81] = "1) [A] is preferred to [B]";
 			room_script.grammar_string[ 82] = "example: 私 は 犬 より 補 が 猫 です ね I prefer";
 			room_script.grammar_string[ 83] = "cats to dogs.";
+
+			// mash the arrays together into a huge string, up to the max display length					
+						
+			room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
 						
 			room_script.total_lines = 83;
 			room_script.current_line = 10;
-			room_script.max_words_to_display = 10;
 			
-			// mash the arrays together into a huge string, up to the max display length					
-			//room_script.display_string = display_string;
-			room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
+			room_script.max_words_to_display = 10;			
 			
 			#endregion
 			
@@ -194,8 +204,7 @@ switch (btn_name)
 				if ( string_count(verbStem, "suru") > 0 ) {
 					conjugation_pln = verbStem + " shi";
 					conjugation_pol = verbStem + " shi";		
-					}
-				
+					}				
 				  
 				if ( string_count(arg,"Godan") > 0 && string_count(verbStem, "/") > 0 ) {
 					temp = string_split(verbStem,"/");
@@ -225,7 +234,7 @@ switch (btn_name)
 				// aka present indicitive polite
 				obj_VerbTextPresPol._text	= conjugation_pol + "masu"; //tabe + masu
 				obj_VerbTextPreNegPol._text	= conjugation_pol + "masen"; //tabe + masen
-				
+					
 				// aka past indicitive plain
 				obj_VerbTextPastPln._text	= conjugation_pln + "ta"; // tabe + ta
 				obj_VerbTextPastNegPln._text = conjugation_pln + "nakatta"; // tabe + nakatta
@@ -248,29 +257,75 @@ switch (btn_name)
 			room_script.title_string = "Adjectives";
 		
 			room_script.grammar_string[  0] = "Adjectives describe nouns, eg hot, handsome, old...";
-			room_script.grammar_string[  1] = "Japanese adjectives can be conjugated. In Japanese";
-			room_script.grammar_string[  2] = "there is one irregular verb, \"good\". The rest";
-			room_script.grammar_string[  3 ]= "are regular. Adjectives can work like verbs, when";
-			room_script.grammar_string[  4] = "used at the end of a sentence, and coupled with";
-			room_script.grammar_string[  5] = "the auxillary verb.";			
-			
-			//room_script.grammar_string[  3] = "are regular.";			
-			//room_script.grammar_string[  4] = "Adjectives can work like verbs, when used at the";
-			//room_script.grammar_string[  5] = "end of a sentence, and coupled with the auxillary";
-			//room_script.grammar_string[  6] = "verb. ";
+			room_script.grammar_string[  1] = "There are two types of adjectives in Japanese: い and";
+			room_script.grammar_string[  2] = "な adjectives.";
 
-			room_script.total_lines = 4; // total number of lines in the list
+			room_script.grammar_string[  3] = "い adjectives are a single kanji with an い, though are";
+			room_script.grammar_string[  4] = "most commonly written in hiragana (kunyomi reading).";
+			room_script.grammar_string[  5] = "They are conjugated similary to Japanese verbs. い";
+			room_script.grammar_string[  6] = "adjectives can be used without additional verbs,";
+			room_script.grammar_string[  7] = "eg 'oishii' can mean 'it's delicious'.";
+			
+			room_script.grammar_string[  8] = "Na adjectives end in -な when directly before a noun.";
+			room_script.grammar_string[  9] = "Otherwise, they function like nouns. They  are conjugated";
+			room_script.grammar_string[ 10] = "using だ or です. They are usually written as two kanji.";
+			room_script.grammar_string[ 11] = ""
+			
+			room_script.grammar_string[ 12] = "There is one irregular verb, いい (good). The rest";
+			room_script.grammar_string[ 13]= "are regular."			
+				
+			room_script.total_lines = 13; // total number of lines in the list
 			room_script.current_line = 4; // current line (same as number of words to display, initially)
 			room_script.max_words_to_display = 4; 			
 			
-			room_script.display_string = function_join_string(0,5,room_script.grammar_string);
+			room_script.display_string = function_join_string(0,5,room_script.grammar_string);			
 			
 			room_script.word_list = function_add_to_WordBuilderArray("Adjective",room_script.kanji_list,field_list);
-
+	
 			room_script.search_result_method = function(arg){
-				show_debug_message("you clicked "+ btn_name);
-				}
-				
+
+			obj_PlainTitle._text = "Plain";
+			obj_PoliteTitle._text = "Polite";
+			
+			//if (adjective is i) {
+			
+			word_length = string_length(word);
+			word_kanji = string_delete(word,0,word_length); // delete the last character in the string
+	
+			obj_AdjPlainPres._text = word;
+			obj_AdjPlainPresNeg._text = word_kanji + "kunai";
+			
+			obj_AdjPlainPast._text = word_kanji + "katta";
+			obj_AdjPlainPastNeg._text = word_kanji +  "kunakatta";
+
+			obj_AdjPolitePres._text = word + "desu";
+			obj_AdjPolitePresNeg._text = word_kanji + "kunai desu\n" + word_kanji + "arimasen";
+			
+			obj_AdjPolitePast._text = word_kanji + "kattadesu";
+			obj_AdjPolitePastNeg._text = word_kanji + "kunakatta desu\n" + word_kanji + "ku arimasendeshita";
+			
+			//}
+			//else if (adjective is na) {
+			
+			word_length = string_length(word);
+			word_kanji = string_delete(word,0,word_length); // delete the last character in the string
+	
+			obj_AdjPlainPres._text = word + "ta";
+			obj_AdjPlainPresNeg._text = word_kanji + "janai\n" + word_kanji + "dewanai";
+			
+			obj_AdjPlainPast._text = word_kanji + "datta";
+			obj_AdjPlainPastNeg._text = word_kanji +  "janai\n" + word_kanji + "dewanakatta";
+			
+			obj_AdjPolitePres._text = word + "desu";
+			obj_AdjPolitePresNeg._text = word_kanji + "janai desu\n" + word_kanji + "ja arimasen\n" + word_kanji + "dewanaidesu\n" + word_kanji + "dewa arimasen";
+			
+			obj_AdjPolitePast._text = word_kanji + "deshita";
+			obj_AdjPolitePastNeg._text = word_kanji + "kunakatta desu\n" + word_kanji + "ku arimasendeshita";			
+					
+			//}			
+			}
+			
+			instance_activate_layer("Adjective");			
 			instance_activate_layer("Search");
 			btn_Dialog_Search.y = 350;
 		break;
