@@ -1,4 +1,4 @@
-/// @description Init_Dialog_Search:Create
+ /// @description Init_Dialog_Search:Create
 
 // room_script = function_get_room_script_name(id);
 
@@ -63,3 +63,6 @@ alarm[0] = blink_speed;
 // make the searchbox background image random
 image_index = irandom(self. image_number);
 image_speed = 0;
+
+ //room_script.display_list = [];
+ //search_create_result_buttons();

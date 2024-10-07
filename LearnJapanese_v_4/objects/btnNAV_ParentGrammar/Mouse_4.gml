@@ -11,6 +11,20 @@
 // sentence constructor
 // nouns + search
 
+/*
+//used for displayng result when button is clicked
+card_index:		room_script.card_index + i,
+// shows reults on button
+kanji:			room_script.display_list[room_script.card_index + i].kanji,
+meaning:		room_script.display_list[room_script.card_index + i].meaning,
+kana:			room_script.display_list[room_script.card_index + i].field_2,
+verbStem:		room_script.display_list[room_script.card_index + i].verbStem,
+examples:		room_script.display_list[room_script.card_index + i].examples,
+type			room_script.display_list[room_script.card_index + i].field1,
+*/
+
+
+
 if (live_call()) return live_result;
 
 var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs","Arrow_Buttons","Search","Verbs_bg"];
@@ -23,9 +37,10 @@ field_list = ["field_1"];
 
 // switch statement for the buttons
 switch (btn_name)
-		{		
+		{
+
 		case "Adverbs":
-			
+#region			
 			//room_script.grammar_string = [];
 			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 			// either it crashes or it gets an extra line at the end.
@@ -35,9 +50,9 @@ switch (btn_name)
 			
 			room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,field_list);
 			
-			room_script.grammar_string[0] = "Describes a verb. Adverbs in English usually end in -ly";
-			room_script.grammar_string[1] = "(eg: slowly, brokenly, noisily) and can come either before";
-			room_script.grammar_string[2] = "or after the verb.";
+			room_script.grammar_string[0] = "Describes a verb. Adverbs in English usually end";
+			room_script.grammar_string[1] = "in -ly (eg: slowly, brokenly, noisily) and can";
+			room_script.grammar_string[2] = "come before or after the verb.";
 			room_script.grammar_string[3] = "In the sentence 'I quickly ran to the train station'";
 			room_script.grammar_string[4] = "'quickly' is the adverb.";
 						
@@ -48,37 +63,36 @@ switch (btn_name)
 			// this shows the words. 
 			room_script.display_string = function_join_string(0,4,room_script.grammar_string);
 							
-			
-			#endregion			
-			
 			// this is for the word search
-			room_script.total_lines = 4;
+			room_script.total_lines = 7;
 			room_script.current_line = 4;
 			room_script.max_words_to_display = 4;
-			
 			
 			// this will display the adjective search.
 			room_script.search_result_method = function(arg){
 				// just an example				
-				//Adverbs - fill in the adverb conjugation				
+				//Adverbs - fill in the adverb conjugation
+				// show the word search result button
 				show_debug_message("you clicked "+ btn_name);
 				}
 			
 			// move the layer.
 			instance_activate_layer("Search");
 			btn_Dialog_Search.y = 370;
-			//btn_Dialog_Search.y = 1310;
-			
+
+			room_restart();
+
+#endregion			
 		break;
 
-		case "Particles":		
+		case "Particles":
+#region
 			// might have to loop through and delete all of the grammar_string[]'s first?			
 			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 			
 			room_script.title_string = "Particles";
 			
-			// max width is to col 100
-			#region
+			// max width is to col 100			
 			room_script.grammar_string[  1] = "Japanese particles, are suffixes or short words in";
 			room_script.grammar_string[  2] = "Japanese grammar that immediately follow the noun,";
 			room_script.grammar_string[  3] = "verb, adjective, or sentence they are modifying.";
@@ -171,14 +185,12 @@ switch (btn_name)
 			room_script.current_line = 10;
 			
 			room_script.max_words_to_display = 10;			
-			
-			#endregion
-			
 			instance_activate_layer("Arrow_Buttons");
-			
+#endregion
 		break;
 
 		case "Verbs":
+#region
 			// show search thing for verbs
 			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 			room_script.title_string = "Verb conjugation";
@@ -188,25 +200,26 @@ switch (btn_name)
 						
 			room_script.search_result_method = function(arg){
 				
-				// delete the vocab layer
-				layer_destroy("vocab_layer");
-								
-				verbStem = arg;
+			// delete the vocab layer
+			// layer_destroy("vocab_layer");
+			
+			type = arg[1];
+			verbStem = arg[0];
 				
-				// just an example
-				//Verbs - fill in the verb conjugation form 
-				//plus special case suru
+			// just an example
+			//Verbs - fill in the verb conjugation form 
+			//plus special case suru
+			
+			// TODO
+			// need to finish this with the rest of the verbs
 				
-				// TODO
-				// need to finish this with the rest of the verbs
-				
-				// suru verb
-				if ( string_count(verbStem, "suru") > 0 ) {
+			// suru verb
+				if ( string_count(type, "suru") > 0 ) {
 					conjugation_pln = verbStem + " shi";
 					conjugation_pol = verbStem + " shi";		
 					}				
 				  
-				if ( string_count(arg,"Godan") > 0 && string_count(verbStem, "/") > 0 ) {
+				if ( string_count(type,"Godan") > 0 && string_count(verbStem, "/") > 0 ) {
 					temp = string_split(verbStem,"/");
 					conjugation_pln = temp[1];
 					conjugation_pol = temp[0];
@@ -219,7 +232,8 @@ switch (btn_name)
 					}				
 				
 				// holds true for all Ichidan verbs.
-				// Dictionary/infinitive 
+				// Dictionary/infinitive
+			
 				obj_VerbTextDict._text	= verbStem + "u";// tabe + ru
 				
 				obj_VerbTextStem._text	= verbStem + "-"; // tabe
@@ -243,16 +257,25 @@ switch (btn_name)
 				obj_VerbTextPastPol._text	= conjugation_pol + "mashita"; // tabe + mashita
 				obj_VerbTextPastNegPol._text = conjugation_pol + "masen\n deshita"; //tabe + masen deshita
 								
-				show_debug_message("you clicked "+ btn_name);
+				show_debug_message("you clicked "+ btn_name);			
+				
 				}
 				
 				instance_activate_layer("Verbs_bg");
-				instance_activate_layer("Search");
+				instance_activate_layer("Verbs");	
+				instance_activate_layer("Search");				
+					
 				btn_Dialog_Search.y = 82;
+				
+				room_script.total_lines = 13; // total number of lines in the list
+				room_script.current_line = 8; // current line (same as number of words to display, initially)
+				room_script.max_words_to_display = 8;
+				
+#endregion
 		break;
 
 		case "Adjectives":			
-			
+#region
 			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 			room_script.title_string = "Adjectives";
 		
@@ -284,6 +307,8 @@ switch (btn_name)
 	
 			room_script.search_result_method = function(arg){
 
+/*
+			obj_PlainTitle.x = 1000;
 			obj_PlainTitle._text = "Plain";
 			obj_PoliteTitle._text = "Polite";
 			
@@ -322,40 +347,38 @@ switch (btn_name)
 			obj_AdjPolitePast._text = word_kanji + "deshita";
 			obj_AdjPolitePastNeg._text = word_kanji + "kunakatta desu\n" + word_kanji + "ku arimasendeshita";			
 					
-			//}			
-			}
+			}	*/		
 			
-			instance_activate_layer("Adjective");			
+			}
+			instance_activate_layer("Adjective");		
 			instance_activate_layer("Search");
 			btn_Dialog_Search.y = 350;
+#endregion
 		break;
 
 		case "N50sentences":			
-			
+#region
 			// just a list of sentence examples.
 			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 			
 			room_script.grammar_string ="";
-			room_script.title_string = "Sentence examples";
+			room_script.title_string = "Sentence examples";			
 			
-			#region
 			room_script.grammar_string[1] = "Japanese sentences follow subject object verb";
-
 						
 			room_script.total_lines = 52; // total lines in the array
 			room_script.current_line = 10; // current last line to display
 			room_script.max_words_to_display = 10; //max lines to display on the screen 
 
 			room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
-			
-			#endregion
-			
+		
 			instance_activate_layer("Arrow_Buttons");
 
+#endregion
 		break;
 
 		case "Sentence Constructor":		
-		
+#region		
 			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));			
 			room_script.title_string = "Sentence constructor";
 			
@@ -367,11 +390,11 @@ switch (btn_name)
 			room_script.max_words_to_display = 2;
 			
 			room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
-			
+#endregion		
 		break;
 
 		case "Nouns":		
-		
+#region
 			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));			
 			room_script.title_string = "Noun";
 			
@@ -379,15 +402,13 @@ switch (btn_name)
 			room_script.grammar_string[2] = "(common nouns, formal nouns, and abstract nous, respectively).";
 			room_script.grammar_string[3] = "Use the dropdown to search for nouns.";
 			
-			room_script.tltal_lines = 3;
+			room_script.total_lines = 3;
 			room_script.current_line=3;
 			room_script.max_words_to_display = 3;
 			
 			room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
-			
+#endregion			
 		break;
-
-
 
 		default:
 			show_debug_message("The grammar buttons are broken! Congrats, you found a bug!");

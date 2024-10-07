@@ -13,17 +13,20 @@ function_draw_room_name(display_name);
 
 //draw_surface(global.painting_surface,card_middle_x - (surface_w / 2) ,288 - (surface_h / 2) );
 
+//added a bug here?
+var _symbol_type;
+
 if (room_get_name(room) == "Radical0List" ) {
-		symbol_type = "Radical";
+		_symbol_type = "Radical";
 		draw_set_font(fnt_Radicals_and_Examples);
 		} 
 else {
-		symbol_type = "Kanji";
+		_symbol_type = "Kanji";
 		draw_set_font(fnt_100Kanji);
 		}
 
 // draw the counter text
-string_counter = symbol_type + " " + string(card_index + 1 ) + " of " + string(array_length(kanji_list) + 1);
+var string_counter = _symbol_type + " " + string(card_index + 1 ) + " of " + string(array_length(kanji_list) + 1);
 draw_text_ext_transformed(1000,25,string_counter,0,700,0.5,0.5,0);	
 
 draw_set_color(c_black);

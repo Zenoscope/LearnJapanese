@@ -48,14 +48,25 @@ function function_click_NAV_button(btn_name) {
 	
 	global.navLastButton = btn_name;
 	
+	// can I make this a series of functions, rather than a switch staement?		
+	
 	switch (btn_name)
 		{
 		case "back":
 		    //show_debug_message("you clicked back, return to " + string(global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2]));
 			// delete the most recent entry
-			array_pop(global.roomBreadcrumbs);
-			// and go back to the previous menu item
-			room_goto(asset_get_index(global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 1]));
+			/*
+			if ( global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 1] == "Grammar" ) {
+					show_debug_message("back: " + string(global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 1]));					
+					room_restart();
+					}			
+			else {*/
+				// delete the most recent one.
+				array_pop(global.roomBreadcrumbs);
+				//go back to the previous menu item
+				room_goto(asset_get_index(global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 1]));
+				//}
+				
 		break;
 						
 		case "Gojuon":

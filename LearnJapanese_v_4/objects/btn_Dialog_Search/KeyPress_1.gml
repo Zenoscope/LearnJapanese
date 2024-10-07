@@ -33,7 +33,8 @@ if (!keyboard_check(vk_control)) {
 				room_script.search_result_list = search_for_word(text,room_script.word_list);
 				// we are searching
 				room_script.search = true;
-				//create_buttons = true;
+				// create the seach result buttons
+				search_create_result_buttons();
 				}
 			else {
 				// reset the search				 

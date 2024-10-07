@@ -152,6 +152,7 @@ function_execute_script("scr_VocabList");
 
 // -- Search settings needed outside the search object
 
+
 // show a list of words when activating the search function
 show_initial_words = true;
 search = false;

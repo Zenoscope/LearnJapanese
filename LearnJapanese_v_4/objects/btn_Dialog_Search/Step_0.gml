@@ -17,8 +17,10 @@ if (room_script.search == true) {
 else {
 	// if the search list is empty
 	if (room_script.show_initial_words == true){
+		// just displayeverything
 		room_script.display_list = room_script.word_list;
-		//room_script.search = true;
+		spr_height = self.sprite_height;
+		search_create_result_buttons(spr_height);
 		}		
 	else {
 		room_script.display_list = [];
