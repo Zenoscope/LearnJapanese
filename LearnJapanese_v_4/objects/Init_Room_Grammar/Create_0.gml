@@ -4,12 +4,15 @@
 room_set_live(room, true);
 
 // Inherit the parent eveninitialize it with a default value
-	event_inherited();
+event_inherited();
 
 display_string = [];
 
 // 76 wide
 #region 
+
+// 
+
 grammar_string[  1]="Sentence Structure";
 grammar_string[  2]="Basic sentence structure in English is Subject-Verb-";
 grammar_string[  3]="Object, while Japanese sentence structure is ";

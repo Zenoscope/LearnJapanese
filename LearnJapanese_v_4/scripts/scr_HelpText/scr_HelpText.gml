@@ -46,17 +46,33 @@ tooltip032 = new tooltip("Missing0Vocab","A game to help learn the N5 vocabulary
 tooltip033 = new tooltip("Word0Builder","Drag the character into the correct spot to spell the word.","helptext");
 tooltip034 = new tooltip("Vocab0Grammar","Vocab and grammar. Grammar and vocab.\n\n Vocab and grammar.","helptext");
 
+
 tooltip035 = new tooltip("One0Hundred0Kanji0List","A list of the 100 most common Kanji used in Japanese.\n\n Each Kanji may have multiple readings. These are listed in order, with the most common first. Learning the most common readings gets you reading kanji more quickly.\n\n There are two types of readings: On-yomi (Chinese, only some match modern Chinese pronounciation) and Kun-yomi (Japanese).\n\n Generally, the on-yomi reading is used for words made of multiple kanji,and kun-yomi are used for words using a single kanji (though there are exceptions).\n\n Okurigana are a mix of kanji and hiragana, they use kun-yomi reading.","helptext");
 tooltip036 = new tooltip("Radical0List"," Learning the radicals isn't essential, but may make learning the Kanji easier.\n\n Radicals are the parts which make up a kanji character. For example 図 'map' (ちず) is made up of the radicals 囗 斗. They can sometimes be kanji themselves, and may have variations in how they are written.\n\n Radicals may appear in different positions as part of a character, eg on the left hand side or surrounding another radical or kanji character.","helptext");
 tooltip037 = new tooltip("One0Hundred0Kanji0Vocab","Words which use the 100 Kanji characters.","helptext");
 
+//----------------
+// Grammar
+//----------------
+// tooltip038 = new tooltip("Adverbs","An Adverb describes a verb. Adverbs in English usually end in -ly (eg: slowly, brokenly, noisily) and can come before or after the verb."tooltip038 = new tooltip("Adverbs","An Adverb describes a verb. Adverbs in English usually end in -ly \(eg: slowly, brokenly, noisily\) and can come before or after the verb.","helptext");
+tooltip038 = new tooltip("Adverbs","An Adverb.","helptext");
+			//"In the sentence 'I quickly ran to the train station quickly' is the adverb.";						
+			//"Adverbs can be derived from i adjectives, by changing the (i) into a (ku). To use a na adjective, change the (na) to (ni).";
+			//"There are also adverbs which aren't derived from adjectives.";
+			
+tooltip039 = new tooltip("Adjectives","A Adjectives","helptext");
+tooltip040 = new tooltip("Particles","A Particles","helptext");
+tooltip041 = new tooltip("Verbs","A Verb","helptext");
+//----------------
+
+
 //
-tooltip040 = new tooltip("sokuonfu","small tsu, the following consonant is doubled, and pronounced separately, eg konnichiwa","helptext");
-tooltip041 = new tooltip("chōonpu","ー a long vowel","helptext");
+tooltip050 = new tooltip("sokuonfu","small tsu, the following consonant is doubled, and pronounced separately, eg konnichiwa","helptext");
+tooltip051 = new tooltip("chōonpu","ー a long vowel","helptext");
 
 // bibliography
 //not added to array yet
-tooltip050 = new tooltip("Links","Just a test!","biblio");
+tooltip055 = new tooltip("Links","Just a test!","biblio");
 
 // blurbs
 // a blurb is displayed in a room and just stay there, a helptext might replace it,
@@ -149,9 +165,18 @@ tooltip035,
 tooltip036,
 tooltip037,
 
+// ---------------
+// Grammar
+tooltip038,
+tooltip039,
+tooltip040,
+tooltip041,
+// 
 
-// bibliography
 tooltip050,
+tooltip051,
+// bibliography
+tooltip055,
 
 // questionmark text
 tooltip060,

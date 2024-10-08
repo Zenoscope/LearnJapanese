@@ -30,10 +30,15 @@ if (live_call()) return live_result;
 var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs","Arrow_Buttons","Search","Verbs_bg"];
 function_deactivate_layers_by_Name(layer_array);
 
+if layer_exists("vocab_layer") {
+	layer_destroy("vocab_layer");
+	}
+
 field_list = ["field_1"];
 
 // reset the search too.
 
+array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 
 // switch statement for the buttons
 switch (btn_name)
@@ -41,8 +46,8 @@ switch (btn_name)
 
 		case "Adverbs":
 #region			
-			//room_script.grammar_string = [];
-			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
+			// room_script.grammar_string = [];
+			// array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 			// either it crashes or it gets an extra line at the end.
 			
 			room_script.title_string = "Adverbs";
@@ -59,14 +64,13 @@ switch (btn_name)
 			room_script.grammar_string[5] = "Adverbs can be derived from i adjectives, by changing the";
 			room_script.grammar_string[6] = "(i) into a (ku). To use a na adjective, change the (na) to (ni).";
 			room_script.grammar_string[7] = "There are also adverbs which aren't derived from adjectives.";
-					
-			// this shows the words. 
-			room_script.display_string = function_join_string(0,4,room_script.grammar_string);
-							
+										
 			// this is for the word search
 			room_script.total_lines = 7;
 			room_script.current_line = 4;
 			room_script.max_words_to_display = 4;
+			
+			room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
 			
 			// this will display the adjective search.
 			room_script.search_result_method = function(arg){
@@ -78,9 +82,7 @@ switch (btn_name)
 			
 			// move the layer.
 			instance_activate_layer("Search");
-			btn_Dialog_Search.y = 370;
-
-			room_restart();
+			btn_Dialog_Search.y = 370;		
 
 #endregion			
 		break;
@@ -88,7 +90,9 @@ switch (btn_name)
 		case "Particles":
 #region
 			// might have to loop through and delete all of the grammar_string[]'s first?			
-			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
+			// array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
+			
+			instance_deactivate_layer("search");
 			
 			room_script.title_string = "Particles";
 			
@@ -178,13 +182,13 @@ switch (btn_name)
 			room_script.grammar_string[ 83] = "cats to dogs.";
 
 			// mash the arrays together into a huge string, up to the max display length					
+
+			room_script.total_lines = 83;
+			room_script.current_line = 13;
+			room_script.max_words_to_display = 13;
 						
 			room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
-						
-			room_script.total_lines = 83;
-			room_script.current_line = 10;
-			
-			room_script.max_words_to_display = 10;			
+									
 			instance_activate_layer("Arrow_Buttons");
 #endregion
 		break;
@@ -280,75 +284,69 @@ switch (btn_name)
 			room_script.title_string = "Adjectives";
 		
 			room_script.grammar_string[  0] = "Adjectives describe nouns, eg hot, handsome, old...";
-			room_script.grammar_string[  1] = "There are two types of adjectives in Japanese: い and";
-			room_script.grammar_string[  2] = "な adjectives.";
-
-			room_script.grammar_string[  3] = "い adjectives are a single kanji with an い, though are";
-			room_script.grammar_string[  4] = "most commonly written in hiragana (kunyomi reading).";
-			room_script.grammar_string[  5] = "They are conjugated similary to Japanese verbs. い";
-			room_script.grammar_string[  6] = "adjectives can be used without additional verbs,";
-			room_script.grammar_string[  7] = "eg 'oishii' can mean 'it's delicious'.";
+			room_script.grammar_string[  1] = "Adjectives have two types in Japanese: -い and -な";
+			room_script.grammar_string[  2] = "adjectives. Most い adjectives combine a single kanji";
+			room_script.grammar_string[  3] = "(汚い- dirty) with an い, though are most commonly";
+			room_script.grammar_string[  4] = "written in hiragana (kunyomi reading), and can be";
+			room_script.grammar_string[  5] = "used and conjugated like Japanese verbs. い adjectives";
 			
-			room_script.grammar_string[  8] = "Na adjectives end in -な when directly before a noun.";
-			room_script.grammar_string[  9] = "Otherwise, they function like nouns. They  are conjugated";
-			room_script.grammar_string[ 10] = "using だ or です. They are usually written as two kanji.";
-			room_script.grammar_string[ 11] = ""
-			
-			room_script.grammar_string[ 12] = "There is one irregular verb, いい (good). The rest";
-			room_script.grammar_string[ 13]= "are regular."			
+			room_script.grammar_string[  6] = "can be used verbless, eg 'い' can mean 'it's delicious'.";			
+			room_script.grammar_string[  7] = "Na adjectives end in -な when directly before a noun.";
+			room_script.grammar_string[  8] = "Otherwise, they function like nouns. They  are conjugated";
+			room_script.grammar_string[  9] = "using だ or です. They are usually written as two kanji.";
+			room_script.grammar_string[ 10] = "There is one irregular verb, いい (good). The rest";
+			room_script.grammar_string[ 11]= "are regular."			
 				
 			room_script.total_lines = 13; // total number of lines in the list
 			room_script.current_line = 4; // current line (same as number of words to display, initially)
 			room_script.max_words_to_display = 4; 			
 			
-			room_script.display_string = function_join_string(0,5,room_script.grammar_string);			
+			room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
 			
 			room_script.word_list = function_add_to_WordBuilderArray("Adjective",room_script.kanji_list,field_list);
 	
 			room_script.search_result_method = function(arg){
 
-/*
 			obj_PlainTitle.x = 1000;
 			obj_PlainTitle._text = "Plain";
 			obj_PoliteTitle._text = "Polite";
 			
 			//if (adjective is i) {
 			
-			word_length = string_length(word);
-			word_kanji = string_delete(word,0,word_length); // delete the last character in the string
+				word_length = string_length(word);
+				word_kanji = string_delete(word,0,word_length); // delete the last character in the string
 	
-			obj_AdjPlainPres._text = word;
-			obj_AdjPlainPresNeg._text = word_kanji + "kunai";
+				obj_AdjPlainPres._text = word;
+				obj_AdjPlainPresNeg._text = word_kanji + "kunai";
 			
-			obj_AdjPlainPast._text = word_kanji + "katta";
-			obj_AdjPlainPastNeg._text = word_kanji +  "kunakatta";
+				obj_AdjPlainPast._text = word_kanji + "katta";
+				obj_AdjPlainPastNeg._text = word_kanji +  "kunakatta";
 
-			obj_AdjPolitePres._text = word + "desu";
-			obj_AdjPolitePresNeg._text = word_kanji + "kunai desu\n" + word_kanji + "arimasen";
+				obj_AdjPolitePres._text = word + "desu";
+				obj_AdjPolitePresNeg._text = word_kanji + "kunai desu\n" + word_kanji + "arimasen";
 			
-			obj_AdjPolitePast._text = word_kanji + "kattadesu";
-			obj_AdjPolitePastNeg._text = word_kanji + "kunakatta desu\n" + word_kanji + "ku arimasendeshita";
+				obj_AdjPolitePast._text = word_kanji + "kattadesu";
+				obj_AdjPolitePastNeg._text = word_kanji + "kunakatta desu\n" + word_kanji + "ku arimasendeshita";
 			
-			//}
-			//else if (adjective is na) {
+				//}
+				//else if (adjective is na) {
 			
-			word_length = string_length(word);
-			word_kanji = string_delete(word,0,word_length); // delete the last character in the string
+				word_length = string_length(word);
+				word_kanji = string_delete(word,0,word_length); // delete the last character in the string
 	
-			obj_AdjPlainPres._text = word + "ta";
-			obj_AdjPlainPresNeg._text = word_kanji + "janai\n" + word_kanji + "dewanai";
+				obj_AdjPlainPres._text = word + "ta";
+				obj_AdjPlainPresNeg._text = word_kanji + "janai\n" + word_kanji + "dewanai";
 			
-			obj_AdjPlainPast._text = word_kanji + "datta";
-			obj_AdjPlainPastNeg._text = word_kanji +  "janai\n" + word_kanji + "dewanakatta";
+				obj_AdjPlainPast._text = word_kanji + "datta";
+				obj_AdjPlainPastNeg._text = word_kanji +  "janai\n" + word_kanji + "dewanakatta";
 			
-			obj_AdjPolitePres._text = word + "desu";
-			obj_AdjPolitePresNeg._text = word_kanji + "janai desu\n" + word_kanji + "ja arimasen\n" + word_kanji + "dewanaidesu\n" + word_kanji + "dewa arimasen";
+				obj_AdjPolitePres._text = word + "desu";
+				obj_AdjPolitePresNeg._text = word_kanji + "janai desu\n" + word_kanji + "ja arimasen\n" + word_kanji + "dewanaidesu\n" + word_kanji + "dewa arimasen";
 			
-			obj_AdjPolitePast._text = word_kanji + "deshita";
-			obj_AdjPolitePastNeg._text = word_kanji + "kunakatta desu\n" + word_kanji + "ku arimasendeshita";			
+				obj_AdjPolitePast._text = word_kanji + "deshita";
+				obj_AdjPolitePastNeg._text = word_kanji + "kunakatta desu\n" + word_kanji + "ku arimasendeshita";			
 					
-			}	*/		
-			
+				//}			
 			}
 			instance_activate_layer("Adjective");		
 			instance_activate_layer("Search");

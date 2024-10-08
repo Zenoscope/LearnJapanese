@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"btnNAV_Particles",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":37,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"btnNAV_Particles",
   "overriddenProperties":[],
@@ -10,8 +12,8 @@
     "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarNav.yy",
   },
   "parentObjectId":{
-    "name":"btnNAV_ParentGrammar",
-    "path":"objects/btnNAV_ParentGrammar/btnNAV_ParentGrammar.yy",
+    "name":"btnNAV_parent",
+    "path":"objects/btnNAV_parent/btnNAV_parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

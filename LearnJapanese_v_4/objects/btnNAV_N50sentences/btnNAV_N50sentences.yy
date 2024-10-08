@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"btnNAV_N50sentences",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":37,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"btnNAV_N50sentences",
   "overriddenProperties":[],
@@ -10,8 +12,8 @@
     "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarNav.yy",
   },
   "parentObjectId":{
-    "name":"btnNAV_ParentGrammar",
-    "path":"objects/btnNAV_ParentGrammar/btnNAV_ParentGrammar.yy",
+    "name":"btnNAV_parent",
+    "path":"objects/btnNAV_parent/btnNAV_parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -29,7 +31,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
     "name":"spr_ButtonHalfHeight",
     "path":"sprites/spr_ButtonHalfHeight/spr_ButtonHalfHeight.yy",
