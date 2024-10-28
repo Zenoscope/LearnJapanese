@@ -6,8 +6,8 @@
   "name":"obj_AdjPolitePastNeg",
   "overriddenProperties":[],
   "parent":{
-    "name":"GrammarAd_Objs",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarAd_Objs.yy",
+    "name":"Vocab_Adj_Objs",
+    "path":"folders/Objects/Features/VocabAndGrammar/Vocabulary/Vocab_Adj_Objs.yy",
   },
   "parentObjectId":{
     "name":"obj_VerbTextParent",

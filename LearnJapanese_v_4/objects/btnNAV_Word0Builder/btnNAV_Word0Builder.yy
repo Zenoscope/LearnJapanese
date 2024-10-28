@@ -6,8 +6,8 @@
   "name":"btnNAV_Word0Builder",
   "overriddenProperties":[],
   "parent":{
-    "name":"Vocab",
-    "path":"folders/Objects/Features/Vocab.yy",
+    "name":"misc_Games",
+    "path":"folders/Objects/Features/misc_Games.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

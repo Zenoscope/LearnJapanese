@@ -35,7 +35,6 @@ tooltip021 = new tooltip("Hiragana","Hiragana is one of the four Japanese charac
 tooltip022 = new tooltip("Katakana","Katakana is one of the four character sets in Japanese, which also include kanji*, hiragana* and romanji (the latin alphabet, used for writing words in English).  It is a syllabary, representing all of the syllables of the Japanese language.\n\nKatakana is used for writing foreign language words and loan words; onomatopoeia and sound effects in Manga; and scientific and technical terms.\n\n*Kani and hiragana are described in the kanji and hiragana sections.","helptext");
 tooltip023 = new tooltip("Kanji","Kanji is one of the four character sets in japanese, which also include hiragana*, katakana* and romanji (the latin alphabet, used for writing words in English).\n\nKanji are based on Chinese hanji characters, and represent a word or idea. They may have one or more \"readings\", the On-ymi (Chinese) and Kun-yomi (Japanese) readings. For example, the kanji 年, meaning \"year\" has the reading of ネン (nen - onyomi) or とし (toshi - kunyomi).\n\n*Katakana and hiragana are described in the katakana and hiragana sections.","helptext");
 tooltip024 = new tooltip("Grammar","How sentences are put together, and how the parts work: nouns, particles, verbs, adverbs and adjectives.","helptext");
-tooltip025 = new tooltip("Vocabulary","Words, words and more words.\n All of the words in the N5 test, maybe.","helptext");
 tooltip026 = new tooltip("Dialogs","Putting all of those beautiful words to use.","helptext");
 tooltip027 = new tooltip("Bibliography","Useful links, and where all this information came from.","helptext");
 tooltip028 = new tooltip("Kana0intro","Hiragana is one of the four character sets of Japanese. It separates symbols into sounds. Katakana and hiragana are grouped into 4 groups. (explain different groups). You should also notice that the order of the kana vowels are AIUEO rather than AEIOU as in English.","helptext");
@@ -44,9 +43,7 @@ tooltip030 = new tooltip("Missing0Kana","Drag the kana character into it's corre
 tooltip031 = new tooltip("Vocab0List","A list of N5 vocabulary which are usually written using this character set.","helptext");
 tooltip032 = new tooltip("Missing0Vocab","A game to help learn the N5 vocabulary.","helptext");
 tooltip033 = new tooltip("Word0Builder","Drag the character into the correct spot to spell the word.","helptext");
-tooltip034 = new tooltip("Vocab0Grammar","Vocab and grammar. Grammar and vocab.\n\n Vocab and grammar.","helptext");
-
-
+tooltip034 = new tooltip("Vocab0Grammar","Vocabulary is a searchable list of words, sorted by type (nouns, verbs, adverbs etc) with explainations and examples.\n\nGrammar is how to construct and use different types of N5 level sentences.","helptext");
 tooltip035 = new tooltip("One0Hundred0Kanji0List","A list of the 100 most common Kanji used in Japanese.\n\n Each Kanji may have multiple readings. These are listed in order, with the most common first. Learning the most common readings gets you reading kanji more quickly.\n\n There are two types of readings: On-yomi (Chinese, only some match modern Chinese pronounciation) and Kun-yomi (Japanese).\n\n Generally, the on-yomi reading is used for words made of multiple kanji,and kun-yomi are used for words using a single kanji (though there are exceptions).\n\n Okurigana are a mix of kanji and hiragana, they use kun-yomi reading.","helptext");
 tooltip036 = new tooltip("Radical0List"," Learning the radicals isn't essential, but may make learning the Kanji easier.\n\n Radicals are the parts which make up a kanji character. For example 図 'map' (ちず) is made up of the radicals 囗 斗. They can sometimes be kanji themselves, and may have variations in how they are written.\n\n Radicals may appear in different positions as part of a character, eg on the left hand side or surrounding another radical or kanji character.","helptext");
 tooltip037 = new tooltip("One0Hundred0Kanji0Vocab","Words which use the 100 Kanji characters.","helptext");
@@ -55,17 +52,15 @@ tooltip037 = new tooltip("One0Hundred0Kanji0Vocab","Words which use the 100 Kanj
 // Grammar
 //----------------
 // tooltip038 = new tooltip("Adverbs","An Adverb describes a verb. Adverbs in English usually end in -ly (eg: slowly, brokenly, noisily) and can come before or after the verb."tooltip038 = new tooltip("Adverbs","An Adverb describes a verb. Adverbs in English usually end in -ly \(eg: slowly, brokenly, noisily\) and can come before or after the verb.","helptext");
-tooltip038 = new tooltip("Adverbs","An Adverb.","helptext");
-			//"In the sentence 'I quickly ran to the train station quickly' is the adverb.";						
-			//"Adverbs can be derived from i adjectives, by changing the (i) into a (ku). To use a na adjective, change the (na) to (ni).";
-			//"There are also adverbs which aren't derived from adjectives.";
-			
-tooltip039 = new tooltip("Adjectives","A Adjectives","helptext");
-tooltip040 = new tooltip("Particles","A Particles","helptext");
-tooltip041 = new tooltip("Verbs","A Verb","helptext");
+tooltip038 = new tooltip("Adverbs"," An Adverb describes a verb. Adverbs in English usually end in -ly (eg: slowly, brokenly, noisily) and can come before or after the verb. In the sentence 'I quickly ran to the train station' 'quickly' is the adverb.\n\n Adverbs can also be derived from adjectives. You can derive adverbs from -い adjectives, by changing the -い ending into a -く. To use a -な adjective as an adverb, change the -な ending to to -に.","helptext");
+tooltip039 = new tooltip("Adjectives"," Adjectives describe nouns, eg hot, handsome, old...\n\n Adjectives have two types in Japanese: -い (-i) and -な  (-na) adjectives. Most -い adjectives combine a single kanji (汚い / kitanai / 'dirty') with an -い, though are most commonly written in hiragana (kunyomi reading): eg きたない (kitanai). -い adjectives can be used and conjugated like Japanese verbs, or be used without a verb, eg '汚い' can mean 'It is dirty'.\n\n In contrast, -な adjectives end in -な when directly before a noun. Otherwise, they function like nouns. They are conjugated using -だ (plain) or -です (polite). They are usually written as two kanji eg 元気 (げんき / genki / 'spirit, wellness').\n\nMost adjectives are regular, except for いい (ee / 'good').","helptext");
+tooltip040 = new tooltip("Particles"," Particles indicate 'how or where'  the action is being performed.\n\n Particles are always written in hiragana.","helptext");
+tooltip041 = new tooltip("Verbs"," A verb shows which action is being performed in the sentence.\n In Japanese the verb comes at the end of the sentence, so 'I quickly ran to the train station' would be 'I to train station quickly ran' with 'ran' as the verb.\n Verbs can be Transitive - where the action changes from the subject to object; or Intransitive - where the verb doesn't need an object. 分かる (わかる / wakaru) means 'to understand'. You can say 'I understand' either as 'watashi wa wakarimasu' (I understand) or just 'wakarimasu'.\n Japanese has two types of verbs, Godan verbs and Ichidan verbs, which differ in how they conjugate (change forms depending on their tense). A verb's tense is whether a verb is describing an action eg in the past, present, etc. In Japanese, most verbs are regular, and conjugate in a regular way, except for three: 死ぬ (しぬ,shine,'to die'), 為る (する,suru,'to do') and 来る (くる,kuru,'to come').","helptext");
+tooltip042 = new tooltip("Nouns"," A noun is a 'naming' word. In the sentence 'I quickly ran to the train station' both words 'I' 'train station' are nouns.\n\nJapanese also doesn't have definite and indefinite articles ('the' and 'a' respectively). So you would just say '猫がカップを壊した (にゃんこがかっぷをこわした / Neko wa cuppo o kowashita / '[The/A] cat broke [the/a] cup') rather than 'The cat broke a cup'.","helptext");
+tooltip043 = new tooltip("Vocabulary","A list of Japanese N5 level words, with examples, grouped by usage (verbs, adjectives, nouns, etc). ","helptext");
+tooltip044 = new tooltip("Grammar","Different types of sentences and how they are constructed and used.","helptext");
+
 //----------------
-
-
 //
 tooltip050 = new tooltip("sokuonfu","small tsu, the following consonant is doubled, and pronounced separately, eg konnichiwa","helptext");
 tooltip051 = new tooltip("chōonpu","ー a long vowel","helptext");
@@ -79,7 +74,6 @@ tooltip055 = new tooltip("Links","Just a test!","biblio");
 // but it comes back.
 tooltip060 = new tooltip("Splash_Screen","Learn Japanese: Release 2\n\nCreated by Omoshiroi games\n\nTested by Bobby and Omoshiroi Games.\n\nRead the dev blog at:          \n\nMade with Gamemeaker.","questionmark");
 tooltip061 = new tooltip("Main_menu","Learn Japanese: Release 2\n\nCreated by Omoshiroi games\n\nTested by Bobby and Omoshiroi Games.\n\nRead the dev blog at:          \n\nMade with Gamemeaker.","questionmark");
-
 
 
 // tooltips 
@@ -150,7 +144,6 @@ tooltip021,
 tooltip022,
 tooltip023,
 tooltip024,
-tooltip025,
 tooltip026,
 tooltip027,
 tooltip028,
@@ -171,7 +164,10 @@ tooltip038,
 tooltip039,
 tooltip040,
 tooltip041,
-// 
+tooltip042,
+tooltip043,
+tooltip044,
+ 
 
 tooltip050,
 tooltip051,

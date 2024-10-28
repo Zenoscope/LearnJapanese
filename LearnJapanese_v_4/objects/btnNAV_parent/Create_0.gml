@@ -18,3 +18,8 @@ image_index = random(image_number);
 
 global.show_helptext = false;
 //tooltips = gloal.tooltips;
+
+v_alignment = fa_bottom;
+//v_alignment = fa_top;
+
+image_speed = 0;

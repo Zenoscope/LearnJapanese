@@ -24,7 +24,7 @@
   "name":"verbs_old",
   "parent":{
     "name":"Delete",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarRooms/Delete.yy",
+    "path":"folders/_ToDelete/GrammarRooms-delete/Delete.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

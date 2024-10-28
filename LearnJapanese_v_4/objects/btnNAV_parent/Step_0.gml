@@ -2,8 +2,7 @@
 
 event_inherited();
 
-if (hovering) {//2	
-	 	
+if (hovering) {//2		 	
 
 	// runs for all buttons.
 	function_show_helptext(btn_name,global.tooltips,self);

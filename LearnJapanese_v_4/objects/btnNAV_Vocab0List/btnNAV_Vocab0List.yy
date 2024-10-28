@@ -6,8 +6,8 @@
   "name":"btnNAV_Vocab0List",
   "overriddenProperties":[],
   "parent":{
-    "name":"Vocab",
-    "path":"folders/Objects/Features/Vocab.yy",
+    "name":"Vocab_List",
+    "path":"folders/Objects/Features/Vocab_List.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

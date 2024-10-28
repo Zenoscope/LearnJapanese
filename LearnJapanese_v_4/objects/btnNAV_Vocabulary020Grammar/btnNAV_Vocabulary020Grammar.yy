@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"btnNAV_Verbs",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":37,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"btnNAV_Vocabulary020Grammar",
+  "eventList":[],
   "managed":true,
-  "name":"btnNAV_Verbs",
+  "name":"btnNAV_Vocabulary020Grammar",
   "overriddenProperties":[],
   "parent":{
-    "name":"VocabNav",
-    "path":"folders/Objects/Features/VocabAndGrammar/Vocabulary/VocabNav.yy",
+    "name":"VocabAndGrammar",
+    "path":"folders/Objects/Features/VocabAndGrammar.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",
@@ -28,13 +26,15 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"button_text","filters":[],"listItems":[],"multiselect":false,"name":"button_text","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"Default\"","varType":2,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ButtonHalfHeight",
-    "path":"sprites/spr_ButtonHalfHeight/spr_ButtonHalfHeight.yy",
+    "name":"spr_Button",
+    "path":"sprites/spr_Button/spr_Button.yy",
   },
   "spriteMaskId":null,
   "visible":true,

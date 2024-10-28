@@ -8,8 +8,8 @@
   "name":"btnNAV_Adjectives",
   "overriddenProperties":[],
   "parent":{
-    "name":"GrammarNav",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarNav.yy",
+    "name":"VocabNav",
+    "path":"folders/Objects/Features/VocabAndGrammar/Vocabulary/VocabNav.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

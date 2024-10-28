@@ -6,8 +6,8 @@
   "name":"btnNAV_start0game",
   "overriddenProperties":[],
   "parent":{
-    "name":"VocabAndGrammar",
-    "path":"folders/Objects/Features/VocabAndGrammar.yy",
+    "name":"Features",
+    "path":"folders/Objects/Features.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

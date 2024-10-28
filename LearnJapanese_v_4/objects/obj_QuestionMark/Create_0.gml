@@ -19,5 +19,3 @@ num_lines = str_height /  line_height;
 // image stuff
 mySprite = obj_QuestionMarkBGSprite;
 _slice = sprite_get_nineslice(object_get_sprite(mySprite));
-
-//show_debug_message(string("_slice" + _slice.left));

@@ -25,7 +25,7 @@
   "name":"Word0Builder",
   "parent":{
     "name":"WordBuilder",
-    "path":"folders/Objects/Features/Vocab/WordBuilder.yy",
+    "path":"folders/Objects/Features/WordBuilder.yy",
   },
   "parentRoom":{
     "name":"Room_Parent",

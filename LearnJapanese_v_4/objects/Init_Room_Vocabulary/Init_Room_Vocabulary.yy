@@ -1,21 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"btnNAV_ParentGrammar",
+  "%Name":"Init_Room_Vocabulary",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"btnNAV_ParentGrammar",
+  "name":"Init_Room_Vocabulary",
   "overriddenProperties":[],
   "parent":{
-    "name":"Grammar",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar.yy",
+    "name":"Vocabulary",
+    "path":"folders/Objects/Features/VocabAndGrammar/Vocabulary.yy",
   },
   "parentObjectId":{
-    "name":"btnNAV_parent",
-    "path":"objects/btnNAV_parent/btnNAV_parent.yy",
+    "name":"Init_Room_Parent",
+    "path":"objects/Init_Room_Parent/Init_Room_Parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,10 +33,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_Button",
-    "path":"sprites/spr_Button/spr_Button.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

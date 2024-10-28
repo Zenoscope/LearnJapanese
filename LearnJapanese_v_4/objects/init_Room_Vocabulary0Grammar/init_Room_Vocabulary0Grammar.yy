@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"init_Room_Vocab0Grammar",
+  "%Name":"init_Room_Vocabulary0Grammar",
   "eventList":[],
   "managed":true,
-  "name":"init_Room_Vocab0Grammar",
+  "name":"init_Room_Vocabulary0Grammar",
   "overriddenProperties":[],
   "parent":{
     "name":"VocabAndGrammar",

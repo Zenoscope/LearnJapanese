@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"Init_Room_Grammar",
+  "%Name":"btnNAV_Nouns",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":37,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"Init_Room_Grammar",
+  "name":"btnNAV_Nouns",
   "overriddenProperties":[],
   "parent":{
-    "name":"Grammar",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar.yy",
+    "name":"VocabNav",
+    "path":"folders/Objects/Features/VocabAndGrammar/Vocabulary/VocabNav.yy",
   },
   "parentObjectId":{
-    "name":"Init_Room_Parent",
-    "path":"objects/Init_Room_Parent/Init_Room_Parent.yy",
+    "name":"btnNAV_parent",
+    "path":"objects/btnNAV_parent/btnNAV_parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_ButtonHalfHeight",
+    "path":"sprites/spr_ButtonHalfHeight/spr_ButtonHalfHeight.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

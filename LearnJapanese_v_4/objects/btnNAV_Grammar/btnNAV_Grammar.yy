@@ -1,9 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"btnNAV_Grammar",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"btnNAV_Grammar",
   "overriddenProperties":[],

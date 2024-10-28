@@ -27,7 +27,7 @@ type			room_script.display_list[room_script.card_index + i].field1,
 
 if (live_call()) return live_result;
 
-var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs","Arrow_Buttons","Search","Verbs_bg"];
+var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs","Arrow_Buttons","Search","Verbs_bg","Nouns"];
 function_deactivate_layers_by_Name(layer_array);
 
 if layer_exists("vocab_layer") {
@@ -45,7 +45,8 @@ switch (btn_name)
 		{
 
 		case "Adverbs":
-#region			
+#region
+/*
 			// room_script.grammar_string = [];
 			// array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 			// either it crashes or it gets an extra line at the end.
@@ -83,8 +84,9 @@ switch (btn_name)
 			// move the layer.
 			instance_activate_layer("Search");
 			btn_Dialog_Search.y = 370;		
+*/
+#endregion		
 
-#endregion			
 		break;
 
 		case "Particles":
@@ -280,6 +282,7 @@ switch (btn_name)
 
 		case "Adjectives":			
 #region
+/*
 			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 			room_script.title_string = "Adjectives";
 		
@@ -351,7 +354,9 @@ switch (btn_name)
 			instance_activate_layer("Adjective");		
 			instance_activate_layer("Search");
 			btn_Dialog_Search.y = 350;
+*/
 #endregion
+
 		break;
 
 		case "N50sentences":			
@@ -405,6 +410,9 @@ switch (btn_name)
 			room_script.max_words_to_display = 3;
 			
 			room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
+			
+			instance_activate_layer("Search");
+			
 #endregion			
 		break;
 

@@ -8,8 +8,8 @@
   "name":"btn_invisPlain",
   "overriddenProperties":[],
   "parent":{
-    "name":"GrammarVerb_Objs",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarVerb_Objs.yy",
+    "name":"Vocab_Verb_Objs",
+    "path":"folders/Objects/Features/VocabAndGrammar/Vocabulary/Vocab_Verb_Objs.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

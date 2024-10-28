@@ -6,8 +6,8 @@
   "name":"btn_DropdownArrow",
   "overriddenProperties":[],
   "parent":{
-    "name":"DropDown",
-    "path":"folders/Objects/Features/VocabAndGrammar/DropDown.yy",
+    "name":"DropDown -delete",
+    "path":"folders/_ToDelete/DropDown -delete.yy",
   },
   "parentObjectId":null,
   "persistent":false,

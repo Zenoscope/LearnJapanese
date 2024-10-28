@@ -327,14 +327,12 @@ function function_trim_buttonName(orig_btn_name) {
 // chop the string to underscore_pos + 1
 	var room_name = string_delete(orig_btn_name,1,underscore_pos); 
  
- // replace 0 with a space, if it is there.
-  //if (string_count("0",room_name) > 0 ) {   
-		var display_name = string_replace_all(room_name,"0"," ");
- //		} 
- //else {
- //		var display_name = room_name;
- //		}
- 
+  // replace 0 with a space, if it is there.
+  	var display_name = string_replace_all(room_name,"0"," ");
+	// replace 2 with an ampersand, if it is there.
+  	var display_name = string_replace_all(display_name,"2","&");
+		
+
  if (display_name = "" ){
 	show_message("Display name error");
 	}

@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Delete",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarRooms/Delete.yy",
+    "path":"folders/_ToDelete/GrammarRooms-delete/Delete.yy",
   },
   "parentObjectId":{
     "name":"Init_Room_Parent",

@@ -8,8 +8,8 @@
   "name":"TextBox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Grammar",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar.yy",
+    "name":"Vocabulary",
+    "path":"folders/Objects/Features/VocabAndGrammar/Vocabulary.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"Grammar_Dwn_Arrow",
+  "%Name":"VocabGrammar_Up_Arrow",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"Grammar_Dwn_Arrow",
+  "name":"VocabGrammar_Up_Arrow",
   "overriddenProperties":[],
   "parent":{
-    "name":"GrammarNav",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarNav.yy",
+    "name":"Shared",
+    "path":"folders/Objects/Features/VocabAndGrammar/Shared.yy",
   },
   "parentObjectId":{
     "name":"btn_NoLabel",
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Nav_Arrow_Down",
-    "path":"sprites/spr_Nav_Arrow_Down/spr_Nav_Arrow_Down.yy",
+    "name":"spr_Nav_Arrow_Up",
+    "path":"sprites/spr_Nav_Arrow_Up/spr_Nav_Arrow_Up.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -19,3 +19,5 @@ image_index = random(image_number);
 
 show_helptext = false;
 //tooltips = gloal.tooltips;
+
+v_alignment = fa_middle;

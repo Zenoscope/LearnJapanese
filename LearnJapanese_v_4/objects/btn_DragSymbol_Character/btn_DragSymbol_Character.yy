@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"WordBuilder",
-    "path":"folders/Objects/Features/Vocab/WordBuilder.yy",
+    "path":"folders/Objects/Features/WordBuilder.yy",
   },
   "parentObjectId":{
     "name":"btn_Drag_Character_Parent",

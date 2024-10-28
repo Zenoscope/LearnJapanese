@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"btnNAV_N50sentences",
+  "%Name":"btnNAV_Vocab0Search",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":37,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"btnNAV_N50sentences",
+  "name":"btnNAV_Vocab0Search",
   "overriddenProperties":[],
   "parent":{
-    "name":"GrammarNav",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar/GrammarNav.yy",
+    "name":"VocabNav",
+    "path":"folders/Objects/Features/VocabAndGrammar/Vocabulary/VocabNav.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",
@@ -31,7 +31,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
+  "solid":false,
   "spriteId":{
     "name":"spr_ButtonHalfHeight",
     "path":"sprites/spr_ButtonHalfHeight/spr_ButtonHalfHeight.yy",
