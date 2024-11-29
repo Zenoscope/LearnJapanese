@@ -25,6 +25,21 @@ y_scale = 0.75;
 
 // searchFunction_show_result_text {}
 
+
+if (string_length(meaning) > 20) {
+	// get first 17 chars and add ... to it.
+	temp = "";
+	temp = string_copy(meaning, 0, 17);
+	meaning = temp + "...";
+	}
+
+if (string_length(examples) > 60) {
+	// get first 17 chars and add ... to it.
+	temp = "";
+	temp = string_copy(examples, 0, 57);
+	examples = temp + "...";
+	}
+
 if (string_count(room_script.title_string,"Adverbs") > 0 ){
 			draw_text_ext_transformed(x + x_offset,y + y_offset			,"Word: "	+ kanji,0,1500,x_scale,y_scale,0);
 			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);

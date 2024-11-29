@@ -18,7 +18,6 @@ var height = string_height(model_string);
 
 spr_height = self.sprite_height;
 
-
 // search text config
 // search font
 draw_set_font(fnt_button);

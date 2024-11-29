@@ -7,7 +7,7 @@ y_origin = y;
 
 create_depth = depth;
 
-image_xscale = 3;
+image_xscale = 3.45;
 image_yscale = 0.7;
 
 text_colour = c_gray;

@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_background",
+  "%Name":"obj_SearchBackground",
   "eventList":[],
   "managed":true,
-  "name":"obj_background",
+  "name":"obj_SearchBackground",
   "overriddenProperties":[],
   "parent":{
     "name":"Search",
@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_SearchDropBG",
+    "path":"sprites/spr_SearchDropBG/spr_SearchDropBG.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

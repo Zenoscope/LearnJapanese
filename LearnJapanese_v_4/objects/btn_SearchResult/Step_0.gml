@@ -21,26 +21,40 @@ if (clicked) {//1
 	var _args = [type,verbStem];
 	room_script.search_result_method(_args);					
 	
+	//disable the vocab layer.
+	// crate a new layer called vocab_display
+	// create a new object to display the vocab item
+	// if you click on the close button on the object (dialog) then it destroys the layer.
+	
+	
+	
+	
+	
+	
+	/*
 	show_debug_message(string(self));
 	show_debug_message("button layer is " + string(self.layer));
 	show_debug_message("button layer is " + string(layer_get_name(self.layer)));
 	
     show_debug_message("------------show layers");
 	
+	
 	var _arr_layers = layer_get_all();	
 	for (var i = 0; i < array_length(_arr_layers); i++)		
 		{//2
-		//if (layer_get_name(_arr_layers[i]) == "vocab_layer") {//3
+		if (layer_get_name(_arr_layers[i]) == "vocab_layer") {//3
 		//	show_debug_message("########" + string(room_get_name(room)));
 		
-		show_debug_message("name " + string(layer_get_name(_arr_layers[i])));
-		show_debug_message("id " + string(_arr_layers[i]));
+		
+		
+			show_debug_message("name " + string(layer_get_name(_arr_layers[i])));
+			show_debug_message("id " + string(_arr_layers[i]));
 		//if ( layer_get_name(_arr_layers[i]) == "vocab_layer") {
 		//	layer_destroy(_arr_layers[i]);			
 		//	}
 			
-		if ( layer_get_depth(_arr_layers[i]) == -100 ) {
-			layer_destroy(_arr_layers[i]);			
+		//if ( layer_get_depth(_arr_layers[i]) == -100 ) {
+		//	layer_destroy(_arr_layers[i]);			
 			}
 		}//2`1																																																																																																																					`
 		
@@ -62,7 +76,9 @@ if (clicked) {//1
 		// instance_destroy(room_script.vocab_display_buttons[i].id);
 		}
 		
+	*/
 	
+	layer_disable("Vocab_layer");
 	
 	//object_get_instance()
 }//1

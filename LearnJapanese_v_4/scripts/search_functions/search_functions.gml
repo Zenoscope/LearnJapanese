@@ -175,6 +175,9 @@ if (array_length(room_script.display_list) > 0 ) {
 #endregion
 
 //------------------------------
+// show search result buttons
+//------------------------------
+
 // scale factor of the background image
 #region
 var _bg_scale_factor = 6 / 8;
@@ -187,9 +190,6 @@ var _xscale = 3.5;
 var _width  = sprite_get_width(spr_SearchDropBG);
 var _height = sprite_get_height(spr_SearchDropBG);
 #endregion
-
-//------------------------------
-// show search result buttons
 
 //------------------------------
 // draw the arrows once
@@ -230,16 +230,24 @@ else {
 #endregion
 
 
+
 //----------------
 // draw the background image
 #region
 // size of the background
 _ysize =(_yscale/room_script.max_words_to_display) * _search_result_count;
 // background of the image
-// draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_ysize + 0.2,0,c_white,1);
-layer_sprite_create("vocab_layer",text_x_pos -5,text_y_pos,spr_SearchDropBG);
-layer_sprite_xscale(spr_SearchDropBG,_xscale);
-layer_sprite_yscale(spr_SearchDropBG,_ysize + 0.2);
+//draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_ysize + 0.2,0,c_white,1);
+background = instance_create_layer(text_x_pos,text_y_pos,"vocab_layer",obj_SearchBackground);
+//layer_sprite_create("vocab_layer",text_x_pos -5,text_y_pos,spr_SearchDropBG);
+//   layer_sprite_xscale(spr_SearchDropBG,_xscale);
+//   sprite_ID =  layer_sprite_get_id("vocab_layer","spr_SearchDropBG");
+//    layer_sprite_xscale(sprite_ID,1000);
+//   layer_sprite_yscale(sprite_ID,1000);
+//     layer_sprite_yscale(spr_SearchDropBG,_ysize + 0.2);
+
+background.image_yscale = _ysize + 0.2;
+background.image_xscale = _xscale;
 
 #endregion
 

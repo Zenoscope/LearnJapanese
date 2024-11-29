@@ -20,6 +20,7 @@ else {
 		// just displayeverything
 		room_script.display_list = room_script.word_list;
 		spr_height = self.sprite_height;
+		// this shows the background, search results etc.
 		search_create_result_buttons(spr_height);
 		}		
 	else {

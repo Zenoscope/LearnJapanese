@@ -59,6 +59,8 @@ tooltip041 = new tooltip("Verbs"," A verb shows which action is being performed 
 tooltip042 = new tooltip("Nouns"," A noun is a 'naming' word. In the sentence 'I quickly ran to the train station' both words 'I' 'train station' are nouns.\n\nJapanese also doesn't have definite and indefinite articles ('the' and 'a' respectively). So you would just say '猫がカップを壊した (にゃんこがかっぷをこわした / Neko wa cuppo o kowashita / '[The/A] cat broke [the/a] cup') rather than 'The cat broke a cup'.","helptext");
 tooltip043 = new tooltip("Vocabulary","A list of Japanese N5 level words, with examples, grouped by usage (verbs, adjectives, nouns, etc). ","helptext");
 tooltip044 = new tooltip("Grammar","Different types of sentences and how they are constructed and used.","helptext");
+tooltip045 = new tooltip("N5_sentence_types","Under Construction - Different types of sentences and how they are constructed and used.","helptext");
+tooltip046 = new tooltip("Sentence_constructor","Under Construction - Build sentences.","helptext");
 
 //----------------
 //

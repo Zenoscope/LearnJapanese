@@ -23,6 +23,7 @@ var y_offset =  (bttn_height /2) + str_height + _slice.bottom;
 draw_sprite_stretched(object_get_sprite(mySprite), 0, x_loc, y_loc ,bttn_width ,bttn_height);
 
 offset = _slice.bottom + str_height + _slice.top + (line_height /2); // might want to add the seperator as well?
+
 draw_set_font(fnt_button);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
