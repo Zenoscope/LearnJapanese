@@ -1,6 +1,6 @@
 /// obj_Kanjicard step
 
-show_debug_message("room_script " + string(room_script));
+//show_debug_message("room_script " + string(room_script));
 
 // move the card whe the arrow is clicked
 	if (room_script.moving == "to_left") {

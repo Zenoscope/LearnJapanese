@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-show_GrammarText(btn_name);
+// Inherit the parent event
+event_inherited();
 
-hideTipOnClick = true;
+hideTipOnClick = false;

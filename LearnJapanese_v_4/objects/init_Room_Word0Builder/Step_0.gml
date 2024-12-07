@@ -43,7 +43,7 @@ if (match_count == length_of_string) { //1
 
 if (show_word = true) { //1
 
-	show_debug_message("selected_word.field_2: " + selected_word.kanji);
+	//show_debug_message("selected_word.field_2: " + selected_word.kanji);
 	
 	// create the array for the selected word
 	var counter = 1;
@@ -152,7 +152,7 @@ if (show_word = true) { //1
 		// set the instance
 		var temp_instance = drag_letter_array[counter];
 					
-		show_debug_message( "selected_letter = " + string(temp_char) );
+		//show_debug_message( "selected_letter = " + string(temp_char) );
 		
 		draggable_card = instance_create_layer(x_loc,y_loc,"card_layer",drag_object,
 				{ // 3

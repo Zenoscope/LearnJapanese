@@ -469,7 +469,7 @@ while( array_counter < array_length( random_number_list ) ) {
 //show_debug_message( "copy kana to Missing Card Grid array" );
 //                         0   1   2
 var missingCardGrid_array = [0];
-show_debug_message("missing card array " + string(missingCardGrid_array));
+//show_debug_message("missing card array " + string(missingCardGrid_array));
 
 var array_counter = 0; // recycling!!!
 while (array_counter < kana_array_length) { 	
@@ -1147,7 +1147,7 @@ catch ( _exception){
 			// max width of the text before a new line...
 			// the width of the button being moused over.
 			
-			show_debug_message("creating questionmark");
+			//show_debug_message("creating questionmark");
 			
 			var local_btn_width = mySelf.sprite_width;
 			var local_btn_height = mySelf.sprite_height;
@@ -1377,7 +1377,7 @@ switch (btn_name)
 				// just an example				
 				//Adverbs - fill in the adverb conjugation
 				// show the word search result button
-				show_debug_message("you clicked "+ btn_name);
+				//show_debug_message("you clicked "+ btn_name);
 				}
 			
 			// move the layer.
@@ -1455,7 +1455,7 @@ switch (btn_name)
 				obj_VerbTextPastPol._text	= conjugation_pol + "mashita"; // tabe + mashita
 				obj_VerbTextPastNegPol._text = conjugation_pol + "masen\n deshita"; //tabe + masen deshita
 								
-				show_debug_message("you clicked "+ btn_name);			
+				//show_debug_message("you clicked "+ btn_name);			
 				
 				}
 				
@@ -1601,13 +1601,9 @@ switch (btn_name)
 			room_script.grammar_string ="";
 			room_script.title_string = "Sentence examples";			
 			
-			room_script.grammar_string[1] = "Japanese sentences follow subject object verb";
+			room_script.grammar_string[0] = "Japanese sentences follow subject object verb";
 						
-			room_script.total_lines = 52; // total lines in the array
-			room_script.current_line = 10; // current last line to display
-			room_script.max_words_to_display = 10; //max lines to display on the screen 
-
-			room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
+			room_script.display_string = function_join_string(0, 1 ,room_script.grammar_string);
 		
 			instance_activate_layer("Arrow_Buttons");
 
@@ -1619,14 +1615,10 @@ switch (btn_name)
 			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));			
 			room_script.title_string = "Sentence constructor";
 			
-			room_script.grammar_string[1] = "Choose the type of sentence you want to make.";
-			room_script.grammar_string[2] = "Use the dropdowns to add in the appropriate nouns and verbs.";
-			
-			room_script.tltal_lines = 2;
-			room_script.current_line=2;
-			room_script.max_words_to_display = 2;
-			
-			room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
+			room_script.grammar_string[0] = "Choose the type of sentence you want to make.";
+			room_script.grammar_string[1] = "Use the dropdowns to add in the appropriate nouns and verbs.";
+
+			room_script.display_string = function_join_string(0,2,room_script.grammar_string);
 #endregion		
 		break;
 

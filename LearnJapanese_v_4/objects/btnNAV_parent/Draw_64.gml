@@ -3,7 +3,7 @@
 //draws the text on the button
 draw_self();
 draw_set_font(fnt_button);
-show_debug_message(btn_name);
+//show_debug_message(btn_name);
  
 kern = string_height("A");
 char_width  = string_width("A");

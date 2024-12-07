@@ -31,6 +31,7 @@ function tooltip(
 
 // BUTTON NAME IS CASE SENSITIVE!!!
 // helptext is the text spoken by Clarissa as part of the game UI
+tooltip020 = new tooltip("Vocabulary020Grammar","Vocabulary - search through various word lists. Grammar - learn how words are used in various types of sentences.","helptext");
 tooltip021 = new tooltip("Hiragana","Hiragana is one of the four Japanese character sets, which also include kanji*, katakana* and romanji (the latin alphabet, used for writing words in English). It is a syllabary, representing all of the syllables of the Japanese language. \n\n Hiragana is used for Kanji suffixes; particles, furigana (used above Kanji to help with pronounciation) and native Japanese words which have no Kanji equivalent.\n\n *Katakana and kanji are described in the katakana and kanji sections.","helptext");
 tooltip022 = new tooltip("Katakana","Katakana is one of the four character sets in Japanese, which also include kanji*, hiragana* and romanji (the latin alphabet, used for writing words in English).  It is a syllabary, representing all of the syllables of the Japanese language.\n\nKatakana is used for writing foreign language words and loan words; onomatopoeia and sound effects in Manga; and scientific and technical terms.\n\n*Kani and hiragana are described in the kanji and hiragana sections.","helptext");
 tooltip023 = new tooltip("Kanji","Kanji is one of the four character sets in japanese, which also include hiragana*, katakana* and romanji (the latin alphabet, used for writing words in English).\n\nKanji are based on Chinese hanji characters, and represent a word or idea. They may have one or more \"readings\", the On-ymi (Chinese) and Kun-yomi (Japanese) readings. For example, the kanji 年, meaning \"year\" has the reading of ネン (nen - onyomi) or とし (toshi - kunyomi).\n\n*Katakana and hiragana are described in the katakana and hiragana sections.","helptext");
@@ -142,6 +143,7 @@ tooltip006,
 tooltip007,
 */
 // helptext
+tooltip020,
 tooltip021,
 tooltip022,
 tooltip023,

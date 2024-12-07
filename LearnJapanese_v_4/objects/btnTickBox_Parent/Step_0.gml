@@ -14,8 +14,8 @@ if (mouse_check_button_released(mb_left))
 
 if (clicked)
 {
-    show_debug_message("you ticked " + btn_name);
-	show_debug_message("Going to room " + btn_name);
+    //show_debug_message("you ticked " + btn_name);
+	//show_debug_message("Going to room " + btn_name);
 	function_tickbox_actions(btn_name,room_script.tick_state);
 } 
 

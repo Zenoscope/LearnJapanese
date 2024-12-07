@@ -35,7 +35,7 @@ catch ( _exception){
 			// max width of the text before a new line...
 			// the width of the button being moused over.
 			
-			show_debug_message("creating questionmark");
+			//show_debug_message("creating questionmark");
 			
 			var local_btn_width = mySelf.sprite_width;
 			var local_btn_height = mySelf.sprite_height;

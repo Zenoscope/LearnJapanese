@@ -2,7 +2,7 @@
 
 room_name = global.current_room;
 
-show_debug_message("Draw Missing Kana---------------:");
+//show_debug_message("Draw Missing Kana---------------:");
 
 // make this a function, i will reuse it in the other Kana games else, I'm sure.
 
@@ -11,7 +11,7 @@ show_debug_message("Draw Missing Kana---------------:");
 //var array_index = 0; //choose which array in the eg kana_array to display first, default is Gojuon
 
 // menu stuff
-show_debug_message(string(global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2]));
+//show_debug_message(string(global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2]));
 
 // sets the array
 switch (global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2])
