@@ -1488,18 +1488,17 @@ switch (btn_name)
 			
 			room_script.total_lines = 2;
 			room_script.current_line=0;
-			room_script.max_words_to_display = 3;
+			room_script.max_words_to_display = 5;
 			
 			room_script.display_string = function_join_string(0,3,room_script.grammar_string);
 
 			instance_activate_layer("Search");
-			btn_Dialog_Search.y = 370;
+			btn_Dialog_Search.y = 250;
 #endregion			
 		break;
 		
 		case "Vocab0Search":		
 #region
-
 			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string))
 			room_script.word_list = function_add_to_WordBuilderArray("Noun",room_script.kanji_list,field_list);						
 						
@@ -1512,7 +1511,10 @@ switch (btn_name)
 			room_script.display_string = function_join_string(0,1,room_script.grammar_string);
 			
 			instance_activate_layer("Search");
-			btn_Dialog_Search.y = 370;
+			btn_Dialog_Search.y = 150;
+			
+			room_script.max_words_to_display  = 7;
+			
 #endregion			
 		break;
 		
