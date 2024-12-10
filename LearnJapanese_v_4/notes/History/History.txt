@@ -1,6 +1,0 @@
-
-# add to an object script
-if (live_call()) return live_result;
-
-room?
-room_set_live(room, true);
