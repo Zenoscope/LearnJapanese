@@ -1357,21 +1357,20 @@ switch (btn_name)
 			
 			//room_script.grammar_stri[0] = "01234567890123456789012345678901234567890123";
 			room_script.grammar_string[0] = "Describes a verb. Adverbs in English usually end";
-			room_script.grammar_string[1] = "in -ly (eg: slowly, brokenly, noisily) and can";
-			room_script.grammar_string[2] = "come before or after the verb. In the sentence"; 
-			room_script.grammar_string[3] = "'I quickly ran to the train station' 'quickly'";
-			room_script.grammar_string[4] = " is the adverb.";
-						
-			room_script.grammar_string[5] = "Adverbs can be derived from i adjectives, by changing the";
-			room_script.grammar_string[6] = "(i) into a (ku). To use a na adjective, change the (na) to (ni).";
-			room_script.grammar_string[7] = "There are also adverbs which aren't derived from adjectives.";
+			room_script.grammar_string[1] = "in -ly (eg: slowly, brokenly, noisily) and can come";
+			room_script.grammar_string[2] = "before or after the verb. In the sentence 'I quickly"; 
+			room_script.grammar_string[3] = "ran to the train station' 'quickly' is the adverb.";
+									
+			//room_script.grammar_string[4] = " Adverbs can be derived from i adjectives, by changing the";
+			//room_script.grammar_string[5] = "(i) into a (ku). To use a na adjective, change the (na) to (ni).";
+			//room_script.grammar_string[6] = "There are also adverbs which aren't derived from adjectives.";
 										
 			// this is for the word search
 			//room_script.total_lines = 7;
 			//room_script.current_line = 1;
-			//room_script.max_words_to_display = 4;
+			room_script.max_words_to_display = 5;
 			
-			room_script.display_string = function_join_string(0, 4,room_script.grammar_string);
+			room_script.display_string = function_join_string(0, 3,room_script.grammar_string);
 			//room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
 			
 			// this will display the adjective search.
@@ -1384,7 +1383,7 @@ switch (btn_name)
 			
 			// move the layer.
 			instance_activate_layer("Search");
-			btn_Dialog_Search.y = 370;
+			btn_Dialog_Search.y = 270;
 
 #endregion			
 		break;
@@ -1406,6 +1405,8 @@ switch (btn_name)
 			instance_activate_layer("Adjective");		
 			instance_activate_layer("Search");
 			btn_Dialog_Search.y = 270;
+			
+			room_script.max_words_to_display = 5;
 	
 			room_script.search_result_method = function(arg){
 
@@ -1556,9 +1557,9 @@ switch (btn_name)
 			room_script.grammar_string[2] = "nouns, and abstract nouns, respectively).";
 			room_script.grammar_string[3] = "Use the dropdown to search for nouns.";
 			
-			room_script.total_lines = 2;
-			room_script.current_line=0;
-			room_script.max_words_to_display = 3;
+			//room_script.total_lines = 2;
+			//room_script.current_line=0;
+			room_script.max_words_to_display = 5;
 			
 			room_script.display_string = function_join_string(0,3,room_script.grammar_string);
 
@@ -1582,7 +1583,7 @@ switch (btn_name)
 			room_script.display_string = function_join_string(0,1,room_script.grammar_string);
 			
 			instance_activate_layer("Search");
-			btn_Dialog_Search.y = 370;
+			btn_Dialog_Search.y = 270;
 #endregion			
 		break;
 		
