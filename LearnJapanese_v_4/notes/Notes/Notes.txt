@@ -1,0 +1,54 @@
+
+//
+room_set_live(room, true);
+if (live_call()) return live_result;
+
+
+// create an array for collisions and store the 
+
+// the missing card array is where the current missing card stack is stored
+var kana_char =			missing_card_array[array_count][0];
+var meaning_char =		missing_card_array[array_count][1];
+var card_order_number = missing_card_array[array_count][2];
+			
+// if the card order number equals the offset number, then record the information
+// in the card. It's used later to check the collision later on.
+
+if (card_order_number == room_script.card_offset ) {
+	room_script.array_missingCardStack[0][0] = kana_char;
+	room_script.array_missingCardStack[0][1] = meaning_char;
+	room_script.array_missingCardStack[0][2] = room_script.missingCardGrid_array[array_count][3];
+	}
+			
+
+var card_function  = "button";
+var card_function = "missing";
+
+// 
+how the card dragging works for Missing Kana
+there are 5 fixed cards 0 - 5.
+Parent is btn_Drag_Character_Parent
+// can I replace these with generated cards?
+
+Generate a list of draggable cards.
+Generate a list of cards for the display array.
+Draw the cards.
+Assign the cards to the draggable cards.
+
+Uses the instance ID of the [?] card.
+If the instance x,y matches the one in the array, then match is confirmed.
+
+Insert the instance of the target card into the draggable card
+When the instance ID matches....
+
+// switch statement
+switch ( )
+		{		
+		case "":		    
+
+		break;        
+		default:
+			show_debug_message(" ");
+		break;
+		}
+*/

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"ac_show_message",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ac_show_message",
+  "parent":{
+    "name":"Testing",
+    "path":"folders/Debug/UnitTests/Scripts/AtomicCity/Testing.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

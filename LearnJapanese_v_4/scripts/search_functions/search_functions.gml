@@ -106,7 +106,7 @@ function searchfunction_reset_dropdown() {
 	
 function searchfunction_create_vocab_layer(arg0){
 	
-/*	var spr_height = arg0;
+	var spr_height = arg0;
 	
 	// get the highest layer and put this above that:
 	var my_layer_depth = 0;
@@ -119,8 +119,8 @@ function searchfunction_create_vocab_layer(arg0){
 		if (current_depth < my_layer_depth){
 			my_layer_depth = current_depth;
 			}	
-		}*/
-	layer_create(100,"vocab_layer");
+		}	
+	layer_create(my_layer_depth - 100,"vocab_layer");
 	}
 
 
@@ -301,5 +301,5 @@ else{
 	}
 
 	}
- //room_script.show_initial_words = false;
+ room_script.show_initial_words = false;
 }

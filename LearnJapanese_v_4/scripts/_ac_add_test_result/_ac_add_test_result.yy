@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"_ac_add_test_result",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"_ac_add_test_result",
+  "parent":{
+    "name":"Testing",
+    "path":"folders/Debug/UnitTests/Scripts/AtomicCity/Testing.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"Note3",
+  "name":"Note3",
+  "parent":{
+    "name":"Vocabulary",
+    "path":"folders/Objects/Features/VocabAndGrammar/Vocabulary.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

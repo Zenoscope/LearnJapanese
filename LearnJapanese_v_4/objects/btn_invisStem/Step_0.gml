@@ -1,0 +1,26 @@
+/// @description Insert description here
+// You can write your code in this editor
+
+if (live_call()) return live_result;
+
+/// @Description - btn_nav_parent
+
+if (!room_script.search == true) {
+	// disables the hovering part, wtf
+	event_inherited();
+	}
+
+if (hovering) {//2	
+	// runs for all buttons.
+	function_show_helptext(btn_name,global.tooltips,self);
+ 
+	}
+	
+else {//2
+	
+	 if (global.show_helptext == true){
+		global.show_helptext = false;	
+		}
+	 	
+ } // end of "if hovering"
+
