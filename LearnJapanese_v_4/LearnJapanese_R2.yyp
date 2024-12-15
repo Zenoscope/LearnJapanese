@@ -1073,6 +1073,7 @@
     {"id":{"name":"dlg_Parent","path":"objects/dlg_Parent/dlg_Parent.yy",},},
     {"id":{"name":"Init_Room_adjectives","path":"objects/Init_Room_adjectives/Init_Room_adjectives.yy",},},
     {"id":{"name":"Init_Room_adverbs","path":"objects/Init_Room_adverbs/Init_Room_adverbs.yy",},},
+    {"id":{"name":"Init_Room_Grammar","path":"objects/Init_Room_Grammar/Init_Room_Grammar.yy",},},
     {"id":{"name":"Init_Room_GrammarRooms","path":"objects/Init_Room_GrammarRooms/Init_Room_GrammarRooms.yy",},},
     {"id":{"name":"Init_Room_KanjiList","path":"objects/Init_Room_KanjiList/Init_Room_KanjiList.yy",},},
     {"id":{"name":"Init_Room_Main","path":"objects/Init_Room_Main/Init_Room_Main.yy",},},

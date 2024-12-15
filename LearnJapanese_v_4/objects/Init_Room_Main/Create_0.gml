@@ -5,6 +5,8 @@ room_set_live(room, true);
 
 global.roomBreadcrumbs = ["Main_menu"];
 
+show_delf = room_get_name(room);
+
 //randomise();
 
 global.gender = "m";

@@ -106,6 +106,7 @@ function searchfunction_reset_dropdown() {
 	
 function searchfunction_create_vocab_layer(arg0){
 	
+	/*
 	var spr_height = arg0;
 	
 	// get the highest layer and put this above that:
@@ -121,6 +122,8 @@ function searchfunction_create_vocab_layer(arg0){
 			}	
 		}	
 	layer_create(my_layer_depth - 100,"vocab_layer");
+	*/
+	layer_create(-950,"vocab_layer");
 	}
 
 
