@@ -1320,6 +1320,9 @@ if (live_call()) return live_result;
 
 btn_Dialog_Search_x = 331;
 
+// show the initial list again when you click on the button.
+room_script.show_initial_words = true;
+
 var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs","Arrow_Buttons","Search","Verbs_bg"];
 function_deactivate_layers_by_Name(layer_array);
 
@@ -1329,8 +1332,7 @@ if layer_exists("vocab_layer") {
 
 field_list = ["field_1"];
 
-// reset the search too.
-
+// reset the room text
 array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 
 // switch statement for the buttons
@@ -1345,6 +1347,8 @@ switch (btn_name)
 			
 			room_script.title_string = "Adverbs";
 			field_list = ["field_1"];
+		
+			instance_activate_layer("Search");
 			
 			room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,field_list);
 			
@@ -1354,41 +1358,25 @@ switch (btn_name)
 			room_script.grammar_string[2] = "before or after the verb. In the sentence 'I quickly"; 
 			room_script.grammar_string[3] = "ran to the train station' 'quickly' is the adverb.";
 									
-			//room_script.grammar_string[4] = " Adverbs can be derived from i adjectives, by changing the";
-			//room_script.grammar_string[5] = "(i) into a (ku). To use a na adjective, change the (na) to (ni).";
-			//room_script.grammar_string[6] = "There are also adverbs which aren't derived from adjectives.";
-										
-			// this is for the word search
-			//room_script.total_lines = 7;
-			//room_script.current_line = 1;
 			room_script.max_words_to_display = 5;
 			
 			room_script.display_string = function_join_string(0, 3,room_script.grammar_string);
 			//room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
+
+			//btn_Dialog_Search.x = 270;
+			btn_Dialog_Search.y = 270;
 			
 			// this will display the adjective search.
 			room_script.search_result_method = function(arg){
-				// just an example				
+				// just an example		
+				
+				
 				//Adverbs - fill in the adverb conjugation
 				// show the word search result button
 				//show_debug_message("you clicked "+ btn_name);
 				}
-			
-			// move the layer.
-			//layer_destroy_instances("Search");
-			room_script.show_initial_words = true;
-
-			btn_Dialog_Search.y = 270;
-			
-			//instance_create_layer(btn_Dialog_Search_x, btn_Dialog_Search_y,"Search",asset_get_index("btn_Dialog_Search"),
-			//		{
-			//		room_script: room_script,
-			//		
-			//		}
-			//		)
-			instance_activate_layer("Search");
-			
-
+	
+	
 #endregion			
 		break;
 		
