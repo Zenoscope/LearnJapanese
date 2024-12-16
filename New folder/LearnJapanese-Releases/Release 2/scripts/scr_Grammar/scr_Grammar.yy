@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_Grammar",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Grammar",
+  "parent":{
+    "name":"Data",
+    "path":"folders/Data.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

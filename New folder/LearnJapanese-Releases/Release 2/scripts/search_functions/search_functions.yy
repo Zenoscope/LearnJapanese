@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"search_functions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"search_functions",
+  "parent":{
+    "name":"Search",
+    "path":"folders/Objects/Features/Vocab/Vocab_List/Search.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

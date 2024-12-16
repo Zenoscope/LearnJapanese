@@ -1318,6 +1318,8 @@ type			room_script.display_list[room_script.card_index + i].field1,
 
 if (live_call()) return live_result;
 
+btn_Dialog_Search_x = 331;
+
 var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs","Arrow_Buttons","Search","Verbs_bg"];
 function_deactivate_layers_by_Name(layer_array);
 
@@ -1373,8 +1375,19 @@ switch (btn_name)
 				}
 			
 			// move the layer.
-			instance_activate_layer("Search");
+			//layer_destroy_instances("Search");
+			room_script.show_initial_words = true;
+
 			btn_Dialog_Search.y = 270;
+			
+			//instance_create_layer(btn_Dialog_Search_x, btn_Dialog_Search_y,"Search",asset_get_index("btn_Dialog_Search"),
+			//		{
+			//		room_script: room_script,
+			//		
+			//		}
+			//		)
+			instance_activate_layer("Search");
+			
 
 #endregion			
 		break;

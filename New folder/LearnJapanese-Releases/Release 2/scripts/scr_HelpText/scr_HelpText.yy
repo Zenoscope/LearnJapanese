@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_HelpText",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_HelpText",
+  "parent":{
+    "name":"Data",
+    "path":"folders/Data.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

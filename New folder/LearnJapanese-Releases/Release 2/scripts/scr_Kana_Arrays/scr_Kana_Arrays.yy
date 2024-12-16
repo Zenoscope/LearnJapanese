@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_Kana_Arrays",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_Kana_Arrays",
+  "parent":{
+    "name":"Data",
+    "path":"folders/Data.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
