@@ -827,7 +827,7 @@ search fields:
 	kanji		=_kanji; // kanji if there is any
 	meaning		=_meaning; // meaning 
 	romanji		=_romanji; // romanji
-	field_1		=_type; // noun, verb etc
+	field_1		=_word_type; // noun, verb etc
 	field_2		=_onyomi; // kana
 	field_3		=_kunyomi; // category
 	examples	=_examples; // exampes
@@ -1313,7 +1313,7 @@ meaning:		room_script.display_list[room_script.card_index + i].meaning,
 kana:			room_script.display_list[room_script.card_index + i].field_2,
 verbStem:		room_script.display_list[room_script.card_index + i].verbStem,
 examples:		room_script.display_list[room_script.card_index + i].examples,
-type			room_script.display_list[room_script.card_index + i].field1,
+word_type			room_script.display_list[room_script.card_index + i].field1,
 */
 
 if (live_call()) return live_result;
@@ -1346,9 +1346,7 @@ switch (btn_name)
 			// either it crashes or it gets an extra line at the end.
 			
 			room_script.title_string = "Adverbs";
-			field_list = ["field_1"];
-		
-			instance_activate_layer("Search");
+			field_list = ["field_1"];					
 			
 			room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,field_list);
 			
@@ -1364,16 +1362,25 @@ switch (btn_name)
 			//room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
 
 			//btn_Dialog_Search.x = 270;
-			btn_Dialog_Search.y = 270;
+			//btn_Dialog_Search.y = 270;
+			
+			instance_activate_layer("Search");
 			
 			// this will display the adjective search.
-			room_script.search_result_method = function(arg){
-				// just an example		
+			room_script.search_result_method = function(){
+			/*
+				index:			room_script.display_list[room_script.card_index + i].index,
+				kanji:			room_script.display_list[room_script.card_index + i].kanji,
+				meaning:		room_script.display_list[room_script.card_index + i].meaning,
+ 				kana:			room_script.display_list[room_script.card_index + i].field_2,
+				examples:		room_script.display_list[room_script.card_index + i].examples,
+				word_type:		room_script.display_list[room_script.card_index + i].field_1,
+				room_script:	room_script	
+			*/
+				//searchfunction_show_vocab_search_result(index,kanji,meaning,kana,examples,type,room_script);
 				
+				searchfunction_show_vocab_search_result(other.index,other.kanji,other.meaning,other.romanji,other.kana,other.examples,other.word_type,other.room_script);
 				
-				//Adverbs - fill in the adverb conjugation
-				// show the word search result button
-				//show_debug_message("you clicked "+ btn_name);
 				}
 	
 	
@@ -1464,7 +1471,7 @@ switch (btn_name)
 			// delete the vocab layer
 			// layer_destroy("vocab_layer");
 			
-			type = arg[1];
+			word_type = arg[1];
 			verbStem = arg[0];
 				
 			// just an example
@@ -1475,12 +1482,12 @@ switch (btn_name)
 			// need to finish this with the rest of the verbs
 				
 			// suru verb
-				if ( string_count(type, "suru") > 0 ) {
+				if ( string_count(word_type, "suru") > 0 ) {
 					conjugation_pln = verbStem + " shi";
 					conjugation_pol = verbStem + " shi";		
 					}				
 				  
-				if ( string_count(type,"Godan") > 0 && string_count(verbStem, "/") > 0 ) {
+				if ( string_count(word_type,"Godan") > 0 && string_count(verbStem, "/") > 0 ) {
 					temp = string_split(verbStem,"/");
 					conjugation_pln = temp[1];
 					conjugation_pol = temp[0];
@@ -1725,3 +1732,10 @@ switch (btn_name)
 
 
 }
+
+function disable_layers(layer_name) {
+	// get the name of the button that was clicked and deactivate that layer
+	layer_array = [layer_name];	
+	function_deactivate_layers_by_Name(layer_array);
+	}
+

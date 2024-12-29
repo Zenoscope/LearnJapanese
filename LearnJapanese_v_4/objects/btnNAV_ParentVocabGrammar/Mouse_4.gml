@@ -20,10 +20,8 @@ meaning:		room_script.display_list[room_script.card_index + i].meaning,
 kana:			room_script.display_list[room_script.card_index + i].field_2,
 verbStem:		room_script.display_list[room_script.card_index + i].verbStem,
 examples:		room_script.display_list[room_script.card_index + i].examples,
-type			room_script.display_list[room_script.card_index + i].field1,
+word_type			room_script.display_list[room_script.card_index + i].field1,
 */
-
-
 
 if (live_call()) return live_result;
 
@@ -209,7 +207,7 @@ switch (btn_name)
 			// delete the vocab layer
 			// layer_destroy("vocab_layer");
 			
-			type = arg[1];
+			word_type = arg[1];
 			verbStem = arg[0];
 				
 			// just an example
@@ -220,12 +218,12 @@ switch (btn_name)
 			// need to finish this with the rest of the verbs
 				
 			// suru verb
-				if ( string_count(type, "suru") > 0 ) {
+				if ( string_count(word_type, "suru") > 0 ) {
 					conjugation_pln = verbStem + " shi";
 					conjugation_pol = verbStem + " shi";		
 					}				
 				  
-				if ( string_count(type,"Godan") > 0 && string_count(verbStem, "/") > 0 ) {
+				if ( string_count(word_type,"Godan") > 0 && string_count(verbStem, "/") > 0 ) {
 					temp = string_split(verbStem,"/");
 					conjugation_pln = temp[1];
 					conjugation_pol = temp[0];

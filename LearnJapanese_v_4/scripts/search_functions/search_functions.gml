@@ -73,28 +73,30 @@ function search_for_word(text,search_array) {
 /// @param word_list_item item from the wordlist
 /// @param roomScript roomScript
 
-function searchfunction_show_vocab_search_result(word_list_item,roomScript) {	
+//function searchfunction_show_vocab_search_result(_index,_kanji,_meaning,_kana,_examples,_type,_room_script) {	
+function searchfunction_show_vocab_search_result(_index,_kanji,_meaning,_romanji,_kana,_examples,_word_type,_roomScript) {
+
 	
 	if (!layer_exists( "DialogBox")){
-		layer_create(-1000,"DialogBox")
+		layer_create(-1200,"DialogBox")
 		}
 	
 	xloc = 100;
 	yloc = 100;
 	
-	instance_create_layer(xloc, yloc, "DialogBox", _VocabWordDisplay,{
+	instance_create_layer(xloc, yloc, "DialogBox", obj_VocabWordDisplay,{
 			// word_list_item refers to the specific item, rather than the whole array.
 			// index is used to get the index number for displaying the image
-				card_index	:   word_list_item.index,
-				kanji	:	word_list_item.kanji,
-				meaning	:	word_list_item.meaning,
-				romanji	:	word_list_item.romanji,
-				example	:	word_list_item.examples,
-				kana	:	word_list_item.field_2,
-				type	:	word_list_item.field_1,
-				room_script: roomScript
+				//card_index	:word_list_item.index,
+				index		:_index,
+				kanji		:_kanji,
+				meaning		:_meaning,
+				romanji		:_romanji,
+				example		:_examples,
+				kana		:_kana,
+				word_type	:_word_type,
+				room_script	:_roomScript
 				})
-	 
 }
 
 function searchfunction_reset_dropdown() {
@@ -270,12 +272,14 @@ for (i = 0; i < _search_result_count; i++) {
 				//used for displayng result when button is clicked
 				card_index:		room_script.card_index + i,
 				// shows reults on button
-				kanji:			room_script.display_list[room_script.card_index + i].kanji,				
+				index:			room_script.display_list[room_script.card_index + i].index,
+				kanji:			room_script.display_list[room_script.card_index + i].kanji,
 				meaning:		room_script.display_list[room_script.card_index + i].meaning,
  				kana:			room_script.display_list[room_script.card_index + i].field_2,
 				verbStem:		room_script.display_list[room_script.card_index + i].verbStem,
 				examples:		room_script.display_list[room_script.card_index + i].examples,
-				type:			room_script.display_list[room_script.card_index + i].field_1,
+				word_type:		room_script.display_list[room_script.card_index + i].field_1,
+				romanji:		room_script.display_list[room_script.card_index + i].romanji,
 				room_script:	room_script			
 				})
 		}
@@ -289,7 +293,19 @@ for (i = 0; i < _search_result_count; i++) {
 			
 			room_script.vocab_display_buttons[i].kanji = room_script.display_list[room_script.card_index + i].kanji;
 			room_script.vocab_display_buttons[i].meaning = room_script.display_list[room_script.card_index + i].meaning;
- 			room_script.vocab_display_buttons[i].field_2 = room_script.display_list[room_script.card_index + i].field_2;			
+ 			room_script.vocab_display_buttons[i].field_2 = room_script.display_list[room_script.card_index + i].field_2;
+			
+			/*
+			// these too
+			kanji:			room_script.display_list[room_script.card_index + i].kanji,				
+			meaning:		room_script.display_list[room_script.card_index + i].meaning,
+ 			kana:			room_script.display_list[room_script.card_index + i].field_2,
+			verbStem:		room_script.display_list[room_script.card_index + i].verbStem,
+			examples:		room_script.display_list[room_script.card_index + i].examples,
+			word_type:			room_script.display_list[room_script.card_index + i].field_1,
+			*/
+			
+			
 			}			
 	}
 

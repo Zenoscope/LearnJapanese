@@ -4,8 +4,6 @@
 //dlg_style	  = 0;
 xloc		  = 100;
 yloc		  = 50; 
-dialog_width  = 1000;
-dialog_height = 700;
 
 event_inherited();
 
@@ -25,7 +23,7 @@ draw_text_ext_transformed(xloc + x_offset,yloc + (y_offset * 3)			,"Meaning: "+ 
 draw_text_ext_transformed(xloc + x_offset + 450,yloc + (y_offset * 1)	,"Kana: "	+ kana,0,1000,x_scale,y_scale,0);
 draw_text_ext_transformed(xloc + x_offset + 450,yloc + (y_offset * 3)	,"Romaji: "	+ romanji,0,1000,x_scale,y_scale,0);
 
-draw_text_ext_transformed(xloc + x_offset + 800,yloc + (y_offset * 1)	,"Type: "	+ type,0,1000,x_scale,y_scale,0);
+draw_text_ext_transformed(xloc + x_offset + 800,yloc + (y_offset * 1)	,"Type: "	+ word_type,0,1000,x_scale,y_scale,0);
 
 //var new_lines_example  = string_replace(example, "/", "\n");
 
@@ -48,7 +46,7 @@ function function_zero_pad(number){
 	}
 
 // draw the mneumonic image under all of the other stuff
-var vocab_image_index = function_zero_pad(card_index);
+var vocab_image_index = function_zero_pad(index);
 var vocab_sprite = asset_get_index("Vocab_Image" + vocab_image_index);
 
 //var x_midpoint = xloc + (dialog_width  / 2); //(dialog_width -  (dialog_width  / 2));

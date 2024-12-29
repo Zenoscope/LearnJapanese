@@ -2,13 +2,13 @@
 
 function kanji_glyph(
 	//_index,_kanji,_meaning,_sorting,_type,_onyomi,_kunyomi,_examples, _romanji
-	_index,_kanji,_meaning,_romanji,_type,_onyomi,_kunyomi,_examples, _sorting,_kana_reading	
+	_index,_kanji,_meaning,_romanji,_word_type,_onyomi,_kunyomi,_examples, _sorting,_kana_reading	
 	) constructor {
 	index		=_index;
 	kanji		=_kanji;
 	meaning		=_meaning;
 	romanji		=_romanji;
-	field_1		=_type;
+	field_1		=_word_type;
 	field_2		=_onyomi;
 	field_3		=_kunyomi;
 	examples	=_examples;

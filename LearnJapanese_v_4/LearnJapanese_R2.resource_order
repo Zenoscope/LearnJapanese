@@ -34,7 +34,6 @@
   "ResourceOrderSettings":[
     {"name":"GMLive_fallback","order":1,"path":"extensions/GMLive_fallback/GMLive_fallback.yy",},
     {"name":"Note3","order":2,"path":"notes/Note3/Note3.yy",},
-    {"name":"_VocabWordDisplay","order":2,"path":"objects/_VocabWordDisplay/_VocabWordDisplay.yy",},
     {"name":"btn_Dialog_Search","order":3,"path":"objects/btn_Dialog_Search/btn_Dialog_Search.yy",},
     {"name":"btn_DropDown_old","order":2,"path":"objects/btn_DropDown_old/btn_DropDown_old.yy",},
     {"name":"btn_DropdownArrow","order":1,"path":"objects/btn_DropdownArrow/btn_DropdownArrow.yy",},
@@ -108,6 +107,7 @@
     {"name":"obj_VerbTextPresPol","order":21,"path":"objects/obj_VerbTextPresPol/obj_VerbTextPresPol.yy",},
     {"name":"obj_VerbTextStem","order":17,"path":"objects/obj_VerbTextStem/obj_VerbTextStem.yy",},
     {"name":"obj_VerbTextTeForm","order":18,"path":"objects/obj_VerbTextTeForm/obj_VerbTextTeForm.yy",},
+    {"name":"obj_VocabWordDisplay","order":2,"path":"objects/obj_VocabWordDisplay/obj_VocabWordDisplay.yy",},
     {"name":"Search_Dwn_Arrow","order":7,"path":"objects/Search_Dwn_Arrow/Search_Dwn_Arrow.yy",},
     {"name":"Search_Up_Arrow","order":6,"path":"objects/Search_Up_Arrow/Search_Up_Arrow.yy",},
     {"name":"TextBox","order":6,"path":"objects/TextBox/TextBox.yy",},

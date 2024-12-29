@@ -6,3 +6,5 @@
 
 image_index = dlg_style;
 image_speed = 0;
+
+clicked = false;
