@@ -1331,7 +1331,6 @@ if layer_exists("vocab_layer") {
 	}
 
 field_list = ["field_1"];
-
 // reset the room text
 array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 

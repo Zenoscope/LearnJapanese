@@ -75,10 +75,10 @@ function search_for_word(text,search_array) {
 
 //function searchfunction_show_vocab_search_result(_index,_kanji,_meaning,_kana,_examples,_type,_room_script) {	
 function searchfunction_show_vocab_search_result(_index,_kanji,_meaning,_romanji,_kana,_examples,_word_type,_roomScript) {
-
 	
 	if (!layer_exists( "DialogBox")){
-		layer_create(-1200,"DialogBox")
+		// the actual is 950
+		layer_create(-1050,"DialogBox")
 		}
 	
 	xloc = 100;
@@ -107,24 +107,6 @@ function searchfunction_reset_dropdown() {
 	}
 	
 function searchfunction_create_vocab_layer(arg0){
-	
-	/*
-	var spr_height = arg0;
-	
-	// get the highest layer and put this above that:
-	var my_layer_depth = 0;
-	var current_depth = 0;
-	// loop through all the layers and get the depths
-	var all_layers = layer_get_all();
-	for (var i = 0; i < array_length(all_layers); i++;)
-		{
-		current_depth = layer_get_depth(all_layers[i]);
-		if (current_depth < my_layer_depth){
-			my_layer_depth = current_depth;
-			}	
-		}	
-	layer_create(my_layer_depth - 100,"vocab_layer");
-	*/
 	layer_create(-950,"vocab_layer");
 	}
 
@@ -235,27 +217,6 @@ else {
 #endregion
 
 
-
-//----------------
-// draw the background image
-#region
-// size of the background
-_ysize =(_yscale/room_script.max_words_to_display) * _search_result_count;
-// background of the image
-//draw_sprite_ext(spr_SearchDropBG,1,text_x_pos -5 ,text_y_pos,_xscale,_ysize + 0.2,0,c_white,1);
-background = instance_create_layer(text_x_pos,text_y_pos,"vocab_layer",obj_SearchBackground);
-//layer_sprite_create("vocab_layer",text_x_pos -5,text_y_pos,spr_SearchDropBG);
-//   layer_sprite_xscale(spr_SearchDropBG,_xscale);
-//   sprite_ID =  layer_sprite_get_id("vocab_layer","spr_SearchDropBG");
-//    layer_sprite_xscale(sprite_ID,1000);
-//   layer_sprite_yscale(sprite_ID,1000);
-//     layer_sprite_yscale(spr_SearchDropBG,_ysize + 0.2);
-
-background.image_yscale = _ysize + 0.2;
-background.image_xscale = _xscale;
-
-#endregion
-
 //------------------------------------
 //Draw the search result buttons
 #region
@@ -303,10 +264,19 @@ for (i = 0; i < _search_result_count; i++) {
 			verbStem:		room_script.display_list[room_script.card_index + i].verbStem,
 			examples:		room_script.display_list[room_script.card_index + i].examples,
 			word_type:			room_script.display_list[room_script.card_index + i].field_1,
-			*/
+			*/		
 			
+			}
 			
-			}			
+	//----------------
+	// draw the background image	
+	// size of the background
+	_ysize =(_yscale/room_script.max_words_to_display) * _search_result_count;
+	// background of the image
+	background = instance_create_layer(text_x_pos,text_y_pos,"vocab_layer",obj_SearchBackground);
+	background.image_yscale = _ysize + 0.2;
+	background.image_xscale = _xscale;
+			
 	}
 
 

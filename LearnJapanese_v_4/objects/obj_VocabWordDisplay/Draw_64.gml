@@ -1,9 +1,8 @@
 /// @description draw the dialog box
 // You can write your code in this editor
 
-//dlg_style	  = 0;
-xloc		  = 100;
-yloc		  = 50; 
+xloc		  = 325;
+yloc		  = 100; 
 
 event_inherited();
 
@@ -20,15 +19,12 @@ var y_scale = 0.75;
 
 draw_text_ext_transformed(xloc + x_offset,yloc + (y_offset * 1)			,"Kanji: "	+ kanji,0,1000,x_scale,y_scale,0);
 draw_text_ext_transformed(xloc + x_offset,yloc + (y_offset * 3)			,"Meaning: "+ meaning,0,1000,x_scale,y_scale,0);
+draw_text_ext_transformed(xloc + x_offset,yloc + (y_offset * 5)	,"Type: "	+ word_type,0,1000,x_scale,y_scale,0);
+
 draw_text_ext_transformed(xloc + x_offset + 450,yloc + (y_offset * 1)	,"Kana: "	+ kana,0,1000,x_scale,y_scale,0);
 draw_text_ext_transformed(xloc + x_offset + 450,yloc + (y_offset * 3)	,"Romaji: "	+ romanji,0,1000,x_scale,y_scale,0);
 
-draw_text_ext_transformed(xloc + x_offset + 800,yloc + (y_offset * 1)	,"Type: "	+ word_type,0,1000,x_scale,y_scale,0);
-
-//var new_lines_example  = string_replace(example, "/", "\n");
-
-draw_text_ext_transformed(xloc + x_offset,yloc + (y_offset * 5)			,"Example: "+ example,(y_offset * 3),1300,x_scale,y_scale,0);
-//draw_text_ext_transformed(xloc + x_offset,yloc + (y_offset  *3)			,"example: "+ new_lines_example,100,1500,x_scale,y_scale,0);
+draw_text_ext_transformed(xloc + x_offset,yloc + (y_offset * 7)			,"Example: "+ example,(y_offset * 3),1300,x_scale,y_scale,0);
 
 function function_zero_pad(number){
 	var num_str = string(number);
@@ -49,10 +45,14 @@ function function_zero_pad(number){
 var vocab_image_index = function_zero_pad(index);
 var vocab_sprite = asset_get_index("Vocab_Image" + vocab_image_index);
 
-//var x_midpoint = xloc + (dialog_width  / 2); //(dialog_width -  (dialog_width  / 2));
-var x_midpoint = window_get_width / 2;
-//var y_midpoint = yloc + (dialog_height / 2); //(dialog_height - (dialog_height / 2));
-var y_midpoint = window_get_height / 2;
+dialog_width  = 1000;
+dialog_height = 700;
 
-// draw the background image
+
+//var x_midpoint = xloc + (dialog_width  / 2); //(dialog_width -  (dialog_width  / 2));
+var x_midpoint = self.x; //+ (dialog_width / 2);
+//var y_midpoint = yloc + (dialog_height / 2); //(dialog_height - (dialog_height / 2));
+var y_midpoint = self.y - 50; //+  (dialog_height / 2);
+
+// draw the vocab image
 draw_sprite_ext(vocab_sprite,0,x_midpoint,y_midpoint + 20 ,0.6,0.6,0,c_white,1);

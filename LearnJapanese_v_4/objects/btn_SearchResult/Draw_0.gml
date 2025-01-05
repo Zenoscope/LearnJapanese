@@ -23,61 +23,63 @@ y_scale = 0.75;
 // switch statement
 // this shouls be another function
 
-// searchFunction_show_result_text {}
+// copy the meaning to the trimmed meeting, so the 
+// trimmed meeting is displayed here.
 
+function trim_display_string(trim_string){
+	if (string_length(trim_string) > 20) {
+		// get first 17 chars and add ... to it.
+		var temp = "";
+		var temp = string_copy(meaning, 0, 17);
+		var trimmed = temp + "...";
+		trim_string = trimmed;
+ 		}
+	return trim_string;
+}
 
-if (string_length(meaning) > 20) {
-	// get first 17 chars and add ... to it.
-	temp = "";
-	temp = string_copy(meaning, 0, 17);
-	meaning = temp + "...";
-	}
-
-if (string_length(examples) > 60) {
-	// get first 17 chars and add ... to it.
-	temp = "";
-	temp = string_copy(examples, 0, 57);
-	examples = temp + "...";
-	}
+trimmed_meaning = trim_display_string(meaning);
+trimmed_examples = trim_display_string(examples);
 
 if (string_count(room_script.title_string,"Adverbs") > 0 ){
 			draw_text_ext_transformed(x + x_offset,y + y_offset			,"Word: "	+ kanji,0,1500,x_scale,y_scale,0);
-			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);
-			draw_text_ext_transformed(x + x_offset + 350,y + y_offset	,"Example: "+ examples,kerning,800,x_scale,y_scale,0);			
+			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ trimmed_meaning,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset + 350,y + y_offset	,"Example: "+ trimmed_examples,kerning,800,x_scale,y_scale,0);			
 		}
 else if (string_count(room_script.title_string,"Adjectives") > 0 ){
 			draw_text_ext_transformed(x + x_offset,y + y_offset			,"Word: "	+ kanji,0,1500,x_scale,y_scale,0);
-			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);
-			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Example: "+ examples,kerning,800,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ trimmed_meaning,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Example: "+ trimmed_examples,kerning,800,x_scale,y_scale,0);
 		}
 else if (string_count(room_script.title_string,"Verbs") > 0 ){
 			draw_text_ext_transformed(x + x_offset,y + y_offset			,"Word:"	+ kanji,0,1500,x_scale,y_scale,0);
-			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);
-			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Example: "+ examples,0,800,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ trimmed_meaning,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Example: "+ trimmed_examples,0,800,x_scale,y_scale,0);
 		}	
 else if (string_count(room_script.title_string,"Kanji") > 0 ){
 			draw_text_ext_transformed(x + x_offset,y + y_offset			,"Kanji Kanji: "	+ kanji,0,1500,x_scale,y_scale,0);
-			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ trimmed_meaning,0,1500,x_scale,y_scale,0);
 			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);
 		}			
 else if (string_count(room_script.title_string,"Hiragana") > 0 ){		
 			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);
-			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);			
+			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ trimmed_meaning,0,1500,x_scale,y_scale,0);			
 		}		
 else if (string_count(room_script.title_string,"Katakana") > 0 ){
 			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);
-			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);		
+			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ trimmed_meaning,0,1500,x_scale,y_scale,0);		
 		}
 else	{		
 			//show_debug_message("Room not found");
 			//show_debug_message(room_script.display_name);
 			// this is for Kanji search
 			draw_text_ext_transformed(x + x_offset,y + y_offset			,"Kanji: "	+ kanji,0,1500,x_scale,y_scale,0);
-			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);
+			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ trimmed_meaning,0,1500,x_scale,y_scale,0);
 			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);
 		}
 
+
 // this is for Kanji search
 //draw_text_ext_transformed(x + x_offset,y + y_offset			,"Kanji: "	+ kanji,0,1500,x_scale,y_scale,0);
-//draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ meaning,0,1500,x_scale,y_scale,0);
+//draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ trimmed_meaning,0,1500,x_scale,y_scale,0);
 //draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);
+

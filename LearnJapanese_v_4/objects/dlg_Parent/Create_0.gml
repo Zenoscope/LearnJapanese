@@ -4,7 +4,10 @@
 // spawn a close button too
 // use the square box.
 
-image_index = dlg_style;
+//image_xscale
+//image_yscale
+
+image_index = 0;
 image_speed = 0;
 
 clicked = false;

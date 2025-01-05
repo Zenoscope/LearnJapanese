@@ -148,7 +148,7 @@ for(lines = 1; lines <= num_max_words_to_display; lines += 1; ) {
 
 // hide the layers until we need them
 // 
-var LayerArray = ["Sentence","Particles","Verbs","Verbs_bg","Nouns","Adjectives","Adverbs","Search"]
+var LayerArray = ["Sentence","Particles","Verbs","Verbs_bg","Nouns","Adjectives","Adverbs","Search"];
 function_deactivate_layers_by_Name(LayerArray);
 function_execute_script("scr_VocabList");
 
