@@ -1318,7 +1318,7 @@ word_type			room_script.display_list[room_script.card_index + i].field1,
 
 if (live_call()) return live_result;
 
-btn_Dialog_Search_x = 331;
+btn_Dialog_Search_x = 325;
 
 // show the initial list again when you click on the button.
 room_script.show_initial_words = true;
@@ -1327,7 +1327,7 @@ var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs"
 function_deactivate_layers_by_Name(layer_array);
 
 if layer_exists("vocab_layer") {
-	layer_destroy("vocab_layer");
+	 layer_destroy_instances("vocab_layer");
 	}
 
 field_list = ["field_1"];
@@ -1337,33 +1337,24 @@ array_delete(room_script.grammar_string,1,array_length(room_script.grammar_strin
 // switch statement for the buttons
 switch (btn_name)
 		{
-
 		case "Adverbs":
 #region			
-			// room_script.grammar_string = [];
-			// array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
-			// either it crashes or it gets an extra line at the end.
 			
 			room_script.title_string = "Adverbs";
 			field_list = ["field_1"];					
 			
-			room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,field_list);
+			room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,field_list);			
 			
-			//room_script.grammar_stri[0] = "01234567890123456789012345678901234567890123";
 			room_script.grammar_string[0] = "Describes a verb. Adverbs in English usually end";
 			room_script.grammar_string[1] = "in -ly (eg: slowly, brokenly, noisily) and can come";
 			room_script.grammar_string[2] = "before or after the verb. In the sentence 'I quickly"; 
 			room_script.grammar_string[3] = "ran to the train station' 'quickly' is the adverb.";
 									
 			room_script.max_words_to_display = 5;
-			
 			room_script.display_string = function_join_string(0, 3,room_script.grammar_string);
-			//room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
-
-			//btn_Dialog_Search.x = 270;
-			//btn_Dialog_Search.y = 270;
 			
 			instance_activate_layer("Search");
+			btn_Dialog_Search.y = 270;
 			
 			// this will display the adjective search.
 			room_script.search_result_method = function(){
@@ -1375,8 +1366,7 @@ switch (btn_name)
 				examples:		room_script.display_list[room_script.card_index + i].examples,
 				word_type:		room_script.display_list[room_script.card_index + i].field_1,
 				room_script:	room_script	
-			*/
-				//searchfunction_show_vocab_search_result(index,kanji,meaning,kana,examples,type,room_script);
+			*/	
 				
 				searchfunction_show_vocab_search_result(other.index,other.kanji,other.meaning,other.romanji,other.kana,other.examples,other.word_type,other.room_script);
 				
@@ -1391,14 +1381,13 @@ switch (btn_name)
 			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 			room_script.title_string = "Adjectives";
 		    
-			// room_script.grammar_string[0] = "01234567890123456789012345678901234567890123";
 			room_script.grammar_string[  0] = "Adjectives describe nouns, eg hot, handsome, old...";
 			room_script.grammar_string[  1] = "Adjectives have two types in Japanese: -い and -な";
 			room_script.grammar_string[  2] = "adjectives.";	
 				
 			room_script.display_string = function_join_string(0,2 ,room_script.grammar_string);
 			
-			room_script.word_list = function_add_to_WordBuilderArray("Adjective",room_script.kanji_list,field_list);
+			room_script.word_list = function_add_to_WordBuilderArray("adjective",room_script.kanji_list,field_list);
 
 			instance_activate_layer("Adjective");		
 			instance_activate_layer("Search");
@@ -1431,7 +1420,7 @@ switch (btn_name)
 			
 				//}
 				//else if (adjective is na) {
-			
+				/*			
 				word_length = string_length(word);
 				word_kanji = string_delete(word,0,word_length); // delete the last character in the string
 	
@@ -1446,7 +1435,7 @@ switch (btn_name)
 			
 				obj_AdjPolitePast._text = word_kanji + "deshita";
 				obj_AdjPolitePastNeg._text = word_kanji + "kunakatta desu\n" + word_kanji + "ku arimasendeshita";			
-					
+				*/
 				//}			
 			}
 
@@ -1458,7 +1447,7 @@ switch (btn_name)
 		case "Verbs":
 #region
 			array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string))
-			room_script.word_list = function_add_to_WordBuilderArray("Verb",room_script.kanji_list,field_list);						
+			room_script.word_list = function_add_to_WordBuilderArray(" verb",room_script.kanji_list,field_list);						
 
 			// show search thing for verbs
 			;
@@ -1534,7 +1523,7 @@ switch (btn_name)
 					
 				btn_Dialog_Search.y = 82;
 				
-				room_script.total_lines = 13; // total number of lines in the list
+				room_script.total_lines = 10; // total number of lines in the list
 				room_script.current_line = 8; // current line (same as number of words to display, initially)
 				room_script.max_words_to_display = 8;
 				
@@ -1581,7 +1570,7 @@ switch (btn_name)
 			room_script.display_string = function_join_string(0,1,room_script.grammar_string);
 			
 			instance_activate_layer("Search");
-			btn_Dialog_Search.y = 270;
+			btn_Dialog_Search.y = 170;
 #endregion			
 		break;
 		

@@ -106,189 +106,190 @@ function searchfunction_reset_dropdown() {
 	layer_destroy("vocab_layer");
 	}
 	
+/**
+ * Function Description
+ * @param {any*} arg0 Description
+ */
 function searchfunction_create_vocab_layer(arg0){
 	layer_create(-950,"vocab_layer");
 	}
 
+function search_create_result_buttons() {
+    //------------------------------
+    // show the number of search results
+    #region
+    // if the result count is fewer than the number of words to display....
+    var _search_result_count = 0;
 
-function search_create_result_buttons(){
-//------------------------------
-// show the number of search results
-#region
-// if the result count is fewer than the number of words to display....
-var _search_result_count = 0;
-
-if ( room_script.show_initial_words == true) {
-	room_script.display_list = room_script.word_list;
-	}
-
-if (array_length(room_script.display_list) < room_script.max_words_to_display) {
-		// ... set the result display count to the number of results found
-		_search_result_count = array_length(room_script.display_list);		
-		draw_arrows = false;			
+    if (room_script.show_initial_words == true) {
+	//if (room_script.search == true) {
+        room_script.display_list = room_script.word_list;
 		}
-else {
-	// ... otherwise set the result display count to the number of words to display
-	_search_result_count = room_script.max_words_to_display;
-	draw_arrows = true;
-	}
 
-if (room_script.search == true || room_script.show_initial_words == true ) {
-
-// display the number of results
-if (array_length(room_script.display_list) > 0 ) { 		
-	if(_search_result_count = 1 ) {		
-		string_counter = "Word";
-		}
+    if (array_length(room_script.display_list) < room_script.max_words_to_display) {
+        // ... set the result display count to the number of results found
+        _search_result_count = array_length(room_script.display_list);
+        draw_arrows = false;
+		} 
 	else {
-		string_counter = "Words " + string(room_script.card_index + 1) + " to " + string( room_script.card_index + _search_result_count) + " of " + string(array_length(room_script.display_list));
-		}
-		
-	// variables for the top of the result box.
-	var text_x_pos = self.x -5;
-	var text_y_pos = self.y + spr_height;
-	
-	// set the fonts
-	//draw_set_font(fnt_button);
-	//draw_set_color(c_black);
-	draw_set_halign(fa_left);
-
-	// Draw the word counter
-	var x_scale = 1;
-	var y_scale = 1;	
-	
-	draw_set_halign(fa_right);
-	draw_text_ext_transformed(text_x_pos + 850,text_y_pos - 80,string_counter,string_height(string_counter),700,x_scale,y_scale,0);
-#endregion
-
-//------------------------------
-// show search result buttons
-//------------------------------
-
-// scale factor of the background image
-#region
-var _bg_scale_factor = 6 / 8;
-// y scale for the bg image
-var _yscale = room_script.max_words_to_display * _bg_scale_factor;
-// x scale for bg image
-var _xscale = 3.5;
-
-// width and height
-var _width  = sprite_get_width(spr_SearchDropBG);
-var _height = sprite_get_height(spr_SearchDropBG);
-#endregion
-
-//------------------------------
-// draw the arrows once
-#region
-if (draw_arrows == true){
-	room_script.vocab_display_buttons = [];
-	
-	if (!layer_exists("vocab_layer")) {
-		//layer_destroy("vocab_layer");
-		searchfunction_create_vocab_layer();
+        // ... otherwise set the result display count to the number of words to display
+        _search_result_count = room_script.max_words_to_display;
+        draw_arrows = true;
 		}
 
-// if the word list is longer than the number of words to put on the screen...	
-if (array_length(room_script.display_list) > room_script.max_words_to_display ){
-		
-	room_script.word_display_number = array_length(room_script.display_list);	
-	
-	//-----------------------
-	//show the arrows.
-	x_loc = (_width * _xscale) + (x * 0.70) ;
-	y_loc = _search_result_count * _height;		
-	
-	var arrow = asset_get_index("Search_Up_Arrow");
-	instance_create_layer( x_loc,text_y_pos + 10 ,"vocab_layer",arrow,{
-			room_script:	room_script	
-			});
-	
-	var arrow = asset_get_index("Search_Dwn_Arrow");
-	instance_create_layer(x_loc, y_loc + y,"vocab_layer",arrow,{
-			room_script:	room_script	
-			});	
-		}
-else {
-	room_script.word_display_number = room_script.number_words_shown;
-	}
- draw_arrows = false;	
- } // end of create buttons
-#endregion
+    if (room_script.search == true || room_script.show_initial_words == true) {
+
+        // display the number of results
+
+        // variables for the top of the result box.
+        text_x_pos = self.x - 5;
+        text_y_pos = self.y + spr_height;
+
+        // Draw the word counter
+        var x_scale = 1;
+        var y_scale = 1;
+
+        // display the result buttons and text
+        // matches with the Else at the end of the this function.
+        if (array_length(room_script.display_list) > 0) {
+            //change the dispaly string text depening on trhe number of results returned
+            if (_search_result_count = 1) {
+                result_counter = "Word ";
+				}
+		   else {
+                result_counter = "Words ";
+				}
+
+            result_counter += string(room_script.card_index + 1) + " to " + string(room_script.card_index + _search_result_count) + " of " + string(array_length(room_script.display_list));
+
+            draw_set_halign(fa_right);
+            //draw_text_ext_transformed(text_x_pos + 850,text_y_pos - 80,string_counter,string_height(string_counter),700,x_scale,y_scale,0);
+            #endregion
+
+            //------------------------------
+            // show search result buttons
+            //------------------------------
+
+            // scale factor of the background image
+            #region
+            var _bg_scale_factor = 6 / 8;
+            // y scale for the bg image
+            var _yscale = room_script.max_words_to_display * _bg_scale_factor;
+            // x scale for bg image
+            var _xscale = 3.5;
+
+            // width and height
+            var _width = sprite_get_width(spr_SearchDropBG);
+            var _height = sprite_get_height(spr_SearchDropBG);
+            #endregion
+
+			// clear the buttons and arrows.
+			layer_destroy_instances("vocab_layer");
+
+            //------------------------------
+            // draw the arrows once
+            #region
+            if (draw_arrows == true) {
+                room_script.vocab_display_buttons = [];
+
+                // create the layer for the buttons if it doesn't exist already
+                if (!layer_exists("vocab_layer")) {
+                    searchfunction_create_vocab_layer();
+					}
+
+                // if the word list is longer than the number of words to put on the screen...	
+                if (array_length(room_script.display_list) > room_script.max_words_to_display) {
+
+                    room_script.word_display_number = array_length(room_script.display_list);
+
+                    //-----------------------
+                    // show the scroll bar arrows. 
+                    // draw them here:
+                    x_loc = (_width * _xscale) + (x * 0.75);
+                    y_loc = _search_result_count * _height;
+
+                    // only create the arrows once.
+                    var arrow = asset_get_index("Search_Up_Arrow");
+                    if (!instance_exists(arrow)) {
+                        instance_create_layer(x_loc, text_y_pos + 10, "vocab_layer", arrow, {
+                            room_script: room_script
+                        });
+                    }
+                    var arrow = asset_get_index("Search_Dwn_Arrow");
+                    if (!instance_exists(arrow)) {
+                        instance_create_layer(x_loc, y_loc + y, "vocab_layer", arrow, {
+                            room_script: room_script
+                        });
+                    }					
+				  } 
+				else {
+                    room_script.word_display_number = room_script.number_words_shown;
+                }
+                // dcon't draw the arrows.
+                draw_arrows = false;
+            } // end of create buttons
+            #endregion
 
 
-//------------------------------------
-//Draw the search result buttons
-#region
-
-// only need to do this if the number of results is fewer than the
-// number of buttons currently being displayed. Or the number of buttons is zero.
-
-for (i = 0; i < _search_result_count; i++) {  
-		// do this only once:
-		if ( draw_buttons == true){
-		var vocab_object = asset_get_index("btn_SearchResult");		
-		room_script.vocab_display_buttons[i] = instance_create_layer( text_x_pos + 10,text_y_pos + (i * 69) + 10,"vocab_layer",vocab_object,
-				{
-				//used for displayng result when button is clicked
-				card_index:		room_script.card_index + i,
-				// shows reults on button
-				index:			room_script.display_list[room_script.card_index + i].index,
-				kanji:			room_script.display_list[room_script.card_index + i].kanji,
-				meaning:		room_script.display_list[room_script.card_index + i].meaning,
- 				kana:			room_script.display_list[room_script.card_index + i].field_2,
-				verbStem:		room_script.display_list[room_script.card_index + i].verbStem,
-				examples:		room_script.display_list[room_script.card_index + i].examples,
-				word_type:		room_script.display_list[room_script.card_index + i].field_1,
-				romanji:		room_script.display_list[room_script.card_index + i].romanji,
-				room_script:	room_script			
-				})
-		}
-
-		//------------------------------------
-		// overwrite the existing buttons.		
-		else {
-			test = "test";			
-			temp1 = room_script.vocab_display_buttons[i].kanji;
-			temp2 = room_script.display_list[room_script.card_index + i].kanji;
+            //------------------------------------
+            //Draw the search result buttons
+            #region
+            // only need to do this if the number of results is fewer than the
+            // number of buttons currently being displayed. Or the number of buttons is zero.
+			// nuke the vocab layer and redraw it			
 			
-			room_script.vocab_display_buttons[i].kanji = room_script.display_list[room_script.card_index + i].kanji;
-			room_script.vocab_display_buttons[i].meaning = room_script.display_list[room_script.card_index + i].meaning;
- 			room_script.vocab_display_buttons[i].field_2 = room_script.display_list[room_script.card_index + i].field_2;
-			
-			/*
+            for (i = 0; i < _search_result_count; i++) {
+                // do this only once:
+				//
+                //if (draw_buttons == true) {
+                    var vocab_object = asset_get_index("btn_SearchResult");
+                    room_script.vocab_display_buttons[i] = instance_create_layer(text_x_pos + 12, text_y_pos + (i * 69) + 10, "vocab_layer", vocab_object, {
+                        //used for displayng result when button is clicked
+                        card_index: room_script.card_index + i,
+                        // shows reults on button
+                        index: room_script.display_list[room_script.card_index + i].index,
+                        kanji: room_script.display_list[room_script.card_index + i].kanji,
+                        meaning: room_script.display_list[room_script.card_index + i].meaning,
+                        kana: room_script.display_list[room_script.card_index + i].field_2,
+                        verbStem: room_script.display_list[room_script.card_index + i].verbStem,
+                        examples: room_script.display_list[room_script.card_index + i].examples,
+                        word_type: room_script.display_list[room_script.card_index + i].field_1,
+                        romanji: room_script.display_list[room_script.card_index + i].romanji,
+                        room_script: room_script
+                    })
+                //}
+
+                   
 			// these too
-			kanji:			room_script.display_list[room_script.card_index + i].kanji,				
-			meaning:		room_script.display_list[room_script.card_index + i].meaning,
- 			kana:			room_script.display_list[room_script.card_index + i].field_2,
-			verbStem:		room_script.display_list[room_script.card_index + i].verbStem,
-			examples:		room_script.display_list[room_script.card_index + i].examples,
-			word_type:			room_script.display_list[room_script.card_index + i].field_1,
-			*/		
-			
+			//kanji:			room_script.display_list[room_script.card_index + i].kanji,				
+			//meaning:		room_script.display_list[room_script.card_index + i].meaning,
+ 			//kana:			room_script.display_list[room_script.card_index + i].field_2,
+			//verbStem:		room_script.display_list[room_script.card_index + i].verbStem,
+			//examples:		room_script.display_list[room_script.card_index + i].examples,
+			//word_type:			room_script.display_list[room_script.card_index + i].field_1,
+         
+
+				}
+		        
+				_ysize = (_yscale / room_script.max_words_to_display) * _search_result_count;
+                // draw the searchbox background image
+                background = instance_create_layer(text_x_pos, text_y_pos, "vocab_layer", obj_SearchBackground);
+                background.image_yscale = _ysize + 0.2;
+                background.image_xscale = _xscale;
+				if (draw_arrows == false) {
+					background.image_index = 0;
+					}
+				else {
+					background.image_index = 1;
+					}
+        }
+
+        // Dont display the result buttons and text
+        // matches with the If at the start of the this function.	
+        else {
+            result_counter = "Nothing found!"; 
 			}
-			
-	//----------------
-	// draw the background image	
-	// size of the background
-	_ysize =(_yscale/room_script.max_words_to_display) * _search_result_count;
-	// background of the image
-	background = instance_create_layer(text_x_pos,text_y_pos,"vocab_layer",obj_SearchBackground);
-	background.image_yscale = _ysize + 0.2;
-	background.image_xscale = _xscale;
-			
-	}
-
-
-
-	}
-	
-else{
-	string_counter = "Nothing found!";
-	draw_set_halign(fa_right);
-	draw_text_ext_transformed(text_x_pos + 850,text_y_pos - 80 ,string_counter,string_height(string_counter),500,x_scale,y_scale,0);
-	}
-
-	}
- room_script.show_initial_words = false;
-}
+    }
+ //return result_counter;
+ draw_text_ext_transformed(text_x_pos + 1025,text_y_pos - 80,result_counter,100,700,1,1,0);
+ }

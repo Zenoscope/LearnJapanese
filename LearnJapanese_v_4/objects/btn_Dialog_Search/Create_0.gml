@@ -64,5 +64,4 @@ alarm[0] = blink_speed;
 image_index = irandom(self. image_number);
 image_speed = 0;
 
- //room_script.display_list = [];
- //search_create_result_buttons();
+text = "";

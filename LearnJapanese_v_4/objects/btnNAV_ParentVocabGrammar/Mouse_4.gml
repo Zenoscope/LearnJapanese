@@ -29,6 +29,7 @@ var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs"
 function_deactivate_layers_by_Name(layer_array);
 
 if layer_exists("vocab_layer") {
+	// um
 	layer_destroy("vocab_layer");
 	}
 

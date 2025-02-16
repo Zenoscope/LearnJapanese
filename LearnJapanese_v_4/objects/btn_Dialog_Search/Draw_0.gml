@@ -13,7 +13,7 @@ var scale = 1;//text scale
 
 var half_char_width = string_width("A") / 2;
 var spr_width = (self.sprite_width / 2);
-var length = string_width(search_box_text);
+var length = string_width(text);
 var height = string_height(model_string);
 
 spr_height = self.sprite_height;
@@ -26,7 +26,7 @@ draw_set_halign(text_halign);
 draw_set_valign(text_valign);
 
 // displays the text
-draw_text_transformed(self.x + 5, self.y, search_box_text, scale, scale,0);
+draw_text_transformed(self.x + 5, self.y, text, scale, scale,0);
 #endregion
 
 //------------------------------
@@ -48,6 +48,10 @@ if (blink) {
 	}
 #endregion
 
+var _halign = draw_get_halign();
+draw_set_halign(fa_right);
+draw_text_ext_transformed(text_x_pos + 1025,text_y_pos - 80,result_counter,100,700,1,1,0);
+draw_set_halign(_halign);
 
 // probably shoudl be somewhere else...
 //------------------------------

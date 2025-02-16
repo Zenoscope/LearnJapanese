@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"_ac_add_test_result",
   "isCompatibility":false,
   "isDnD":false,

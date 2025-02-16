@@ -18,16 +18,17 @@ if (clicked) {//1
 	room_script.search_result_method();
 	// disable the other layers....
 	
-	
-var a = layer_get_all();
-for (var i = 0; i < array_length(a); i++;)
+_array = layer_get_all();
+
+for (var i = 0; i < array_length(_array); i++;)
 	{
-    show_debug_message(string(layer_get_name(a[i])));
+    show_debug_message(string(layer_get_name(_array[i])));
 	}
 	
 	show_debug_message("=======================");
 	var LayerArray = ["Sentence","Particles","Verbs","Verbs_bg","Nouns","Adjectives","Adverbs","Search","vocab_layer"]
-	function_deactivate_layers_by_Name(LayerArray);
+
+function_deactivate_layers_by_Name(LayerArray);
 
 // Example of printing layer names using show_debug_message
 
@@ -51,7 +52,3 @@ for (var i = 0; i < array_length(a); i++;)
 	show_debug_message("=======================");
 	
 }//1
-
-//if (hovering) { 
-//	show_debug_message("Hovering: " + string(self.depth));
-//	}

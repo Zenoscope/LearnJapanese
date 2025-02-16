@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Kana_Arrays",
   "isCompatibility":false,
   "isDnD":false,

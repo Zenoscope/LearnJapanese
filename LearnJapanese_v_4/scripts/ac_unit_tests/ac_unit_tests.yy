@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ac_unit_tests",
   "isCompatibility":false,
   "isDnD":false,

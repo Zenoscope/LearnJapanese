@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_Kanji100",
   "isCompatibility":false,
   "isDnD":false,

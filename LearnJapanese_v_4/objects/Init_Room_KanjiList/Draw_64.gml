@@ -26,7 +26,7 @@ else {
 		}
 
 // draw the counter text
-var string_counter = _symbol_type + " " + string(card_index + 1 ) + " of " + string(array_length(kanji_list) + 1);
+string_counter = _symbol_type + " " + string(card_index + 1 ) + " of " + string(array_length(kanji_list) + 1);
 draw_text_ext_transformed(1000,25,string_counter,0,700,0.5,0.5,0);	
 
 draw_set_color(c_black);

@@ -4,6 +4,7 @@
 
 // Stolen from: https://www.youtube.com/watch?v=PWRPCWf58nU
 
+
 if (live_call()) return live_result;
 
 if (string_count(chr(keyboard_key),enabled_keys) && (string_length( chr(keyboard_key) ) == 1) ){
@@ -13,6 +14,8 @@ if (string_count(chr(keyboard_key),enabled_keys) && (string_length( chr(keyboard
 	
 	if ( string_length(text) < string_length(model_string) ) {
 		text += keyboard_lastchar;
+		show_debug_message("text:" + text);
+		search_box_text = text;
 		}
 	
 	} 
@@ -51,7 +54,7 @@ if (!keyboard_check(vk_control)) {
 			searchfunction_reset_dropdown();
 		break;		
 		default:
-			//show_debug_message(string(keyboard_key));
+			show_debug_message(string(keyboard_key));
 		break;		
 		}	
 	}
@@ -66,4 +69,3 @@ else {
 		break;
 		}
 	}
-	
