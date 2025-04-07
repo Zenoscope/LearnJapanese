@@ -76,10 +76,3 @@ else	{
 			draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ trimmed_meaning,0,1500,x_scale,y_scale,0);
 			draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);
 		}
-
-
-// this is for Kanji search
-//draw_text_ext_transformed(x + x_offset,y + y_offset			,"Kanji: "	+ kanji,0,1500,x_scale,y_scale,0);
-//draw_text_ext_transformed(x + x_offset,y + kerning			,"Meaning: "+ trimmed_meaning,0,1500,x_scale,y_scale,0);
-//draw_text_ext_transformed(x + x_offset + 450,y + y_offset	,"Kana: "	+ kana,0,1500,x_scale,y_scale,0);
-

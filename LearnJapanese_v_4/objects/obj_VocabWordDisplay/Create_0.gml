@@ -27,4 +27,3 @@ self.image_yscale = size_to_scale(650,sprite_height);
 
 self.x = 840;
 self.y = 300;
-

@@ -48,10 +48,12 @@ if (blink) {
 	}
 #endregion
 
+
 var _halign = draw_get_halign();
 draw_set_halign(fa_right);
-draw_text_ext_transformed(text_x_pos + 1025,text_y_pos - 80,result_counter,100,700,1,1,0);
+draw_text_ext_transformed(text_x_pos + 1025,text_y_pos - 80,result_counter_string,100,700,1,1,0);
 draw_set_halign(_halign);
+
 
 // probably shoudl be somewhere else...
 //------------------------------
@@ -59,10 +61,12 @@ draw_set_halign(_halign);
 if (mouse_wheel_up()) {
 	if (room_script.card_index > 0 ){
 		room_script.card_index--;
+		search_create_result_buttons();
 		}
 	}
 if (mouse_wheel_down()) {
 	if (room_script.card_index < array_length(room_script.word_list) - room_script.max_words_to_display) {
 		room_script.card_index++;
+		search_create_result_buttons();
 		}
 	}

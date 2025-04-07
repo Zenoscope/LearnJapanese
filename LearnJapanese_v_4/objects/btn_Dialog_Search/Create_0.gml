@@ -31,6 +31,9 @@ room_script.show_initial_words = true;
 // generate an empty card array
 room_script.card_array = [];
 
+
+room_script.card_index = 0;
+
 //------------------
 // Text stuff for search box
 // japanese keyboard input?

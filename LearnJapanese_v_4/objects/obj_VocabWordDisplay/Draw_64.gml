@@ -41,6 +41,7 @@ function function_zero_pad(number){
 	return number_string;
 	}
 
+/*
 // draw the mneumonic image under all of the other stuff
 var vocab_image_index = function_zero_pad(index);
 var vocab_sprite = asset_get_index("Vocab_Image" + vocab_image_index);
@@ -48,11 +49,12 @@ var vocab_sprite = asset_get_index("Vocab_Image" + vocab_image_index);
 dialog_width  = 1000;
 dialog_height = 700;
 
+var x_midpoint = self.x;
+var y_midpoint = self.y - 50;
 
-//var x_midpoint = xloc + (dialog_width  / 2); //(dialog_width -  (dialog_width  / 2));
-var x_midpoint = self.x; //+ (dialog_width / 2);
-//var y_midpoint = yloc + (dialog_height / 2); //(dialog_height - (dialog_height / 2));
-var y_midpoint = self.y - 50; //+  (dialog_height / 2);
-
-// draw the vocab image
-draw_sprite_ext(vocab_sprite,0,x_midpoint,y_midpoint + 20 ,0.6,0.6,0,c_white,1);
+//if (object_exists(vocab_sprite)) {
+	//image_sprite_width = sprite_get_width(vocab_sprite);
+	// draw the vocab image
+	//draw_sprite_ext(vocab_sprite,0,x_midpoint - (image_sprite_width /2) ,y_midpoint + 20 ,0.6,0.6,0,c_white,1);
+//	}
+*/

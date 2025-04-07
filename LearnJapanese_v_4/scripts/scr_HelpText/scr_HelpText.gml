@@ -62,6 +62,7 @@ tooltip043 = new tooltip("Vocabulary","A list of Japanese N5 level words, with e
 tooltip044 = new tooltip("Grammar","Different types of sentences and how they are constructed and used.","helptext");
 tooltip045 = new tooltip("N5_sentence_types","Under Construction - Different types of sentences and how they are constructed and used.","helptext");
 tooltip046 = new tooltip("Sentence_constructor","Under Construction - Build sentences.","helptext");
+tooltip047 = new tooltip("Vocab0Search","Search the whole vocabulary list.","helptext");
 
 //----------------
 //
@@ -75,13 +76,11 @@ tooltip055 = new tooltip("Links","Just a test!","biblio");
 // blurbs
 // a blurb is displayed in a room and just stay there, a helptext might replace it,
 // but it comes back.
-tooltip060 = new tooltip("Splash_Screen","Learn Japanese: Release 2\n\nCreated by Omoshiroi games\n\nTested by Bobby and Omoshiroi Games.\n\nRead the dev blog at:          \n\nMade with Gamemeaker.","questionmark");
+tooltip060 = new tooltip("Splash_Screen","Learn Japanese: Release 2\n\nCreated by Omoshiroi games\n\nTested by Bobby and Omoshiroi Games.\n\nRead the dev blog!         \n\nMade with Gamemaker.","questionmark");
 tooltip061 = new tooltip("Main_menu","Learn Japanese: Release 2\n\nCreated by Omoshiroi games\n\nTested by Bobby and Omoshiroi Games.\n\nRead the dev blog at:          \n\nMade with Gamemeaker.","questionmark");
 
 
 // tooltips 
-
-
 // invisible button tool tips
 tooltip075 = new tooltip("invisKunyomi","Kunyomi is the Japanese reading. Readings are ordered most to least frequent.","tooltip");
 tooltip076 = new tooltip("invisOnyomi","Onyomi is the Chinese reading. Readings are ordered most to least frequent.","tooltip");
@@ -89,11 +88,13 @@ tooltip076 = new tooltip("invisOnyomi","Onyomi is the Chinese reading. Readings 
 tooltip081 = new tooltip("invisTeForm", "Used to request an action, for connecting verbs, asking permission or present progressive (an ongoing action in the present).","tooltip");
 tooltip082 = new tooltip("invisPolite","Polite - used with superiors and strangers, and in public announcements.","tooltip");
 tooltip083 = new tooltip("invisPlain","Plain - used with friends, children and in informal situations, eg shopping.","tooltip");
-tooltip084 = new tooltip("invisPresent","Expresses an action that is currently going on or habitually performed, or a state that currently or generally exists.'","tooltip");
-tooltip085 = new tooltip("invisPresNeg","The negative of present tense, eg not ~.","tooltip");
-tooltip086 = new tooltip("invisPast","Describing an action which has occured in the past.","tooltip");
-tooltip087 = new tooltip("invisPastNeg","Expressing an action which has not occured in the past.","tooltip");
-tooltip088 = new tooltip("invisStem","The stem of the verb, used for conjugations.","tooltip");
+tooltip084 = new tooltip("invisPresent","Describes an action that is currently going on or habitually performed, or a state that currently or generally exists.  E.g I am hungry.","tooltip");
+tooltip085 = new tooltip("invisPresNeg","Describing an action or state which is not occuring in the present. E.g I am not hungry.","tooltip");
+tooltip086 = new tooltip("invisPast","Describing an action or state which has occured in the past. E.g I was hungry.","tooltip");
+tooltip087 = new tooltip("invisPastNeg","Describing action or state which has not occured in the past. E.g I was not hungry.","tooltip");
+tooltip088 = new tooltip("invisStem","The stem of the verb, used for conjugations. The part of the verb which doesn't change.","tooltip");
+tooltip089 = new tooltip("invisDictionary","The dictionay 'to ~' form  (infinitive)","tooltip");
+//tooltip089 = new tooltip("btn_invisButton","The stem of the verb, used for conjugations.","helptext");
 
 //kana tooltips
 tooltip090 = new tooltip("Gojuon","The traditional grid order of the kana characters (shown sideways here)","tooltip");
@@ -103,7 +104,7 @@ tooltip092 = new tooltip("Yoon","Digraphs, add a 'y','g' or 'j' sound to a conso
 //test, please remove!
 tooltip098 = new tooltip("invisTest","Quit game.","tooltip");
 //tooltip099 = new tooltip("quit0game","1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0. 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0.","tooltip");
-tooltip100 = new tooltip("back","go back?","tooltip");
+//tooltip100 = new tooltip("back","go back?","tooltip");
 
 // helptext
 tooltip000 = new tooltip("start0game","Start! Start! Start!","tooltip");
@@ -171,7 +172,9 @@ tooltip041,
 tooltip042,
 tooltip043,
 tooltip044,
- 
+tooltip045,
+tooltip046,
+tooltip047,
 
 tooltip050,
 tooltip051,
@@ -197,14 +200,14 @@ tooltip085,
 tooltip086,
 tooltip087,
 tooltip088,
-
+tooltip089,
 // kana stuff, gojuon etc 
 tooltip090,
 tooltip091,
 tooltip092,
 
 // testing only
-tooltip100,
+// tooltip100,
 
 
 // gammar stuff
@@ -227,7 +230,7 @@ grammar_blurb14,
 // test stuff
 tooltip098,
 //tooltip099,
-tooltip100
+//tooltip100
 	]
 	
 /*	

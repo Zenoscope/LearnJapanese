@@ -1,0 +1,53 @@
+
+CURRENT
+
+
+Adjective display:
+ obj_plaintitle not found (adjectives)
+
+functionality:
+Verb display
+
+bugs:
+
+4) Arrows are not aligned initially (HARD!!) 
+ tHEY SEEM TO BE MOVING. 
+ And others also show up for seemingly no reason
+
+DONE
+-result count is not displayed. - DONE
+-Vocab search max 7 results - DONE
+-mouse over text is under the text in the dialog box. (depth problem) - DONE
+-Back button text goes out of the top of the screen - DONE
+-Search DONE
+-Esc and enter etc work - DONE
+-Cow doesnt talk on mouse over - DONE
+- Adjective/noun result button just crashes the game.
+.search_result_method not found (nouns) - DONE
+-Change vocab button to destroy the dialogbox as well if it exists - DONE
+ - search buttons don't come back when closing the image dialog, other stuff seems clickable - DONE
+ - vocab layer buttons are still clickable (destroy the layer?) DONE
+when closing the image dialog
+ - Arrows also don't make a return
+5) Adverb only shows 3 lines, not four. "I quickly" then nothing.
+5) back button still crashes it (make a new one? fix it)
+
+
+adjectives:
+obj_PlainTitle 384, 384
+obj_politeTitle 736 384
+
+obj_PlainPast 384 448
+obj_PolitePast 736 448
+
+Obj_AdjPlainPastNeg 384 512
+obj_AdjPolitePastNeg 736 512
+
+obj_AdjPlainPast 384 576
+obj_AdjPolitePast 736 576
+
+romanji
+kanji
+kana
+
+

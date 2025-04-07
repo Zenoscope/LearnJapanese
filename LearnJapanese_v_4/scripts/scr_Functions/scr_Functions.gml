@@ -355,9 +355,6 @@ function function_trim_buttonName(orig_btn_name) {
 function function_generate_missing_card_stack(card_offset,room_script,missing_card_array) {
 
 // create missing card stack array
-//show_debug_message("create new missing Card Stack array" + string (missing_card_array));
-//show_debug_message("room_script" + string (room_script));
-
 room_script.array_cardStack = array_create(5, 0);
 
 room_script.kana_array_length = array_length(missing_card_array);
@@ -426,11 +423,8 @@ return  room_script.array_cardStack;
 function function_generate_missing_kana_array(array_index,room_script) {
 // - 1 to chop off the  the grid width/height numbers at the end.
 var kana_array_length = array_length(global.kana_array[array_index]);
-//show_debug_message("kana_array_length: " + string(kana_array_length));
-//show_debug_message("kana_array_global " + string(global.kana_array[array_index]));
 
 // count the headers so we can skip them:
-//
 var heading_count = 0;
 for (var i = 0, len = kana_array_length; i < len; ++i) { 
 	var returned_value = global.kana_array[array_index][i][1];
@@ -463,8 +457,7 @@ var missingCardGrid_array = [0];
 //show_debug_message("missing card array " + string(missingCardGrid_array));
 
 var array_counter = 0; // recycling!!!
-while (array_counter < kana_array_length) { 	
-	//show_debug_message("---updateing missing card array");
+while (array_counter < kana_array_length) { 		
 	
 	// add the array value to the end of the array (thats what array_push does)		
 	missingCardGrid_array[array_counter][0] = global.kana_array[array_index][array_counter][0];
@@ -490,13 +483,7 @@ while (array_counter < kana_array_length) {
 		// fetch a random number from the list from that location
 		// add random number to the missing card array.
 		missingCardGrid_array[array_counter][2] = random_number_list[location];
-		//show_debug_message("missingCardGrid_array_two " + string(room_script.missingCardGrid_array[array_counter]));
-		//show_debug_message("missingCardGrid_array_two " + string(missingCardGrid_array[array_counter]));
-		// add the array element for the instance ID of the card
-		missingCardGrid_array[array_counter][3] = "";
-		//show_debug_message("missingCardGrid_array_two " + string(room_script.missingCardGrid_array[array_counter]));
-		//show_debug_message("missingCardGrid_array_two " + string(missingCardGrid_array[array_counter]));
-		
+		missingCardGrid_array[array_counter][3] = "";		
 		try {
 			// delete the random numnber from the array.
 			array_delete(random_number_list,location,1);
@@ -555,6 +542,7 @@ var missing_card_list = [
 function function_play_sound(button_selected,meaning_character){
 
 	var flipcard_sound = button_selected +  global.gender + "_" + meaning_character;
+	// felt cute, might use this later
 	//show_debug_message("flipcard_sound " + flipcard_sound);
 	//if (audio_exists(asset_get_index(flipcard_sound))) {
 	//	show_debug_message("playing " + string(flipcard_sound));
@@ -612,7 +600,7 @@ function function_spawn_kanji_card(x_loc,y_loc,roomscript,card_index) {
 			kana_reading:		card_source.kana_reading,
 			room_script:		roomscript,
 			image_speed:		0,
-			moving:				"false",
+			moving:				"false"
 			//sprite_xloc:		150 // can change depending on side.
 			});
 
@@ -925,8 +913,9 @@ function function_delete_found_card(internal_room_script) {
 			
 			// increment the card offset 
 			room_script.card_offset = room_script.card_offset + array_length(internal_room_script.missing_card_list);			
-			internal_room_script.missing_card_index = 0;
-			
+			//internal_room_script.missing_card_index = 0;
+			room_script.missing_card_index = 0;
+						
 			var counter = 0;
 			while (counter < array_length(internal_room_script.missing_card_list)) {
 				function_reset_missing_card(missing_card_list[counter]);
@@ -1075,14 +1064,10 @@ catch ( _exception){
 	has_help = false;
  }
 
-	//if (has_help == false) {
-		//show_debug_message("Helptext for " + string(button_name) +" not found");
-	//	}
-	
 	// if there is, show the button
 	if (has_help) {		
 		// create the Helptext layer
-		layer_create(-1000,"Helptext");
+		layer_create(-1200,"Helptext");
 		
 		if (value.tip_type == "tooltip"){
 	
@@ -1115,7 +1100,7 @@ catch ( _exception){
 			
 			// fixed spot for it
 			var x_loc = 300;
-			var y_loc = 15; 
+			var y_loc = 15;
 						
 			var object = asset_get_index("obj_HelpText");
 						
@@ -1254,10 +1239,14 @@ function function_deactivate_layers_by_Name(layer_array){
 	}
 
 
+
 // @play the cow narration stuff
 function function_play_cow_narrator(){
 		// if the cow exists and a dialog is displayed
 		// she talks!
+		
+		
+		
 		if ( instance_exists(obj_CowNarr) &&  layer_exists("Helptext") ) {		
 			// if the end of the sprite images, loop back to the start. 
 			if (obj_CowNarr.image_index >= obj_CowNarr.image_number){
@@ -1323,16 +1312,16 @@ btn_Dialog_Search_x = 325;
 // show the initial list again when you click on the button.
 room_script.show_initial_words = true;
 
-var layer_array = ["Sentence","Particles","Verbs","Nouns","Adjectives","Adverbs","Arrow_Buttons","Search","Verbs_bg"];
+// Arrow Buttons is the layer with the preview text and scroll buttons
+var layer_array = ["Arrow_Buttons"];
 function_deactivate_layers_by_Name(layer_array);
 
-if layer_exists("vocab_layer") {
-	 layer_destroy_instances("vocab_layer");
-	}
 
 field_list = ["field_1"];
 // reset the room text
 array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
+
+
 
 // switch statement for the buttons
 switch (btn_name)
@@ -1349,14 +1338,21 @@ switch (btn_name)
 			room_script.grammar_string[1] = "in -ly (eg: slowly, brokenly, noisily) and can come";
 			room_script.grammar_string[2] = "before or after the verb. In the sentence 'I quickly"; 
 			room_script.grammar_string[3] = "ran to the train station' 'quickly' is the adverb.";
-									
-			room_script.max_words_to_display = 5;
+			
+			// shows the string all joined up.
+			// starts from 0 and ends at the number of lines + 1 to display.
 			room_script.display_string = function_join_string(0, 3,room_script.grammar_string);
 			
+			// number of search results to display
+			room_script.max_words_to_display = 5;
+						
 			instance_activate_layer("Search");
-			btn_Dialog_Search.y = 270;
+			instance_activate_layer("Intro_Text");
 			
-			// this will display the adjective search.
+			btn_Dialog_Search.y = 310;
+			
+			// this will display the adjective search result
+		    // when the search reesult button is clicked.
 			room_script.search_result_method = function(){
 			/*
 				index:			room_script.display_list[room_script.card_index + i].index,
@@ -1368,7 +1364,7 @@ switch (btn_name)
 				room_script:	room_script	
 			*/	
 				
-				searchfunction_show_vocab_search_result(other.index,other.kanji,other.meaning,other.romanji,other.kana,other.examples,other.word_type,other.room_script);
+				searchfunction_show_vocab_search_result(other.index,other.kanji,other.meaning,other.romanji,other.kana,other.examples,other.word_type,other.room_script,obj_VocabWordDisplay);
 				
 				}
 	
@@ -1385,58 +1381,20 @@ switch (btn_name)
 			room_script.grammar_string[  1] = "Adjectives have two types in Japanese: -い and -な";
 			room_script.grammar_string[  2] = "adjectives.";	
 				
-			room_script.display_string = function_join_string(0,2 ,room_script.grammar_string);
-			
+			room_script.display_string = function_join_string(0,2 ,room_script.grammar_string);			
 			room_script.word_list = function_add_to_WordBuilderArray("adjective",room_script.kanji_list,field_list);
 
 			instance_activate_layer("Adjective");		
 			instance_activate_layer("Search");
-			btn_Dialog_Search.y = 270;
+			btn_Dialog_Search.y = 310;
 			
 			room_script.max_words_to_display = 5;
 	
-			room_script.search_result_method = function(arg){
-
-			obj_PlainTitle.x = 1000;
-			obj_PlainTitle._text = "Plain";
-			obj_PoliteTitle._text = "Polite";
-			
-			//if (adjective is i) {
-			
-				word_length = string_length(word);
-				word_kanji = string_delete(word,0,word_length); // delete the last character in the string
-	
-				obj_AdjPlainPres._text = word;
-				obj_AdjPlainPresNeg._text = word_kanji + "kunai";
-			
-				obj_AdjPlainPast._text = word_kanji + "katta";
-				obj_AdjPlainPastNeg._text = word_kanji +  "kunakatta";
-
-				obj_AdjPolitePres._text = word + "desu";
-				obj_AdjPolitePresNeg._text = word_kanji + "kunai desu\n" + word_kanji + "arimasen";
-			
-				obj_AdjPolitePast._text = word_kanji + "kattadesu";
-				obj_AdjPolitePastNeg._text = word_kanji + "kunakatta desu\n" + word_kanji + "ku arimasendeshita";
-			
-				//}
-				//else if (adjective is na) {
-				/*			
-				word_length = string_length(word);
-				word_kanji = string_delete(word,0,word_length); // delete the last character in the string
-	
-				obj_AdjPlainPres._text = word + "ta";
-				obj_AdjPlainPresNeg._text = word_kanji + "janai\n" + word_kanji + "dewanai";
-			
-				obj_AdjPlainPast._text = word_kanji + "datta";
-				obj_AdjPlainPastNeg._text = word_kanji +  "janai\n" + word_kanji + "dewanakatta";
-			
-				obj_AdjPolitePres._text = word + "desu";
-				obj_AdjPolitePresNeg._text = word_kanji + "janai desu\n" + word_kanji + "ja arimasen\n" + word_kanji + "dewanaidesu\n" + word_kanji + "dewa arimasen";
-			
-				obj_AdjPolitePast._text = word_kanji + "deshita";
-				obj_AdjPolitePastNeg._text = word_kanji + "kunakatta desu\n" + word_kanji + "ku arimasendeshita";			
-				*/
-				//}			
+			room_script.search_result_method = function(){
+				
+			// word is more generic, doesn't need the same format as the verb or adjective ones.
+			searchfunction_show_vocab_search_result(other.index,other.kanji,other.meaning,other.romanji,other.kana,other.examples,other.word_type,other.room_script, obj_VocabAdjectiveDisplay);
+				
 			}
 
 #endregion
@@ -1450,82 +1408,25 @@ switch (btn_name)
 			room_script.word_list = function_add_to_WordBuilderArray(" verb",room_script.kanji_list,field_list);						
 
 			// show search thing for verbs
-			;
+	
 			room_script.title_string = "Verb conjugation";
 			room_script.display_string = room_script.title_string;
 						
 			room_script.search_result_method = function(arg){
-				
-			// delete the vocab layer
-			// layer_destroy("vocab_layer");
 			
-			word_type = arg[1];
-			verbStem = arg[0];
-				
-			// just an example
-			//Verbs - fill in the verb conjugation form 
-			//plus special case suru
-			
-			// TODO
-			// need to finish this with the rest of the verbs
-				
-			// suru verb
-				if ( string_count(word_type, "suru") > 0 ) {
-					conjugation_pln = verbStem + " shi";
-					conjugation_pol = verbStem + " shi";		
-					}				
-				  
-				if ( string_count(word_type,"Godan") > 0 && string_count(verbStem, "/") > 0 ) {
-					temp = string_split(verbStem,"/");
-					conjugation_pln = temp[1];
-					conjugation_pol = temp[0];
-					}
-				else { // not quite, but should work for now.
-					// Godan verbs are more complicated than this, but should be OK
-					// with some more rules.
-					conjugation_pln = verbStem;
-					conjugation_pol = verbStem;					
-					}				
-				
-				// holds true for all Ichidan verbs.
-				// Dictionary/infinitive
-			
-				obj_VerbTextDict._text	= verbStem + "u";// tabe + ru
-				
-				obj_VerbTextStem._text	= verbStem + "-"; // tabe
-				// stems and inf the same?
-				
-				obj_VerbTextTeForm._text = verbStem + "te"; // tabe+te
-				
-				// aka present indicitive plain
-				obj_VerbTextPresPln._text	= conjugation_pln;  //tabe + ru
-				obj_VerbTextPresNegPln._text = conjugation_pln + "nai"; //tabe + nai
-
-				// aka present indicitive polite
-				obj_VerbTextPresPol._text	= conjugation_pol + "masu"; //tabe + masu
-				obj_VerbTextPreNegPol._text	= conjugation_pol + "masen"; //tabe + masen
-					
-				// aka past indicitive plain
-				obj_VerbTextPastPln._text	= conjugation_pln + "ta"; // tabe + ta
-				obj_VerbTextPastNegPln._text = conjugation_pln + "nakatta"; // tabe + nakatta
-				
-				// aka past indicitive polite
-				obj_VerbTextPastPol._text	= conjugation_pol + "mashita"; // tabe + mashita
-				obj_VerbTextPastNegPol._text = conjugation_pol + "masen\n deshita"; //tabe + masen deshita
-								
-				//show_debug_message("you clicked "+ btn_name);			
+				searchfunction_show_vocab_search_result(other.index,other.kanji,other.meaning,other.romanji,other.kana,other.examples,other.word_type,other.room_script, obj_VocabVerbDisplay);
 				
 				}
 				
-				instance_activate_layer("Verbs_bg");
-				instance_activate_layer("Verbs");	
-				instance_activate_layer("Search");
+			instance_activate_layer("Verbs_bg");
+			instance_activate_layer("Verbs");	
+			instance_activate_layer("Search");
 					
-				btn_Dialog_Search.y = 82;
+			btn_Dialog_Search.y = 95;
 				
-				room_script.total_lines = 10; // total number of lines in the list
-				room_script.current_line = 8; // current line (same as number of words to display, initially)
-				room_script.max_words_to_display = 8;
+			room_script.total_lines = 10; // total number of lines in the list
+			room_script.current_line = 8; // current line (same as number of words to display, initially)
+			room_script.max_words_to_display = 8;
 				
 #endregion
 		break;
@@ -1551,7 +1452,14 @@ switch (btn_name)
 			room_script.display_string = function_join_string(0,3,room_script.grammar_string);
 
 			instance_activate_layer("Search");
-			btn_Dialog_Search.y = 270;
+			btn_Dialog_Search.y = 310;
+			
+			room_script.search_result_method = function(){
+			
+				searchfunction_show_vocab_search_result(other.index,other.kanji,other.meaning,other.romanji,other.kana,other.examples,other.word_type,other.room_script);
+				
+				}
+			
 #endregion			
 		break;
 		
@@ -1570,7 +1478,16 @@ switch (btn_name)
 			room_script.display_string = function_join_string(0,1,room_script.grammar_string);
 			
 			instance_activate_layer("Search");
-			btn_Dialog_Search.y = 170;
+			btn_Dialog_Search.y = 168;
+			
+			room_script.max_words_to_display = 7;
+			
+			room_script.search_result_method = function(){
+			
+				searchfunction_show_vocab_search_result(other.index,other.kanji,other.meaning,other.romanji,other.kana,other.examples,other.word_type,other.room_script);
+				
+				}
+			
 #endregion			
 		break;
 		
@@ -1668,7 +1585,7 @@ switch (btn_name)
 			room_script.grammar_string[ 52] = "1) destination particle; in; at; on; to";
 			room_script.grammar_string[ 53] = "example: honda-san wa densha ni ikmasu";
 			room_script.grammar_string[ 54] = "";
-			room_script.grammar_string[ 55] = "Ni / Ne, に/へ";
+			room_script.grammar_string[ 55] = "Ni , に / Ne, へ";
 			room_script.grammar_string[ 56] = "1) to (indicates direction / destination)";
 			room_script.grammar_string[ 57] = "example: honda-san wa Tokyo ni ikimashta";
 			room_script.grammar_string[ 58] = "";
@@ -1677,7 +1594,7 @@ switch (btn_name)
 			room_script.grammar_string[ 61] = "between subject and object.";
 			room_script.grammar_string[ 62] = "example: koko wa watashi no karuma desu";
 			room_script.grammar_string[ 63] = "";
-			room_script.grammar_string[ 64] = "O / Go, お / ご";
+			room_script.grammar_string[ 64] = "O , お / Go, ご";
 			room_script.grammar_string[ 65] = "1) polite marker; honorific prefix particle";
 			room_script.grammar_string[ 66] = "example:";
 			room_script.grammar_string[ 67] = "";
@@ -1700,7 +1617,7 @@ switch (btn_name)
 
 			// mash the arrays together into a huge string, up to the max display length					
 
-			room_script.total_lines = 83;
+			room_script.total_lines = 82;
 			room_script.current_line = 13;
 			room_script.max_words_to_display = 13;
 						
@@ -1709,15 +1626,13 @@ switch (btn_name)
 			instance_activate_layer("Arrow_Buttons");
 #endregion
 		break;
-
-
-
 		default:
 			show_debug_message("The grammar buttons are broken! Congrats, you found a bug!");
 		break;
 		}
 
-
+		room_script.display_list = room_script.word_list;
+		search_create_result_buttons();
 
 }
 
@@ -1727,3 +1642,10 @@ function disable_layers(layer_name) {
 	function_deactivate_layers_by_Name(layer_array);
 	}
 
+function function_stop_cow_narrator(){
+		// stop "talking", set the image back to the first image.
+		if (instance_exists(obj_CowNarr)) {
+			obj_CowNarr.image_index = 0;
+			}
+		global.show_helptext = false;
+		}

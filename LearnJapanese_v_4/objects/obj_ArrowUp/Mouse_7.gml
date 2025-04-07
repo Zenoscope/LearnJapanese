@@ -3,7 +3,7 @@
 // FIXME - should be roomlist
 
 if (room_script.blockButtonClick == false ) {
-	layer_destroy_instances("vocab_layer");
+	//layer_destroy_instances("vocab_layer");
 	
 		if (btn_name == "ArrowDown" && room_script.current_scroll_clicks < room_script.max_scroll_clicks ){//3
 	    	// increment the card_index for the new words to display

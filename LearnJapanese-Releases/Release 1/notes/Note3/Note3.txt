@@ -1,7 +1,0 @@
-
-Shrink the buttons on the Grammar page, maybe make the size a variable in the "create"
-which can be overridden to make them slightly smaller.
-
-Actually, can the scale be changed so it's the button height/width * 105% then back?
- Set the heigt and width from the create event, get button_height from self.height
-hmm.

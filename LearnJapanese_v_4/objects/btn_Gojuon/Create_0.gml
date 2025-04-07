@@ -48,3 +48,4 @@ switch (name_array[0]) {
 
 // helptext stuff
 global.show_helptext = false;
+v_alignment = fa_center;
