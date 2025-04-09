@@ -21,4 +21,3 @@ global.show_helptext = false;
 
 v_alignment = fa_center;
 image_speed = 0;
-

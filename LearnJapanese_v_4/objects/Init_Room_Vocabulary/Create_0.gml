@@ -1,6 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @Hiragana/Kanji/Katakana rooms
 
+/*
 room_set_live(room, true);
 
 // Inherit the parent eveninitialize it with a default value
@@ -11,7 +11,7 @@ display_string = "";
 // 76 wide
 #region 
 
-// 
+// this is test information
 grammar_string[1]="Verbs";
 grammar_string[2]="A verb is a action word. It shows which action is";
 grammar_string[3]="being performed in the sentence. In the sentence 'I";
@@ -114,3 +114,32 @@ show_results = false;
 
 // card_index = 0;
 display_list = [];
+*/
+
+function_execute_script("scr_VocabList");
+temp = global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 3]
+switch (global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 3]){
+		case "Kanji":
+		//select Kanji mainly from the list
+			ListDefault = 1;		
+		break;
+		case "Hiragana":
+			//select Kanji mainly from the list
+			ListDefault = 2;			
+		break;
+		case "Katakana":
+			//select Kanji mainly from the list
+			ListDefault = 3;
+		break;
+		}			
+
+max_words_to_display = 8;
+number_words_shown = 0; // max_words_to_display;
+field_list = ["field_4"];
+// searches through the vocab and finds the vocab which matches 
+// what we are searching for, eg kanji, hiragana etc
+word_list = function_add_to_WordBuilderArray(ListDefault,kanji_list,field_list);
+display_list = word_list;
+show_initial_words = true;
+//room_script.search = false;
+//search_result_list

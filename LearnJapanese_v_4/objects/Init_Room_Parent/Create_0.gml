@@ -11,4 +11,3 @@ room_script = function_get_room_script_name(id);
  
 name_array = function_trim_buttonName(room_name);
 display_name = name_array[1];
-

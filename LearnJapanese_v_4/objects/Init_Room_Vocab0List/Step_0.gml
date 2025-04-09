@@ -2,6 +2,7 @@
 
 // move these to the objects
 
+/*
 room_set_live(room, true);
 // if not searching, then the display list is the actual word list.
 // *I could avoid this (ans storing the arrays) but it might get confusing... 
@@ -23,3 +24,4 @@ else {
 	}
 
 //room_script.max_scroll_clicks = array_length(room_script.display_list) / room_script.number_words_shown;	
+*/

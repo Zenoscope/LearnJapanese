@@ -1069,7 +1069,7 @@
     {"id":{"name":"Init_Room_sentence0constructor","path":"objects/Init_Room_sentence0constructor/Init_Room_sentence0constructor.yy",},},
     {"id":{"name":"Init_Room_SplashScreen","path":"objects/Init_Room_SplashScreen/Init_Room_SplashScreen.yy",},},
     {"id":{"name":"Init_Room_verbs","path":"objects/Init_Room_verbs/Init_Room_verbs.yy",},},
-    {"id":{"name":"Init_Room_Vocab","path":"objects/Init_Room_Vocab/Init_Room_Vocab.yy",},},
+    {"id":{"name":"Init_Room_Vocab0List","path":"objects/Init_Room_Vocab0List/Init_Room_Vocab0List.yy",},},
     {"id":{"name":"Init_Room_Vocabulary","path":"objects/Init_Room_Vocabulary/Init_Room_Vocabulary.yy",},},
     {"id":{"name":"init_Room_Vocabulary0Grammar","path":"objects/init_Room_Vocabulary0Grammar/init_Room_Vocabulary0Grammar.yy",},},
     {"id":{"name":"init_Room_Word0Builder","path":"objects/init_Room_Word0Builder/init_Room_Word0Builder.yy",},},

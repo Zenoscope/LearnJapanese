@@ -62,7 +62,7 @@
     {"name":"Init_Room_particles","order":11,"path":"objects/Init_Room_particles/Init_Room_particles.yy",},
     {"name":"Init_Room_sentence0constructor","order":12,"path":"objects/Init_Room_sentence0constructor/Init_Room_sentence0constructor.yy",},
     {"name":"Init_Room_verbs","order":13,"path":"objects/Init_Room_verbs/Init_Room_verbs.yy",},
-    {"name":"Init_Room_Vocab","order":3,"path":"objects/Init_Room_Vocab/Init_Room_Vocab.yy",},
+    {"name":"Init_Room_Vocab0List","order":3,"path":"objects/Init_Room_Vocab0List/Init_Room_Vocab0List.yy",},
     {"name":"Init_Room_Vocabulary","order":1,"path":"objects/Init_Room_Vocabulary/Init_Room_Vocabulary.yy",},
     {"name":"init_Room_Vocabulary0Grammar","order":1,"path":"objects/init_Room_Vocabulary0Grammar/init_Room_Vocabulary0Grammar.yy",},
     {"name":"obj_ArrowDown","order":4,"path":"objects/obj_ArrowDown/obj_ArrowDown.yy",},

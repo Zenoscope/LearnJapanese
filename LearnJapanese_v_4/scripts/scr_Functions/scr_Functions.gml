@@ -1321,8 +1321,6 @@ field_list = ["field_1"];
 // reset the room text
 array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
 
-
-
 // switch statement for the buttons
 switch (btn_name)
 		{
@@ -1489,8 +1487,7 @@ switch (btn_name)
 				}
 			
 #endregion			
-		break;
-		
+		break;		
 
 		case "N50sentences":			
 #region
@@ -1624,6 +1621,19 @@ switch (btn_name)
 			room_script.display_string = function_join_string(room_script.current_line - ( room_script.max_words_to_display - 1), room_script.max_words_to_display ,room_script.grammar_string);
 									
 			instance_activate_layer("Arrow_Buttons");
+			
+		case "Vocab0List":
+		
+						
+		
+		
+		
+			field_list = ["verbStem"];
+			room_script.max_words_to_display = 8;
+			room_script.word_list = function_add_to_WordBuilderArray("2",room_script.kanji_list,field_list);
+			
+
+		
 #endregion
 		break;
 		default:
