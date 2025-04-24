@@ -1305,8 +1305,6 @@ examples:		room_script.display_list[room_script.card_index + i].examples,
 word_type			room_script.display_list[room_script.card_index + i].field1,
 */
 
-if (live_call()) return live_result;
-
 btn_Dialog_Search_x = 325;
 
 // show the initial list again when you click on the button.
@@ -1319,7 +1317,12 @@ function_deactivate_layers_by_Name(layer_array);
 
 field_list = ["field_1"];
 // reset the room text
-array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
+if (variable_instance_exists(self,"room_script.grammar_string")) {
+	array_delete(room_script.grammar_string,1,array_length(room_script.grammar_string));
+	}
+else { 
+	show_debug_message("grammar_string doesn't exist")
+	} 
 
 // switch statement for the buttons
 switch (btn_name)
@@ -1328,7 +1331,8 @@ switch (btn_name)
 #region			
 			
 			room_script.title_string = "Adverbs";
-			field_list = ["field_1"];					
+			
+			field_list = ["field_1"];
 			
 			room_script.word_list = function_add_to_WordBuilderArray("Adverb",room_script.kanji_list,field_list);			
 			
@@ -1623,17 +1627,44 @@ switch (btn_name)
 			instance_activate_layer("Arrow_Buttons");
 			
 		case "Vocab0List":
-		
-						
-		
-		
-		
-			field_list = ["verbStem"];
-			room_script.max_words_to_display = 8;
-			room_script.word_list = function_add_to_WordBuilderArray("2",room_script.kanji_list,field_list);
 			
-
-		
+			var _listSelection = global.roomBreadcrumbs[array_length(global.roomBreadcrumbs) - 2]
+			switch (_listSelection){
+				case "Kanji":		//select Kanji mainly from the list
+					ListDefault = 1;		
+				break;
+				case "Hiragana":
+					//select Kanji mainly from the list
+					ListDefault = 2;			
+				break;
+				case "Katakana":
+					//select Kanji mainly from the list
+					ListDefault = 3;
+				break;
+				default:
+					show_debug_message("ListDefault create error");
+				break
+				}
+				
+			btn_Dialog_Search.y = 95;
+				
+			room_script.total_lines = 10; // total number of lines in the list
+			room_script.current_line = 8; // current line (same as number of words to display, initially)
+			room_script.max_words_to_display = 8;	
+						
+			field_list = ["field_4"];
+			room_script.word_list = function_add_to_WordBuilderArray(ListDefault,room_script.kanji_list,field_list);
+			room_script.title_string = _listSelection;
+			room_script.grammar_string[0] = "Words written in " + _listSelection;			
+			
+			// is this right?
+			room_script.display_list = room_script.word_list;
+			
+			room_script.search_result_method = function(){				
+				// word is more generic, doesn't need the same format as the verb or adjective ones.
+				searchfunction_show_vocab_search_result(other.index,other.kanji,other.meaning,other.romanji,other.kana,other.examples,other.word_type,other.room_script, obj_VocabWordDisplay);
+				}
+	
 #endregion
 		break;
 		default:
@@ -1659,3 +1690,11 @@ function function_stop_cow_narrator(){
 			}
 		global.show_helptext = false;
 		}
+
+// debugging functions
+
+function debugging_room_trace() {
+	if (global.room_trace == true) {
+		show_debug_message("created room: " + string(room_get_name(room)));
+		}
+	}

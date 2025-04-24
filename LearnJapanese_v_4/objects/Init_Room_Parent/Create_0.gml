@@ -1,6 +1,8 @@
 // Init room variables
 global.current_room = room_get_name(room);
 
+debugging_room_trace();
+
 // defaults to goujon
 global.use_kana_set = 0;
 

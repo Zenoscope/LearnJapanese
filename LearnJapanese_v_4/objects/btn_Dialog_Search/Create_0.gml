@@ -2,8 +2,6 @@
 
 // room_script = function_get_room_script_name(id);
 
-if (live_call()) return live_result;
-
 //------------------
 // variables for searching
 // reached the end of the list (possibly delete)
@@ -18,19 +16,10 @@ room_script.word_display_number = 0;
 // variables for displayin the search reults
 draw_buttons = true;
 
-/* these are meta variables, they are set in the actual room script itself.
- Are we searching? Not yet
- room_script.search = false;
- only set if they haven't already been set.
- room_script.search = true;
-room_script.show_initial_words = true; 
-*/
-
 //------------------
 // Text stuff for cards
 // generate an empty card array
 room_script.card_array = [];
-
 
 room_script.card_index = 0;
 
@@ -53,9 +42,6 @@ model_string = "ABCDEFGHIJKLMN";
 box_width = string_width(model_string);
 box_height = string_height(model_string);
 
-// initial text to display in the search box
-search_box_text = "Click here to search";
-
 //------------------
 // blink the cursor
 blink = false;
@@ -67,4 +53,4 @@ alarm[0] = blink_speed;
 image_index = irandom(self. image_number);
 image_speed = 0;
 
-text = "";
+text = "Type here to search"

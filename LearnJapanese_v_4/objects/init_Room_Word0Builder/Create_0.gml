@@ -61,6 +61,7 @@ field_list = ["field_4"];
 //WordBuilderArray = function_add_to_WordBuilderArray(ListDefault,kanji_list,10,field_list);
 WordBuilderArray = function_add_to_WordBuilderArray(ListDefault,kanji_list,field_list);
 
+//room_script.display_list = room_script.search_result_list;
 
 selected_index = random(array_length(WordBuilderArray) -1 );
 selected_word = WordBuilderArray[selected_index];

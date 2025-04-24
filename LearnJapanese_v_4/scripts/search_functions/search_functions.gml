@@ -245,7 +245,7 @@ function search_create_result_buttons() {
                         kanji: room_script.display_list[room_script.card_index + i].kanji,
                         meaning: room_script.display_list[room_script.card_index + i].meaning,
                         kana: room_script.display_list[room_script.card_index + i].field_2,
-                        verbStem: room_script.display_list[room_script.card_index + i].verbStem,
+                        //verbStem: room_script.display_list[room_script.card_index + i].verbStem,
                         examples: room_script.display_list[room_script.card_index + i].examples,
                         word_type: room_script.display_list[room_script.card_index + i].field_1,
                         romanji: room_script.display_list[room_script.card_index + i].romanji,

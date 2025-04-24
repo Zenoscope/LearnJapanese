@@ -14,3 +14,7 @@ window_set_caption("Learn Japanese with Clarabelle and Gran");
 global.release = "Release 2";
 
 global.current_room = room_get_name(room);
+
+// debugging stuff
+// writes the room name to the console
+global.room_trace = true;

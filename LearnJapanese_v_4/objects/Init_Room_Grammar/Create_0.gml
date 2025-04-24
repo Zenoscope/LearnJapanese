@@ -1,10 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-room_set_live(room, true);
-
-
-
 // Inherit the parent eveninitialize it with a default value
 event_inherited();
 

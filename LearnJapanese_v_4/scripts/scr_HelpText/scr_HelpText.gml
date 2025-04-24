@@ -76,8 +76,8 @@ tooltip055 = new tooltip("Links","Just a test!","biblio");
 // blurbs
 // a blurb is displayed in a room and just stay there, a helptext might replace it,
 // but it comes back.
-tooltip060 = new tooltip("Splash_Screen","Learn Japanese: Release 2\n\nCreated by Omoshiroi games\n\nTested by Bobby and Omoshiroi Games.\n\nRead the dev blog!         \n\nMade with Gamemaker.","questionmark");
-tooltip061 = new tooltip("Main_menu","Learn Japanese: Release 2\n\nCreated by Omoshiroi games\n\nTested by Bobby and Omoshiroi Games.\n\nRead the dev blog at:          \n\nMade with Gamemeaker.","questionmark");
+tooltip060 = new tooltip("Splash_Screen","Learn Japanese: \nRelease 3.0 - ギミ チョコ!!\n\nCreated by Omoshiroi games\n\nTested by Bobby and Omoshiroi Games.\n\nRead the dev blog: https://omoshiroigames.wordpress.com/ \n\nMade with Gamemaker.\n\nSpecial thanks to JpnsWClarabelle&Gran_Fan and soyer_dev","questionmark");
+tooltip061 = new tooltip("Main_menu","Learn Japanese: \nRelease 3.0 - ギミ チョコ!!\n\nCreated by Omoshiroi games\n\nTested by Bobby and Omoshiroi Games.\n\nRead the dev blog: https://omoshiroigames.wordpress.com/ \n\nMade with Gamemaker.\n\nSpecial thanks to JpnsWClarabelle&Gran_Fan and soyer_dev","questionmark");
 
 
 // tooltips 
