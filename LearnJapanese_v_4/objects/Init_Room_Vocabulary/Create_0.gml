@@ -1,6 +1,6 @@
 /// @Vocab and Grammar
 
-room_set_live(room, true);
+
 
 // Inherit the parent eveninitialize it with a default value
 event_inherited();

@@ -1,6 +1,6 @@
 /// @description 
 
-if (live_call()) return live_result;
+
 
 // draw the background sprite
 draw_self();

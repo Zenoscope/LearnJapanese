@@ -1,7 +1,7 @@
 // @description draw the found words
 // 
 
-room_set_live(room, true);
+
 
 // if the words left in the array is smaller than the 
 // number of t be words shown on screen...

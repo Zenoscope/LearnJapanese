@@ -3,7 +3,7 @@
 // move these to the objects
 
 /*
-room_set_live(room, true);
+
 // if not searching, then the display list is the actual word list.
 // *I could avoid this (ans storing the arrays) but it might get confusing... 
 //if (btn_Search.search == false){	

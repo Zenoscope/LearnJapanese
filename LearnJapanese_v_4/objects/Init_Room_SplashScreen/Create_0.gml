@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 //GMLive		
-room_set_live(room, true);
+
 
 function_execute_script("scr_HelpText");
 

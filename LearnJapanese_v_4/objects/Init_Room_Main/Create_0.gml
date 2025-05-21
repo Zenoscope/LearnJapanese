@@ -1,7 +1,7 @@
 // Main_menu
 // store the menu crubs as an array.
 
-room_set_live(room, true);
+
 
 global.roomBreadcrumbs = ["Main_menu"];
 

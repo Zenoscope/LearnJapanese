@@ -1,8 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (live_call()) return live_result;
-
 //draws the text on the button
 draw_self();
 self.image_xscale = 2.75;

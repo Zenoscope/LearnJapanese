@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 //GMLive		
-if (live_call()) return live_result;
+
 
 /// @Description draws the text on the balloon
 

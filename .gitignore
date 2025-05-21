@@ -1,4 +1,7 @@
 /backups/
 /ArchiveFiles/
+/Build/
+/Build_Archive/
+
 
 Github_Commit.bat

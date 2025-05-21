@@ -12,7 +12,7 @@ or they are always there and just don't do anything?
 
 */
 
-if (live_call()) return live_result;
+
 
 function_execute_script("scr_VocabList");
 

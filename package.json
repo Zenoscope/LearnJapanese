@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "gamemaker-rubber": "^3.0.1"
+  },
+  "scripts": {
+	"build": "node rubber.js"
+  }
+}
+

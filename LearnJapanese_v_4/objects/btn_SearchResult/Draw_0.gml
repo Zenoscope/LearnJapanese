@@ -1,7 +1,7 @@
 /// @description Draws the button
 // This displays the search list results
 
-if (live_call()) return live_result;
+
 
 // draws the sprite for the button
 draw_self();
