@@ -62,7 +62,8 @@ colorama_init()
 #            f.write(line)
 
 
-GAME_PATH = r"C:\Users\ryan\Downloads\LearnJapanese\Build\LearnJapanese.exe"
+# GAME_PATH = r"C:\Users\ryan\Downloads\LearnJapanese\Build\LearnJapanese.exe"
+GAME_PATH = r"..\Build\LearnJapanese.exe"
 CONFIDENCE = 0.8
 TIMEOUT = 3  # seconds
 SCREENSHOTS_DIR = 'screenshots'
