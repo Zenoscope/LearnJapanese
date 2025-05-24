@@ -1458,7 +1458,7 @@ switch (btn_name)
 			
 			room_script.search_result_method = function(){
 			
-				searchfunction_show_vocab_search_result(other.index,other.kanji,other.meaning,other.romanji,other.kana,other.examples,other.word_type,other.room_script);
+				searchfunction_show_vocab_search_result(other.index,other.kanji,other.meaning,other.romanji,other.kana,other.examples,other.word_type,other.room_script, obj_VocabWordDisplay);
 				
 				}
 			
@@ -1486,7 +1486,7 @@ switch (btn_name)
 			
 			room_script.search_result_method = function(){
 			
-				searchfunction_show_vocab_search_result(other.index,other.kanji,other.meaning,other.romanji,other.kana,other.examples,other.word_type,other.room_script);
+				searchfunction_show_vocab_search_result(other.index,other.kanji,other.meaning,other.romanji,other.kana,other.examples,other.word_type,other.room_script, obj_VocabWordDisplay);
 				
 				}
 			
