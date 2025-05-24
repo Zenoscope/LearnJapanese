@@ -64,7 +64,7 @@ colorama_init()
 
 # GAME_PATH = r"C:\Users\ryan\Downloads\LearnJapanese\Build\LearnJapanese.exe"
 GAME_PATH = r"..\Build\LearnJapanese.exe"
-CONFIDENCE = 0.8
+CONFIDENCE = 0.85
 TIMEOUT = 3  # seconds
 SCREENSHOTS_DIR = 'screenshots'
 move_duration = 0.1
@@ -92,11 +92,15 @@ _00_BTN_FLIPCARD_MISSING = r'images\00_BTN_flipcard_missing.png'
 #_00_DLG2_Vocab = r'images\00_DLG2_Vocab.png'
 
 _00_SCH_AdjectiveResult = r'images\00_SCH_AdjectiveResult.png'
-_00_SCH_AdverbsResult= r'images\00_SCH_AdverbsResult.png'
-_00_SCH_VerbsResult= r'images\00_SCH_VerbsResult.png'
-_00_SCH_NounsResult= r'images\00_SCH_NounsResult.png'
+_00_SCH_AdverbsResult = r'images\00_SCH_AdverbsResult.png'
+_00_SCH_VerbsResult = r'images\00_SCH_VerbsResult.png' # File not found
+_00_SCH_NounsResult = r'images\00_SCH_NounsResult.png' # File not found
+_00_SCH_VocabResult = r'images\00_SCH_VocabResult.png' 
 
-_00_DLG1_Adjectives= r'images\00_DLG1_Adjectives.png'
+# dialog boxes
+_00_DLG1_Adjectives = r'images\00_DLG1_Adjectives.png'
+_00_DLG2_Adjectives = r'images\00_DLG2_Adjectives.png'
+
 
 _00_SCR_Cow = r'images\00_SCR_Cow.png'
 
@@ -110,7 +114,7 @@ _01_SPL_SPLASHSCREEN = r'images\01_SPL_SplashScreen.png'
 _02_BTN_HIRAGANA = r'images\02_BTN_hiragana.png'
 _02_BTN_KANJI = r'images\02_BTN_kanji.png'
 _02_BTN_KATAKANA = r'images\02_BTN_katakana.png'
-_02_BTN_VOCABGRAMMAR = r'images\02_BTN_VocabGrammar.png'
+_02_BTN_VOCABGRAMMAR = r'images\02_BTN_VocabGrammar.png' # File not found
 
 # Hiragana/katakana/kanji menu
 _03_BTN_FLIPCARDS = r'images\03_BTN_flipcards.png'
@@ -198,7 +202,7 @@ def wait_for_image(image_path, timeout=TIMEOUT, confidence=CONFIDENCE):
         try:            
             location = pyautogui.locateCenterOnScreen(image_path, confidence=confidence)
         except:
-            print(f" Image:{image_path} not found")
+            # print(f"{Fore.RED} Image{image_path} not found{Style.RESET_ALL}")
             return None
             
         if location:
@@ -226,14 +230,14 @@ def mouseover_image(image_path, timeout=TIMEOUT, test_name=""):
         return False
     
 def find_image(image_path, timeout=TIMEOUT, test_name=""):
-    # print(f"Find_image(): for {image_path} as {test_name} test")
     location = wait_for_image(image_path, timeout)
     if location:        
         print(f" Found {image_path}")
         return location
     else:
-        print(f" Failed to find {image_path}")
-        capture_screenshot(test_name)
+        print(f"{Fore.RED}  Failed to find {image_path}{Style.RESET_ALL} on screen")
+        # print(f" Failed to find {image_path}")
+        # capture_screenshot(test_name)
         return False
 
 def find_mouseover_image(image_path, timeout=TIMEOUT, test_name=""):    
@@ -248,14 +252,13 @@ def find_mouseover_image(image_path, timeout=TIMEOUT, test_name=""):
         # images\01_BTN_start_game.png
         help_image = image_path.replace("BTN", "HLP")     
         print(f"Looking for: mouseover {help_image} for {test_name} test")
-        mouseover_location = wait_for_image(help_image, timeout)
-        
+        mouseover_location = wait_for_image(help_image, timeout)        
         if mouseover_location:     
             return True
         else:
             return False
     else:
-        print(f" Failed to find {image_path} for {test_name} test")
+        print(f"{Fore.RED} Failed to mouse over {image_path} for {test_name} test{Style.RESET_ALL}")
         capture_screenshot(test_name)
         return False
 
@@ -265,7 +268,8 @@ def find_button(image_path, timeout=TIMEOUT, test_name=""):
     if location:
         return True
     else:
-        print(f" Failed to find {image_path} for {test_name} test")
+        print(f"{Fore.RED} Failed to find {image_path} button for {test_name} test {Style.RESET_ALL}")
+        #print(f" Failed to find {image_path} button for {test_name} test")
         capture_screenshot(test_name)
         return False
            
@@ -375,217 +379,243 @@ def main():
     #
     # Run tests
     #
-
-    results['Check image exists - fail'] = test_press_button(_00_Image_Exits_Test, "_00_Image_Exits_Test")
+    mouseover_test = False
+    hiragana_test = False
+    katakana_test = False
+    kanji_test = False
+    vocabAndGrammar_test = True
+    
+    # always fails!
+    #results['Check image exists - fail'] = test_press_button(_00_Image_Exits_Test, "_00_Image_Exits_Test")
     
     ### splash screen ### these are the most basic tests
-    #results['Start - screen background'] = test_check_background(_01_SPL_SPLASHSCREEN, "SPL_SPLASHSCREEN")
-    #results['Start - Mouse over'] = test_check_mouseover(_01_BTN_START_GAME, "1_BTN_START_GAME")
+    if mouseover_test:
+        results['Start - screen background'] = test_check_background(_01_SPL_SPLASHSCREEN, "SPL_SPLASHSCREEN")
+        results['Start - Mouse over'] = test_check_mouseover(_01_BTN_START_GAME, "1_BTN_START_GAME")
+    
+    results['Start - Press qmark'] = test_press_button(_00_BTN_QUESTIONMARK, "_00_BTN_QUESTIONMARK")  
     results['Start - Press start'] = test_press_button(_01_BTN_START_GAME, "1_BTN_START_GAME")
    
     ###
   
     
      ### main menu
-    #results['Main menu - Hiragana mouse over'] = test_check_mouseover(_02_BTN_HIRAGANA, "_02_BTN_HIRAGANA")
-    #results['Main menu - Katakana mouse over'] = test_check_mouseover(_02_BTN_KATAKANA, "_02_BTN_KATAKANA")
-    #results['Main menu - Kanji mouse over'] = test_check_mouseover(_02_BTN_KANJI, "_02_BTN_KANJI")
-    #results['Main menu - Vocab and Grammar mouse over'] = test_check_mouseover(_02_BTN_VocabGrammar, "_02_BTN_VocabGrammar")
+    if mouseover_test: 
+        results['Main menu - Hiragana mouse over'] = test_check_mouseover(_02_BTN_HIRAGANA, "_02_BTN_HIRAGANA")
+        results['Main menu - Katakana mouse over'] = test_check_mouseover(_02_BTN_KATAKANA, "_02_BTN_KATAKANA")
+        results['Main menu - Kanji mouse over'] = test_check_mouseover(_02_BTN_KANJI, "_02_BTN_KANJI")
+        results['Main menu - Vocab and Grammar mouse over'] = test_check_mouseover(_02_BTN_VOCABGRAMMAR, "_02_BTN_VocabGrammar")
     
-    """
-     ### hiragana
-    results['Main menu - Hiragana - go!'] = test_press_button(_02_BTN_HIRAGANA, "_02_BTN_HIRAGANA")
-    #
-    results['Hiragana - FLIPCARDS'] = test_check_mouseover(_03_BTN_FLIPCARDS, "_03_BTN_FLIPCARDS")
-    results['Hiragana - MISSING_KANA'] = test_check_mouseover(_03_BTN_MISSING_KANA, "_03_BTN_MISSING_KANA")
-    results['Hiragana - VOCAB_LIST'] = test_check_mouseover(_03_BTN_VOCAB_LIST, "_03_BTN_VOCAB_LIST")
-    results['Hiragana - WORD_BUILDER'] = test_check_mouseover(_03_BTN_WORD_BUILDER, "_03_BTN_WORD_BUILDER")
- 
-    ## Flipcards
-    results['Hiragana - FLIPCARDS - go!'] = test_press_button(_03_BTN_FLIPCARDS, "_03_BTN_FLIPCARDS")
-    #    
-    results['Hiragana - GOJUON'] = test_check_mouseover(_04_BTN_GOJUON, "_04_BTN_GOJUON")
-    results['Hiragana - HANDAKUTEN'] = test_check_mouseover(_04_BTN_HANDAKUTEN, "_04_BTN_HANDAKUTEN")
-    results['Hiragana - YOON'] = test_check_mouseover(_04_BTN_YOON, "_04_BTN_YOON")    
-    results['Hiragana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
-
-     ## Missing
-    results['Hiragana - Missing kana - go!'] = test_press_button(_03_BTN_MISSING_KANA,"_03_BTN_MISSING_KANA")
-    #
-    results['Hiragana - GOJUON'] = test_check_mouseover(_04_BTN_GOJUON, "_04_BTN_GOJUON")
-    results['Hiragana - HANDAKUTEN'] = test_check_mouseover(_04_BTN_HANDAKUTEN, "_04_BTN_HANDAKUTEN")
-    results['Hiragana - YOON'] = test_check_mouseover(_04_BTN_YOON, "_04_BTN_YOON")    
-    results['Hiragana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
-
-     ## VOCAB_LIST
-    results['Hiragana - VOCAB_LIST - go!'] = test_press_button(_03_BTN_VOCAB_LIST, "_03_BTN_VOCAB_LIST")
-    # 
-    results['Hiragana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
-
-     ## WORD_BUILDER
-    results['Hiragana - WORD_BUILDER - go!'] = test_press_button(_03_BTN_WORD_BUILDER, "_03_BTN_WORD_BUILDER")
-    # 
-    results['Hiragana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
-    results['Hiragana - Back to main menu'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
     
-      ### Katakana
-    results['Main menu - Katakana - go!'] = test_press_button(_02_BTN_KATAKANA, "_02_BTN_KATAKANA")
+    ### hiragana
+    if hiragana_test:
+        results['Main menu - Hiragana - go!'] = test_press_button(_02_BTN_HIRAGANA, "_02_BTN_HIRAGANA")
+        #
+        if mouseover_test:
+            results['Hiragana - FLIPCARDS'] = test_check_mouseover(_03_BTN_FLIPCARDS, "_03_BTN_FLIPCARDS")
+            results['Hiragana - MISSING_KANA'] = test_check_mouseover(_03_BTN_MISSING_KANA, "_03_BTN_MISSING_KANA")
+            results['Hiragana - VOCAB_LIST'] = test_check_mouseover(_03_BTN_VOCAB_LIST, "_03_BTN_VOCAB_LIST")
+            results['Hiragana - WORD_BUILDER'] = test_check_mouseover(_03_BTN_WORD_BUILDER, "_03_BTN_WORD_BUILDER")
  
-    results['Katakana - FLIPCARDS'] = test_check_mouseover(_03_BTN_FLIPCARDS, "_03_BTN_FLIPCARDS")
-    results['Katakana - MISSING_KANA'] = test_check_mouseover(_03_BTN_MISSING_KANA, "_03_BTN_MISSING_KANA")
-    results['Katakana - VOCAB_LIST'] = test_check_mouseover(_03_BTN_VOCAB_LIST, "_03_BTN_VOCAB_LIST")
-    results['Katakana - WORD_BUILDER'] = test_check_mouseover(_03_BTN_WORD_BUILDER, "_03_BTN_WORD_BUILDER")
- 
-    ## Flipcards
-    results['Katakana - FLIPCARDS - go!'] = test_press_button(_03_BTN_FLIPCARDS, "_03_BTN_FLIPCARDS")
-    #    
-    results['Katakana - GOJUON'] = test_check_mouseover(_04_BTN_GOJUON, "_04_BTN_GOJUON")
-    results['Katakana - HANDAKUTEN'] = test_check_mouseover(_04_BTN_HANDAKUTEN, "_04_BTN_HANDAKUTEN")
-    results['Katakana - YOON'] = test_check_mouseover(_04_BTN_YOON, "_04_BTN_YOON")    
-    results['Katakana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
+        ## Flipcards
+        results['Hiragana - FLIPCARDS - go!'] = test_press_button(_03_BTN_FLIPCARDS, "_03_BTN_FLIPCARDS")
+        #    
+        results['Hiragana - GOJUON'] = test_check_mouseover(_04_BTN_GOJUON, "_04_BTN_GOJUON")
+        results['Hiragana - HANDAKUTEN'] = test_check_mouseover(_04_BTN_HANDAKUTEN, "_04_BTN_HANDAKUTEN")
+        results['Hiragana - YOON'] = test_check_mouseover(_04_BTN_YOON, "_04_BTN_YOON")    
+        results['Hiragana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
 
-     ## Missing
-    results['Katakana - Missing kana - go!'] = test_press_button(_03_BTN_MISSING_KANA,"_03_BTN_MISSING_KANA")
-    #
-    results['Katakana - GOJUON'] = test_check_mouseover(_04_BTN_GOJUON, "_04_BTN_GOJUON")
-    results['Katakana - HANDAKUTEN'] = test_check_mouseover(_04_BTN_HANDAKUTEN, "_04_BTN_HANDAKUTEN")
-    results['Katakana - YOON'] = test_check_mouseover(_04_BTN_YOON, "_04_BTN_YOON")    
-    results['Katakana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
+         ## Missing
+        results['Hiragana - Missing kana - go!'] = test_press_button(_03_BTN_MISSING_KANA,"_03_BTN_MISSING_KANA")
+        #
+        results['Hiragana - GOJUON'] = test_check_mouseover(_04_BTN_GOJUON, "_04_BTN_GOJUON")
+        results['Hiragana - HANDAKUTEN'] = test_check_mouseover(_04_BTN_HANDAKUTEN, "_04_BTN_HANDAKUTEN")
+        results['Hiragana - YOON'] = test_check_mouseover(_04_BTN_YOON, "_04_BTN_YOON")    
+        results['Hiragana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
 
-     ## VOCAB_LIST
-    results['Katakana - VOCAB_LIST - go!'] = test_press_button(_03_BTN_VOCAB_LIST, "_03_BTN_VOCAB_LIST")
-    # check scroll buttons (up, down) work:
-    #  Count changes
-    #  top results scroll out of the way.
+         ## VOCAB_LIST
+        results['Hiragana - VOCAB_LIST - go!'] = test_press_button(_03_BTN_VOCAB_LIST, "_03_BTN_VOCAB_LIST")
+        # 
+        results['Hiragana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
+
+         ## WORD_BUILDER
+        results['Hiragana - WORD_BUILDER - go!'] = test_press_button(_03_BTN_WORD_BUILDER, "_03_BTN_WORD_BUILDER")
+        # 
+        results['Hiragana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
+        results['Hiragana - Back to main menu'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
+    
+    
+    ### Katakana
+    if katakana_test:
+        results['Main menu - Katakana - go!'] = test_press_button(_02_BTN_KATAKANA, "_02_BTN_KATAKANA")
         
-    # check search works for fewer and more than one result
-    # more than result_count:
-    # scroll arrows disappear
-    # 
-    
-    # 
-    results['Katakana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
+        if mouseover_test:
+            results['Katakana - FLIPCARDS'] = test_check_mouseover(_03_BTN_FLIPCARDS, "_03_BTN_FLIPCARDS")
+            results['Katakana - MISSING_KANA'] = test_check_mouseover(_03_BTN_MISSING_KANA, "_03_BTN_MISSING_KANA")
+            results['Katakana - VOCAB_LIST'] = test_check_mouseover(_03_BTN_VOCAB_LIST, "_03_BTN_VOCAB_LIST")
+            results['Katakana - WORD_BUILDER'] = test_check_mouseover(_03_BTN_WORD_BUILDER, "_03_BTN_WORD_BUILDER")
+     
+        ## Flipcards
+        results['Katakana - FLIPCARDS - go!'] = test_press_button(_03_BTN_FLIPCARDS, "_03_BTN_FLIPCARDS")
+        #    
+        results['Katakana - GOJUON'] = test_check_mouseover(_04_BTN_GOJUON, "_04_BTN_GOJUON")
+        results['Katakana - HANDAKUTEN'] = test_check_mouseover(_04_BTN_HANDAKUTEN, "_04_BTN_HANDAKUTEN")
+        results['Katakana - YOON'] = test_check_mouseover(_04_BTN_YOON, "_04_BTN_YOON")    
+        results['Katakana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
 
-     ## WORD_BUILDER
-    results['Katakana - WORD_BUILDER - go!'] = test_press_button(_03_BTN_WORD_BUILDER, "_03_BTN_WORD_BUILDER")
-    # 
-    results['Katakana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
-    results['Katakana - Back to main menu'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
-    """
-    
-    
-      ### Kanji
-    results['Main menu - Kanji - go!'] = test_press_button(_02_BTN_KANJI, "_02_BTN_KANJI")
-    """    
-    results['Kanji - 100KANJI'] = test_check_mouseover(_05_BTN_100KANJI, "_05_BTN_100KANJI")
-    results['Kanji - RADICALLIST'] = test_check_mouseover(_05_BTN_RADICALLIST, "_05_BTN_RADICALLIST")
-    results['Kanji - VOCAB_LIST'] = test_check_mouseover(_03_BTN_VOCAB_LIST, "_03_BTN_VOCAB_LIST")
-    results['Kanji - WORD_BUILDER'] = test_check_mouseover(_03_BTN_WORD_BUILDER, "_03_BTN_WORD_BUILDER")
-    """
+         ## Missing
+        results['Katakana - Missing kana - go!'] = test_press_button(_03_BTN_MISSING_KANA,"_03_BTN_MISSING_KANA")
+        #
+        results['Katakana - GOJUON'] = test_check_mouseover(_04_BTN_GOJUON, "_04_BTN_GOJUON")
+        results['Katakana - HANDAKUTEN'] = test_check_mouseover(_04_BTN_HANDAKUTEN, "_04_BTN_HANDAKUTEN")
+        results['Katakana - YOON'] = test_check_mouseover(_04_BTN_YOON, "_04_BTN_YOON")    
+        results['Katakana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
+
+         ## VOCAB_LIST
+        results['Katakana - VOCAB_LIST - go!'] = test_press_button(_03_BTN_VOCAB_LIST, "_03_BTN_VOCAB_LIST")
+        # check scroll buttons (up, down) work:
+        #  Count changes
+        #  top results scroll out of the way.
+            
+        # check search works for fewer and more than one result
+        # more than result_count:
+        # scroll arrows disappear
+        # 
         
-    """
-    # radical list
-    results['Kanji - Press RADICALLIST'] = test_press_button(_05_BTN_RADICALLIST, "_05_BTN_RADICALLIST")
-    results['Kanji Radicals - radical_frequency'] = test_check_background(_05_SCREEN_RADICAL_FREQUENCY, "_05_SCREEN_RADICAL_FREQUENCY")
-    # go left, should stay the same
-    results['Kanji Radicals - Press LEFT_ARROW'] = test_press_button(_00_BTN_LEFT_ARROW, "_00_BTN_LEFT_ARROW")
-    results['Kanji Radicals - _RADICALS_01'] = test_check_background(_05_SCR_RADICALS_01, "_05_SCR_RADICALS_01")
-    # go right, it should be different
-    results['Kanji Radicals - Press RIGHT_ARROW'] = test_press_button(_00_BTN_RIGHT_ARROW, "_00_BTN_RIGHT_ARROW")
-    results['Kanji Radicals - RADICALS_02'] = test_check_background(_05_SCR_RADICALS_02, "_05_SCR_RADICALS_02")
-    results['Katakana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
-    """
-    
-    # 100 kanji
-    """
-    results['Kanji - Press 100KANJI'] = test_press_button(_05_BTN_100KANJI, "_05_BTN_100KANJI")
-    # go left, should stay the same
-    results['Kanji 100 - Press LEFT_ARROW'] = test_press_button(_00_BTN_LEFT_ARROW, "_00_BTN_LEFT_ARROW")
-    results['Kanji 100 - _05_SCR_KANJI_01'] = test_check_background(_05_SCR_KANJI_01, "_05_SCR_KANJI_01")
-    # go right, it should be different
-    results['Kanji 100 - Press RIGHT_ARROW'] = test_press_button(_00_BTN_RIGHT_ARROW, "_00_BTN_RIGHT_ARROW")
-    results['Kanji 100 - _05_SCR_KANJI_02'] = test_check_background(_05_SCR_KANJI_02, "_05_SCR_KANJI_02")
-    results['Katakana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
-    
-    # should probably check the end of the kanji list doesn't crash out too, by clicking heaps
-    # make a click function wrapper with a loop.
-    """
+        # 
+        results['Katakana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
 
-    # Word builder
-    results['Kanji - Press Word Builder'] = test_press_button(_03_BTN_WORD_BUILDER, "_03_BTN_WORD_BUILDER")
-    # check if it makes it there:
-    # results['Kanji 100 - _05_SCR_KANJI_02'] = test_check_background(_05_SCR_KANJI_02, "_05_SCR_KANJI_02")
-    results['Katakana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
+         ## WORD_BUILDER
+        results['Katakana - WORD_BUILDER - go!'] = test_press_button(_03_BTN_WORD_BUILDER, "_03_BTN_WORD_BUILDER")
+        # 
+        results['Katakana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
+        results['Katakana - Back to main menu'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
 
-    # Vocab &Grammar button
-    results['Vocab & grammar - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
-    results['Vocab - Go!'] = test_press_button(_02_BTN_VOCABGRAMMAR, "_02_BTN_VOCABGRAMMAR")
+    
+    ### Kanji
+    if kanji_test:
+        results['Main menu - Kanji - go!'] = test_press_button(_02_BTN_KANJI, "_02_BTN_KANJI")
+        
+        if mouseover_test:
+            results['Kanji - 100KANJI'] = test_check_mouseover(_05_BTN_100KANJI, "_05_BTN_100KANJI")
+            results['Kanji - RADICALLIST'] = test_check_mouseover(_05_BTN_RADICALLIST, "_05_BTN_RADICALLIST")
+            results['Kanji - VOCAB_LIST'] = test_check_mouseover(_03_BTN_VOCAB_LIST, "_03_BTN_VOCAB_LIST")
+            results['Kanji - WORD_BUILDER'] = test_check_mouseover(_03_BTN_WORD_BUILDER, "_03_BTN_WORD_BUILDER")
+        """
+            
+        """
+        # radical list
+        results['Kanji - Press RADICALLIST'] = test_press_button(_05_BTN_RADICALLIST, "_05_BTN_RADICALLIST")
+        results['Kanji Radicals - radical_frequency'] = test_check_background(_05_SCREEN_RADICAL_FREQUENCY, "_05_SCREEN_RADICAL_FREQUENCY")
+        # go left, should stay the same
+        results['Kanji Radicals - Press LEFT_ARROW'] = test_press_button(_00_BTN_LEFT_ARROW, "_00_BTN_LEFT_ARROW")
+        results['Kanji Radicals - _RADICALS_01'] = test_check_background(_05_SCR_RADICALS_01, "_05_SCR_RADICALS_01")
+        # go right, it should be different
+        results['Kanji Radicals - Press RIGHT_ARROW'] = test_press_button(_00_BTN_RIGHT_ARROW, "_00_BTN_RIGHT_ARROW")
+        results['Kanji Radicals - RADICALS_02'] = test_check_background(_05_SCR_RADICALS_02, "_05_SCR_RADICALS_02")
+        results['Katakana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
+        """
+        
+        # 100 kanji
+        """
+        results['Kanji - Press 100KANJI'] = test_press_button(_05_BTN_100KANJI, "_05_BTN_100KANJI")
+        # go left, should stay the same
+        results['Kanji 100 - Press LEFT_ARROW'] = test_press_button(_00_BTN_LEFT_ARROW, "_00_BTN_LEFT_ARROW")
+        results['Kanji 100 - _05_SCR_KANJI_01'] = test_check_background(_05_SCR_KANJI_01, "_05_SCR_KANJI_01")
+        # go right, it should be different
+        results['Kanji 100 - Press RIGHT_ARROW'] = test_press_button(_00_BTN_RIGHT_ARROW, "_00_BTN_RIGHT_ARROW")
+        results['Kanji 100 - _05_SCR_KANJI_02'] = test_check_background(_05_SCR_KANJI_02, "_05_SCR_KANJI_02")
+        results['Katakana - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
+        
+        # should probably check the end of the kanji list doesn't crash out too, by clicking heaps
+        # make a click function wrapper with a loop.
 
-    # Vocab button
-    results['Vocab & grammar - Press button'] = test_press_button(_08_BTN_VOCABULARY, "_08_BTN_VOCABULARY")
-    
-    ## Vocab/Grammar
-    
-    # check mouse overs first
-    
-    results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
-    
-    results['Adjectives - Help'] = test_check_mouseover(_10_BTN_ADJECTIVES, "_10_BTN_ADJECTIVES")
-    # wtf can't find it
-    results['Adverbs - Help'] = test_check_mouseover(_09_BTN_ADVERBS, "_09_BTN_ADVERBS")
-    results['Nouns - Help'] = test_check_mouseover(_11_BTN_NOUNS, "_11_BTN_NOUNS")
-    results['Verbs - Help'] = test_check_mouseover(_12_BTN_VERBS, "_12_BTN_VERBS")
-    results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")    
-    
-    # Adjectives
-    results['Adjectives - Press button'] = test_press_button(_10_BTN_ADJECTIVES, "_10_BTN_ADJECTIVES")
-    # Dialogs
-    results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")    
-    results['Adjectives - _00_SCH_AdjectiveResult'] = test_press_button(_00_SCH_AdjectiveResult, "_00_SCH_AdjectiveResult")
-    results['Adjectives - 00_DLG1_Adjectives'] = test_press_button(_00_DLG1_Adjectives, "_00_DLG1_Adjectives")
+        # Word builder
+        results['Kanji - Press Word Builder'] = test_press_button(_03_BTN_WORD_BUILDER, "_03_BTN_WORD_BUILDER")
+        # check if it makes it there:
+        # results['Kanji 100 - _05_SCR_KANJI_02'] = test_check_background(_05_SCR_KANJI_02, "_05_SCR_KANJI_02")
+        results['Kanji - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
 
-    # Adverbs
-    #results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
-    #results['Adverbs - Go!'] = test_press_button(_09_BTN_ADVERBS, "_09_BTN_ADVERBS")
-    #_00_SCH_AdverbsResult= r'images\00_SCH_AdverbsResult.png'
+    if vocabAndGrammar_test:
+        # Vocab &Grammar button
+        if hiragana_test or katakana_test or kanji_test:
+            results['Vocab & grammar - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
+            
+        results['Vocab ^ grammar - Go!'] = test_press_button(_02_BTN_VOCABGRAMMAR, "_02_BTN_VOCABGRAMMAR")
 
-    #move_mouse_to()
-    #results['Adverbs - splash'] = test_check_background(_09_SPL_ADVERBS, "_09_SPL_ADVERBS")
-    
-    
-    # Nouns
-    #results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
-    #results['Nouns - Press button'] = test_press_button(_11_BTN_NOUNS, "_11_BTN_NOUNS")
-    #_00_SCH_NounsResult= r'images\00_SCH_NounsResult.png'    
+        # Vocab button
+        results['Vocab'] = test_press_button(_08_BTN_VOCABULARY, "_08_BTN_VOCABULARY")
+        
+        ## Vocab/Grammar
+        # check mouse overs first
+        if mouseover_test:
+            results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
+            
+            results['Adjectives - Help'] = test_check_mouseover(_10_BTN_ADJECTIVES, "_10_BTN_ADJECTIVES")
+            # wtf can't find it
+            results['Adverbs - Help'] = test_check_mouseover(_09_BTN_ADVERBS, "_09_BTN_ADVERBS")
+            results['Nouns - Help'] = test_check_mouseover(_11_BTN_NOUNS, "_11_BTN_NOUNS")
+            results['Verbs - Help'] = test_check_mouseover(_12_BTN_VERBS, "_12_BTN_VERBS")
+            results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")    
+        
+        """
+        # Adjectives
+        results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
+        results['Adjectives - Press button'] = test_press_button(_10_BTN_ADJECTIVES, "_10_BTN_ADJECTIVES")
+        # Dialogs
+        results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")    
+        results['Adjectives - _00_SCH_AdjectiveResult'] = test_press_button(_00_SCH_AdjectiveResult, "_00_SCH_AdjectiveResult")
+        #time.sleep(5)
+        # i'm fine with skipping this one.
+        #results['Adjectives - 00_DLG1_Adjectives'] = test_check_background(_00_DLG1_Adjectives, "00_DLG1_Adjectives")
+        results['Adjectives - 00_DLG2_Adjectives'] = test_check_background(_00_DLG2_Adjectives, "00_DLG2_Adjectives")
+        results['Adjectives - 00_DLG2_Adjectives'] = test_press_button(_00_DLG2_Adjectives, "00_DLG2_Adjectives")
+        
+        
+        # Adverbs
+        results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
+        results['Adverbs - Go!'] = test_press_button(_09_BTN_ADVERBS, "_09_BTN_ADVERBS")
+        results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
+        #results['Adverbs - _00_SCH_AdjectiveResult'] = test_press_button(_00_SCH_AdverbsResult, "_00_SCH_AdverbsResult")        
+        #results['Adverbs - _00_SCH_AdverbsResult'] = test_check_background(_00_SCH_AdverbsResult, "00_SCH_AdverbsResult")
+        results['Adverbs - _00_SCH_AdverbsResult'] = test_press_button(_00_SCH_AdverbsResult, "00_SCH_AdverbsResult")
+        """
+        
+        # Nouns
+        """
+        results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")        
+        results['Nouns - Press button'] = test_press_button(_11_BTN_NOUNS, "_11_BTN_NOUNS")
+        results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
+        #results['Adjectives - _00_SCH_AdjectiveResult'] = test_press_button(_00_SCH_AdjectiveResult, "_00_SCH_AdjectiveResult")
 
-    # Verbs
-    #results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
-    #results['Verbs - Press button'] = test_press_button(_12_BTN_VERBS, "_12_BTN_VERBS")
-    # _00_SCH_VerbsResult= r'images\00_SCH_VerbsResult.png'
-    
-    # Dialogs
-    #results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
-    #results['Verbs - _10_DLG1_Adverbs'] = test_check_background(_10_DLG1_Adverbs, "_10_DLG1_Adverbs")
-    #results['Verbs - _10_DLG2_Adjectives'] = test_check_background(_10_DLG2_Adjectives, "_10_DLG2_Adjectives")
-
-
-    #results['Verbs - _12_BTN_VERBS'] = test_press_button(_12_BTN_VERBS, "_12_BTN_VERBS")
-    
-    # Dialogs
-    #results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
-    #results['Verbs - _13_BTN_VOCABSEARCH'] = test_press_button(_13_BTN_VOCABSEARCH, "_13_BTN_VOCABSEARCH")
-    #results['Verbs - _13_SPL_VOCAB'] = test_check_background(_13_SPL_VOCAB, "_13_SPL_VOCAB")
-    #results['Verbs - _13_DLG1_Adverbs'] = test_check_background(_13_DLG1_Adverbs, "_13_DLG1_Adverbs")
-
-    # Vocab/Grammar
-    # _08_BTN_GRAMMAR = r'images\08_BTN_Grammar.png'
-    # results['Vocab & grammar - Press button'] = test_press_button(_08_BTN_VOCABULARY, "_08_BTN_VOCABULARY")
-    
-   
-    
-    ###Vocab and Grammar
-    # results['Main menu - Katakana - go!'] = test_press_button(_02_BTN_VocabGrammar, "_02_BTN_VocabGrammar")
-    
+        results['Nouns - _00_SCH_NounsResult'] = test_press_button(_00_SCH_NounsResult, "00_SCH_NounsResult")
+        results['Nouns - _00_SCH_NounsResult'] = test_check_background(_00_SCH_NounsResult, "00_SCH_NounsResult")
+        results['Nouns - _00_SCH_NounsResult'] = test_press_button(_00_SCH_NounsResult, "00_SCH_NounsResult")
+        """
+        
+        """
+        # Verbs
+        results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
+        results['Verbs - Press button'] = test_press_button(_12_BTN_VERBS, "_12_BTN_VERBS")
+        results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
+        results['Verbs - result click'] = test_press_button(_00_SCH_VerbsResult, "00_SCH_VerbsResult")
+        results['Verbs - _00_SCH_VerbsResult'] = test_check_background(_00_SCH_VerbsResult, "00_SCH_VerbsResult")
+        results['Verbs - result click'] = test_press_button(_00_SCH_VerbsResult, "00_SCH_VerbsResult")
+        """
+        
+        """
+        # Vocab search
+        results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
+        results['Vocab - Press button'] = test_press_button(_13_BTN_VOCABSEARCH, "_13_BTN_VocabSearch")
+        results['Vocab - _00_SCH_VerbsResult'] = test_check_background(_00_SCH_VocabResult, "00_SCH_VocabResult")
+        results['Vocab - _00_SCH_VerbsResult'] = test_press_button(_00_SCH_VocabResult, "00_SCH_VocabResult")
+        """
+        results['MouseOverReset'] = test_move_mouse(_00_SCR_Cow, "_00_SCR_Cow")
+        results['Vocab & grammar - Press back'] = test_press_button(_00_BTN_BACK, "_00_BTN_BACK")
+        
+        ###Vocab and Grammar
+        results['Grammar - go!'] = test_press_button(_08_BTN_GRAMMAR, "_08_BTN_Grammar")
+        
     time.sleep(3)    
     
     #results['Quit Game'] = test_quit_game()
