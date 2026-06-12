@@ -1,0 +1,234 @@
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_heaven">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Road">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Mise - shop">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Moon">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Buy">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Gate">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_vehicle">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_middle">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Person">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_big">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_now">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Foot">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Money">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_sheep">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_sun">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_river">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_rain">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Tree">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_under">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Mouth">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Water">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_mountain">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_hand">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_4">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Sakana">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Fire">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Eye">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Electricity">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Cow">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Country">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Book">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Kanji 3">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Ground">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Above ">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_10">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_5">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Kanji 1">
+<layer type="group" active="false" exclude_from_rendering="true" version="0.3" desc="p_Kanji 2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
