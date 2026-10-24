@@ -4,3 +4,4 @@
 // undefined;
 card_array = undefined;
 kanji_list = undefined;
+

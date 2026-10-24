@@ -22,7 +22,7 @@
   "name":"Vocab0List",
   "parent":{
     "name":"Vocab_List",
-    "path":"folders/Objects/Features/Vocab_List.yy",
+    "path":"folders/Objects/Features/Basics/Vocab_List.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

@@ -53,7 +53,7 @@
   "name":"Vocabulary",
   "parent":{
     "name":"Vocabulary",
-    "path":"folders/Objects/Features/VocabAndGrammar/Vocabulary.yy",
+    "path":"folders/Objects/Features/Basics/VocabAndGrammar/Vocabulary.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

@@ -1,0 +1,33 @@
+
+lesson list:
+
+
+Lesson list Room:
+Scrolling list (based on the line displayer?)
+RHS Click buttons which scroll up/down the list.
+On click, incr/dec the lines to display
+Set a particular number of lines to display (5-10? smaller buttons and text)
+Zeros work how?
+
+1) Loop through lesson list array
+__means button is a header, not a button
+2) Spit out button/header depending on the array member.
+
+// Introduciton is the header.
+// Lessons all start with the word "Lesson"
+lessonList = ["Introduction", "Lesson 1 - Basics","Lesson 2 - Self Introduction","Lesson 3 - Family","Lesson 4 - "]
+Lessons
+
+
+
+Button has text which points to lesson_content array.
+eg: Lesson_1, IntroLesson1,Wordfind001,ImageFind001,Hiragana001,KanjiList001
+(underscores are spaces)
+
+Controller:
+Each lesson references different "minigames" or text.
+So IntroLesson1 looks for Lesson1 in the Text array, which are intros for the lessons.
+Wordfind001 is a wordfind in the wordfind array.
+Imagefind001 is an imageFind in the imageFind array.
+The minigame Rooms take the minigames as arguments and will look for the content themselves.
+The lesson container Room is generated (or uses a template?)

@@ -17,7 +17,7 @@
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_60B7335B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":true,"inheritedItemId":{"name":"inst_60B7335B","path":"rooms/Word0Builder/Word0Builder.yy",},"inheritItemSettings":false,"isDnd":false,"name":"inst_60B7335B","objectId":{"name":"init_Room_Word0Builder","path":"objects/init_Room_Word0Builder/init_Room_Word0Builder.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":13.0,"scaleY":13.0,"x":0.0,"y":-32.0,},
+        {"$GMRInstance":"v4","%Name":"inst_60B7335B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":true,"inheritedItemId":{"name":"inst_60B7335B","path":"rooms/Word0Builder/Word0Builder.yy",},"inheritItemSettings":false,"isDnd":false,"name":"inst_60B7335B","objectId":{"name":"init_Room_Word0Builder","path":"objects/init_Room_Word0Builder/init_Room_Word0Builder.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":5.0,"scaleY":5.0,"x":0.0,"y":-32.0,},
       ],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Buttons","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_3313ECE6_2_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":true,"inheritedItemId":{"name":"inst_3313ECE6","path":"rooms/Room_Parent/Room_Parent.yy",},"inheritItemSettings":true,"isDnd":false,"name":"inst_3313ECE6_2_1_1","objectId":{"name":"btnNAV_back","path":"objects/btnNAV_back/btnNAV_back.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1217.0,"y":720.0,},
@@ -33,7 +33,7 @@
   "name":"One0Hundred0Kanji0Vocab",
   "parent":{
     "name":"One_Hundred_Kanji_Vocab",
-    "path":"folders/Objects/Features/Kanji/One_Hundred_Kanji_Vocab.yy",
+    "path":"folders/Objects/Features/Basics/Kanji/One_Hundred_Kanji_Vocab.yy",
   },
   "parentRoom":{
     "name":"Word0Builder",

@@ -33,7 +33,7 @@
   "name":"Radical0List",
   "parent":{
     "name":"RadicalList",
-    "path":"folders/Objects/Features/Kanji/RadicalList.yy",
+    "path":"folders/Objects/Features/Basics/Kanji/RadicalList.yy",
   },
   "parentRoom":{
     "name":"Room_Parent",

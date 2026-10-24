@@ -35,8 +35,9 @@ draw_set_valign(fa_top);
 var x_align = 0;
 var y_align = 0;
 
+// for the meaning etc
 draw_set_halign(fa_left);
-var offset_x = x_align + 600
+var offset_x = x_align + 600;
 var offset_y = y_align - 40;
 var offset_y_gap = -60;
 
@@ -77,4 +78,5 @@ draw_text_ext_transformed(offset_x,offset_y - (offset_y_gap * 8),field3 + string
 //kana_reading
 
 draw_text_ext_transformed(offset_x,offset_y - (offset_y_gap * 9),"Examples: " +	examples	,kern,text_length,text_scale,text_scale,0);
+
 

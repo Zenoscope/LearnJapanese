@@ -34,7 +34,7 @@
   "name":"Flipcards",
   "parent":{
     "name":"Flipcards",
-    "path":"folders/Objects/Features/Kana/Flipcards.yy",
+    "path":"folders/Objects/Features/Basics/Kana/Flipcards.yy",
   },
   "parentRoom":{
     "name":"Room_Parent",

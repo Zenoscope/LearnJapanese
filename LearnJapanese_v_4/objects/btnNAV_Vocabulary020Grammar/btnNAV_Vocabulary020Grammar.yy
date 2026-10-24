@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"VocabAndGrammar",
-    "path":"folders/Objects/Features/VocabAndGrammar.yy",
+    "path":"folders/Objects/Features/Basics/VocabAndGrammar.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Flipcards",
-    "path":"folders/Objects/Features/Kana/Flipcards.yy",
+    "path":"folders/Objects/Features/Basics/Kana/Flipcards.yy",
   },
   "parentObjectId":{
     "name":"btn_Parent",

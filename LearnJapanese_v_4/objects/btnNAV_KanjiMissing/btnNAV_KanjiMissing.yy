@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Kanji",
-    "path":"folders/Objects/Features/Kanji.yy",
+    "path":"folders/Objects/Features/Basics/Kanji.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

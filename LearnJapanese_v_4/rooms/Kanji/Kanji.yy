@@ -36,7 +36,7 @@
   "name":"Kanji",
   "parent":{
     "name":"Kanji",
-    "path":"folders/Objects/Features/Kanji.yy",
+    "path":"folders/Objects/Features/Basics/Kanji.yy",
   },
   "parentRoom":{
     "name":"Room_Parent",

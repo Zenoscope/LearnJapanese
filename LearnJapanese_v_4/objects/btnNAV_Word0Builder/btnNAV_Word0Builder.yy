@@ -6,8 +6,8 @@
   "name":"btnNAV_Word0Builder",
   "overriddenProperties":[],
   "parent":{
-    "name":"misc_Games",
-    "path":"folders/Objects/Features/misc_Games.yy",
+    "name":"MiniGames",
+    "path":"folders/Objects/Features/Lessons/MiniGames.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

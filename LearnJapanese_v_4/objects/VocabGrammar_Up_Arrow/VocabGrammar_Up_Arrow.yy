@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Shared",
-    "path":"folders/Objects/Features/VocabAndGrammar/Shared.yy",
+    "path":"folders/Objects/Features/Basics/VocabAndGrammar/Shared.yy",
   },
   "parentObjectId":{
     "name":"btn_NoLabel",

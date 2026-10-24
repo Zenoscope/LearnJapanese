@@ -5,3 +5,5 @@
 
 initial_x = xstart;
 initial_y = ystart;
+
+cardMode = "kanji";

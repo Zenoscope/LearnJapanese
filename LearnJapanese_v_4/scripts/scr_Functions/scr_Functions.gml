@@ -646,7 +646,7 @@ function delete_card(room_script){
 	}
 
 /// DESCRIPTION:
-/// Adds the roomsctipt to all of the instances in a room.
+/// Adds the roomscript to all of the instances in a room.
 /// 
 /// USAGE:
 /// room_script = function_get_room_script_name(object_index);

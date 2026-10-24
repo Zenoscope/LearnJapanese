@@ -33,7 +33,7 @@
   "name":"Katakana",
   "parent":{
     "name":"Kana",
-    "path":"folders/Objects/Features/Kana.yy",
+    "path":"folders/Objects/Features/Basics/Kana.yy",
   },
   "parentRoom":{
     "name":"Room_Parent",

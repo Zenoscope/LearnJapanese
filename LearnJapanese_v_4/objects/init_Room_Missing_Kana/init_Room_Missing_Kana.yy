@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Missing_Kana",
-    "path":"folders/Objects/Features/Kana/Missing_Kana.yy",
+    "path":"folders/Objects/Features/Basics/Kana/Missing_Kana.yy",
   },
   "parentObjectId":null,
   "persistent":false,

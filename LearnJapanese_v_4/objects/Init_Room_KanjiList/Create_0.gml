@@ -15,9 +15,10 @@ event_inherited();
 moving = "false";
 
 // screen positions for the cards
-card_left_x = 000;
+card_left_x = 200;
 card_right_x = 600;
 card_middle_x = card_right_x / 2;
+
 //surface_w = 300;
 //surface_h = 300;
 
@@ -29,12 +30,15 @@ y_loc = 288;
 moving = false;
 spawn_card = false;
 
+card_mode = "kanji"
+
 // initial card which is shown on the first card.
 card_index = 0;
 
 // generate an empty card array
 card_array = [];
 
+// gets the word/character lists
 switch (room_get_name(room))
 		{
 		case "Radical0List":
@@ -53,11 +57,11 @@ switch (room_get_name(room))
 					ListDefault = 1;		
 				break;
 				case "Hiragana":
-					//select Kanji mainly from the list
+					//select hiragana mainly from the list
 					ListDefault = 2;			
 				break;
 				case "Katakana":
-					//select Kanji mainly from the list
+					//select katakana mainly from the list
 					ListDefault = 3;
 				break;
 				}
@@ -88,4 +92,3 @@ function_spawn_kanji_card(card_middle_x,y_loc,room_script,card_index,"field_4");
 instance_id[instance_count - 1].room_script = id;
 
 //draw_surface(global.painting_surface,card_middle_x - (surface_w / 2) ,288 - (surface_h / 2) );
-

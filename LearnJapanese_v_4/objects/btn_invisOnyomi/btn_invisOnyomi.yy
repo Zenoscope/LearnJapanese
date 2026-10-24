@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Kanji_100List",
-    "path":"folders/Objects/Features/Kanji/Kanji_100List.yy",
+    "path":"folders/Objects/Features/Basics/Kanji/Kanji_100List.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

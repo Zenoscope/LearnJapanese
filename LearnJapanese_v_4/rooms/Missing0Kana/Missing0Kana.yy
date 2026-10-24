@@ -45,7 +45,7 @@
   "name":"Missing0Kana",
   "parent":{
     "name":"Missing_Kana",
-    "path":"folders/Objects/Features/Kana/Missing_Kana.yy",
+    "path":"folders/Objects/Features/Basics/Kana/Missing_Kana.yy",
   },
   "parentRoom":{
     "name":"Room_Parent",

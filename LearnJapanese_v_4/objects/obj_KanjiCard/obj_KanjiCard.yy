@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"RadicalList",
-    "path":"folders/Objects/Features/Kanji/RadicalList.yy",
+    "path":"folders/Objects/Features/Basics/Kanji/RadicalList.yy",
   },
   "parentObjectId":null,
   "persistent":false,

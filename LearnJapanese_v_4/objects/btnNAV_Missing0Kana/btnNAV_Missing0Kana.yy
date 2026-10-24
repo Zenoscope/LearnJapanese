@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Shared_Buttons",
-    "path":"folders/Objects/Features/Kana/Shared_Buttons.yy",
+    "path":"folders/Objects/Features/Basics/Kana/Shared_Buttons.yy",
   },
   "parentObjectId":{
     "name":"btnNAV_parent",

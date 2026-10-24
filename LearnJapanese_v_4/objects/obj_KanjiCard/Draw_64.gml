@@ -1,6 +1,7 @@
 /// obj_Kanjicard Draw_GUI
 // You can write your code in this editor
 
+
 //draws the text on the button
 draw_self();
 
@@ -26,6 +27,27 @@ image_num = 0;
 var y_shift = 0;
 var x_shift = 0;
 
+
+switch (room_get_name(room)){
+		case "Radical0List":
+		case "One0Hundred0Kanji0List":
+		case "Vocab0List":
+		}
+
+if (cardMode == "kanji") {
+	x_shift = 100;
+	self.image_index=image_num;
+}
+else if (cardMode == "memonic") {
+	// change the sprite to the kanjiImage/kanji_memonics sprite 
+	imageName ="output_p_" + image_num;
+	self.image_index=image_num;
+	
+}
+else if (cardMode == "path") {
+
+}
+else if (cardMode == "radicals") {
 // move the main radical character 	
 switch (position) {
 	// for some reason these are all displayed as opposites, eg top is bottom etc	
@@ -71,13 +93,14 @@ switch (position) {
 		 
 	break;
 	default:
-		image_num=0;
-	
+		image_num=0;	
 	break;
 	}
 
 
-self.image_index=image_num;
+}
+
+
 //self.image_index=7;
 
 //draw_set_valign(fa_middle);

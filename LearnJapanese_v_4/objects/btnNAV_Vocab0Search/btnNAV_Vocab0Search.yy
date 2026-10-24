@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"VocabNav",
-    "path":"folders/Objects/Features/VocabAndGrammar/Vocabulary/VocabNav.yy",
+    "path":"folders/Objects/Features/Basics/VocabAndGrammar/Vocabulary/VocabNav.yy",
   },
   "parentObjectId":{
     "name":"btn_Label",

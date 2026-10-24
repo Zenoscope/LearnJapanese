@@ -40,7 +40,7 @@
   "name":"Grammar",
   "parent":{
     "name":"Grammar",
-    "path":"folders/Objects/Features/VocabAndGrammar/Grammar.yy",
+    "path":"folders/Objects/Features/Basics/VocabAndGrammar/Grammar.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
