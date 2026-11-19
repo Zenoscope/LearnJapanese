@@ -1,8 +1,6 @@
 // Main_menu
 // store the menu crubs as an array.
 
-
-
 global.roomBreadcrumbs = ["Main_menu"];
 
 show_delf = room_get_name(room);

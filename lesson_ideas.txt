@@ -16,9 +16,7 @@ __means button is a header, not a button
 // Introduciton is the header.
 // Lessons all start with the word "Lesson"
 lessonList = ["Introduction", "Lesson 1 - Basics","Lesson 2 - Self Introduction","Lesson 3 - Family","Lesson 4 - "]
-Lessons
-
-
+Lessons Lesson_1, IntroLesson1,Wordfind001,ImageFind001,Hiragana001,KanjiList001
 
 Button has text which points to lesson_content array.
 eg: Lesson_1, IntroLesson1,Wordfind001,ImageFind001,Hiragana001,KanjiList001
@@ -31,3 +29,68 @@ Wordfind001 is a wordfind in the wordfind array.
 Imagefind001 is an imageFind in the imageFind array.
 The minigame Rooms take the minigames as arguments and will look for the content themselves.
 The lesson container Room is generated (or uses a template?)
+
+* Word list:
+(hiragana/kanji/katakana) plus lessons:
+List of words:
+ArrayName =
+[<DisplayWord>,<AnswerWord>]
+ With either side being English or japanese.
+The display page will have text/editable text, a title field eg "write these foods in English!"
+Inputs: keyboard/onscreen keyboard?
+Compare text input with answerWord
+• Times - what time is it in text
+
+* Clocks (faces)
+Clock faces with random times on them
+Compare times
+Convert angles for hours/minutes, rotate image of hands (pixelated?
+
+• Times of countries - map?
+
+Manually adjust a clock?
+
+*Find an item:
+Images
+Rooms/places with items to find (japanese)
+[Room Image, (item_1, x ,y)]
+
+*Near (me/you), far etc as well
+*Family members (photographs)
+*Extended family
+*Country names (map?)
+*Above, under, behind etc too
+*North/East/west etc
+*Colours, coloured items
+*Other nouns eg sport, letters post office
+*Where and what people are doing.
+
+Mouse click within rectangle/square. Tick shows within the square.
+(Start_X,start_y) + ((End_x, end_y) - (Start_X,start_y) /2) For image location
+
+
+Maps? (Hard?)
+Interior or exterior
+
+Calendar:
+Day of week, months , years , day of month
+/Last/this/next/ day/week/month/year
+What happened today last/next month week/year
+
+Conversation simulator
+Speech marks facing left/right, rise up on lhs
+Using yarn?
+Mouth shapes for characters
+Backgrounds
+Fwd/back buttons
+Multiple options
+Speech wheel
+It's a graph, just move around the graph
+Dictionary and grammar on mouse over
+
+Maybe 100 lines per convo? How many branches?
+Recording audio too? Possibly an audio only option?
+
+& Plus a list of all of the games (revision section)
+
+Study tips
