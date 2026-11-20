@@ -9,73 +9,70 @@
 // this screen will read in the lesson list,and then
 // unload it on exit
 
+// 
+// Info loaded from another file
+// 
 // used to store the lesson array info
-global.lessonArray=""
+
+// draw room title
+draw_text_ext_transformed(100,100,"Lessons",40,500,1,1,0);
+
+function LessonStruct(
+    _display_name, _lesson_name
+    )
+    constructor {
+    display_name = _display_name 
+    lesson_name = _lesson_name
+        }
+
+lessonList1 = new LessonStruct("_header", "")
+lessonList2 = new LessonStruct("Introduction", "LessonIntro")
+lessonList3 = new LessonStruct("Lesson 1 - Basics", "Lesson1")
+lessonList4 = new LessonStruct("Lesson 2 - Self Introduction", "Lesson2")
 
 lessonList = [
-"_header",    
-"Introduction",
- "Lesson 1 - Basics",
- "Lesson 2 - Self Introduction"
+ lessonList1,
+ lessonList2,
+ lessonList3,
+ lessonList4
 ]
 
+// variables for screen generation
 button_X = 500
 button_X_offset = button_X + 50
 button_Y = 50
 button_dist = 100 
 
-var buttonCount = array_length(lessonList) - 1
+var buttonCount = array_length(lessonList) 
 
 for(i=0 ; i < buttonCount ; i++ ){
     // create the instance for the lesson button:
     
     check = lessonList[i]
-    show_debug_message(lessonList[i]) 
-    if (string_starts_with( check,"_" )) {
-        
-        createLessonButtonInstance( check,i)
+    show_debug_message(lessonList[i].display_name) 
+    // if (string_starts_with( check,"_" )) { 
+        createLessonButtonInstance( check)
         button_Y = button_Y + button_dist
-    }
-    
-    else {
-        createLessonButtonInstance( check,i)
-        button_Y = button_Y + button_dist
-        button_X = button_X_offset
-    }
+    //} 
+    //else {
+     //   createLessonButtonInstance( check)
+    //    button_Y = button_Y + button_dist
+    //    button_X = button_X_offset
+    // }
 }
 
 function buttonStruct(
-    _display_name,_index
+    _display_name,_lesson_name
     )
     constructor {
     display_name = _display_name 
-    excercise_index = _index
-    exerciseArray = global.exerciseArray[_index]
+    lesson_name = _lesson_name
     }
 
-
-function createLessonButtonInstance(buttonName, index){
-    ButtonStruct = new buttonStruct(buttonName, index)
+function createLessonButtonInstance(instanceVars){
+    ButtonStruct = new buttonStruct(instanceVars.display_name,instanceVars.lesson_name)
+    if (! string_starts_with( instanceVars.display_name,"_" )) { 
+        button_X = button_X_offset 
+        }
     instance_create_layer(button_X, button_Y, "lessonButtons", btn_lessonButton,ButtonStruct)
 }
-
-function createLessonHeaderInstance(headerName){
-    ButtonStruct = new buttonStruct(headerName)
-    instance_create_layer(button_X, button_Y, "lessonButtons", btn_lessonHeader,ButtonStruct)
-}
-
-// generates the exercse array from the lessons.
-
-function Lesson(
-	_lesson_name
-	) constructor {
-	lesson_name		= _lesson_name;
-	lessonContent	= [];
-	}
-
-Lesson1 = new Lesson("Lesson 1 - Basics")
-array_push(Lesson1.lessonContent, "IntroLesson1", "WordMatch001" ,"ImageFind001" ,"VocabList001");
-Lesson2 = new Lesson("Lesson 2 - Self introduction")
-array_push(Lesson2.lessonContent, "IntroLesson2", "WordMatch002", "VocabList001");
-
-global.exerciseArray = [Lesson1, Lesson2]
